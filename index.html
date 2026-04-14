@@ -24,10 +24,14 @@
 <meta name="twitter:image" content="farm-hero.jpg">
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231a2b52'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%23fff' font-family='Georgia,serif' font-weight='700'>H</text></svg>">
+<!-- Preload hero image -->
+<link rel="preload" as="image" href="assets/farm-hero.jpg">
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -507,6 +511,38 @@ footer a:hover{color:var(--navy)}
   /* trust bar */
   .tb-inner{flex-wrap:wrap!important}
   .tb-item{min-width:50%!important;font-size:11.5px!important;padding:8px 12px!important}
+  /* gallery tabs scroll on mobile */
+  #galleryTabs{display:flex!important;overflow-x:auto!important;width:100%!important;-webkit-overflow-scrolling:touch}
+  #galleryTabs button{white-space:nowrap!important;flex-shrink:0!important}
+  /* gallery grids on mobile */
+  .gallery-tab [style*="grid-template-columns: 1fr 1fr 1fr 1fr"],
+  .gallery-tab [style*="grid-template-columns:1fr 1fr 1fr 1fr"]{grid-template-columns:1fr 1fr!important}
+  .gallery-tab [style*="grid-template-columns: 2fr 1fr 1fr"],
+  .gallery-tab [style*="grid-template-columns:2fr 1fr 1fr"]{grid-template-columns:1fr!important}
+  .gallery-tab [style*="grid-template-columns:2fr 1fr 1fr"] > div{grid-row:auto!important}
+  .gallery-tab [style*="grid-template-columns: 2fr 1fr"],
+  .gallery-tab [style*="grid-template-columns:2fr 1fr"]{grid-template-columns:1fr!important}
+  .gallery-tab [style*="grid-template-columns:2fr 1fr"] iframe{min-height:250px!important}
+  /* no-fees 4-col grid */
+  [style*="grid-template-columns:1fr 1fr 1fr 1fr"]{grid-template-columns:1fr 1fr!important}
+  /* visa proof 3-col grid */
+  [style*="grid-template-columns:1fr 1fr 1fr;gap:16px"]{grid-template-columns:1fr!important}
+  /* proforce & legal 2-col grids */
+  [style*="grid-template-columns:1fr 1fr;gap:24px"]{grid-template-columns:1fr!important}
+  [style*="grid-template-columns:1fr 1fr;gap:40px"]{grid-template-columns:1fr!important}
+  /* housing features 3-col */
+  [style*="grid-template-columns:repeat(3,1fr);gap:0"]{grid-template-columns:1fr!important}
+  /* what-are-caravans 2-col explainer */
+  [style*="grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-top:none"]{grid-template-columns:1fr!important}
+  [style*="grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-top:none"] > div{border-right:none!important;border-bottom:1px solid var(--border)!important}
+  /* caravan photo grid */
+  [style*="grid-template-columns:1fr 1fr 1fr;gap:2px"]{grid-template-columns:1fr 1fr!important}
+  /* visa info 2-col grid with auto */
+  [style*="grid-template-columns:auto 1fr"]{grid-template-columns:1fr!important}
+  /* messenger quick strip */
+  [style*="max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between"]{flex-direction:column!important;align-items:flex-start!important;gap:10px!important}
+  /* housing cost/pairs 2-col */
+  [style*="grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-top:none"] > div:first-child{border-right:none!important;border-bottom:1px solid var(--border)!important}
 }
 /* ─── MESSENGER FORM FIELDS ─── */
 .messenger-fields{background:var(--surface);border:1px solid var(--border);padding:14px;margin-top:4px}
@@ -565,7 +601,7 @@ footer a:hover{color:var(--navy)}
 <header class="hdr">
   <div class="hdr-inner">
     <div class="brand">
-      <img src="assets/logo-hr-recruit.png" alt="HR & Recruit Limited" style="height:42px;width:auto;display:block">
+      <img src="assets/logo-hr-recruit.png" alt="HR & Recruit Limited" fetchpriority="high" style="height:42px;width:auto;display:block">
     </div>
     <nav class="hdr-nav">
       <a href="#proforce">Pro-Force</a>
@@ -841,10 +877,12 @@ footer a:hover{color:var(--navy)}
       <div style="display:grid;grid-template-columns:2fr 1fr;gap:0;min-height:400px">
         <div style="position:relative;background:#000;overflow:hidden">
           <iframe
-            src="https://www.youtube.com/embed/kk6-UElT4Dc?rel=0&modestbranding=1&color=white"
+            id="ytFrame"
+            data-src="https://www.youtube.com/embed/kk6-UElT4Dc?rel=0&modestbranding=1&color=white"
             style="width:100%;height:100%;border:none;display:block;min-height:400px"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
+            loading="lazy"
             title="Работа на грибной ферме в Великобритании — реальное видео"
           ></iframe>
         </div>
@@ -869,6 +907,8 @@ function switchTab(tab) {
   document.querySelectorAll('.gallery-tab').forEach(t => t.style.display = 'none');
   const el = document.getElementById('tab-' + tab);
   if(el) { el.style.display = 'block'; }
+  // Lazy-load YouTube iframe when video tab is opened
+  if(tab==='video'){var yt=document.getElementById('ytFrame');if(yt&&!yt.src&&yt.dataset.src){yt.src=yt.dataset.src;}}
   document.querySelectorAll('.gtab').forEach(b => {
     const active = b.dataset.tab === tab;
     b.style.background = active ? 'var(--navy)' : 'var(--surface2)';
@@ -1254,7 +1294,7 @@ function switchTab(tab) {
 
     <!-- Aerial photo: caravans + farm together -->
     <div style="margin-top:28px;position:relative;overflow:hidden;border:1px solid var(--border)">
-      <img src="assets/caravan-farm-aerial.jpg" alt="Каравани рядом с фермой — аэрофото" style="width:100%;display:block;max-height:440px;object-fit:cover">
+      <img src="assets/caravan-farm-aerial.jpg" alt="Каравани рядом с фермой — аэрофото" loading="lazy" style="width:100%;display:block;max-height:440px;object-fit:cover">
       <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:20px 24px">
         <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#fff;margin-bottom:4px">Каравани и ферма — рядом</div>
         <div style="font-size:13px;color:rgba(255,255,255,.6)">На аэрофото: жилые каравани расположены в 2–5 минутах ходьбы от производственных ангаров. Вы не тратите время на дорогу.</div>
@@ -1359,7 +1399,7 @@ function switchTab(tab) {
       <div>
         <div style="border:1px solid var(--border);overflow:hidden">
           <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
-            <img src="assets/farm-map.jpg" alt="Расположение фермы на карте UK" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+            <img src="assets/farm-map.jpg" alt="Расположение фермы на карте UK" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
           </div>
           <div style="padding:14px 18px;background:var(--surface);border-top:1px solid var(--border)">
             <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:4px">Расположение ферм — вблизи Лондона</div>
