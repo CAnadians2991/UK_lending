@@ -440,7 +440,6 @@ footer a:hover{color:var(--navy)}
 
 /* ─── MOBILE HERO OVERHAUL ─── */
 @media(max-width:640px){
-  .hero-overlay{display:none!important}
   .hero{min-height:auto;background-position:center top;background-attachment:scroll}
   .hero-inner{
     grid-template-columns:1fr!important;
@@ -448,23 +447,16 @@ footer a:hover{color:var(--navy)}
     align-items:stretch!important;
     gap:0!important;
   }
-  /* Left col: text fills viewport, form hidden on scroll */
+  /* Left col: text fills viewport, light gradient */
   .hero-inner > div:first-child{
     min-height:100svh;
     display:flex;
     flex-direction:column;
     justify-content:flex-end;
     padding:20px 20px 28px;
-    background:linear-gradient(180deg,rgba(26,43,82,0) 0%,rgba(26,43,82,0.3) 25%,rgba(26,43,82,0.65) 50%,rgba(26,43,82,0.88) 75%,rgba(26,43,82,0.95) 100%);
+    background:linear-gradient(180deg,rgba(247,248,252,0) 0%,rgba(247,248,252,0.75) 30%,rgba(247,248,252,0.97) 60%,rgba(247,248,252,1) 100%);
     position:relative;
   }
-  .hero-inner > div:first-child .season-tag{background:rgba(255,255,255,.15)!important;border-color:rgba(255,255,255,.25)!important;color:#fff!important}
-  .hero-inner > div:first-child h1{color:#fff!important}
-  .hero-inner > div:first-child h1 em{color:#fde68a!important}
-  .hero-inner > div:first-child .hero-lead{color:rgba(255,255,255,.8)!important}
-  .hero-inner > div:first-child .tl-item{color:rgba(255,255,255,.75)!important}
-  .hero-inner > div:first-child .tl-item::before{background:rgba(255,255,255,.5)!important}
-  .hero-inner > div:first-child .btn-main{background:#fff!important;color:var(--navy)!important;box-shadow:0 4px 20px rgba(0,0,0,.3)!important}
   .season-tag{font-size:11px;padding:5px 12px;margin-bottom:14px}
   .hero-inner h1{font-size:clamp(32px,8vw,44px)!important;line-height:1.1!important;margin-bottom:12px!important}
   .hero-lead{font-size:14px!important;margin-bottom:16px!important;line-height:1.7!important}
@@ -486,10 +478,10 @@ footer a:hover{color:var(--navy)}
   }
   .hero-form{box-shadow:none!important;border:none!important;position:static!important;top:auto!important}
   /* Message widget mobile */
-  .msg-widget{bottom:76px;right:16px}
+  .msg-widget{bottom:24px;right:16px}
   .msg-main-btn{width:50px;height:50px}
   /* Float cta on mobile */
-  .float-cta{bottom:0;left:0;right:0;text-align:center;font-size:14px;padding:14px 20px;width:100%}
+  .float-cta{display:none}
   /* Tables / grids on mobile */
   .reviews-grid{grid-template-columns:1fr!important}
   .testi:nth-child(3),.testi:nth-child(6){border-right:none}
@@ -520,6 +512,7 @@ footer a:hover{color:var(--navy)}
   .tb-inner{flex-wrap:wrap!important}
   .tb-item{min-width:50%!important;font-size:11.5px!important;padding:8px 12px!important}
 }
+
 /* ─── MESSENGER FORM FIELDS ─── */
 .messenger-fields{background:var(--surface);border:1px solid var(--border);padding:14px;margin-top:4px}
 .messenger-choice{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px}
@@ -579,7 +572,7 @@ footer a:hover{color:var(--navy)}
     display:flex;flex-direction:column;justify-content:flex-end;
     padding:20px 20px 32px!important;
     min-height:100svh;
-    background:linear-gradient(180deg,rgba(26,43,82,0) 0%,rgba(26,43,82,0.3) 25%,rgba(26,43,82,0.65) 50%,rgba(26,43,82,0.88) 75%,rgba(26,43,82,0.95) 100%)!important;
+    background:linear-gradient(180deg,rgba(247,248,252,0) 0%,rgba(247,248,252,0.75) 30%,rgba(247,248,252,0.97) 60%,rgba(247,248,252,1) 100%)!important;
     position:relative!important;
   }
   .hero h1{font-size:34px!important;margin-bottom:10px!important}
@@ -599,10 +592,10 @@ footer a:hover{color:var(--navy)}
   .gtab{display:inline-block!important}
   .hdr-nav{display:none}
   .hdr-inner{padding:0 16px!important}
-  .msg-widget{bottom:76px;right:16px}
+  .msg-widget{bottom:24px;right:16px}
   .msg-main-btn{width:50px;height:50px}
-  .float-cta{bottom:0;left:0;right:0;text-align:center;font-size:14px;padding:14px 20px;width:100%}
-  footer{padding:32px 20px 60px!important}
+  .float-cta{display:none}
+  footer{padding:32px 20px 20px!important}
   .mob-1col{grid-template-columns:1fr!important}
   .mob-1col > div[style*="border-right"]{border-right:none!important;border-bottom:1px solid var(--border)!important}
   .mob-2col{grid-template-columns:1fr 1fr!important}
@@ -680,8 +673,8 @@ footer a:hover{color:var(--navy)}
   <div class="hero-inner" style="position:relative;z-index:1">
     <div>
       <div class="season-tag">Набір відкрито — літо-осінь 2026</div>
-      <h1 style="font-family:'Playfair Display',serif">Робота в Англії —<br><em>офіційно і реально</em></h1>
-      <p class="hero-lead">Збір шампіньонів на фермах UK. Ставка захищена законом. Держвіза, контракт, житло поруч.<br><span style="font-size:13px;color:var(--ink-light)">Ви підписуєте контракт <strong>до</strong> будь-яких витрат.</span></p>
+      <h1 style="font-family:'Playfair Display',serif">Збір шампіньонів в Англії —<br><em>£1 900+ на руки щомісяця</em></h1>
+      <p class="hero-lead">Офіційна сезонна робота на грибних фермах Великобританії. Закритий ангар, стабільний графік, житло на фермі. Без досвіду, без мови — 75% колег з України та СНД.</p>
 
       <!-- Key numbers -->
       <div class="key-nums" style="margin-bottom:20px">
@@ -691,20 +684,8 @@ footer a:hover{color:var(--navy)}
         <div class="kn"><div class="n">18–50</div><div class="l">вік</div></div>
       </div>
 
-      <!-- Messenger quick links — mobile friendly -->
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
-        <a href="https://t.me/YOUR_TELEGRAM" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;padding:11px 18px;background:#2AABEE;color:#fff;font-size:14px;font-weight:700;font-family:'DM Sans',sans-serif;text-decoration:none;flex:1;min-width:130px;justify-content:center">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
-          Написати в Telegram
-        </a>
-        <a href="https://wa.me/YOUR_WHATSAPP" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;padding:11px 18px;background:#25D366;color:#fff;font-size:14px;font-weight:700;font-family:'DM Sans',sans-serif;text-decoration:none;flex:1;min-width:130px;justify-content:center">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Написати в WhatsApp
-        </a>
-      </div>
-
-      <div style="margin-bottom:12px">
-        <button class="btn-line" style="min-height:48px" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Форма заявки ↓</button>
+      <div class="hero-cta" style="margin-bottom:20px">
+        <button class="btn-main" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Дізнатись деталі ↓</button>
       </div>
 
       <div class="trust-list">
@@ -770,123 +751,6 @@ footer a:hover{color:var(--navy)}
 </div>
 
 
-<!-- VIDEO SECTION — між Hero і Proof -->
-<section style="background:var(--navy);padding:0" id="video-intro">
-  <div class="mob-1col" style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;min-height:340px">
-    <!-- Video -->
-    <div style="position:relative;background:#000;overflow:hidden">
-      <iframe
-        src="https://www.youtube.com/embed/kk6-UElT4Dc?rel=0&modestbranding=1&color=white"
-        style="width:100%;height:100%;border:none;display:block;min-height:340px"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        loading="lazy"
-        title="Робота на грибній фермі UK — реальне відео"
-      ></iframe>
-    </div>
-    <!-- Text beside video -->
-    <div style="padding:36px 32px;display:flex;flex-direction:column;justify-content:center">
-      <div style="font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:12px">Подивіться 2 хвилини</div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(20px,2.4vw,30px);font-weight:600;color:#fff;line-height:1.3;margin-bottom:14px">Краще один раз побачити як всe виглядає</h2>
-      <p style="font-size:14px;color:rgba(255,255,255,.5);line-height:1.75;margin-bottom:24px;font-weight:300">У відео — реальний ангар, процес збору, умови роботи і як виглядають каравані. Не постановка.</p>
-      <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;color:rgba(255,255,255,.5)">
-        <div style="display:flex;gap:8px;align-items:center"><div style="width:5px;height:5px;background:#86efac;flex-shrink:0"></div>Ангари і ряди стелажів з грибами</div>
-        <div style="display:flex;gap:8px;align-items:center"><div style="width:5px;height:5px;background:#86efac;flex-shrink:0"></div>Процес збору і упаковки</div>
-        <div style="display:flex;gap:8px;align-items:center"><div style="width:5px;height:5px;background:#86efac;flex-shrink:0"></div>Каравані — де живуть</div>
-      </div>
-      <button onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})" style="margin-top:24px;background:var(--blue);color:#fff;border:none;padding:14px 22px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;min-height:52px;width:100%">Зв'язатись зі мною →</button>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     STAGE 2 — PROOF
-     Чи це реально? Хто вже їхав?
-════════════════════════════════════════════ -->
-<section style="background:var(--white);padding:52px 32px" id="proof">
-  <div class="container">
-    <div class="stage-label" style="display:none">Стадія 2 — Докази</div>
-
-    <!-- Counter -->
-    <div class="counter-badge">
-      <div class="cb-num">200+</div>
-      <div class="cb-text">кандидатів вже<br>отримали візу і поїхали</div>
-    </div>
-
-    <h2 class="sh">Ось як виглядає<br><em>реальна UK-віза</em></h2>
-    <p class="sb">Нижче — справжні Seasonal Worker Visa наших кандидатів. Не картинки з інтернету — реальні документи реальних людей.</p>
-
-    <!-- Real visa photos -->
-    <div class="proof-grid">
-      <div class="proof-card">
-        <div class="proof-card-img">
-          <img src="assets/visa-1.jpg" alt="UK Seasonal Worker Visa" loading="lazy">
-        </div>
-        <div class="proof-card-body">
-          <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:3px">D — SEASONAL WORKER VISA</div>
-          <div style="font-size:12px;color:var(--ink-light)">Кандидат з Узбекистану · Сезон 2026</div>
-        </div>
-      </div>
-      <div class="proof-card">
-        <div class="proof-card-img">
-          <img src="assets/visa-2.jpg" alt="UK Seasonal Worker Visa 2" loading="lazy">
-        </div>
-        <div class="proof-card-body">
-          <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:3px">D — SEASONAL WORKER VISA</div>
-          <div style="font-size:12px;color:var(--ink-light)">Кандидат з Узбекистану · Сезон 2026</div>
-        </div>
-      </div>
-      <div class="proof-card">
-        <div class="proof-card-img">
-          <img src="assets/visa-couple.jpg" alt="Пара з UK-візами" loading="lazy">
-        </div>
-        <div class="proof-card-body">
-          <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:3px">Пара — обоє отримали візу</div>
-          <div style="font-size:12px;color:var(--ink-light)">Поїхали разом · Сезон 2026</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Visa decoding -->
-    <div class="mob-1col" style="background:var(--surface);border:1px solid var(--border);padding:18px 22px;margin-top:14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0">
-      <div style="padding:0 18px 0 0;border-right:1px solid var(--border)">
-        <div style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;color:var(--ink-muted);margin-bottom:6px;text-transform:uppercase">Що написано у візі</div>
-        <div style="font-size:13px;color:var(--ink);line-height:1.8;font-family:'Courier New',monospace;background:var(--white);padding:10px 12px;border:1px solid var(--border)">Type: <strong>D — TEMPORARY WORK</strong><br>(SEASONAL WORKER) MIGRANT<br>Valid: до 6 місяців<br>CoS No: [номер запрошення]</div>
-      </div>
-      <div style="padding:0 18px;border-right:1px solid var(--border)">
-        <div style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;color:var(--ink-muted);margin-bottom:6px;text-transform:uppercase">CoS — що це</div>
-        <div style="font-size:13px;color:var(--ink-mid);line-height:1.75">Certificate of Sponsorship — офіційний номер запрошення від Pro-Force Ltd. Видається після підтвердження трудоустрою. Без нього візу не дадуть.</div>
-      </div>
-      <div style="padding:0 0 0 18px">
-        <div style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;color:var(--ink-muted);margin-bottom:6px;text-transform:uppercase">Перевірте роботодавця</div>
-        <div style="font-size:13px;color:var(--ink-mid);line-height:1.75;margin-bottom:10px">Pro-Force Ltd, рег. №05580634 — перевірте самостійно:</div>
-        <a href="https://find-and-update.company-information.service.gov.uk/company/05580634" target="_blank" rel="noopener" style="display:block;font-size:12px;font-weight:700;color:var(--blue);text-decoration:underline;text-underline-offset:2px;word-break:break-all">Companies House UK →</a>
-        <a href="https://www.gov.uk/government/publications/seasonal-worker-visa-licensed-operators" target="_blank" rel="noopener" style="display:block;font-size:12px;font-weight:700;color:var(--blue);text-decoration:underline;text-underline-offset:2px;margin-top:6px">Список операторів gov.uk →</a>
-      </div>
-    </div>
-
-    <!-- 3 review quotes -->
-    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:24px">
-      <div style="padding:18px;border:1px solid var(--border);background:var(--white)">
-        <div class="t-stars" style="margin-bottom:10px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:12px">"Боялась що обман. Але все так як казали — виза справжня, зарплата кожного тижня. За 5 місяців заробила на квартиру."</div>
-        <div style="font-size:12px;font-weight:600;color:var(--navy)">Оксана М. <span style="font-weight:400;color:var(--ink-muted)">· Харків, 2024</span></div>
-      </div>
-      <div style="padding:18px;border:1px solid var(--border);background:var(--white)">
-        <div class="t-stars" style="margin-bottom:10px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:12px">"Їхав з дружиною — поселили разом. Брав понаднормові — один місяць вийшло більше £3 000. Все офіційно."</div>
-        <div style="font-size:12px;font-weight:600;color:var(--navy)">Дмитрій К. <span style="font-weight:400;color:var(--ink-muted)">· Запоріжжя, 2024</span></div>
-      </div>
-      <div style="padding:18px;border:1px solid var(--border);background:var(--white)">
-        <div class="t-stars" style="margin-bottom:10px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:12px">"Половина бригади з України і Молдови. English взагалі не потрібна. Каравані виявився нормальним — кухня, душ, тераса."</div>
-        <div style="font-size:12px;font-weight:600;color:var(--navy)">Наталія В. <span style="font-weight:400;color:var(--ink-muted)">· Київ, 2024</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
 <!-- ══════════════════════════════════════════
      STAGE 3 — MATH
      Скільки реально? Чому стільки?
@@ -894,7 +758,12 @@ footer a:hover{color:var(--navy)}
 <section style="background:var(--surface);border-top:1px solid var(--border);padding:52px 32px" id="math">
   <div class="container">
     <div class="stage-label" style="display:none">Стадія 3 — Гроші</div>
-    <h2 class="sh">Скільки реально <em>на руки</em></h2>
+    <h2 class="sh">Що я буду робити<br><em>і скільки отримаю?</em></h2>
+
+    <div style="background:var(--white);border:1px solid var(--border);padding:20px 24px;margin-bottom:24px">
+      <h3 style="font-size:15px;font-weight:600;color:var(--navy);margin-bottom:8px">Ваша робота — збір шампіньонів</h3>
+      <p style="font-size:14px;color:var(--ink-mid);line-height:1.8">Ви працюєте в закритому ангарі з кліматконтролем (+18-22°C). Збираєте гриби з полиць, сортуєте за розміром, пакуєте в лотки. Фізична робота, але в комфортних умовах — без дощу, спеки чи холоду. Зміна 8-10 годин, 6 днів на тиждень. Навчання на місці у перші дні.</p>
+    </div>
 
     <!-- Мінімалка badge -->
     <div class="wage-badge" style="margin:12px 0 24px">
@@ -1029,6 +898,122 @@ footer a:hover{color:var(--navy)}
 </section>
 
 
+<!-- ЧОМУ РЕКРУТИНГ БЕЗКОШТОВНИЙ -->
+<section style="background:var(--green-bg);border-top:1px solid rgba(13,107,56,.15);border-bottom:1px solid rgba(13,107,56,.15);padding:52px 32px">
+  <div class="container">
+    <p class="stag">Ваше головне питання</p>
+    <h2 class="sh">Чому рекрутинг<br><em>безкоштовний?</em></h2>
+    <p class="sb">Бо нам платить роботодавець, а не ви. Це стандартна практика в UK — закон забороняє брати гроші з кандидатів за працевлаштування.</p>
+    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:28px">
+      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
+        <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--green);margin-bottom:8px">£0</div>
+        <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:4px">За рекрутинг</div>
+        <div style="font-size:12.5px;color:var(--ink-mid);line-height:1.6">Нам платить роботодавець. Для вас — безкоштовно.</div>
+      </div>
+      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
+        <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--green);margin-bottom:8px">£319</div>
+        <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:4px">Держмито UK</div>
+        <div style="font-size:12.5px;color:var(--ink-mid);line-height:1.6">Єдина витрата — оплачується через gov.uk уряду Великобританії. Не нам.</div>
+      </div>
+      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
+        <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--navy);margin-bottom:8px">Держпрограма</div>
+        <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:4px">Seasonal Worker Scheme</div>
+        <div style="font-size:12.5px;color:var(--ink-mid);line-height:1.6">Це програма уряду UK, не приватний рекрутинг. Ліцензія Home Office.</div>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding:14px 18px;background:var(--white);border:1px solid rgba(13,107,56,.2);border-left:3px solid var(--green)">
+      <p style="font-size:13px;color:var(--green);line-height:1.7;font-weight:500">Будь-який інший платіж — незаконний. Якщо хтось просить гроші за "бронювання місця" або "реєстрацію" — це шахрайство. Ми ніколи не беремо жодної копійки від кандидатів.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     STAGE 2 — PROOF
+     Чи це реально? Хто вже їхав?
+════════════════════════════════════════════ -->
+<section style="background:var(--white);padding:52px 32px" id="proof">
+  <div class="container">
+    <div class="stage-label" style="display:none">Стадія 2 — Докази</div>
+
+    <!-- Counter -->
+    <div class="counter-badge">
+      <div class="cb-num">200+</div>
+      <div class="cb-text">кандидатів вже<br>отримали візу і поїхали</div>
+    </div>
+
+    <h2 class="sh">Це точно офіційно?<br><em>Як перевірити</em></h2>
+    <p class="sb">Нижче — справжні Seasonal Worker Visa наших кандидатів. Не картинки з інтернету — реальні документи реальних людей.</p>
+
+    <!-- Real visa photos -->
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="proof-card-img">
+          <img src="assets/visa-1.jpg" alt="UK Seasonal Worker Visa" loading="lazy">
+        </div>
+        <div class="proof-card-body">
+          <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:3px">D — SEASONAL WORKER VISA</div>
+          <div style="font-size:12px;color:var(--ink-light)">Кандидат з Узбекистану · Сезон 2026</div>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-card-img">
+          <img src="assets/visa-2.jpg" alt="UK Seasonal Worker Visa 2" loading="lazy">
+        </div>
+        <div class="proof-card-body">
+          <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:3px">D — SEASONAL WORKER VISA</div>
+          <div style="font-size:12px;color:var(--ink-light)">Кандидат з Узбекистану · Сезон 2026</div>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-card-img">
+          <img src="assets/visa-couple.jpg" alt="Пара з UK-візами" loading="lazy">
+        </div>
+        <div class="proof-card-body">
+          <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:3px">Пара — обоє отримали візу</div>
+          <div style="font-size:12px;color:var(--ink-light)">Поїхали разом · Сезон 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visa decoding -->
+    <div class="mob-1col" style="background:var(--surface);border:1px solid var(--border);padding:18px 22px;margin-top:14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0">
+      <div style="padding:0 18px 0 0;border-right:1px solid var(--border)">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;color:var(--ink-muted);margin-bottom:6px;text-transform:uppercase">Що написано у візі</div>
+        <div style="font-size:13px;color:var(--ink);line-height:1.8;font-family:'Courier New',monospace;background:var(--white);padding:10px 12px;border:1px solid var(--border)">Type: <strong>D — TEMPORARY WORK</strong><br>(SEASONAL WORKER) MIGRANT<br>Valid: до 6 місяців<br>CoS No: [номер запрошення]</div>
+      </div>
+      <div style="padding:0 18px;border-right:1px solid var(--border)">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;color:var(--ink-muted);margin-bottom:6px;text-transform:uppercase">CoS — що це</div>
+        <div style="font-size:13px;color:var(--ink-mid);line-height:1.75">Certificate of Sponsorship — офіційний номер запрошення від Pro-Force Ltd. Видається після підтвердження трудоустрою. Без нього візу не дадуть.</div>
+      </div>
+      <div style="padding:0 0 0 18px">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;color:var(--ink-muted);margin-bottom:6px;text-transform:uppercase">Перевірте роботодавця</div>
+        <div style="font-size:13px;color:var(--ink-mid);line-height:1.75;margin-bottom:10px">Pro-Force Ltd, рег. №05580634 — перевірте самостійно:</div>
+        <a href="https://find-and-update.company-information.service.gov.uk/company/05580634" target="_blank" rel="noopener" style="display:block;font-size:12px;font-weight:700;color:var(--blue);text-decoration:underline;text-underline-offset:2px;word-break:break-all">Companies House UK →</a>
+        <a href="https://www.gov.uk/government/publications/seasonal-worker-visa-licensed-operators" target="_blank" rel="noopener" style="display:block;font-size:12px;font-weight:700;color:var(--blue);text-decoration:underline;text-underline-offset:2px;margin-top:6px">Список операторів gov.uk →</a>
+      </div>
+    </div>
+
+    <!-- 3 review quotes -->
+    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:24px">
+      <div style="padding:18px;border:1px solid var(--border);background:var(--white)">
+        <div class="t-stars" style="margin-bottom:10px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:12px">"Боялась що обман. Але все так як казали — виза справжня, зарплата кожного тижня. За 5 місяців заробила на квартиру."</div>
+        <div style="font-size:12px;font-weight:600;color:var(--navy)">Оксана М. <span style="font-weight:400;color:var(--ink-muted)">· Харків, 2024</span></div>
+      </div>
+      <div style="padding:18px;border:1px solid var(--border);background:var(--white)">
+        <div class="t-stars" style="margin-bottom:10px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:12px">"Їхав з дружиною — поселили разом. Брав понаднормові — один місяць вийшло більше £3 000. Все офіційно."</div>
+        <div style="font-size:12px;font-weight:600;color:var(--navy)">Дмитрій К. <span style="font-weight:400;color:var(--ink-muted)">· Запоріжжя, 2024</span></div>
+      </div>
+      <div style="padding:18px;border:1px solid var(--border);background:var(--white)">
+        <div class="t-stars" style="margin-bottom:10px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:12px">"Половина бригади з України і Молдови. English взагалі не потрібна. Каравані виявився нормальним — кухня, душ, тераса."</div>
+        <div style="font-size:12px;font-weight:600;color:var(--navy)">Наталія В. <span style="font-weight:400;color:var(--ink-muted)">· Київ, 2024</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══════════════════════════════════════════
      STAGE 4 — LIFESTYLE
      Де живу? Як виглядає?
@@ -1036,7 +1021,7 @@ footer a:hover{color:var(--navy)}
 <section style="background:var(--white);border-top:1px solid var(--border);padding:52px 32px" id="housing">
   <div class="container">
     <div class="stage-label" style="display:none">Стадія 4 — Побут</div>
-    <h2 class="sh">Де ви будете жити —<br><em>реальні фото</em></h2>
+    <h2 class="sh">Де я буду жити?<br><em>Хто мене зустріне?</em></h2>
     <p class="sb">Каравані — це повноцінний мобільний будинок 30–50 м². Не барак, не гуртожиток.</p>
 
     <!-- Aerial: caravans + farm -->
@@ -1091,6 +1076,10 @@ footer a:hover{color:var(--navy)}
         <div style="font-size:12.5px;color:var(--ink-mid)">Можна жити разом при наявності місць. Візи окремо.</div>
       </div>
     </div>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-top:none;padding:18px 22px">
+      <p style="font-size:14px;color:var(--ink-mid);line-height:1.8">По приїзду вас зустріне координатор, який допоможе з маршрутом і трансфером від аеропорту. Перший день — заселення і інструктаж. На фермі працює україномовна та російськомовна команда — ви не будете самі.</p>
+    </div>
   </div>
 </section>
 
@@ -1102,7 +1091,7 @@ footer a:hover{color:var(--navy)}
       <button onclick="switchTab('process')" class="gtab active" data-tab="process" style="padding:10px 20px;border:none;border-right:1px solid var(--border);background:var(--navy);color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer">Процес роботи</button>
       <button onclick="switchTab('hangar')" class="gtab" data-tab="hangar" style="padding:10px 20px;border:none;border-right:1px solid var(--border);background:var(--surface2);color:var(--ink-mid);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer">Ангари</button>
       <button onclick="switchTab('farm')" class="gtab" data-tab="farm" style="padding:10px 20px;border:none;border-right:1px solid var(--border);background:var(--surface2);color:var(--ink-mid);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer">Ферма</button>
-<button onclick="document.getElementById('video-intro').scrollIntoView({behavior:'smooth'})" style="padding:10px 20px;border:none;background:var(--surface2);color:var(--ink-mid);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer">▶ Відео ↑</button>
+<button onclick="document.getElementById('video-intro').scrollIntoView({behavior:'smooth'})" style="padding:10px 20px;border:none;background:var(--surface2);color:var(--ink-mid);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer">▶ Відео ↓</button>
     </div>
     <div id="tab-process" class="gallery-tab" style="margin-top:2px">
       <div class="mob-2col" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:2px">
@@ -1141,6 +1130,36 @@ footer a:hover{color:var(--navy)}
   </div>
 </section>
 
+
+<!-- VIDEO SECTION — між Hero і Proof -->
+<section style="background:var(--navy);padding:0" id="video-intro">
+  <div class="mob-1col" style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;min-height:340px">
+    <!-- Video -->
+    <div style="position:relative;background:#000;overflow:hidden">
+      <iframe
+        src="https://www.youtube.com/embed/kk6-UElT4Dc?rel=0&modestbranding=1&color=white"
+        style="width:100%;height:100%;border:none;display:block;min-height:340px"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        loading="lazy"
+        title="Робота на грибній фермі UK — реальне відео"
+      ></iframe>
+    </div>
+    <!-- Text beside video -->
+    <div style="padding:36px 32px;display:flex;flex-direction:column;justify-content:center">
+      <div style="font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:12px">Подивіться 2 хвилини</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(20px,2.4vw,30px);font-weight:600;color:#fff;line-height:1.3;margin-bottom:14px">Краще один раз побачити як всe виглядає</h2>
+      <p style="font-size:14px;color:rgba(255,255,255,.5);line-height:1.75;margin-bottom:24px;font-weight:300">У відео — реальний ангар, процес збору, умови роботи і як виглядають каравані. Не постановка.</p>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;color:rgba(255,255,255,.5)">
+        <div style="display:flex;gap:8px;align-items:center"><div style="width:5px;height:5px;background:#86efac;flex-shrink:0"></div>Ангари і ряди стелажів з грибами</div>
+        <div style="display:flex;gap:8px;align-items:center"><div style="width:5px;height:5px;background:#86efac;flex-shrink:0"></div>Процес збору і упаковки</div>
+        <div style="display:flex;gap:8px;align-items:center"><div style="width:5px;height:5px;background:#86efac;flex-shrink:0"></div>Каравані — де живуть</div>
+      </div>
+      <button onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})" style="margin-top:24px;background:var(--blue);color:#fff;border:none;padding:14px 22px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;min-height:52px;width:100%">Зв'язатись зі мною →</button>
+    </div>
+  </div>
+</section>
+
 <!-- ══════════════════════════════════════════
      STAGE 5 — SAFETY
      Це не обман? Гарантії?
@@ -1148,7 +1167,7 @@ footer a:hover{color:var(--navy)}
 <section style="background:var(--navy);padding:52px 32px" id="safety">
   <div class="container">
     <div class="stage-label" style="display:none">Стадія 5 — Безпека</div>
-    <h2 class="sh" style="color:#fff;margin-bottom:8px">Як відрізнити нас<br><em style="color:#fde68a">від шахраїв</em></h2>
+    <h2 class="sh" style="color:#fff;margin-bottom:8px">Як відрізнити нас<br><em style="color:#fde68a">від шахраїв?</em></h2>
     <p style="font-size:15px;color:rgba(255,255,255,.4);margin-bottom:32px;font-weight:300">У цій сфері дійсно багато обману. Ось конкретні ознаки.</p>
 
     <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
@@ -1225,7 +1244,7 @@ footer a:hover{color:var(--navy)}
 <section style="background:var(--white);border-top:1px solid var(--border);padding:52px 32px" id="process">
   <div class="container">
     <div class="stage-label" style="display:none">Стадія 6 — Дія</div>
-    <h2 class="sh">Від заявки до виїзду —<br><em>5 кроків</em></h2>
+    <h2 class="sh">Як потрапити<br><em>на програму?</em></h2>
     <p class="sb">Близько 1.5–2 місяці від першого контакту до вильоту.</p>
 
     <!-- Urgency banner -->
@@ -1323,45 +1342,41 @@ footer a:hover{color:var(--navy)}
 <!-- FAQ -->
 <section class="faq-sec" id="faq">
   <div class="container">
-    <p class="stag" style="justify-content:center">Вопросы и ответы</p>
-    <h2 class="sh" style="text-align:center">Частые <em>вопросы</em></h2>
+    <p class="stag" style="justify-content:center">Запитання та відповіді</p>
+    <h2 class="sh" style="text-align:center">Часті <em>запитання</em></h2>
     <div class="faq-wrap">
-      <div class="faq-item open">
-        <button class="faq-btn">Чи потрібна англійська мова?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-ans">Ні. Интервью — на русском. На ферме работа показывается без слов. Около 75% коллег русскоязычные. Базовые фразы появятся сами за первые недели.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn">Це справді тільки 6 місяців?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-ans">Да. Seasonal Worker Visa выдаётся максимум на 6 месяцев. Продлить в Великобритании нельзя по закону. После окончания контракта — возврат домой. При желании — новая виза на следующий сезон.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn">Чи потрібен досвід роботи на фермі?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-ans">Ні. Это работа без квалификации. В первые дни вас обучают прямо на месте — опытные коллеги и бригадиры. Важна физическая готовность, а не профессиональный опыт.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn">£319 — це обов'язково для всіх?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-ans">Да, для всех кандидатов в мире без исключений. Это фиксированный государственный сбор UK. Работодатель его не покрывает. Оплачивается онлайн через gov.uk. Без оплаты заявка не продвигается.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn">Ми подаємо візу самі чи агенція допомагає?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-ans">Оба варианта. Можно подать самостоятельно через gov.uk — процедура понятная, мы объясняем каждый шаг. Либо наш агент оформляет документы вместе с вами. Оба варианта бесплатны для кандидата. Уточните при подаче заявки.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn">Чому треба подати візу за 3 дні після отримання CoS?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-ans">CoS (Certificate of Sponsorship) привязан к конкретному кандидату и действует ограниченное время. Если не подать заявку на визу вовремя — CoS аннулируется и место передаётся следующему в очереди. Конкуренция реальная, мест ограниченное количество.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn">Роботодавець оплачує авіаквиток?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-ans">Частично. Работодатель покрывает стоимость авиабилета до £200. Если билет стоит дороже — разницу оплачиваете самостоятельно, но £200 возвращаются в первую зарплату. Координатор помогает выбрать оптимальный маршрут.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn">Можно ехать с мужем или женой?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-ans">Виза на одного — каждый подаёт отдельно. Если оба пройдут отбор, можно попасть на одну ферму и жить вместе при наличии мест. Уточняйте при заявке.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn">Як переконатись що це не шахрайство?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-ans">Виза оформляется через gov.uk — официальный сайт правительства UK. Спонсор — Pro-Force Ltd (pro-force.co.uk), лицензирован Home Office. £319 идут государству. Никаких платежей за "бронирование" или "рекрутинг".</div>
-      </div>
+<div class="faq-item open">
+  <button class="faq-btn">Це точно не обман?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
+  <div class="faq-ans">Віза оформлюється через gov.uk — офіційний сайт уряду Великобританії. Роботодавець Pro-Force Ltd має ліцензію Home Office. Ви підписуєте контракт ДО будь-яких витрат. Єдиний платіж — £319 держмито через gov.uk. Перевірте самі: <a href="https://find-and-update.company-information.service.gov.uk/company/05580634" target="_blank" style="color:var(--blue);text-decoration:underline">Companies House UK</a>.</div>
+</div>
+<div class="faq-item">
+  <button class="faq-btn">Чому рекрутинг безкоштовний — де підвох?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
+  <div class="faq-ans">Підвоху немає. Нам платить роботодавець Pro-Force Ltd — це стандартна практика в UK. Закон Великобританії забороняє брати гроші з кандидатів за працевлаштування. Будь-який інший платіж крім £319 держмито — це ознака шахрайства.</div>
+</div>
+<div class="faq-item">
+  <button class="faq-btn">Потрібна англійська мова?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
+  <div class="faq-ans">Ні. Співбесіда українською або російською. На фермі робота показується, не пояснюється. Близько 75% колег — україномовні та російськомовні. Базові фрази з'являться самі за перші тижні.</div>
+</div>
+<div class="faq-item">
+  <button class="faq-btn">Що якщо візу не дадуть — гроші повернуть?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
+  <div class="faq-ans">£319 — це державний збір UK. При відмові він не повертається (стандартне правило уряду UK для всіх віз). Але відсоток відмов дуже низький, бо ваша заявка йде через ліцензованого спонсора.</div>
+</div>
+<div class="faq-item">
+  <button class="faq-btn">Хто мене зустріне в Англії?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
+  <div class="faq-ans">Координатор допоможе з маршрутом і трансфером від аеропорту. Перший день — інструктаж, заселення. 75% колег розмовляють українською і російською. Ви не будете самі.</div>
+</div>
+<div class="faq-item">
+  <button class="faq-btn">Можна їхати з чоловіком / дружиною?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
+  <div class="faq-ans">Так, кожен подає візу окремо. Якщо обоє пройдуть відбір, можна потрапити на одну ферму і жити разом (при наявності місць).</div>
+</div>
+<div class="faq-item">
+  <button class="faq-btn">Я зараз працюю в Польщі / Чехії — чи варто?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
+  <div class="faq-ans">Мінімалка UK = £12.71/год (закон) — це значно більше ніж в більшості країн ЄС. Ваша ставка £12.90 + понаднормові. Житло включено. За 6 місяців реально привезти £8 000–12 000 чистими.</div>
+</div>
+<div class="faq-item">
+  <button class="faq-btn">Це тільки 6 місяців — а потім?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
+  <div class="faq-ans">Seasonal Worker Visa — максимум 6 місяців, продовжити не можна. Після закінчення контракту — повернення додому. Але наступного сезону можна подати знову.</div>
+</div>
     </div>
   </div>
 </section>
@@ -1375,36 +1390,36 @@ footer a:hover{color:var(--navy)}
     </div>
     <div class="cta-form">
       <div class="cta-form-header">
-        <h3>Оставьте заявку</h3>
-        <p>Ответ в течение 24 часов · Сезон 2026</p>
+        <h3>Залишити заявку</h3>
+        <p>Відповідь протягом 24 годин · Сезон 2026</p>
       </div>
       <div class="cta-form-body">
         <form id="finalForm">
-          <div class="fg"><label>Ваше ім'я</label><input type="text" placeholder="Иван Петров" required></div>
+          <div class="fg"><label>Ваше ім'я</label><input type="text" placeholder="Іван Петров" required></div>
           <div class="fg"><label>Телефон</label><input type="tel" placeholder="+380 XX XXX XXXX" required></div>
           <div class="messenger-fields">
-            <div class="fg" style="margin-bottom:8px"><label style="font-size:11px;font-weight:700;color:var(--ink-light);letter-spacing:.8px;text-transform:uppercase">Как удобно получить ответ?</label>
+            <div class="fg" style="margin-bottom:8px"><label style="font-size:11px;font-weight:700;color:var(--ink-light);letter-spacing:.8px;text-transform:uppercase">Як зручніше відповісти?</label>
               <div class="messenger-choice">
                 <label class="mc-opt" onclick="toggleMC(this)"><input type="checkbox" name="messenger" value="WhatsApp"><span class="mc-dot wa"></span>WhatsApp</label>
                 <label class="mc-opt" onclick="toggleMC(this)"><input type="checkbox" name="messenger" value="Telegram"><span class="mc-dot tg"></span>Telegram</label>
                 <label class="mc-opt" onclick="toggleMC(this)"><input type="checkbox" name="messenger" value="Viber"><span class="mc-dot vb"></span>Viber</label>
-                <label class="mc-opt" onclick="toggleMC(this)"><input type="checkbox" name="messenger" value="Звонок"><span class="mc-dot call"></span>Позвонить</label>
+                <label class="mc-opt" onclick="toggleMC(this)"><input type="checkbox" name="messenger" value="Дзвінок"><span class="mc-dot call"></span>Дзвінок</label>
               </div>
             </div>
             <div class="fg" style="margin-bottom:0">
-              <label>Номер у месенджері (якщо інший)</label>
-              <input type="tel" placeholder="Если мессенджер зарегистрирован на другой номер">
+              <label>Номер месенджера (якщо інший)</label>
+              <input type="tel" placeholder="Якщо месенджер на іншому номері">
             </div>
           </div>
-          <div class="fg"><label>Пол</label><select><option>Мужской</option><option>Женский</option></select></div>
-          <div class="fg"><label>Страна</label><select><option>Украина</option><option>Молдова</option><option>Грузия</option><option>Другая</option></select></div>
+          <div class="fg"><label>Стать</label><select><option>Чоловік</option><option>Жінка</option></select></div>
+          <div class="fg"><label>Країна</label><select><option>Україна</option><option>Молдова</option><option>Грузія</option><option>Інша</option></select></div>
           <button type="submit" class="btn-submit" style="min-height:52px">Хочу поїхати — дізнатись деталі →</button>
         </form>
         <div class="success-panel" id="finalSuccess">
-          <h3>Заявка принята</h3>
-          <p>Менеджер свяжется в течение 24 часов.</p>
+          <h3>Заявку отримано</h3>
+          <p>Менеджер зв'яжеться протягом 24 годин.</p>
         </div>
-        <p class="form-disc">Рекрутинг безкоштовний. Кандидат платит только государственный сбор £319.</p>
+        <p class="form-disc">Рекрутинг безкоштовний. Кандидат платить тільки £319 держмито уряду UK.</p>
       </div>
     </div>
   </div>
@@ -1417,32 +1432,29 @@ footer a:hover{color:var(--navy)}
       <div class="fb-name">HR & Recruit Limited</div>
       <p>Official Recruitment · United Kingdom</p>
       <p>8 Basin Road, Worcester, Worcestershire WRS 3GA</p>
-      <p style="margin-top:10px;padding:10px 12px;background:var(--surface2);border:1px solid var(--border)">Официальный рекрутинговый партнёр<br>Pro-Force Ltd · Home Office Licensed · pro-force.co.uk</p>
+      <p style="margin-top:10px;padding:10px 12px;background:var(--surface2);border:1px solid var(--border)">Офіційний рекрутинговий партнер<br>Pro-Force Ltd · Home Office Licensed · pro-force.co.uk</p>
     </div>
     <div class="fc">
-      <h4>Навигация</h4>
+      <h4>Навігація</h4>
       <ul>
-        <li><a href="#proforce">О Pro-Force Ltd</a></li>
-        <li><a href="#honest">Реальні умови</a></li>
-        <li><a href="#calculator">Калькулятор дохода</a></li>
-        <li><a href="#process">Процесс оформления</a></li>
-        <li><a href="#fee">Консульский сбор £319</a></li>
-        <li><a href="#housing">Проживание</a></li>
-        <li><a href="#reviews">Отзывы</a></li>
-        <li><a href="#faq">Вопросы и ответы</a></li>
+        <li><a href="#proof">Перевірка</a></li>
+        <li><a href="#math">Зарплата</a></li>
+        <li><a href="#housing">Житло</a></li>
+        <li><a href="#process">Процес оформлення</a></li>
+        <li><a href="#faq">Часті запитання</a></li>
       </ul>
     </div>
     <div class="fc">
-      <h4>Важно</h4>
-      <p>Контракт строго до 6 месяцев.</p>
-      <p>Кандидат платит только £319 через gov.uk.</p>
-      <p>Любой другой платёж за рекрутинг — незаконен.</p>
-      <p>Работодатель не покрывает консульский сбор.</p>
-      <p style="margin-top:10px">Набор: летне-осенний сезон 2026</p>
+      <h4>Важливо</h4>
+      <p>Контракт строго до 6 місяців.</p>
+      <p>Кандидат платить тільки £319 через gov.uk.</p>
+      <p>Будь-який інший платіж за рекрутинг — незаконний.</p>
+      <p>Роботодавець не покриває консульський збір.</p>
+      <p style="margin-top:10px">Набір: літньо-осінній сезон 2026</p>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025–2026 HR & Recruit Limited. Все права защищены.</span>
+    <span>© 2025–2026 HR & Recruit Limited. Усі права захищені.</span>
     <span>Pro-Force Ltd · Home Office Licensed · Seasonal Worker Scheme 2026</span>
   </div>
 </footer>
@@ -1699,7 +1711,7 @@ function toggleMC(el) {
   var altField = form.querySelector('#altNumField') || form.querySelector('.messenger-fields .fg:last-child');
   var anySelected = form.querySelectorAll('.mc-opt.selected').length > 0;
   var callOnly = Array.from(form.querySelectorAll('.mc-opt.selected')).every(function(o){
-    return o.querySelector('input').value === 'Звонок';
+    return o.querySelector('input').value === 'Дзвінок';
   });
   if(altField) {
     altField.style.display = (anySelected && !callOnly) ? 'block' : 'none';
