@@ -440,23 +440,39 @@ footer a:hover{color:var(--navy)}
 
 /* ─── MOBILE HERO OVERHAUL ─── */
 @media(max-width:640px){
-  .hero{min-height:100svh;background-attachment:scroll}
+  .hero{min-height:auto;background-attachment:scroll;background-position:center top}
+  .hero-overlay{display:none!important}
   .hero-inner{
     grid-template-columns:1fr!important;
     padding:0!important;
     align-items:stretch!important;
     gap:0!important;
   }
-  /* Left col: text fills viewport, form hidden on scroll */
+  /* Left col: text fills viewport with visible bg photo */
   .hero-inner > div:first-child{
     min-height:100svh;
     display:flex;
     flex-direction:column;
     justify-content:flex-end;
     padding:20px 20px 28px;
-    background:linear-gradient(180deg,rgba(247,248,252,0) 0%,rgba(247,248,252,0.7) 30%,rgba(247,248,252,0.97) 65%,rgba(247,248,252,1) 100%);
+    background:linear-gradient(180deg,rgba(26,43,82,0) 0%,rgba(26,43,82,0.3) 25%,rgba(26,43,82,0.65) 50%,rgba(26,43,82,0.88) 75%,rgba(26,43,82,0.95) 100%);
     position:relative;
   }
+  .hero-inner > div:first-child .season-tag{background:rgba(255,255,255,.15)!important;border-color:rgba(255,255,255,.25)!important;color:#fff!important}
+  .hero-inner > div:first-child h1{color:#fff!important}
+  .hero-inner > div:first-child h1 em{color:#fde68a!important}
+  .hero-inner > div:first-child .hero-lead{color:rgba(255,255,255,.8)!important}
+  .hero-inner > div:first-child .tl-item{color:rgba(255,255,255,.75)!important}
+  .hero-inner > div:first-child .tl-item::before{background:rgba(255,255,255,.5)!important}
+  .hero-inner > div:first-child .btn-main{background:#fff!important;color:var(--navy)!important;box-shadow:0 4px 20px rgba(0,0,0,.3)!important}
+  /* Offer card on mobile — white text */
+  .hero-inner > div:first-child > div[style*="background:var(--white)"]{background:rgba(255,255,255,.12)!important;border-color:rgba(255,255,255,.2)!important;backdrop-filter:blur(8px)}
+  .hero-inner > div:first-child > div[style*="background:var(--white)"] *{color:rgba(255,255,255,.9)!important}
+  .hero-inner > div:first-child > div[style*="background:var(--white)"] [style*="background:var(--navy)"]{background:rgba(255,255,255,.1)!important}
+  .hero-inner > div:first-child > div[style*="background:var(--white)"] [style*="color:var(--blue)"]{color:#fde68a!important}
+  .hero-inner > div:first-child > div[style*="background:var(--white)"] [style*="color:var(--navy)"]{color:#fff!important}
+  .hero-inner > div:first-child > div[style*="background:var(--white)"] [style*="border-right"]{border-color:rgba(255,255,255,.15)!important}
+  .hero-inner > div:first-child > div[style*="background:var(--white)"] [style*="border-bottom"]{border-color:rgba(255,255,255,.15)!important}
   .season-tag{font-size:11px;padding:5px 12px;margin-bottom:14px}
   .hero-inner h1{font-size:clamp(32px,8vw,44px)!important;line-height:1.1!important;margin-bottom:12px!important}
   .hero-lead{font-size:14px!important;margin-bottom:16px!important;line-height:1.7!important}
@@ -504,7 +520,7 @@ footer a:hover{color:var(--navy)}
   .cta-inner{grid-template-columns:1fr!important;gap:32px!important}
   /* footer */
   .footer-grid{grid-template-columns:1fr!important;gap:28px!important}
-  footer{padding:32px 20px 20px!important}
+  footer{padding:32px 20px 60px!important}
   .footer-bottom{flex-direction:column!important;align-items:flex-start!important}
   /* announce bar */
   .announce{padding:8px 16px;font-size:11.5px;flex-wrap:wrap;gap:6px}
@@ -514,35 +530,18 @@ footer a:hover{color:var(--navy)}
   /* gallery tabs scroll on mobile */
   #galleryTabs{display:flex!important;overflow-x:auto!important;width:100%!important;-webkit-overflow-scrolling:touch}
   #galleryTabs button{white-space:nowrap!important;flex-shrink:0!important}
-  /* gallery grids on mobile */
-  .gallery-tab [style*="grid-template-columns: 1fr 1fr 1fr 1fr"],
-  .gallery-tab [style*="grid-template-columns:1fr 1fr 1fr 1fr"]{grid-template-columns:1fr 1fr!important}
-  .gallery-tab [style*="grid-template-columns: 2fr 1fr 1fr"],
-  .gallery-tab [style*="grid-template-columns:2fr 1fr 1fr"]{grid-template-columns:1fr!important}
-  .gallery-tab [style*="grid-template-columns:2fr 1fr 1fr"] > div{grid-row:auto!important}
-  .gallery-tab [style*="grid-template-columns: 2fr 1fr"],
-  .gallery-tab [style*="grid-template-columns:2fr 1fr"]{grid-template-columns:1fr!important}
-  .gallery-tab [style*="grid-template-columns:2fr 1fr"] iframe{min-height:250px!important}
-  /* no-fees 4-col grid */
-  [style*="grid-template-columns:1fr 1fr 1fr 1fr"]{grid-template-columns:1fr 1fr!important}
-  /* visa proof 3-col grid */
-  [style*="grid-template-columns:1fr 1fr 1fr;gap:16px"]{grid-template-columns:1fr!important}
-  /* proforce & legal 2-col grids */
-  [style*="grid-template-columns:1fr 1fr;gap:24px"]{grid-template-columns:1fr!important}
-  [style*="grid-template-columns:1fr 1fr;gap:40px"]{grid-template-columns:1fr!important}
-  /* housing features 3-col */
-  [style*="grid-template-columns:repeat(3,1fr);gap:0"]{grid-template-columns:1fr!important}
-  /* what-are-caravans 2-col explainer */
-  [style*="grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-top:none"]{grid-template-columns:1fr!important}
-  [style*="grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-top:none"] > div{border-right:none!important;border-bottom:1px solid var(--border)!important}
-  /* caravan photo grid */
-  [style*="grid-template-columns:1fr 1fr 1fr;gap:2px"]{grid-template-columns:1fr 1fr!important}
-  /* visa info 2-col grid with auto */
-  [style*="grid-template-columns:auto 1fr"]{grid-template-columns:1fr!important}
-  /* messenger quick strip */
-  [style*="max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between"]{flex-direction:column!important;align-items:flex-start!important;gap:10px!important}
-  /* housing cost/pairs 2-col */
-  [style*="grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-top:none"] > div:first-child{border-right:none!important;border-bottom:1px solid var(--border)!important}
+  /* Mobile grid helpers */
+  .mob-1col{grid-template-columns:1fr!important}
+  .mob-1col > div[style*="border-right"]{border-right:none!important;border-bottom:1px solid var(--border)!important}
+  .mob-2col{grid-template-columns:1fr 1fr!important}
+  /* gallery grids — 2 cols for photos */
+  .gallery-tab div[style*="display:grid"]{grid-template-columns:1fr 1fr!important}
+  .gallery-tab div[style*="display:grid"] > div[style*="grid-row"]{grid-row:auto!important}
+  .gallery-tab div[style*="display:grid"] > div[style*="min-height"]{min-height:auto!important}
+  #tab-video div[style*="display:grid"]{grid-template-columns:1fr!important}
+  .gallery-tab iframe{min-height:250px!important}
+  /* caravan photo grid — 2 cols */
+  .housing-sec div[style*="grid-template-columns:1fr 1fr 1fr;gap:2px"]{grid-template-columns:1fr 1fr!important}
 }
 /* ─── MESSENGER FORM FIELDS ─── */
 .messenger-fields{background:var(--surface);border:1px solid var(--border);padding:14px;margin-top:4px}
@@ -618,7 +617,7 @@ footer a:hover{color:var(--navy)}
 <!-- HERO -->
 <section class="hero">
   <!-- Background overlay for text readability -->
-  <div style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(247,248,252,0.96) 0%,rgba(247,248,252,0.93) 38%,rgba(240,244,252,0.70) 55%,rgba(225,232,248,0.35) 100%);z-index:0"></div>
+  <div class="hero-overlay" style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(247,248,252,0.96) 0%,rgba(247,248,252,0.93) 38%,rgba(240,244,252,0.70) 55%,rgba(225,232,248,0.35) 100%);z-index:0"></div>
   <div class="hero-inner" style="position:relative;z-index:1">
     <div>
       <div class="season-tag">Летне-осенний сезон 2026 · Набор открыт</div>
@@ -896,7 +895,7 @@ function switchTab(tab) {
     <h2 class="sh">Мы работаем <em>напрямую</em> с Pro-Force Ltd —<br>без агентов и посредников</h2>
     <p class="sb">HR & Recruit Limited — официальный рекрутинговый партнёр Pro-Force Ltd. Никаких субагентов. Никаких посредников. Вы работаете через двух официальных участников программы UK.</p>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px">
+    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px">
 
       <!-- Pro-Force official block -->
       <div style="background:var(--navy);padding:0;overflow:hidden">
@@ -979,7 +978,7 @@ function switchTab(tab) {
     <p class="stag">Проверьте сами</p>
     <h2 class="sh">Официальные данные <em>Pro-Force Ltd</em> —<br>всё открыто для проверки</h2>
     <p class="sb">Мы понимаем, что многие кандидаты проверяют информацию через поисковики или ChatGPT перед тем как принять решение. Публикуем все данные открыто — проверяйте.</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px">
+    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px">
 
       <!-- Legal card -->
       <div style="background:var(--white);border:1px solid var(--border)">
@@ -1054,7 +1053,7 @@ function switchTab(tab) {
 <!-- NO FEES BLOCK -->
 <section style="background:var(--green-bg);border-top:1px solid rgba(13,107,56,.15);border-bottom:1px solid rgba(13,107,56,.15);padding:44px 32px">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0;border:1px solid rgba(13,107,56,.2)">
+    <div class="mob-2col" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0;border:1px solid rgba(13,107,56,.2)">
       <div style="padding:24px 22px;border-right:1px solid rgba(13,107,56,.2);text-align:center">
         <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--green);margin-bottom:6px">£0</div>
         <div style="font-size:12px;font-weight:600;color:var(--green);margin-bottom:4px;letter-spacing:.3px">За рекрутинг</div>
@@ -1271,7 +1270,7 @@ function switchTab(tab) {
     </div>
 
     <!-- What are caravans - explainer -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-top:none;margin-bottom:28px">
+    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-top:none;margin-bottom:28px">
       <div style="padding:22px 26px;border-right:1px solid var(--border)">
         <p style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:10px">Что такое каравани?</p>
         <p style="font-size:14px;color:var(--ink-mid);line-height:1.8;font-weight:300">Каравани (или статик-хоумс) — это полноценные мобильные дома, постоянно стоящие на одном месте. В Великобритании это стандартное жильё для сезонных работников. Площадь — 30–50 м², внутри: спальня, гостиная, кухня, ванная с душем, терраса.</p>
@@ -1311,7 +1310,7 @@ function switchTab(tab) {
     </div>
 
     <!-- Features list -->
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);border-top:none;margin-bottom:0">
+    <div class="mob-1col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);border-top:none;margin-bottom:0">
       <div style="padding:16px 18px;border-right:1px solid var(--border);display:flex;gap:10px;align-items:flex-start">
         <div style="width:3px;height:100%;background:var(--blue-soft);flex-shrink:0;align-self:stretch;min-height:16px"></div>
         <div><div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:2px">Спальня + гостиная</div><div style="font-size:12px;color:var(--ink-light)">Отдельные комнаты, полноценный отдых</div></div>
@@ -1326,7 +1325,7 @@ function switchTab(tab) {
       </div>
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-top:none">
+    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-top:none">
       <div style="padding:16px 18px;border-right:1px solid var(--border)">
         <div style="font-size:11.5px;font-weight:600;color:var(--gold);margin-bottom:4px">Стоимость проживания</div>
         <div style="font-size:13px;color:var(--ink-mid);line-height:1.65">Может удерживаться из зарплаты. Конкретная сумма прописана в контракте до подписания.</div>
@@ -1342,7 +1341,7 @@ function switchTab(tab) {
 <!-- ONLINE VISA INFO -->
 <section style="background:var(--white);border-top:1px solid var(--border);padding:64px 32px" id="visa-online">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
+    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
       <div>
         <p class="stag">Важно знать</p>
         <h2 class="sh">Визу можно подать <em>онлайн из любой точки</em> мира</h2>
@@ -1545,7 +1544,7 @@ function switchTab(tab) {
     <p class="sb" style="max-width:100%">Ниже — настоящие Seasonal Worker Visa наших кандидатов. Мы работаем напрямую, без посредников и субагентов.</p>
 
     <!-- Visa proof section -->
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:32px;margin-bottom:32px">
+    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:32px;margin-bottom:32px">
       <div style="border:1px solid var(--border);overflow:hidden">
         <div style="background:var(--navy);padding:12px 16px">
           <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35)">Пример визы</div>
@@ -1585,7 +1584,7 @@ function switchTab(tab) {
     </div>
 
     <!-- What visa contains - info block -->
-    <div style="background:var(--navy);padding:24px 28px;margin-bottom:28px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start">
+    <div class="mob-1col" style="background:var(--navy);padding:24px 28px;margin-bottom:28px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start">
       <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:16px 20px;min-width:200px">
         <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:8px">На визе указано</div>
         <div style="font-size:12.5px;color:rgba(255,255,255,.7);line-height:2">Type: <strong style="color:#fde68a">D - TEMPORARY WORK</strong><br>(SEASONAL WORKER) MIGRANT<br>Valid: до 6 месяцев<br>CoS No: [номер приглашения]<br>Issuer: UKVI 01</div>
