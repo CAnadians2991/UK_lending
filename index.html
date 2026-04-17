@@ -936,7 +936,6 @@ footer a:hover{color:var(--navy)}
             <button class="rb" onclick="setRate(this,13.50)">13.50 <span style="font-weight:300;opacity:.6;font-size:10px">повышенная</span></button>
             <button class="rb" onclick="setRate(this,14.50)">14.50 <span style="font-weight:300;opacity:.6;font-size:10px">максимум</span></button>
           </div>
-          <div style="font-size:11.5px;color:var(--ink-light);line-height:1.6;margin-bottom:16px;padding:8px 12px;background:var(--surface);border:1px solid var(--border)">Кнопки выше — базовая ставка (фунты/час). Первые 8 часов — базовая ставка. Сверхурочные (свыше 8 ч/день) — 13.50 фунтов/час.</div>
           <div class="calc-row">
             <div class="cl-label">Часов в день <span class="val" id="hLabel">8 ч</span></div>
             <input type="range" id="hoursRange" min="6" max="12" value="8" step="1" oninput="calc()">
@@ -947,32 +946,30 @@ footer a:hover{color:var(--navy)}
             <input type="range" id="daysRange" min="5" max="7" value="6" step="1" oninput="calc()">
             <div class="cl-minmax"><span>5 дн</span><span>6 дн</span><span>7 дн</span></div>
           </div>
-          <div class="calc-row" style="margin-bottom:0">
-            <div class="cl-label" style="margin-bottom:8px">Период расчёта</div>
-          </div>
-          <div class="period-row">
-            <button class="pb" onclick="setPeriod('week',this)">Неделя</button>
-            <button class="pb active" onclick="setPeriod('month',this)">Месяц</button>
-            <button class="pb" onclick="setPeriod('two',this)">2 месяца</button>
-            <button class="pb" onclick="setPeriod('season',this)">Сезон (6 мес)</button>
+          <div style="margin-top:16px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);font-size:12px;color:var(--ink-mid);line-height:1.6">
+            Расчёт: ставка × часы × дни × 4.33 недели. Потом вычитаем налог (~12%) и жильё (~£100/нед). Остаток — ваш.
           </div>
         </div>
         <div class="calc-right">
-          <div class="cr-small">Ваш расчётный доход</div>
-          <div class="cr-period" id="crPeriod">За месяц</div>
-          <div class="cr-big" id="crAmount">£2 229</div>
-          <div class="cr-cur">фунтов (до вычетов). 1 фунт ≈ 1.19 евро. Все суммы в фунтах — официальная валюта Великобритании.</div>
+          <div class="cr-small">Как считать — пошагово</div>
+          <div id="crFormula" style="font-size:13px;color:rgba(255,255,255,.5);margin:8px 0 14px;line-height:1.8"></div>
+          <div class="cr-rows" style="margin-bottom:0">
+            <div class="crr"><span class="cl">Начислено (брутто)</span><span class="cv" id="crGross">£2 400</span></div>
+            <div class="crr"><span class="cl">Налог (~12%)</span><span class="cv" style="color:#f87171" id="crTax">− £290</span></div>
+            <div class="crr"><span class="cl">Жильё (~£100/нед)</span><span class="cv" style="color:#f87171" id="crHousing">− £430</span></div>
+          </div>
+          <div class="cr-div"></div>
+          <div class="cr-small" style="margin-bottom:4px">Чистыми на руки</div>
+          <div class="cr-big" id="crAmount">£1 680</div>
+          <div style="font-size:14px;color:rgba(255,255,255,.5);margin-top:4px">≈ <span id="crEur">€2 000</span> · <span id="crUah">82 000 грн</span></div>
           <div class="cr-div"></div>
           <div class="cr-rows">
-            <div class="crr"><span class="cl">В евро (≈)</span><span class="cv" id="crEur">€2 650</span></div>
-            <div class="crr"><span class="cl">В гривнах (≈)</span><span class="cv" id="crUah">109 000 грн</span></div>
-            <div class="crr"><span class="cl">В день</span><span class="cv" id="crDay">£103</span></div>
-            <div class="crr"><span class="cl">В неделю</span><span class="cv" id="crWeek">£619</span></div>
-            <div class="crr"><span class="cl">За весь сезон</span><span class="cv hi" id="crSeason">£13 380</span></div>
+            <div class="crr"><span class="cl">За весь сезон (6 мес) на руки</span><span class="cv hi" id="crSeason">£10 000</span></div>
+            <div class="crr"><span class="cl">Это ≈ в евро</span><span class="cv" id="crSeasonEur">€11 900</span></div>
           </div>
-          <p class="cr-note">Брутто. На руки ~70–75% от этой суммы после налога и жилья.<br>Первые 8 часов — базовая ставка. Сверхурочные (свыше 8 ч/день) — 13.50 фунтов/час.<br>1 фунт ≈ 1.19 евро. Все суммы в фунтах — официальная валюта Великобритании.</p>
-          <button class="cr-cta" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Хочу столько зарабатывать → Оставить заявку</button>
-          <div class="cr-tip" id="crTip"></div>
+          <p class="cr-note">Это примерный расчёт. Точные суммы — в вашем контракте до подписания. 1 фунт ≈ 1.19 евро.</p>
+          <button class="cr-cta" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Хочу так зарабатывать → Оставить заявку</button>
+          <div class="cr-tip" id="crTip" style="display:none"></div>
         </div>
       </div>
     </div>
@@ -1565,41 +1562,27 @@ function fmt(n){return '£'+Math.round(n).toLocaleString('ru-RU')}
 function calc(){
   const h=+document.getElementById('hoursRange').value;
   const d=+document.getElementById('daysRange').value;
-  document.getElementById('hLabel').textContent=h+' ч.';
+  document.getElementById('hLabel').textContent=h+' ч';
   document.getElementById('dLabel').textContent=d+' дн';
 
-  // First 8 hours at base rate, overtime hours at 13.50
-  const baseHours = Math.min(h, 8);
-  const overtimeHours = Math.max(h - 8, 0);
-  const day = rate * baseHours + 13.50 * overtimeHours;
-
+  const day=rate*h;
   const week=day*d;
-  const month=week*4.33;
-  const two=month*2;
-  const season=month*6;
+  const gross=week*4.33;
+  const tax=Math.round(gross*0.12);
+  const housing=430;
+  const net=Math.round(gross-tax-housing);
+  const season=net*6;
 
-  let main,label;
-  if(period==='week'){main=week;label='За неделю';}
-  else if(period==='two'){main=two;label='За 2 месяца';}
-  else if(period==='season'){main=season;label='За сезон (6 мес)';}
-  else{main=month;label='За месяц';}
-
-  document.getElementById('crAmount').textContent=fmt(main);
-  document.getElementById('crPeriod').textContent=label;
-  document.getElementById('crDay').textContent=fmt(day);
-  document.getElementById('crWeek').textContent=fmt(week);
+  var f=document.getElementById('crFormula');
+  if(f) f.innerHTML=rate.toFixed(2)+' × '+h+' ч × '+d+' дн × 4.33 нед = <strong style="color:#fff">'+fmt(Math.round(gross))+'</strong> брутто';
+  var g=document.getElementById('crGross'); if(g) g.textContent=fmt(Math.round(gross));
+  var t=document.getElementById('crTax'); if(t) t.textContent='− '+fmt(tax);
+  var hs=document.getElementById('crHousing'); if(hs) hs.textContent='− '+fmt(housing);
+  document.getElementById('crAmount').textContent=fmt(net);
+  document.getElementById('crEur').textContent='€'+Math.round(net*1.19).toLocaleString('ru-RU');
+  document.getElementById('crUah').textContent=Math.round(net*49).toLocaleString('ru-RU')+' грн';
   document.getElementById('crSeason').textContent=fmt(season);
-  document.getElementById('crEur').textContent='€'+Math.round(main*1.19).toLocaleString('ru-RU');
-  document.getElementById('crUah').textContent=Math.round(main*49).toLocaleString('ru-RU')+' грн';
-
-  const tip=document.getElementById('crTip');
-  const netMonth = Math.round(month * 0.88 - 430); // after ~12% tax and £100/week housing
-  const netSeason = Math.round(netMonth * 6);
-  tip.textContent = 'Реально на руки/мес: ~' + fmt(netMonth) + '  ·  За сезон: ~' + fmt(netSeason);
-  if(overtimeHours > 0) {
-    tip.textContent += '  ·  Сверхурочные: ' + overtimeHours + ' ч × 13.50 фунтов';
-  }
-  tip.classList.add('show');
+  var se=document.getElementById('crSeasonEur'); if(se) se.textContent='€'+Math.round(season*1.19).toLocaleString('ru-RU');
 }
 calc();
 
@@ -1707,41 +1690,27 @@ function fmt(n){return '£'+Math.round(n).toLocaleString('ru-RU')}
 function calc(){
   const h=+document.getElementById('hoursRange').value;
   const d=+document.getElementById('daysRange').value;
-  document.getElementById('hLabel').textContent=h+' ч.';
+  document.getElementById('hLabel').textContent=h+' ч';
   document.getElementById('dLabel').textContent=d+' дн';
 
-  // First 8 hours at base rate, overtime hours at 13.50
-  const baseHours = Math.min(h, 8);
-  const overtimeHours = Math.max(h - 8, 0);
-  const day = rate * baseHours + 13.50 * overtimeHours;
-
+  const day=rate*h;
   const week=day*d;
-  const month=week*4.33;
-  const two=month*2;
-  const season=month*6;
+  const gross=week*4.33;
+  const tax=Math.round(gross*0.12);
+  const housing=430;
+  const net=Math.round(gross-tax-housing);
+  const season=net*6;
 
-  let main,label;
-  if(period==='week'){main=week;label='За неделю';}
-  else if(period==='two'){main=two;label='За 2 месяца';}
-  else if(period==='season'){main=season;label='За сезон (6 мес)';}
-  else{main=month;label='За месяц';}
-
-  document.getElementById('crAmount').textContent=fmt(main);
-  document.getElementById('crPeriod').textContent=label;
-  document.getElementById('crDay').textContent=fmt(day);
-  document.getElementById('crWeek').textContent=fmt(week);
+  var f=document.getElementById('crFormula');
+  if(f) f.innerHTML=rate.toFixed(2)+' × '+h+' ч × '+d+' дн × 4.33 нед = <strong style="color:#fff">'+fmt(Math.round(gross))+'</strong> брутто';
+  var g=document.getElementById('crGross'); if(g) g.textContent=fmt(Math.round(gross));
+  var t=document.getElementById('crTax'); if(t) t.textContent='− '+fmt(tax);
+  var hs=document.getElementById('crHousing'); if(hs) hs.textContent='− '+fmt(housing);
+  document.getElementById('crAmount').textContent=fmt(net);
+  document.getElementById('crEur').textContent='€'+Math.round(net*1.19).toLocaleString('ru-RU');
+  document.getElementById('crUah').textContent=Math.round(net*49).toLocaleString('ru-RU')+' грн';
   document.getElementById('crSeason').textContent=fmt(season);
-  document.getElementById('crEur').textContent='€'+Math.round(main*1.19).toLocaleString('ru-RU');
-  document.getElementById('crUah').textContent=Math.round(main*49).toLocaleString('ru-RU')+' грн';
-
-  const tip=document.getElementById('crTip');
-  const netMonth = Math.round(month * 0.88 - 430); // after ~12% tax and £100/week housing
-  const netSeason = Math.round(netMonth * 6);
-  tip.textContent = 'Реально на руки/мес: ~' + fmt(netMonth) + '  ·  За сезон: ~' + fmt(netSeason);
-  if(overtimeHours > 0) {
-    tip.textContent += '  ·  Сверхурочные: ' + overtimeHours + ' ч × 13.50 фунтов';
-  }
-  tip.classList.add('show');
+  var se=document.getElementById('crSeasonEur'); if(se) se.textContent='€'+Math.round(season*1.19).toLocaleString('ru-RU');
 }
 calc();
 
