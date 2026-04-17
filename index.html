@@ -670,14 +670,30 @@ footer a:hover{color:var(--navy)}
       <h1 style="font-family:'Playfair Display',serif">Работа в Англии —<br><em>официально и бесплатно</em></h1>
       <p class="hero-lead">Сбор шампиньонов на фермах Великобритании. Сезонная виза, контракт, жильё включено. Без опыта и языка. Рекрутинг бесплатный — мы не берём денег с кандидатов.</p>
 
-      <div class="trust-list" style="margin-bottom:20px">
-        <div class="tl-item">Работаете в Европе за 1 200 евро? Здесь ~2 200 и жильё включено</div>
-        <div class="tl-item">Боитесь обмана? Контракт подписываете ДО любых расходов</div>
-        <div class="tl-item">Не знаете язык? 75% коллег говорят по-русски</div>
-        <div class="tl-item">Рекрутинг бесплатный — мы не берём денег с кандидатов</div>
+      <!-- 4 карточки с преимуществами -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px">
+        <div style="padding:12px 14px;background:rgba(26,79,214,.06);border:1px solid rgba(26,79,214,.12)">
+          <div style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:2px">~2 200 евро/мес</div>
+          <div style="font-size:11.5px;color:var(--ink-mid)">и жильё уже включено</div>
+        </div>
+        <div style="padding:12px 14px;background:rgba(13,107,56,.06);border:1px solid rgba(13,107,56,.12)">
+          <div style="font-size:14px;font-weight:700;color:var(--green);margin-bottom:2px">Рекрутинг £0</div>
+          <div style="font-size:11.5px;color:var(--ink-mid)">платит работодатель</div>
+        </div>
+        <div style="padding:12px 14px;background:rgba(154,112,16,.06);border:1px solid rgba(154,112,16,.12)">
+          <div style="font-size:14px;font-weight:700;color:var(--gold);margin-bottom:2px">Контракт → потом расходы</div>
+          <div style="font-size:11.5px;color:var(--ink-mid)">не наоборот</div>
+        </div>
+        <div style="padding:12px 14px;background:rgba(26,43,82,.06);border:1px solid rgba(26,43,82,.12)">
+          <div style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:2px">Вас встретят</div>
+          <div style="font-size:11.5px;color:var(--ink-mid)">координатор + русскоязычная бригада</div>
+        </div>
       </div>
 
-      <button class="btn-main" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Узнать подробности ↓</button>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn-main" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Оставить заявку</button>
+        <button class="btn-line" onclick="toggleMsg()" style="min-height:48px">✉ Написать нам</button>
+      </div>
       <div style="font-size:11px;color:var(--ink-light);margin-top:10px">Лицензия №05580634 · Госпрограмма сезонной работы Великобритании</div>
     </div>
 
@@ -1378,7 +1394,6 @@ footer a:hover{color:var(--navy)}
   </div>
 </footer>
 
-<a href="#apply" class="float-cta">Оставить заявку</a>
 
 <script>
 function fmt(n){return '£'+Math.round(n).toLocaleString('ru-RU')}
@@ -1441,28 +1456,9 @@ document.querySelectorAll('.faq-btn').forEach(btn=>{
   });
 });
 
-// Float CTA
-window.addEventListener('scroll',()=>{
-  document.querySelector('.float-cta').style.display=window.scrollY>700?'block':'none';
-});
+
 </script>
 
-
-<!-- MOBILE STICKY CTA BAR -->
-<div id="mobileCTABar">
-  <button onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})"
-    style="flex:1;background:var(--blue);color:#fff;border:none;padding:14px;font-size:15px;font-weight:700;font-family:'DM Sans',sans-serif;letter-spacing:.2px">
-    Оставить заявку
-  </button>
-  <a href="https://t.me/YOUR_TELEGRAM" target="_blank" rel="noopener"
-    style="width:52px;background:#2AABEE;color:#fff;border:none;display:flex;align-items:center;justify-content:center;text-decoration:none">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
-  </a>
-  <a href="https://wa.me/YOUR_WHATSAPP" target="_blank" rel="noopener"
-    style="width:52px;background:#25D366;color:#fff;border:none;display:flex;align-items:center;justify-content:center;text-decoration:none">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </a>
-</div>
 
 <!-- MESSENGER WIDGET -->
 <div class="msg-widget" id="msgWidget">
@@ -1570,12 +1566,6 @@ document.querySelectorAll('.mc-opt').forEach(function(opt){
 </script>
 
 <script>
-// Mobile sticky CTA
-if(window.innerWidth <= 640){
-  var bar = document.getElementById('mobileCTABar');
-  if(bar) bar.style.display = 'flex';
-  document.body.style.paddingBottom = '72px';
-}
 // Forms
 ['mainForm:formSuccess','finalForm:finalSuccess'].forEach(function(pair){
   var p = pair.split(':'), f = document.getElementById(p[0]);
@@ -1586,11 +1576,6 @@ if(window.innerWidth <= 640){
     var s = document.getElementById(p[1]);
     if(s) s.style.display = 'block';
   });
-});
-// Scroll float CTA
-window.addEventListener('scroll', function(){
-  var fc = document.querySelector('.float-cta');
-  if(fc && window.innerWidth > 640) fc.style.display = window.scrollY > 700 ? 'block' : 'none';
 });
 </script>
 </body>
