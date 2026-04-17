@@ -84,7 +84,7 @@ button{font-family:'DM Sans',sans-serif}
 
 /* ─── HERO ─── */
 .hero{padding-top:0;min-height:100vh;display:flex;align-items:center;border-bottom:1px solid var(--border);background-image:url("assets/farm-hero.jpg");background-size:cover;background-position:center right;position:relative}
-.hero-inner{max-width:1160px;margin:0 auto;padding:72px 32px 60px;width:100%;display:grid;grid-template-columns:1fr 400px;gap:64px;align-items:start}
+.hero-inner{max-width:1160px;margin:0 auto;padding:32px 32px 48px;width:100%;display:grid;grid-template-columns:1fr 400px;gap:64px;align-items:start}
 .season-tag{display:inline-flex;align-items:center;gap:8px;background:var(--green-bg);border:1px solid rgba(13,107,56,.2);color:var(--green);padding:5px 14px;font-size:11.5px;font-weight:600;letter-spacing:.5px;margin-bottom:18px}
 .hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,3.8vw,54px);font-weight:600;line-height:1.1;color:var(--navy);margin-bottom:16px;letter-spacing:-.4px}
 .hero h1 em{color:var(--blue);font-style:normal}
@@ -415,7 +415,7 @@ footer a:hover{color:var(--navy)}
   .key-nums{flex-wrap:wrap}
   .kn{min-width:calc(50% - 1px)}
   .float-cta{display:block}
-  .hero-inner{padding:80px 20px 48px!important}
+  .hero-inner{padding:24px 20px 32px!important}
   .trust-bar .tb-inner{flex-wrap:wrap}
   .tb-item{min-width:50%}
 }
@@ -641,12 +641,6 @@ footer a:hover{color:var(--navy)}
 </script>
 </head>
 <body>
-<!-- ANNOUNCE -->
-<div class="announce">
-  <span class="ann-dot"></span>
-  <span><strong>Набор 2026 открыт</strong> &nbsp;·&nbsp; Минимальная зарплата в Англии = 12.71 фунтов в час (это закон) — ваша ставка 12.90 фунтов/час (≈15.35 евро) &nbsp;·&nbsp; <a href="#apply">Узнать →</a></span>
-</div>
-
 <!-- HEADER -->
 <header class="hdr">
   <div class="hdr-inner">
@@ -673,25 +667,24 @@ footer a:hover{color:var(--navy)}
   <div class="hero-inner" style="position:relative;z-index:1">
     <div>
       <div class="season-tag">Набор открыт — лето-осень 2026</div>
-      <h1 style="font-family:'Playfair Display',serif">Работа в Англии —<br><em>стабильный заработок и жильё</em></h1>
-      <p class="hero-lead">Вы работаете в Европе за 1 200 евро и половину отдаёте за жильё? Здесь жильё включено — почти всё, что заработаете, останется вам. Закрытый ангар, стабильный график, 75% коллег говорят по-русски.</p>
+      <h1 style="font-family:'Playfair Display',serif">Работа в Англии —<br><em>официально и бесплатно</em></h1>
+      <p class="hero-lead">Сбор шампиньонов на фермах Великобритании. Госвиза, контракт, жильё включено. Без опыта и языка. Рекрутинг бесплатный — мы не берём денег с кандидатов.</p>
 
-      <!-- Key numbers -->
-      <div class="key-nums" style="margin-bottom:20px">
-        <div class="kn"><div class="n">12.90 фунтов/час</div><div class="l">ставка выше минимальной (≈15.35 евро)</div></div>
-        <div class="kn"><div class="n">~1 900 фунтов</div><div class="l">чистыми в месяц (≈2 260 евро)</div></div>
-        <div class="kn"><div class="n">6 мес</div><div class="l">контракт с жильём</div></div>
+      <div class="key-nums" style="margin-bottom:16px">
+        <div class="kn"><div class="n">12.90 ф/час</div><div class="l">ставка по закону</div></div>
+        <div class="kn"><div class="n">6 мес</div><div class="l">контракт + жильё</div></div>
+        <div class="kn"><div class="n">бесплатно</div><div class="l">рекрутинг для вас</div></div>
       </div>
 
-      <div class="hero-cta" style="margin-bottom:20px">
-        <button class="btn-main" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Узнать подробности ↓</button>
-      </div>
+      <div style="font-size:12px;color:var(--ink-light);margin-bottom:16px">Лицензия оператора №05580634 · Госпрограмма сезонной работы Великобритании</div>
 
-      <div class="trust-list">
-        <div class="tl-item">Работа в закрытом ангаре — не в поле</div>
-        <div class="tl-item">Жильё на ферме включено — караваны</div>
-        <div class="tl-item">Обучение на месте, опыт не нужен</div>
+      <button class="btn-main" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Узнать подробности ↓</button>
+
+      <div class="trust-list" style="margin-top:16px">
+        <div class="tl-item">Закрытый ангар с климат-контролем — не поле</div>
+        <div class="tl-item">Жильё на ферме включено</div>
         <div class="tl-item">75% коллег говорят по-русски</div>
+        <div class="tl-item">Контракт подписываете ДО любых расходов</div>
       </div>
     </div>
 
@@ -704,33 +697,26 @@ footer a:hover{color:var(--navy)}
         </div>
         <div class="hf-body">
           <form id="mainForm">
-            <div class="fg"><label>Ваше имя</label><input type="text" placeholder="Иван Петров" required autocomplete="name"></div>
-            <div class="fg"><label>Телефон (WhatsApp / Telegram)</label><input type="tel" placeholder="+380 XX XXX XXXX" required autocomplete="tel"></div>
-            <div class="fg"><label>Страна проживания</label>
-              <select autocomplete="country"><option value="">— выберите —</option><option>Украина</option><option>Молдова</option><option>Грузия</option><option>Казахстан</option><option>Узбекистан</option><option>Другая</option></select>
+            <div class="fg"><label>Ваше имя</label><input type="text" placeholder="Иван" required autocomplete="given-name"></div>
+            <div class="fg"><label>Страна, где вы сейчас</label>
+              <select autocomplete="country"><option value="">— выберите —</option><option>Украина</option><option>Польша</option><option>Чехия</option><option>Германия</option><option>Молдова</option><option>Грузия</option><option>Другая</option></select>
             </div>
-            <div class="messenger-fields" style="margin-bottom:4px">
-              <div class="fg" style="margin-bottom:6px">
-                <label style="font-size:11px;font-weight:700;color:var(--ink-light);letter-spacing:.8px;text-transform:uppercase">Как удобнее ответить?</label>
-                <div class="messenger-choice" style="grid-template-columns:1fr 1fr">
-                  <label class="mc-opt" onclick="toggleMC(this)"><input type="checkbox" name="messenger" value="WhatsApp"><span class="mc-dot wa"></span>WhatsApp</label>
-                  <label class="mc-opt" onclick="toggleMC(this)"><input type="checkbox" name="messenger" value="Telegram"><span class="mc-dot tg"></span>Telegram</label>
-                  <label class="mc-opt" onclick="toggleMC(this)"><input type="checkbox" name="messenger" value="Viber"><span class="mc-dot vb"></span>Viber</label>
-                  <label class="mc-opt" onclick="toggleMC(this)"><input type="checkbox" name="messenger" value="Звонок"><span class="mc-dot call"></span>Звонок</label>
-                </div>
-              </div>
-              <div class="fg" style="margin-bottom:0;display:none" id="altNumField">
-                <label>Номер мессенджера (если другой)</label>
-                <input type="tel" placeholder="Если мессенджер на другом номере">
+            <div class="fg"><label>Как с вами связаться?</label>
+              <div class="messenger-choice" style="grid-template-columns:1fr 1fr;margin-bottom:8px">
+                <label class="mc-opt selected" onclick="switchContact(this,'phone')"><input type="radio" name="contact" value="phone" checked style="display:none"><span class="mc-dot call"></span>Позвонить</label>
+                <label class="mc-opt" onclick="switchContact(this,'wa')"><input type="radio" name="contact" value="wa" style="display:none"><span class="mc-dot wa"></span>WhatsApp</label>
+                <label class="mc-opt" onclick="switchContact(this,'tg')"><input type="radio" name="contact" value="tg" style="display:none"><span class="mc-dot tg"></span>Telegram</label>
+                <label class="mc-opt" onclick="switchContact(this,'vb')"><input type="radio" name="contact" value="vb" style="display:none"><span class="mc-dot vb"></span>Viber</label>
               </div>
             </div>
-            <button type="submit" class="btn-submit" style="min-height:52px;font-size:16px">Связаться со мной →</button>
+            <div class="fg"><label id="contactLabel">Номер телефона</label><input type="tel" id="contactInput" placeholder="+380 XX XXX XXXX" required autocomplete="tel"></div>
+            <button type="submit" class="btn-submit">Свяжитесь со мной →</button>
           </form>
           <div class="success-panel" id="formSuccess">
-            <h3>Заявка получена</h3>
-            <p>Менеджер свяжется в течение 24 часов.</p>
+            <h3>Заявка принята</h3>
+            <p>Свяжемся в течение 24 часов.</p>
           </div>
-          <p class="form-disc">Бесплатно. Сначала контракт — потом £319 госпошлина. Никак не наоборот.</p>
+          <p class="form-disc">Бесплатно · Сначала контракт — потом расходы</p>
         </div>
       </div>
 <div style="padding:8px 16px;font-size:11.5px;color:var(--ink-muted);text-align:center">Без давления · Ответим за 24 часа</div>
@@ -741,13 +727,109 @@ footer a:hover{color:var(--navy)}
 <!-- TRUST BAR -->
 <div class="trust-bar">
   <div class="tb-inner">
-    <div class="tb-item"><span class="tb-dot"></span>Госпрограмма Великобритании</div>
-    <div class="tb-item"><span class="tb-dot"></span>Лицензия правительства</div>
-    <div class="tb-item"><span class="tb-dot"></span>Контракт ДО расходов</div>
     <div class="tb-item"><span class="tb-dot"></span>Рекрутинг бесплатный</div>
+    <div class="tb-item"><span class="tb-dot"></span>Госпрограмма Великобритании</div>
+    <div class="tb-item"><span class="tb-dot"></span>Лицензия №05580634</div>
     <div class="tb-item"><span class="tb-dot"></span>200+ уже уехали</div>
   </div>
 </div>
+
+<!-- JOB DESCRIPTION -->
+<section style="background:var(--surface);border-top:1px solid var(--border);padding:52px 32px" id="math">
+  <div class="container">
+    <p class="stag">Описание вакансии</p>
+    <h2 class="sh">Что вы будете делать<br><em>каждый день</em></h2>
+
+    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px">
+      <div style="padding:20px;background:var(--white);border:1px solid var(--border)">
+        <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:8px">Ваша работа</div>
+        <p style="font-size:13px;color:var(--ink-mid);line-height:1.8">Сбор шампиньонов с полок в закрытом ангаре. Сортировка по размеру, укладка в лотки, подготовка к отгрузке. Работа руками — не тяжёлая техника. Обучение на месте в первые дни.</p>
+      </div>
+      <div style="padding:20px;background:var(--white);border:1px solid var(--border)">
+        <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:8px">Условия в ангаре</div>
+        <p style="font-size:13px;color:var(--ink-mid);line-height:1.8">Закрытое помещение с климат-контролем: +18–22°C круглый год. Без дождя, ветра, жары и холода. Чистая спецодежда. Стабильная температура и освещение.</p>
+      </div>
+      <div style="padding:20px;background:var(--white);border:1px solid var(--border)">
+        <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:8px">График работы</div>
+        <p style="font-size:13px;color:var(--ink-mid);line-height:1.8">Смены по 8–10 часов, 6 дней в неделю. Бывают утренние и дневные смены. <strong>Ночных смен нет.</strong> Один выходной в неделю. Сверхурочные оплачиваются ×1.5.</p>
+      </div>
+      <div style="padding:20px;background:var(--white);border:1px solid var(--border)">
+        <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:8px">Важно знать</div>
+        <p style="font-size:13px;color:var(--ink-mid);line-height:1.8">Рабочая виза на <strong>6 месяцев</strong>. Продлить в Англии нельзя — таков закон. После окончания — возвращаетесь домой. На следующий сезон можно подать снова.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;padding:14px 18px;background:var(--blue-soft);border:1px solid var(--border);border-left:3px solid var(--blue)">
+      <p style="font-size:13px;color:var(--ink-mid);line-height:1.7"><strong style="color:var(--navy)">Пары и дети.</strong> Можно ехать парой — каждый подаёт визу отдельно. Дети от 6 лет — тоже нужна виза. Пары могут жить вместе при наличии мест.</p>
+    </div>
+
+    <div style="margin-top:12px;font-size:12px;color:var(--ink-light)">Ставка: <strong>12.90 фунтов/час</strong> (≈15.35 евро). Минималка Великобритании = 12.71 фунтов (закон). Лицензия №05580634.</div>
+
+  </div>
+</section>
+<!-- END JOB DESCRIPTION -->
+
+<!-- HOUSING -->
+<section style="background:var(--white);border-top:1px solid var(--border);padding:52px 32px" id="housing">
+  <div class="container">
+    <h2 class="sh">Где вы будете жить?<br><em>Кто вас встретит?</em></h2>
+    <p class="sb">Караваны — это полноценный мобильный дом 30-50 м. Не барак, не общежитие.</p>
+
+    <div style="position:relative;overflow:hidden;margin-top:24px;border:1px solid var(--border)">
+      <img src="assets/caravan-farm-aerial.jpg" alt="Караваны и ферма рядом" loading="lazy" style="width:100%;max-height:380px;object-fit:cover;display:block">
+      <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:16px 20px">
+        <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:3px">Караваны + ферма — аэрофото</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.6)">От дома до работы — 2-5 минут пешком</div>
+      </div>
+    </div>
+
+    <div class="mob-2col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:2px;border:2px solid transparent">
+      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
+        <img src="assets/caravan-exterior-1.jpg" alt="Караваны снаружи" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.7);padding:7px 10px;font-size:11px;font-weight:600;color:#fff">Снаружи</div>
+      </div>
+      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
+        <img src="assets/caravan-living.jpg" alt="Гостиная" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.7);padding:7px 10px;font-size:11px;font-weight:600;color:#fff">Гостиная + ТВ</div>
+      </div>
+      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
+        <img src="assets/caravan-kitchen.jpg" alt="Кухня" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.7);padding:7px 10px;font-size:11px;font-weight:600;color:#fff">Полная кухня</div>
+      </div>
+      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
+        <img src="assets/caravan-terrace.jpg" alt="Терраса" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.7);padding:7px 10px;font-size:11px;font-weight:600;color:#fff">Личная терраса</div>
+      </div>
+      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
+        <img src="assets/caravan-bathroom.jpg" alt="Ванная" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.7);padding:7px 10px;font-size:11px;font-weight:600;color:#fff">Душ + туалет</div>
+      </div>
+      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
+        <img src="assets/caravan-deck.jpg" alt="Терраса 2" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.7);padding:7px 10px;font-size:11px;font-weight:600;color:#fff">Вид с террасы</div>
+      </div>
+    </div>
+
+    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid var(--border);border-top:none">
+      <div style="padding:14px 18px;border-right:1px solid var(--border)">
+        <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:3px">Что внутри</div>
+        <div style="font-size:12.5px;color:var(--ink-mid)">Спальня, гостиная, кухня с техникой, душ, терраса</div>
+      </div>
+      <div style="padding:14px 18px;border-right:1px solid var(--border)">
+        <div style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:3px">Стоимость</div>
+        <div style="font-size:12.5px;color:var(--ink-mid)">~£100/нед — удерживается из зарплаты. Точная сумма в контракте.</div>
+      </div>
+      <div style="padding:14px 18px">
+        <div style="font-size:13px;font-weight:600;color:var(--green);margin-bottom:3px">Для пар и детей</div>
+        <div style="font-size:12.5px;color:var(--ink-mid)">Пары могут жить вместе при наличии мест. Визы отдельно. Дети от 6 лет могут ехать — нужна отдельная виза.</div>
+      </div>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-top:none;padding:18px 22px">
+      <p style="font-size:14px;color:var(--ink-mid);line-height:1.8">Вы не останетесь одни. Координатор встретит вас, поможет с заселением. 75% коллег — русскоязычные из Украины, Молдовы, Грузии. Первый день — заселение и инструктаж. Трансфер от аэропорта организован.</p>
+    </div>
+  </div>
+</section>
 
 <!-- WORK PHOTOS — separate tab gallery -->
 <section style="background:var(--surface);border-top:1px solid var(--border);padding:40px 32px" id="work-photos">
@@ -757,7 +839,7 @@ footer a:hover{color:var(--navy)}
       <button onclick="switchTab('process')" class="gtab active" data-tab="process" style="padding:10px 20px;border:none;border-right:1px solid var(--border);background:var(--navy);color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer">Процесс работы</button>
       <button onclick="switchTab('hangar')" class="gtab" data-tab="hangar" style="padding:10px 20px;border:none;border-right:1px solid var(--border);background:var(--surface2);color:var(--ink-mid);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer">Ангары</button>
       <button onclick="switchTab('farm')" class="gtab" data-tab="farm" style="padding:10px 20px;border:none;border-right:1px solid var(--border);background:var(--surface2);color:var(--ink-mid);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer">Ферма</button>
-<button onclick="switchTab('video')" class="gtab" data-tab="video" style="padding:10px 20px;border:none;background:var(--surface2);color:var(--ink-mid);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer">▶ Видео</button>
+      <button onclick="switchTab('video')" class="gtab" data-tab="video" style="padding:10px 20px;border:none;background:var(--surface2);color:var(--ink-mid);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer">▶ Видео</button>
     </div>
     <div id="tab-process" class="gallery-tab" style="margin-top:2px">
       <div class="mob-2col" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:2px">
@@ -796,159 +878,7 @@ footer a:hover{color:var(--navy)}
   </div>
 </section>
 
-
-
-
-<!-- ══════════════════════════════════════════
-     STAGE 3 — MATH
-     Скільки реально? Чому стільки?
-════════════════════════════════════════════ -->
-<section style="background:var(--surface);border-top:1px solid var(--border);padding:52px 32px" id="math">
-  <div class="container">
-    <div class="stage-label" style="display:none">Стадия 3 — Деньги</div>
-    <h2 class="sh">Сколько реально<br><em>заработаете?</em></h2>
-
-    <div style="background:var(--white);border:1px solid var(--border);padding:20px 24px;margin-bottom:24px">
-      <h3 style="font-size:15px;font-weight:600;color:var(--navy);margin-bottom:8px">Ваша работа — сбор шампиньонов</h3>
-      <p style="font-size:14px;color:var(--ink-mid);line-height:1.8">Вы работаете в закрытом ангаре с климат-контролем (+18–22°C). Собираете грибы с полок, сортируете по размеру, пакуете в лотки. Физическая работа, но в комфортных условиях — без дождя, жары и холода. Смена 8–10 часов, 6 дней в неделю. Обучение на месте в первые дни.</p>
-    </div>
-
-    <!-- Минималка badge -->
-    <div class="wage-badge" style="margin:12px 0 24px">
-      <span style="font-size:13px;color:var(--green);font-weight:600">Минимальная зарплата в Англии с 1 апреля 2026 = 12.71 фунтов в час (≈15.10 евро). Это закон.</span>
-      <a href="https://www.gov.uk/national-minimum-wage-rates" target="_blank" rel="noopener">Официальный сайт правительства →</a>
-      <span style="font-size:13px;color:var(--ink-mid)">Ваша ставка: <strong>12.90 фунтов в час</strong> (≈15.35 евро) (+0.19 фунтов выше минимальной)</span>
-    </div>
-
-    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px">
-
-      <!-- Math breakdown -->
-      <div class="math-box">
-        <div style="font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:16px">Расчёт за месяц (6 дней × 10 ч)</div>
-        <div class="math-row">
-          <span class="ml">Зарплата (брутто)</span>
-          <span class="mv">£ 2 400</span>
-        </div>
-        <div class="math-row">
-          <span class="ml">Налог (~12%)</span>
-          <span class="mv neg">− £ 290</span>
-        </div>
-        <div class="math-row">
-          <span class="ml">Жильё (~£100/нед)</span>
-          <span class="mv neg">− £ 430</span>
-        </div>
-        <div class="math-row" style="padding-top:12px;margin-top:4px;border-top:1px solid rgba(255,255,255,.12);border-bottom:none">
-          <span style="font-size:14px;font-weight:700;color:#fff">На руки ≈</span>
-          <span class="mv big">~£ 1 700–1 950</span>
-        </div>
-        <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;padding:9px 0;font-size:13px">
-          <span style="color:rgba(255,255,255,.4)">В евро ≈</span>
-          <span style="font-weight:600;color:#86efac">~€ 2 020–2 320</span>
-        </div>
-        <div style="margin-top:12px;font-size:12px;color:rgba(255,255,255,.28);line-height:1.65">До вычета налогов и удержания за жильё. Точные суммы — в вашем контракте.<br>1 фунт ≈ 1.19 евро. Все суммы в фунтах — официальная валюта Великобритании.</div>
-      </div>
-
-      <!-- Comparison + why -->
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <!-- Poland vs UK -->
-        <div style="background:var(--white);border:1px solid var(--border);padding:18px 20px">
-          <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-muted);margin-bottom:12px">Сравнение</div>
-          <div style="display:flex;flex-direction:column;gap:6px">
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--surface)">
-              <span style="font-size:13px;color:var(--ink-mid)">Польша / Чехия</span>
-              <span style="font-size:15px;font-weight:700;color:var(--ink-light)">~€800–1000 на руки</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--green-bg);border:1px solid rgba(13,107,56,.2)">
-              <span style="font-size:13px;color:var(--green);font-weight:600">Великобритания</span>
-              <span style="font-size:15px;font-weight:700;color:var(--green)">~£1 900 (≈€2 260) на руки</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--surface)">
-              <span style="font-size:13px;color:var(--ink-mid)">Средняя зарплата в Украине</span>
-              <span style="font-size:15px;font-weight:700;color:var(--ink-light)">~€400–500</span>
-            </div>
-          </div>
-        </div>
-        <!-- Why more -->
-        <div style="background:var(--white);border:1px solid var(--border);padding:18px 20px">
-          <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-muted);margin-bottom:10px">Почему больше, чем в Польше?</div>
-          <div style="display:flex;flex-direction:column;gap:7px;font-size:13px;color:var(--ink-mid)">
-            <div style="display:flex;gap:8px"><span style="color:var(--blue);font-weight:700;flex-shrink:0">1.</span><span>Фунт (валюта Англии) стоит больше евро: 1 фунт ≈ 1.19 евро</span></div>
-            <div style="display:flex;gap:8px"><span style="color:var(--blue);font-weight:700;flex-shrink:0">2.</span><span>6 рабочих дней вместо 5</span></div>
-            <div style="display:flex;gap:8px"><span style="color:var(--blue);font-weight:700;flex-shrink:0">3.</span><span>Ставка защищена законом — платить меньше незаконно</span></div>
-          </div>
-        </div>
-        <!-- Who pays recruiter -->
-        <div style="background:var(--navy);padding:16px 20px">
-          <div style="font-size:13px;font-weight:700;color:#fde68a;margin-bottom:5px">Нам платит работодатель — не вы</div>
-          <div style="font-size:12.5px;color:rgba(255,255,255,.45);line-height:1.65">HR & Recruit получает гонорар от Pro-Force Ltd за каждого трудоустроенного кандидата. С вас — только £319 государственной пошлины правительства Великобритании. Больше ничего и никогда.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Calculator -->
-    <div style="border:1px solid var(--border);margin-top:4px">
-      <div style="background:var(--white);padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-        <div>
-          <div style="font-size:14px;font-weight:600;color:var(--navy)">Посчитайте свой заработок</div>
-          <div style="font-size:12px;color:var(--ink-light)">Двигайте ползунки — результат обновится сразу</div>
-        </div>
-        <div class="wage-badge" style="margin:0">
-          <span style="font-size:12px;color:var(--green);font-weight:600">Минимальная зарплата = 12.71 фунтов/час (≈15.10 евро)</span>
-          <a href="https://www.gov.uk/national-minimum-wage-rates" target="_blank" rel="noopener">Официальный сайт правительства →</a>
-        </div>
-      </div>
-      <div class="calc-grid">
-        <div class="calc-left" style="padding:28px 32px">
-          <div style="padding:12px 16px;background:var(--surface);border:1px solid var(--border);margin-bottom:16px;font-size:14px;color:var(--navy)">
-            <strong>Ваша ставка: 12.90 фунтов/час</strong> <span style="color:var(--ink-light);font-size:12px">(минималка Великобритании = 12.71)</span>
-          </div>
-          <div class="calc-row">
-            <div class="cl-label">Часов в день <span class="val" id="hLabel">8 ч</span></div>
-            <input type="range" id="hoursRange" min="6" max="12" value="8" step="1" oninput="calc()">
-            <div class="cl-minmax"><span>6 ч</span><span>8 ч</span><span>10 ч</span><span>12 ч</span></div>
-          </div>
-          <div class="calc-row">
-            <div class="cl-label">Дней в неделю <span class="val" id="dLabel">6 дн</span></div>
-            <input type="range" id="daysRange" min="5" max="7" value="6" step="1" oninput="calc()">
-            <div class="cl-minmax"><span>5 дн</span><span>6 дн</span><span>7 дн</span></div>
-          </div>
-          <div style="margin-top:16px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);font-size:12px;color:var(--ink-mid);line-height:1.6">
-            Ставка 12.90 фунтов/час — фиксированная. Свыше 8 часов в день — сверхурочные ×1.5 (19.35 фунтов/час). Из брутто вычитаем налог (~12%) и жильё (~100 фунтов/нед).
-          </div>
-        </div>
-        <div class="calc-right">
-          <div class="cr-small">Как считать — пошагово</div>
-          <div id="crFormula" style="font-size:13px;color:rgba(255,255,255,.5);margin:8px 0 14px;line-height:1.8"></div>
-          <div class="cr-rows" style="margin-bottom:0">
-            <div class="crr"><span class="cl">Начислено (брутто)</span><span class="cv" id="crGross">£2 400</span></div>
-            <div class="crr"><span class="cl">Налог (~12%)</span><span class="cv" style="color:#f87171" id="crTax">− £290</span></div>
-            <div class="crr"><span class="cl">Жильё (~£100/нед)</span><span class="cv" style="color:#f87171" id="crHousing">− £430</span></div>
-          </div>
-          <div class="cr-div"></div>
-          <div class="cr-small" style="margin-bottom:4px">Чистыми на руки</div>
-          <div class="cr-big" id="crAmount">£1 680</div>
-          <div style="font-size:14px;color:rgba(255,255,255,.5);margin-top:4px">≈ <span id="crEur">€2 000</span> · <span id="crUah">82 000 грн</span></div>
-          <div class="cr-div"></div>
-          <div class="cr-rows">
-            <div class="crr"><span class="cl">За весь сезон (6 мес) на руки</span><span class="cv hi" id="crSeason">£10 000</span></div>
-            <div class="crr"><span class="cl">Это ≈ в евро</span><span class="cv" id="crSeasonEur">€11 900</span></div>
-          </div>
-          <p class="cr-note">Это примерный расчёт. Точные суммы — в вашем контракте до подписания. 1 фунт ≈ 1.19 евро.</p>
-          <button class="cr-cta" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Хочу так зарабатывать → Оставить заявку</button>
-          <div class="cr-tip" id="crTip" style="display:none"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-<!-- ══════════════════════════════════════════
-     STAGE 5 — SAFETY
-     Це не обман? Гарантії?
-════════════════════════════════════════════ -->
+<!-- SAFETY -->
 <section style="background:var(--navy);padding:52px 32px" id="safety">
   <div class="container">
     <div class="stage-label" style="display:none">Стадия 5 — Безопасность</div>
@@ -1083,86 +1013,165 @@ footer a:hover{color:var(--navy)}
         </div>
       </div>
 
-      <!-- Reviews -->
-      <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:24px">
-        <div style="padding:18px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04)">
-          <div class="t-stars" style="margin-bottom:10px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:rgba(255,255,255,.6);font-style:italic;line-height:1.75;margin-bottom:12px">"Боялась, что обман. Но всё так, как говорили — виза настоящая, зарплата каждую неделю."</div>
-          <div style="font-size:12px;font-weight:600;color:rgba(255,255,255,.7)">Оксана М. <span style="font-weight:400;color:rgba(255,255,255,.35)">· Харьков, 2024</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR SECTION -->
+<section style="background:var(--surface);border-top:1px solid var(--border);padding:52px 32px" id="calculator">
+  <div class="container">
+    <h2 class="sh">Сколько реально<br><em>заработаете?</em></h2>
+
+    <!-- Минималка badge -->
+    <div class="wage-badge" style="margin:12px 0 24px">
+      <span style="font-size:13px;color:var(--green);font-weight:600">Минимальная зарплата в Англии с 1 апреля 2026 = 12.71 фунтов в час (≈15.10 евро). Это закон.</span>
+      <a href="https://www.gov.uk/national-minimum-wage-rates" target="_blank" rel="noopener">Официальный сайт правительства →</a>
+      <span style="font-size:13px;color:var(--ink-mid)">Ваша ставка: <strong>12.90 фунтов в час</strong> (≈15.35 евро) (+0.19 фунтов выше минимальной)</span>
+    </div>
+
+    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px">
+
+      <!-- Math breakdown -->
+      <div class="math-box">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:16px">Расчёт за месяц (6 дней × 10 ч)</div>
+        <div class="math-row">
+          <span class="ml">Зарплата (брутто)</span>
+          <span class="mv">£ 2 400</span>
         </div>
-        <div style="padding:18px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04)">
-          <div class="t-stars" style="margin-bottom:10px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:rgba(255,255,255,.6);font-style:italic;line-height:1.75;margin-bottom:12px">"Ехал с женой — поселили вместе. Брал сверхурочные — один месяц вышло больше £3 000."</div>
-          <div style="font-size:12px;font-weight:600;color:rgba(255,255,255,.7)">Дмитрий К. <span style="font-weight:400;color:rgba(255,255,255,.35)">· Запорожье, 2024</span></div>
+        <div class="math-row">
+          <span class="ml">Налог (~12%)</span>
+          <span class="mv neg">− £ 290</span>
         </div>
-        <div style="padding:18px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04)">
-          <div class="t-stars" style="margin-bottom:10px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:rgba(255,255,255,.6);font-style:italic;line-height:1.75;margin-bottom:12px">"Половина бригады из Украины и Молдовы. Английский вообще не нужен. Караван оказался нормальным."</div>
-          <div style="font-size:12px;font-weight:600;color:rgba(255,255,255,.7)">Наталья В. <span style="font-weight:400;color:rgba(255,255,255,.35)">· Киев, 2024</span></div>
+        <div class="math-row">
+          <span class="ml">Жильё (~£100/нед)</span>
+          <span class="mv neg">− £ 430</span>
+        </div>
+        <div class="math-row" style="padding-top:12px;margin-top:4px;border-top:1px solid rgba(255,255,255,.12);border-bottom:none">
+          <span style="font-size:14px;font-weight:700;color:#fff">На руки ≈</span>
+          <span class="mv big">~£ 1 700–1 950</span>
+        </div>
+        <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;padding:9px 0;font-size:13px">
+          <span style="color:rgba(255,255,255,.4)">В евро ≈</span>
+          <span style="font-weight:600;color:#86efac">~€ 2 020–2 320</span>
+        </div>
+        <div style="margin-top:12px;font-size:12px;color:rgba(255,255,255,.28);line-height:1.65">До вычета налогов и удержания за жильё. Точные суммы — в вашем контракте.<br>1 фунт ≈ 1.19 евро. Все суммы в фунтах — официальная валюта Великобритании.</div>
+      </div>
+
+      <!-- Comparison + why -->
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <!-- Poland vs UK -->
+        <div style="background:var(--white);border:1px solid var(--border);padding:18px 20px">
+          <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-muted);margin-bottom:12px">Сравнение</div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--surface)">
+              <span style="font-size:13px;color:var(--ink-mid)">Европа (Польша, Чехия)</span>
+              <span style="font-size:15px;font-weight:700;color:var(--ink-light)">~€800–1000 на руки</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--green-bg);border:1px solid rgba(13,107,56,.2)">
+              <span style="font-size:13px;color:var(--green);font-weight:600">Великобритания</span>
+              <span style="font-size:15px;font-weight:700;color:var(--green)">~£1 900 (≈€2 260) на руки</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--surface)">
+              <span style="font-size:13px;color:var(--ink-mid)">Средняя зарплата в Украине</span>
+              <span style="font-size:15px;font-weight:700;color:var(--ink-light)">~€400–500</span>
+            </div>
+          </div>
+        </div>
+        <!-- Why more -->
+        <div style="background:var(--white);border:1px solid var(--border);padding:18px 20px">
+          <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-muted);margin-bottom:10px">Почему больше, чем в Европе?</div>
+          <div style="display:flex;flex-direction:column;gap:7px;font-size:13px;color:var(--ink-mid)">
+            <div style="display:flex;gap:8px"><span style="color:var(--blue);font-weight:700;flex-shrink:0">1.</span><span>Фунт (валюта Англии) стоит больше евро: 1 фунт ≈ 1.19 евро</span></div>
+            <div style="display:flex;gap:8px"><span style="color:var(--blue);font-weight:700;flex-shrink:0">2.</span><span>6 рабочих дней вместо 5</span></div>
+            <div style="display:flex;gap:8px"><span style="color:var(--blue);font-weight:700;flex-shrink:0">3.</span><span>Ставка защищена законом — платить меньше незаконно</span></div>
+          </div>
+        </div>
+        <!-- Who pays recruiter -->
+        <div style="background:var(--navy);padding:16px 20px">
+          <div style="font-size:13px;font-weight:700;color:#fde68a;margin-bottom:5px">Нам платит работодатель — не вы</div>
+          <div style="font-size:12.5px;color:rgba(255,255,255,.45);line-height:1.65">HR & Recruit получает гонорар от Pro-Force Ltd за каждого трудоустроенного кандидата. С вас — только £319 государственной пошлины правительства Великобритании. Больше ничего и никогда.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Calculator -->
+    <div style="border:1px solid var(--border);margin-top:4px">
+      <div style="background:var(--white);padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--navy)">Посчитайте свой заработок</div>
+          <div style="font-size:12px;color:var(--ink-light)">Двигайте ползунки — результат обновится сразу</div>
+        </div>
+        <div class="wage-badge" style="margin:0">
+          <span style="font-size:12px;color:var(--green);font-weight:600">Минимальная зарплата = 12.71 фунтов/час (≈15.10 евро)</span>
+          <a href="https://www.gov.uk/national-minimum-wage-rates" target="_blank" rel="noopener">Официальный сайт правительства →</a>
+        </div>
+      </div>
+      <div class="calc-grid">
+        <div class="calc-left" style="padding:28px 32px">
+          <div style="padding:12px 16px;background:var(--surface);border:1px solid var(--border);margin-bottom:16px;font-size:14px;color:var(--navy)">
+            <strong>Ваша ставка: 12.90 фунтов/час</strong> <span style="color:var(--ink-light);font-size:12px">(минималка Великобритании = 12.71)</span>
+          </div>
+          <div class="calc-row">
+            <div class="cl-label">Часов в день <span class="val" id="hLabel">8 ч</span></div>
+            <input type="range" id="hoursRange" min="6" max="12" value="8" step="1" oninput="calc()">
+            <div class="cl-minmax"><span>6 ч</span><span>8 ч</span><span>10 ч</span><span>12 ч</span></div>
+          </div>
+          <div class="calc-row">
+            <div class="cl-label">Дней в неделю <span class="val" id="dLabel">6 дн</span></div>
+            <input type="range" id="daysRange" min="5" max="7" value="6" step="1" oninput="calc()">
+            <div class="cl-minmax"><span>5 дн</span><span>6 дн</span><span>7 дн</span></div>
+          </div>
+          <div style="margin-top:16px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);font-size:12px;color:var(--ink-mid);line-height:1.6">
+            Ставка 12.90 фунтов/час — фиксированная. Свыше 8 часов в день — сверхурочные ×1.5 (19.35 фунтов/час). Из брутто вычитаем налог (~12%) и жильё (~100 фунтов/нед).
+          </div>
+        </div>
+        <div class="calc-right">
+          <div class="cr-small">Как считать — пошагово</div>
+          <div id="crFormula" style="font-size:13px;color:rgba(255,255,255,.5);margin:8px 0 14px;line-height:1.8"></div>
+          <div class="cr-rows" style="margin-bottom:0">
+            <div class="crr"><span class="cl">Начислено (брутто)</span><span class="cv" id="crGross">£2 400</span></div>
+            <div class="crr"><span class="cl">Налог (~12%)</span><span class="cv" style="color:#f87171" id="crTax">− £290</span></div>
+            <div class="crr"><span class="cl">Жильё (~£100/нед)</span><span class="cv" style="color:#f87171" id="crHousing">− £430</span></div>
+          </div>
+          <div class="cr-div"></div>
+          <div class="cr-small" style="margin-bottom:4px">Чистыми на руки</div>
+          <div class="cr-big" id="crAmount">£1 680</div>
+          <div style="font-size:14px;color:rgba(255,255,255,.5);margin-top:4px">≈ <span id="crEur">€2 000</span> · <span id="crUah">82 000 грн</span></div>
+          <div class="cr-div"></div>
+          <div class="cr-rows">
+            <div class="crr"><span class="cl">За весь сезон (6 мес) на руки</span><span class="cv hi" id="crSeason">£10 000</span></div>
+            <div class="crr"><span class="cl">Это ≈ в евро</span><span class="cv" id="crSeasonEur">€11 900</span></div>
+          </div>
+          <p class="cr-note">Это примерный расчёт. Точные суммы — в вашем контракте до подписания. 1 фунт ≈ 1.19 евро.</p>
+          <button class="cr-cta" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Хочу так зарабатывать → Оставить заявку</button>
+          <div class="cr-tip" id="crTip" style="display:none"></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HOUSING -->
-<section style="background:var(--white);border-top:1px solid var(--border);padding:52px 32px" id="housing">
+<!-- REVIEWS -->
+<section style="background:var(--surface);border-top:1px solid var(--border);padding:52px 32px" id="reviews">
   <div class="container">
-    <h2 class="sh">Где вы будете жить?<br><em>Кто вас встретит?</em></h2>
-    <p class="sb">Караваны — это полноценный мобильный дом 30-50 м. Не барак, не общежитие.</p>
-
-    <div style="position:relative;overflow:hidden;margin-top:24px;border:1px solid var(--border)">
-      <img src="assets/caravan-farm-aerial.jpg" alt="Караваны и ферма рядом" loading="lazy" style="width:100%;max-height:380px;object-fit:cover;display:block">
-      <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:16px 20px">
-        <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:3px">Караваны + ферма — аэрофото</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.6)">От дома до работы — 2-5 минут пешком</div>
+    <p class="stag" style="justify-content:center">Отзывы</p>
+    <h2 class="sh" style="text-align:center">Что говорят<br><em>наши кандидаты</em></h2>
+    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:32px">
+      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
+        <div class="t-stars" style="margin-bottom:12px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:14px">"Боялась, что обман. Но всё так, как говорили — виза настоящая, зарплата каждую неделю."</div>
+        <div style="font-size:12.5px;font-weight:600;color:var(--navy)">Оксана М. <span style="font-weight:400;color:var(--ink-muted)">· Харьков, 2024</span></div>
       </div>
-    </div>
-
-    <div class="mob-2col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:2px;border:2px solid transparent">
-      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
-        <img src="assets/caravan-exterior-1.jpg" alt="Караваны снаружи" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.7);padding:7px 10px;font-size:11px;font-weight:600;color:#fff">Снаружи</div>
+      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
+        <div class="t-stars" style="margin-bottom:12px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:14px">"Ехал с женой — поселили вместе. Брал сверхурочные — один месяц вышло больше £3 000."</div>
+        <div style="font-size:12.5px;font-weight:600;color:var(--navy)">Дмитрий К. <span style="font-weight:400;color:var(--ink-muted)">· Запорожье, 2024</span></div>
       </div>
-      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
-        <img src="assets/caravan-living.jpg" alt="Гостиная" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.7);padding:7px 10px;font-size:11px;font-weight:600;color:#fff">Гостиная + ТВ</div>
+      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
+        <div class="t-stars" style="margin-bottom:12px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:14px">"Половина бригады из Украины и Молдовы. Английский вообще не нужен. Караван оказался нормальным."</div>
+        <div style="font-size:12.5px;font-weight:600;color:var(--navy)">Наталья В. <span style="font-weight:400;color:var(--ink-muted)">· Киев, 2024</span></div>
       </div>
-      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
-        <img src="assets/caravan-kitchen.jpg" alt="Кухня" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.7);padding:7px 10px;font-size:11px;font-weight:600;color:#fff">Полная кухня</div>
-      </div>
-      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
-        <img src="assets/caravan-terrace.jpg" alt="Терраса" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.7);padding:7px 10px;font-size:11px;font-weight:600;color:#fff">Личная терраса</div>
-      </div>
-      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
-        <img src="assets/caravan-bathroom.jpg" alt="Ванная" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.7);padding:7px 10px;font-size:11px;font-weight:600;color:#fff">Душ + туалет</div>
-      </div>
-      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
-        <img src="assets/caravan-deck.jpg" alt="Терраса 2" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.7);padding:7px 10px;font-size:11px;font-weight:600;color:#fff">Вид с террасы</div>
-      </div>
-    </div>
-
-    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid var(--border);border-top:none">
-      <div style="padding:14px 18px;border-right:1px solid var(--border)">
-        <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:3px">Что внутри</div>
-        <div style="font-size:12.5px;color:var(--ink-mid)">Спальня, гостиная, кухня с техникой, душ, терраса</div>
-      </div>
-      <div style="padding:14px 18px;border-right:1px solid var(--border)">
-        <div style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:3px">Стоимость</div>
-        <div style="font-size:12.5px;color:var(--ink-mid)">~£100/нед — удерживается из зарплаты. Точная сумма в контракте.</div>
-      </div>
-      <div style="padding:14px 18px">
-        <div style="font-size:13px;font-weight:600;color:var(--green);margin-bottom:3px">Для пар</div>
-        <div style="font-size:12.5px;color:var(--ink-mid)">Можно жить вместе при наличии мест. Визы отдельно.</div>
-      </div>
-    </div>
-
-    <div style="background:var(--white);border:1px solid var(--border);border-top:none;padding:18px 22px">
-      <p style="font-size:14px;color:var(--ink-mid);line-height:1.8">Вы не останетесь одни. Координатор встретит вас, поможет с заселением. 75% коллег — русскоязычные из Украины, Молдовы, Грузии. Первый день — заселение и инструктаж. Трансфер от аэропорта организован.</p>
     </div>
   </div>
 </section>
@@ -1296,7 +1305,7 @@ footer a:hover{color:var(--navy)}
   <div class="faq-ans">Да, каждый подаёт визу отдельно. Если оба пройдут отбор, можно попасть на одну ферму и жить вместе (при наличии мест).</div>
 </div>
 <div class="faq-item">
-  <button class="faq-btn">Я сейчас работаю в Польше / Чехии — стоит ли?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
+  <button class="faq-btn">Я сейчас работаю в Европе — стоит ли?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
   <div class="faq-ans">Минимальная зарплата в Англии = 12.71 фунтов в час (≈15.10 евро) — это закон, платить меньше нельзя. Это значительно больше, чем в большинстве стран ЕС. Ваша ставка 12.90 фунтов/час (≈15.35 евро) + сверхурочные по 13.50 фунтов/час. Жильё включено. За 6 месяцев реально привезти 8 000–12 000 фунтов чистыми (≈9 500–14 300 евро).</div>
 </div>
 <div class="faq-item">
@@ -1321,31 +1330,26 @@ footer a:hover{color:var(--navy)}
       </div>
       <div class="cta-form-body">
         <form id="finalForm">
-          <div class="fg"><label>Ваше имя</label><input type="text" placeholder="Иван Петров" required></div>
-          <div class="fg"><label>Телефон</label><input type="tel" placeholder="+380 XX XXX XXXX" required></div>
-          <div class="messenger-fields">
-            <div class="fg" style="margin-bottom:8px"><label style="font-size:11px;font-weight:700;color:var(--ink-light);letter-spacing:.8px;text-transform:uppercase">Как удобнее ответить?</label>
-              <div class="messenger-choice">
-                <label class="mc-opt" onclick="toggleMC(this)"><input type="checkbox" name="messenger" value="WhatsApp"><span class="mc-dot wa"></span>WhatsApp</label>
-                <label class="mc-opt" onclick="toggleMC(this)"><input type="checkbox" name="messenger" value="Telegram"><span class="mc-dot tg"></span>Telegram</label>
-                <label class="mc-opt" onclick="toggleMC(this)"><input type="checkbox" name="messenger" value="Viber"><span class="mc-dot vb"></span>Viber</label>
-                <label class="mc-opt" onclick="toggleMC(this)"><input type="checkbox" name="messenger" value="Звонок"><span class="mc-dot call"></span>Звонок</label>
-              </div>
-            </div>
-            <div class="fg" style="margin-bottom:0">
-              <label>Номер мессенджера (если другой)</label>
-              <input type="tel" placeholder="Если мессенджер на другом номере">
+          <div class="fg"><label>Ваше имя</label><input type="text" placeholder="Иван" required autocomplete="given-name"></div>
+          <div class="fg"><label>Страна, где вы сейчас</label>
+            <select autocomplete="country"><option value="">— выберите —</option><option>Украина</option><option>Польша</option><option>Чехия</option><option>Германия</option><option>Молдова</option><option>Грузия</option><option>Другая</option></select>
+          </div>
+          <div class="fg"><label>Как с вами связаться?</label>
+            <div class="messenger-choice" style="grid-template-columns:1fr 1fr;margin-bottom:8px">
+              <label class="mc-opt selected" onclick="switchContact2(this,'phone')"><input type="radio" name="contact2" value="phone" checked style="display:none"><span class="mc-dot call"></span>Позвонить</label>
+              <label class="mc-opt" onclick="switchContact2(this,'wa')"><input type="radio" name="contact2" value="wa" style="display:none"><span class="mc-dot wa"></span>WhatsApp</label>
+              <label class="mc-opt" onclick="switchContact2(this,'tg')"><input type="radio" name="contact2" value="tg" style="display:none"><span class="mc-dot tg"></span>Telegram</label>
+              <label class="mc-opt" onclick="switchContact2(this,'vb')"><input type="radio" name="contact2" value="vb" style="display:none"><span class="mc-dot vb"></span>Viber</label>
             </div>
           </div>
-          <div class="fg"><label>Пол</label><select><option>Мужчина</option><option>Женщина</option></select></div>
-          <div class="fg"><label>Страна</label><select><option>Украина</option><option>Молдова</option><option>Грузия</option><option>Другая</option></select></div>
-          <button type="submit" class="btn-submit" style="min-height:52px">Связаться со мной →</button>
+          <div class="fg"><label id="contactLabel2">Номер телефона</label><input type="tel" id="contactInput2" placeholder="+380 XX XXX XXXX" required autocomplete="tel"></div>
+          <button type="submit" class="btn-submit">Свяжитесь со мной →</button>
         </form>
         <div class="success-panel" id="finalSuccess">
-          <h3>Заявка получена</h3>
-          <p>Менеджер свяжется в течение 24 часов.</p>
+          <h3>Заявка принята</h3>
+          <p>Свяжемся в течение 24 часов.</p>
         </div>
-        <p class="form-disc">Бесплатно. Сначала контракт — потом £319 госпошлина. Никак не наоборот.</p>
+        <p class="form-disc">Бесплатно · Сначала контракт — потом расходы</p>
       </div>
     </div>
   </div>
@@ -1533,7 +1537,29 @@ function trackMessenger(type){
 </script>
 
 <script>
-// Messenger choice toggle
+// Contact method switcher for hero form
+function switchContact(el, type) {
+  el.closest('.messenger-choice').querySelectorAll('.mc-opt').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  var label = document.getElementById('contactLabel');
+  var input = document.getElementById('contactInput');
+  if(type === 'phone') { label.textContent = 'Номер телефона'; input.placeholder = '+380 XX XXX XXXX'; input.type='tel'; }
+  else if(type === 'wa') { label.textContent = 'Номер WhatsApp'; input.placeholder = '+380 XX XXX XXXX'; input.type='tel'; }
+  else if(type === 'tg') { label.textContent = 'Telegram (номер или @username)'; input.placeholder = '@username или +380...'; input.type='text'; }
+  else if(type === 'vb') { label.textContent = 'Номер Viber'; input.placeholder = '+380 XX XXX XXXX'; input.type='tel'; }
+}
+// Contact method switcher for final form
+function switchContact2(el, type) {
+  el.closest('.messenger-choice').querySelectorAll('.mc-opt').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  var label = document.getElementById('contactLabel2');
+  var input = document.getElementById('contactInput2');
+  if(type === 'phone') { label.textContent = 'Номер телефона'; input.placeholder = '+380 XX XXX XXXX'; input.type='tel'; }
+  else if(type === 'wa') { label.textContent = 'Номер WhatsApp'; input.placeholder = '+380 XX XXX XXXX'; input.type='tel'; }
+  else if(type === 'tg') { label.textContent = 'Telegram (номер или @username)'; input.placeholder = '@username или +380...'; input.type='text'; }
+  else if(type === 'vb') { label.textContent = 'Номер Viber'; input.placeholder = '+380 XX XXX XXXX'; input.type='tel'; }
+}
+// Messenger choice toggle (legacy)
 function toggleMC(el) {
   el.classList.toggle('selected');
   // Show/hide alt number field when WhatsApp, Telegram or Viber selected
