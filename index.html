@@ -671,11 +671,10 @@ footer a:hover{color:var(--navy)}
       <p class="hero-lead">Сбор шампиньонов на фермах Великобритании. Сезонная виза, контракт, жильё включено. Без опыта и языка. Рекрутинг бесплатный — мы не берём денег с кандидатов.</p>
 
       <div class="trust-list" style="margin-bottom:20px">
-        <div class="tl-item">Мы не берём денег — рекрутинг бесплатный</div>
-        <div class="tl-item">Жильё включено — не тратите на аренду</div>
-        <div class="tl-item">Контракт подписываете ДО любых расходов</div>
-        <div class="tl-item">75% коллег говорят по-русски — язык не нужен</div>
-        <div class="tl-item">12.90 фунтов/час — ставка защищена законом</div>
+        <div class="tl-item">Работаете в Европе за 1 200 евро? Здесь ~2 200 и жильё включено</div>
+        <div class="tl-item">Боитесь обмана? Контракт подписываете ДО любых расходов</div>
+        <div class="tl-item">Не знаете язык? 75% коллег говорят по-русски</div>
+        <div class="tl-item">Рекрутинг бесплатный — мы не берём денег с кандидатов</div>
       </div>
 
       <button class="btn-main" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Узнать подробности ↓</button>
@@ -718,15 +717,6 @@ footer a:hover{color:var(--navy)}
   </div>
 </section>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="tb-inner">
-    <div class="tb-item"><span class="tb-dot"></span>Сезонная виза на 6 мес</div>
-    <div class="tb-item"><span class="tb-dot"></span>Вас встретят и заселят</div>
-    <div class="tb-item"><span class="tb-dot"></span>Обучение на месте</div>
-    <div class="tb-item"><span class="tb-dot"></span>200+ уже работают</div>
-  </div>
-</div>
 
 <!-- JOB DESCRIPTION -->
 <section style="background:var(--surface);border-top:1px solid var(--border);padding:52px 32px" id="math">
@@ -825,49 +815,54 @@ footer a:hover{color:var(--navy)}
   </div>
 </section>
 
-<!-- WORK PHOTOS — separate tab gallery -->
-<section style="background:var(--surface);border-top:1px solid var(--border);padding:40px 32px" id="work-photos">
+<!-- РАБОТА — фото с описанием -->
+<section style="background:var(--surface);border-top:1px solid var(--border);padding:52px 32px" id="work-photos">
   <div class="container">
-    <div class="stage-label" style="display:none">Так выглядит работа</div>
-    <div style="display:flex;gap:0;border:1px solid var(--border);margin-top:16px;width:fit-content" id="galleryTabs">
-      <button onclick="switchTab('process')" class="gtab active" data-tab="process" style="padding:10px 20px;border:none;border-right:1px solid var(--border);background:var(--navy);color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer">Процесс работы</button>
-      <button onclick="switchTab('hangar')" class="gtab" data-tab="hangar" style="padding:10px 20px;border:none;border-right:1px solid var(--border);background:var(--surface2);color:var(--ink-mid);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer">Ангары</button>
-      <button onclick="switchTab('farm')" class="gtab" data-tab="farm" style="padding:10px 20px;border:none;border-right:1px solid var(--border);background:var(--surface2);color:var(--ink-mid);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer">Ферма</button>
-      <button onclick="switchTab('video')" class="gtab" data-tab="video" style="padding:10px 20px;border:none;background:var(--surface2);color:var(--ink-mid);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer">▶ Видео</button>
-    </div>
-    <div id="tab-process" class="gallery-tab" style="margin-top:2px">
-      <div class="mob-2col" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:2px">
-        <div style="overflow:hidden;aspect-ratio:4/3"><img src="assets/mushroom-hand-closeup.jpg" alt="Сбор" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-        <div style="overflow:hidden;aspect-ratio:4/3"><img src="assets/hands-mushrooms.jpg" alt="Грибы" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-        <div style="overflow:hidden;aspect-ratio:4/3"><img src="assets/packaging-line.jpg" alt="Упаковка" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-        <div style="overflow:hidden;aspect-ratio:4/3"><img src="assets/mushroom-harvest.jpg" alt="Урожай" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+    <p class="stag">Где вы будете работать</p>
+    <h2 class="sh">Реальные фото <em>с производства</em></h2>
+    <p class="sb">Закрытые ангары с климат-контролем. Не поле, не улица. Температура +18–22°C круглый год.</p>
+
+    <div class="mob-2col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:24px">
+      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
+        <img src="assets/mushroom-hand-closeup.jpg" alt="Сбор грибов" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.75);padding:8px 12px;font-size:11.5px;font-weight:600;color:#fff">Ручной сбор с полок</div>
+      </div>
+      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
+        <img src="assets/hands-mushrooms.jpg" alt="Шампиньоны" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.75);padding:8px 12px;font-size:11.5px;font-weight:600;color:#fff">Сортировка по размеру</div>
+      </div>
+      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
+        <img src="assets/packaging-line.jpg" alt="Упаковка" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.75);padding:8px 12px;font-size:11.5px;font-weight:600;color:#fff">Конвейер упаковки</div>
+      </div>
+      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
+        <img src="assets/hangar-shelves-long.jpg" alt="Ангар внутри" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.75);padding:8px 12px;font-size:11.5px;font-weight:600;color:#fff">Ангар изнутри — стеллажи</div>
+      </div>
+      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
+        <img src="assets/shelves-closeup.jpg" alt="Стеллажи" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.75);padding:8px 12px;font-size:11.5px;font-weight:600;color:#fff">Многоярусные полки</div>
+      </div>
+      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
+        <img src="assets/mushroom-harvest.jpg" alt="Урожай" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.75);padding:8px 12px;font-size:11.5px;font-weight:600;color:#fff">Готовая продукция</div>
       </div>
     </div>
-    <div id="tab-hangar" class="gallery-tab" style="margin-top:2px;display:none">
-      <div class="mob-2col" style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:2px">
-        <div style="overflow:hidden;min-height:300px"><img src="assets/hangar-shelves-long.jpg" alt="Ангар" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-        <div style="overflow:hidden;aspect-ratio:4/3"><img src="assets/shelves-closeup.jpg" alt="Стеллажи" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-        <div style="overflow:hidden;aspect-ratio:4/3"><img src="assets/hangar-aisle.jpg" alt="Проход" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+
+    <!-- Видео -->
+    <div class="mob-1col" style="display:grid;grid-template-columns:1.5fr 1fr;margin-top:2px;min-height:300px">
+      <div style="position:relative;background:#000;overflow:hidden">
+        <iframe src="https://www.youtube.com/embed/kk6-UElT4Dc?rel=0&modestbranding=1" style="width:100%;height:100%;border:none;display:block;min-height:300px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="Работа на грибной ферме"></iframe>
+      </div>
+      <div style="background:var(--navy);padding:24px 20px;display:flex;flex-direction:column;justify-content:center">
+        <p style="font-family:\'Playfair Display\',serif;font-size:16px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:10px">Реальное видео</p>
+        <p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:16px">Обычный рабочий день. Не постановка.</p>
+        <button onclick="document.getElementById(\'apply\').scrollIntoView({behavior:\'smooth\'})" style="background:var(--blue);color:#fff;border:none;padding:12px 18px;font-size:13px;font-weight:600;cursor:pointer;font-family:\'DM Sans\',sans-serif">Хочу здесь работать →</button>
       </div>
     </div>
-    <div id="tab-farm" class="gallery-tab" style="margin-top:2px;display:none">
-      <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr;gap:2px">
-        <div style="overflow:hidden;aspect-ratio:16/9"><img src="assets/farm-aerial-wide.jpg" alt="Ферма" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-        <div style="overflow:hidden;aspect-ratio:16/9"><img src="assets/farm-aerial-close.jpg" alt="Ферма вблизи" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-      </div>
-    </div>
-    <div id="tab-video" class="gallery-tab" style="margin-top:2px;display:none">
-      <div class="mob-1col" style="display:grid;grid-template-columns:2fr 1fr;min-height:380px">
-        <iframe src="https://www.youtube.com/embed/kk6-UElT4Dc?rel=0&modestbranding=1" style="width:100%;height:100%;border:none;display:block;min-height:380px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Работа на грибной ферме"></iframe>
-        <div style="background:var(--navy);padding:28px 24px;display:flex;flex-direction:column;justify-content:center">
-          <p style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:12px">Реальное видео с производства</p>
-          <p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:20px">Обычный рабочий день на ферме шампиньонов. Не постановка.</p>
-          <button onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})" style="background:var(--blue);color:#fff;border:none;padding:12px 20px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif">Хочу здесь работать →</button>
-        </div>
-      </div>
-    </div>
+
     <div style="margin-top:12px;padding:10px 16px;background:var(--blue-soft);border:1px solid var(--border);font-size:12px;color:var(--ink-mid)">
-      Это пример одного из ~40 ангаров. Конкретная ферма и регион — в вашем контракте до подписания.
+      Это пример одного из ~40 ангаров. Конкретная ферма — в контракте до подписания.
     </div>
   </div>
 </section>
