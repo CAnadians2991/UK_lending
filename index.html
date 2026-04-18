@@ -84,7 +84,7 @@ button{font-family:'DM Sans',sans-serif}
 
 /* ─── HERO ─── */
 .hero{padding-top:0;min-height:100vh;display:flex;align-items:center;border-bottom:1px solid var(--border);background-image:url("assets/farm-hero.jpg");background-size:cover;background-position:center right;position:relative}
-.hero-inner{max-width:1160px;margin:0 auto;padding:32px 32px 48px;width:100%;display:grid;grid-template-columns:1fr 400px;gap:64px;align-items:start}
+.hero-inner{max-width:900px;margin:0 auto;padding:32px 32px 48px;width:100%}
 .season-tag{display:inline-flex;align-items:center;gap:8px;background:var(--green-bg);border:1px solid rgba(13,107,56,.2);color:var(--green);padding:5px 14px;font-size:11.5px;font-weight:600;letter-spacing:.5px;margin-bottom:18px}
 .hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,3.8vw,54px);font-weight:600;line-height:1.1;color:var(--navy);margin-bottom:16px;letter-spacing:-.4px}
 .hero h1 em{color:var(--blue);font-style:normal}
@@ -697,39 +697,6 @@ footer a:hover{color:var(--navy)}
       <div style="font-size:11px;color:var(--ink-light);margin-top:10px">Лицензия №05580634 · Госпрограмма сезонной работы Великобритании</div>
     </div>
 
-    <!-- FORM — hidden on mobile, shown on desktop -->
-    <div>
-      <div class="hero-form" id="apply">
-        <div class="hf-top">
-          <h3>Оставить заявку</h3>
-          <p>Ответим в течение 24 часов · Бесплатно</p>
-        </div>
-        <div class="hf-body">
-          <form id="mainForm">
-            <div class="fg"><label>Ваше имя</label><input type="text" placeholder="Иван" required autocomplete="given-name"></div>
-            <div class="fg"><label>Страна, где вы сейчас</label>
-              <select autocomplete="country"><option value="">— выберите —</option><option>Украина</option><option>Польша</option><option>Чехия</option><option>Германия</option><option>Молдова</option><option>Грузия</option><option>Другая</option></select>
-            </div>
-            <div class="fg"><label>Как с вами связаться?</label>
-              <div class="messenger-choice" style="grid-template-columns:1fr 1fr;margin-bottom:8px">
-                <label class="mc-opt selected" onclick="switchContact(this,'phone')"><input type="radio" name="contact" value="phone" checked style="display:none"><span class="mc-dot call"></span>Позвонить</label>
-                <label class="mc-opt" onclick="switchContact(this,'wa')"><input type="radio" name="contact" value="wa" style="display:none"><span class="mc-dot wa"></span>WhatsApp</label>
-                <label class="mc-opt" onclick="switchContact(this,'tg')"><input type="radio" name="contact" value="tg" style="display:none"><span class="mc-dot tg"></span>Telegram</label>
-                <label class="mc-opt" onclick="switchContact(this,'vb')"><input type="radio" name="contact" value="vb" style="display:none"><span class="mc-dot vb"></span>Viber</label>
-              </div>
-            </div>
-            <div class="fg"><label id="contactLabel">Номер телефона</label><input type="tel" id="contactInput" placeholder="+380 XX XXX XXXX" required autocomplete="tel"></div>
-            <button type="submit" class="btn-submit">Свяжитесь со мной →</button>
-          </form>
-          <div class="success-panel" id="formSuccess">
-            <h3>Заявка принята</h3>
-            <p>Свяжемся в течение 24 часов.</p>
-          </div>
-          <p class="form-disc">Бесплатно · Сначала контракт — потом расходы</p>
-        </div>
-      </div>
-<div style="padding:8px 16px;font-size:11.5px;color:var(--ink-muted);text-align:center">Без давления · Ответим за 24 часа</div>
-    </div>
   </div>
 </section>
 
@@ -763,7 +730,27 @@ footer a:hover{color:var(--navy)}
       <p style="font-size:13px;color:var(--ink-mid);line-height:1.7"><strong style="color:var(--navy)">Пары и дети.</strong> Можно ехать парой — каждый подаёт визу отдельно. Дети от 6 лет — тоже нужна виза. Пары могут жить вместе при наличии мест.</p>
     </div>
 
-    <div style="margin-top:12px;font-size:12px;color:var(--ink-light)">Ставка: <strong>12.90 фунтов/час</strong> (≈15.35 евро). Минималка Великобритании = 12.71 фунтов — <a href="https://www.gov.uk/national-minimum-wage-rates" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:underline">закон</a>.</div>
+    <!-- Почему такая зарплата -->
+    <div style="margin-top:20px;background:linear-gradient(135deg,var(--gold-bg) 0%,#fff8e1 100%);border:1px solid rgba(154,112,16,.25);border-left:4px solid var(--gold);padding:20px 24px">
+      <div style="display:flex;gap:12px;align-items:flex-start">
+        <div style="font-size:24px;line-height:1">💰</div>
+        <div style="flex:1">
+          <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px">Почему такая большая зарплата?</div>
+          <div style="font-size:13.5px;color:var(--ink-mid);line-height:1.75;margin-bottom:12px">В Великобритании <strong>минимальная зарплата по закону — 12.71 фунтов/час</strong> (≈15.10 евро). Платить меньше — незаконно. Ваша ставка <strong>12.90 фунтов/час</strong> — чуть выше минимума. <a href="https://www.gov.uk/national-minimum-wage-rates" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:underline;text-underline-offset:2px">Проверить закон →</a></div>
+          <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px">
+            <div style="background:var(--white);border:1px solid rgba(154,112,16,.2);padding:12px 14px">
+              <div style="font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:4px">🏠 Проживание — бесплатно</div>
+              <div style="font-size:12.5px;color:var(--ink-mid);line-height:1.6">Сам каравaн не стоит ничего. Платите только коммунальные услуги (вода, электричество).</div>
+            </div>
+            <div style="background:var(--white);border:1px solid rgba(154,112,16,.2);padding:12px 14px">
+              <div style="font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:4px">🍽 Еда — дёшево</div>
+              <div style="font-size:12.5px;color:var(--ink-mid);line-height:1.6">На фермах есть столовые с очень низкими ценами для работников. Готовить дома не обязательно.</div>
+            </div>
+          </div>
+          <div style="margin-top:10px;font-size:12px;color:var(--ink-light);line-height:1.6">Поэтому почти всё, что заработаете — остаётся вам. Это главное отличие от работы в других странах Европы.</div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </section>
@@ -1318,7 +1305,7 @@ footer a:hover{color:var(--navy)}
 </section>
 
 <!-- FINAL CTA -->
-<section class="cta-strip">
+<section class="cta-strip" id="apply">
   <div class="cta-inner">
     <div>
       <h2>Сезон 2026.<br><em>Места ограничены.</em></h2>
@@ -1336,11 +1323,11 @@ footer a:hover{color:var(--navy)}
             <select autocomplete="country"><option value="">— выберите —</option><option>Украина</option><option>Польша</option><option>Чехия</option><option>Германия</option><option>Молдова</option><option>Грузия</option><option>Другая</option></select>
           </div>
           <div class="fg"><label>Как с вами связаться?</label>
-            <div class="messenger-choice" style="grid-template-columns:1fr 1fr;margin-bottom:8px">
-              <label class="mc-opt selected" onclick="switchContact2(this,'phone')"><input type="radio" name="contact2" value="phone" checked style="display:none"><span class="mc-dot call"></span>Позвонить</label>
-              <label class="mc-opt" onclick="switchContact2(this,'wa')"><input type="radio" name="contact2" value="wa" style="display:none"><span class="mc-dot wa"></span>WhatsApp</label>
-              <label class="mc-opt" onclick="switchContact2(this,'tg')"><input type="radio" name="contact2" value="tg" style="display:none"><span class="mc-dot tg"></span>Telegram</label>
-              <label class="mc-opt" onclick="switchContact2(this,'vb')"><input type="radio" name="contact2" value="vb" style="display:none"><span class="mc-dot vb"></span>Viber</label>
+            <div class="messenger-choice" style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-bottom:8px">
+              <label class="mc-opt selected" onclick="switchContact2(this,'phone')" style="justify-content:center;padding:8px 4px;font-size:11.5px"><input type="radio" name="contact2" value="phone" checked style="display:none"><span class="mc-dot call"></span>Звонок</label>
+              <label class="mc-opt" onclick="switchContact2(this,'wa')" style="justify-content:center;padding:8px 4px;font-size:11.5px"><input type="radio" name="contact2" value="wa" style="display:none"><span class="mc-dot wa"></span>WhatsApp</label>
+              <label class="mc-opt" onclick="switchContact2(this,'tg')" style="justify-content:center;padding:8px 4px;font-size:11.5px"><input type="radio" name="contact2" value="tg" style="display:none"><span class="mc-dot tg"></span>Telegram</label>
+              <label class="mc-opt" onclick="switchContact2(this,'vb')" style="justify-content:center;padding:8px 4px;font-size:11.5px"><input type="radio" name="contact2" value="vb" style="display:none"><span class="mc-dot vb"></span>Viber</label>
             </div>
           </div>
           <div class="fg"><label id="contactLabel2">Номер телефона</label><input type="tel" id="contactInput2" placeholder="+380 XX XXX XXXX" required autocomplete="tel"></div>
