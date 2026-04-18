@@ -191,7 +191,7 @@ button{font-family:'DM Sans',sans-serif}
 .calc-section{background:var(--white)}
 .calc-box{border:1px solid var(--border);margin-top:40px;box-shadow:var(--shadow)}
 .calc-grid{display:grid;grid-template-columns:1fr 1fr}
-.calc-left{padding:36px 40px;border-right:1px solid var(--border)}
+.calc-left{padding:22px 26px;border-right:1px solid var(--border)}
 .calc-left h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:4px}
 .calc-left .desc{font-size:13px;color:var(--ink-light);margin-bottom:28px;font-weight:300}
 .calc-row{margin-bottom:22px}
@@ -210,10 +210,10 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.2)}
 .pb:last-child{border-right:none}
 .pb.active{background:var(--blue);color:#fff}
 /* Calc right */
-.calc-right{background:var(--navy);padding:36px 40px;display:flex;flex-direction:column;justify-content:center}
+.calc-right{background:var(--navy);padding:22px 26px;display:flex;flex-direction:column;justify-content:center}
 .cr-small{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:4px}
 .cr-period{font-size:13px;color:rgba(255,255,255,.4);margin-bottom:20px}
-.cr-big{font-family:'Playfair Display',serif;font-size:clamp(44px,5vw,68px);font-weight:600;color:#fde68a;line-height:1;letter-spacing:-.5px}
+.cr-big{font-family:'Playfair Display',serif;font-size:clamp(36px,4vw,52px);font-weight:600;color:#fde68a;line-height:1;letter-spacing:-.5px}
 .cr-cur{font-size:13px;color:rgba(255,255,255,.3);margin-bottom:0}
 .cr-div{height:1px;background:rgba(255,255,255,.08);margin:22px 0}
 .cr-rows{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
@@ -384,7 +384,7 @@ footer a:hover{color:var(--navy)}
 
 /* ─── RESPONSIVE ─── */
 @media(max-width:1024px){
-  .hero-inner,.pf-layout,.honest-grid,.calc-grid,.housing-layout,.roles-grid,.fee-layout,.cta-inner,.footer-grid{grid-template-columns:1fr}
+  .hero-inner,.pf-layout,.honest-grid,.housing-layout,.roles-grid,.fee-layout,.cta-inner,.footer-grid{grid-template-columns:1fr}
   .housing-layout{border:1px solid var(--border)}
   .housing-photos{height:auto}
   .hf-list{border-left:none;border-top:1px solid var(--border)}
@@ -1021,123 +1021,74 @@ footer a:hover{color:var(--navy)}
       <span style="font-size:13px;color:var(--ink-mid)">Ваша ставка: <strong>12.90 фунтов в час</strong> (≈15.35 евро) (+0.19 фунтов выше минимальной)</span>
     </div>
 
-    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px">
-
-      <!-- Math breakdown -->
-      <div class="math-box">
-        <div style="font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:16px">Расчёт за месяц (6 дней × 10 ч)</div>
-        <div class="math-row">
-          <span class="ml">Зарплата (брутто)</span>
-          <span class="mv">£ 2 400</span>
-        </div>
-        <div class="math-row">
-          <span class="ml">Налог (~12%)</span>
-          <span class="mv neg">− £ 290</span>
-        </div>
-        <div class="math-row">
-          <span class="ml">Жильё (~£100/нед)</span>
-          <span class="mv neg">− £ 430</span>
-        </div>
-        <div class="math-row" style="padding-top:12px;margin-top:4px;border-top:1px solid rgba(255,255,255,.12);border-bottom:none">
-          <span style="font-size:14px;font-weight:700;color:#fff">На руки ≈</span>
-          <span class="mv big">~£ 1 700–1 950</span>
-        </div>
-        <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;padding:9px 0;font-size:13px">
-          <span style="color:rgba(255,255,255,.4)">В евро ≈</span>
-          <span style="font-weight:600;color:#86efac">~€ 2 020–2 320</span>
-        </div>
-        <div style="margin-top:12px;font-size:12px;color:rgba(255,255,255,.28);line-height:1.65">До вычета налогов и удержания за жильё. Точные суммы — в вашем контракте.<br>1 фунт ≈ 1.19 евро. Все суммы в фунтах — официальная валюта Великобритании.</div>
-      </div>
-
-      <!-- Comparison + why -->
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <!-- Poland vs UK -->
-        <div style="background:var(--white);border:1px solid var(--border);padding:18px 20px">
-          <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-muted);margin-bottom:12px">Сравнение</div>
-          <div style="display:flex;flex-direction:column;gap:6px">
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--surface)">
-              <span style="font-size:13px;color:var(--ink-mid)">Европа (Польша, Чехия)</span>
-              <span style="font-size:15px;font-weight:700;color:var(--ink-light)">~€800–1000 на руки</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--green-bg);border:1px solid rgba(13,107,56,.2)">
-              <span style="font-size:13px;color:var(--green);font-weight:600">Великобритания</span>
-              <span style="font-size:15px;font-weight:700;color:var(--green)">~£1 900 (≈€2 260) на руки</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--surface)">
-              <span style="font-size:13px;color:var(--ink-mid)">Средняя зарплата в Украине</span>
-              <span style="font-size:15px;font-weight:700;color:var(--ink-light)">~€400–500</span>
-            </div>
-          </div>
-        </div>
-        <!-- Why more -->
-        <div style="background:var(--white);border:1px solid var(--border);padding:18px 20px">
-          <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-muted);margin-bottom:10px">Почему больше, чем в Европе?</div>
-          <div style="display:flex;flex-direction:column;gap:7px;font-size:13px;color:var(--ink-mid)">
-            <div style="display:flex;gap:8px"><span style="color:var(--blue);font-weight:700;flex-shrink:0">1.</span><span>Фунт (валюта Англии) стоит больше евро: 1 фунт ≈ 1.19 евро</span></div>
-            <div style="display:flex;gap:8px"><span style="color:var(--blue);font-weight:700;flex-shrink:0">2.</span><span>6 рабочих дней вместо 5</span></div>
-            <div style="display:flex;gap:8px"><span style="color:var(--blue);font-weight:700;flex-shrink:0">3.</span><span>Ставка защищена законом — платить меньше незаконно</span></div>
-          </div>
-        </div>
-        <!-- Who pays recruiter -->
-        <div style="background:var(--navy);padding:16px 20px">
-          <div style="font-size:13px;font-weight:700;color:#fde68a;margin-bottom:5px">Нам платит работодатель — не вы</div>
-          <div style="font-size:12.5px;color:rgba(255,255,255,.45);line-height:1.65">HR & Recruit получает гонорар от Pro-Force Ltd за каждого трудоустроенного кандидата. С вас — только £319 государственной пошлины правительства Великобритании. Больше ничего и никогда.</div>
-        </div>
-      </div>
+    <!-- Кто платит рекрутеру -->
+    <div style="background:var(--navy);padding:16px 22px;margin-bottom:20px">
+      <div style="font-size:14px;font-weight:700;color:#fde68a;margin-bottom:4px">💰 Нам платит работодатель — не вы</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.65">HR & Recruit получает гонорар от Pro-Force Ltd за каждого трудоустроенного кандидата. С вас — только £319 госпошлины правительству Великобритании. Больше ничего и никогда.</div>
     </div>
 
-    <!-- Calculator -->
-    <div style="border:1px solid var(--border);margin-top:4px">
-      <div style="background:var(--white);padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-        <div>
-          <div style="font-size:14px;font-weight:600;color:var(--navy)">Посчитайте свой заработок</div>
-          <div style="font-size:12px;color:var(--ink-light)">Двигайте ползунки — результат обновится сразу</div>
-        </div>
-        <div class="wage-badge" style="margin:0">
-          <span style="font-size:12px;color:var(--green);font-weight:600">Минимальная зарплата = 12.71 фунтов/час (≈15.10 евро)</span>
-          <a href="https://www.gov.uk/national-minimum-wage-rates" target="_blank" rel="noopener">Официальный сайт правительства →</a>
-        </div>
+    <!-- Calculator — compact -->
+    <div style="border:1px solid var(--border);max-width:880px;margin:0 auto">
+      <div style="background:var(--white);padding:12px 20px;border-bottom:1px solid var(--border)">
+        <div style="font-size:14px;font-weight:600;color:var(--navy)">Посчитайте свой заработок</div>
+        <div style="font-size:12px;color:var(--ink-light);margin-top:2px">Двигайте ползунки — результат обновится сразу. Ставка 12.90 фунтов/час. Свыше 8 ч/день — сверхурочные ×1.5.</div>
       </div>
       <div class="calc-grid">
-        <div class="calc-left" style="padding:28px 32px">
-          <div style="padding:12px 16px;background:var(--surface);border:1px solid var(--border);margin-bottom:16px;font-size:14px;color:var(--navy)">
-            <strong>Ваша ставка: 12.90 фунтов/час</strong> <span style="color:var(--ink-light);font-size:12px">(минималка Великобритании = 12.71)</span>
-          </div>
+        <div class="calc-left">
           <div class="calc-row">
             <div class="cl-label">Часов в день <span class="val" id="hLabel">8 ч</span></div>
             <input type="range" id="hoursRange" min="6" max="12" value="8" step="1" oninput="calc()">
             <div class="cl-minmax"><span>6 ч</span><span>8 ч</span><span>10 ч</span><span>12 ч</span></div>
           </div>
-          <div class="calc-row">
+          <div class="calc-row" style="margin-top:14px">
             <div class="cl-label">Дней в неделю <span class="val" id="dLabel">6 дн</span></div>
             <input type="range" id="daysRange" min="5" max="7" value="6" step="1" oninput="calc()">
-            <div class="cl-minmax"><span>5 дн</span><span>6 дн</span><span>7 дн</span></div>
+            <div class="cl-minmax"><span>5</span><span>6</span><span>7</span></div>
           </div>
-          <div style="margin-top:16px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);font-size:12px;color:var(--ink-mid);line-height:1.6">
-            Ставка 12.90 фунтов/час — фиксированная. Свыше 8 часов в день — сверхурочные ×1.5 (19.35 фунтов/час). Из брутто вычитаем налог (~12%) и жильё (~100 фунтов/нед).
+          <div style="margin-top:14px;padding:8px 12px;background:var(--surface);border:1px solid var(--border);font-size:11.5px;color:var(--ink-mid);line-height:1.55">
+            Из брутто вычитаем налог ~12% и жильё ~100 фунтов/нед. Остаток — ваш.
           </div>
         </div>
         <div class="calc-right">
-          <div class="cr-small">Как считать — пошагово</div>
-          <div id="crFormula" style="font-size:13px;color:rgba(255,255,255,.5);margin:8px 0 14px;line-height:1.8"></div>
+          <div id="crFormula" style="font-size:12px;color:rgba(255,255,255,.5);margin-bottom:10px;line-height:1.6"></div>
           <div class="cr-rows" style="margin-bottom:0">
-            <div class="crr"><span class="cl">Начислено (брутто)</span><span class="cv" id="crGross">£2 400</span></div>
-            <div class="crr"><span class="cl">Налог (~12%)</span><span class="cv" style="color:#f87171" id="crTax">− £290</span></div>
-            <div class="crr"><span class="cl">Жильё (~£100/нед)</span><span class="cv" style="color:#f87171" id="crHousing">− £430</span></div>
+            <div class="crr"><span class="cl">Брутто</span><span class="cv" id="crGross">£2 400</span></div>
+            <div class="crr"><span class="cl">Налог ~12%</span><span class="cv" style="color:#f87171" id="crTax">− £290</span></div>
+            <div class="crr"><span class="cl">Жильё</span><span class="cv" style="color:#f87171" id="crHousing">− £430</span></div>
           </div>
           <div class="cr-div"></div>
-          <div class="cr-small" style="margin-bottom:4px">Чистыми на руки</div>
+          <div class="cr-small" style="margin-bottom:2px">На руки в месяц</div>
           <div class="cr-big" id="crAmount">£1 680</div>
-          <div style="font-size:14px;color:rgba(255,255,255,.5);margin-top:4px">≈ <span id="crEur">€2 000</span> · <span id="crUah">82 000 грн</span></div>
+          <div style="font-size:13px;color:rgba(255,255,255,.5);margin-top:2px">≈ <span id="crEur">€2 000</span></div>
           <div class="cr-div"></div>
-          <div class="cr-rows">
-            <div class="crr"><span class="cl">За весь сезон (6 мес) на руки</span><span class="cv hi" id="crSeason">£10 000</span></div>
-            <div class="crr"><span class="cl">Это ≈ в евро</span><span class="cv" id="crSeasonEur">€11 900</span></div>
-          </div>
-          <p class="cr-note">Это примерный расчёт. Точные суммы — в вашем контракте до подписания. 1 фунт ≈ 1.19 евро.</p>
-          <button class="cr-cta" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Хочу так зарабатывать → Оставить заявку</button>
+          <div class="crr"><span class="cl">За сезон (6 мес)</span><span class="cv hi" id="crSeason">£10 000</span></div>
+          <div class="crr"><span class="cl">В евро</span><span class="cv" id="crSeasonEur">€11 900</span></div>
+          <span style="display:none" id="crUah"></span>
+          <button class="cr-cta" style="margin-top:14px" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Оставить заявку →</button>
           <div class="cr-tip" id="crTip" style="display:none"></div>
         </div>
+      </div>
+    </div>
+
+    <!-- Сравнение Европа vs Англия -->
+    <div style="margin-top:32px;max-width:880px;margin-left:auto;margin-right:auto">
+      <h3 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--navy);text-align:center;margin-bottom:16px">Где выгоднее работать?</h3>
+      <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border)">
+        <div style="padding:24px;border-right:1px solid var(--border)">
+          <div style="font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ink-light);margin-bottom:10px">Европа (Польша, Чехия, Германия)</div>
+          <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--ink-mid);margin-bottom:4px">~€800–1 000</div>
+          <div style="font-size:12px;color:var(--ink-light);margin-bottom:14px">на руки после аренды жилья</div>
+          <div style="font-size:12.5px;color:var(--ink-mid);line-height:1.7">Платите за квартиру 400–500 евро. После еды и расходов — остаётся мало.</div>
+        </div>
+        <div style="padding:24px;background:var(--green-bg)">
+          <div style="font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:10px">Англия — ферма</div>
+          <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--green);margin-bottom:4px">~€2 000–2 300</div>
+          <div style="font-size:12px;color:var(--green);margin-bottom:14px">на руки · жильё уже включено</div>
+          <div style="font-size:12.5px;color:var(--ink-mid);line-height:1.7">Жильё бесплатное, только коммуналка. На фермах есть дешёвые столовые. Почти всё остаётся вам.</div>
+        </div>
+      </div>
+      <div style="margin-top:10px;padding:10px 14px;background:var(--blue-soft);border:1px solid var(--border);font-size:12.5px;color:var(--ink-mid);line-height:1.7">
+        <strong style="color:var(--navy)">Разница — в жилье.</strong> В Европе вы платите за квартиру почти половину зарплаты. Здесь — нет. Фунт стоит больше евро: 1 фунт ≈ 1.19 евро. Ставка защищена законом Великобритании.
       </div>
     </div>
   </div>
@@ -1240,23 +1191,10 @@ footer a:hover{color:var(--navy)}
     </div>
 
     <!-- Online visa note -->
-    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
-      <div style="background:var(--blue-soft);border:1px solid var(--border);padding:14px 18px">
-        <div style="font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:5px">Визу можно подать из любой страны</div>
-        <div style="font-size:12.5px;color:var(--ink-mid);line-height:1.65">Заявка полностью онлайн через официальный сайт правительства — с телефона или компьютера. Нужен только один визит в VFS для биометрии.</div>
-        <a href="https://www.gov.uk/seasonal-worker-visa" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font-size:12px;font-weight:700;color:var(--blue);text-decoration:underline;text-underline-offset:2px">Официальный сайт правительства — виза →</a>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border);padding:14px 18px">
-        <div style="font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:5px">Центры VFS Global</div>
-        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:6px">
-          <span style="font-size:11.5px;padding:3px 10px;background:var(--white);border:1px solid var(--border);color:var(--ink-mid)">Киев</span>
-          <span style="font-size:11.5px;padding:3px 10px;background:var(--white);border:1px solid var(--border);color:var(--ink-mid)">Одесса</span>
-          <span style="font-size:11.5px;padding:3px 10px;background:var(--white);border:1px solid var(--border);color:var(--ink-mid)">Харьков</span>
-          <span style="font-size:11.5px;padding:3px 10px;background:var(--white);border:1px solid var(--border);color:var(--ink-mid)">Кишинёв</span>
-          <span style="font-size:11.5px;padding:3px 10px;background:var(--white);border:1px solid var(--border);color:var(--ink-mid)">Тбилиси</span>
-          <span style="font-size:11.5px;padding:3px 10px;background:var(--white);border:1px solid var(--border);color:var(--ink-mid)">Ташкент</span>
-        </div>
-      </div>
+    <div style="margin-top:12px;background:var(--blue-soft);border:1px solid var(--border);border-left:3px solid var(--blue);padding:14px 18px">
+      <div style="font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:5px">Визу можно подать из любой страны</div>
+      <div style="font-size:12.5px;color:var(--ink-mid);line-height:1.65">Заявка полностью онлайн через официальный сайт правительства Великобритании. Один визит в ближайший визовый центр для биометрии — они есть во всех странах в крупных городах. Мы подскажем ближайший к вам.</div>
+      <a href="https://www.gov.uk/seasonal-worker-visa" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font-size:12px;font-weight:700;color:var(--blue);text-decoration:underline;text-underline-offset:2px">Официальный сайт правительства — виза →</a>
     </div>
   </div>
 </section>
