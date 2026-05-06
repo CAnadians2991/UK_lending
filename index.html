@@ -640,6 +640,16 @@ footer a:hover{color:var(--navy)}
   section[aria-label="Гарантии"]{padding:18px 16px!important}
   section[aria-label="Гарантии"] .container > div{grid-template-columns:1fr!important;gap:10px!important}
   section[aria-label="Гарантии"] .container > div > div{padding:0!important;border:none!important}
+  /* HERO mobile: money block above text */
+  .hero-top{grid-template-columns:1fr!important;gap:18px!important;margin-bottom:18px!important}
+  .hero-top > div:nth-child(2){order:-1;padding:18px 20px!important}
+  .hero-benefits{grid-template-columns:1fr 1fr!important;gap:14px!important;margin-bottom:18px!important}
+  .hero h1{font-size:24px!important}
+  .hero-lead{font-size:13.5px!important}
+  /* CTA row на мобильном — лицензия снизу отдельно */
+  .hero-inner > div:last-child > span:last-child{order:99;width:100%;text-align:center;margin:8px 0 0 0!important;padding-top:8px;border-top:1px solid var(--border-light)}
+  .hero-inner > div:last-child{flex-wrap:wrap!important}
+  .hero-inner > div:last-child button{flex:1;min-width:140px}
 }
 </style>
 <script type="application/ld+json">
@@ -790,36 +800,66 @@ footer a:hover{color:var(--navy)}
 <section class="hero" id="top" aria-label="Описание вакансии">
   <div class="hero-overlay" style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.95) 55%,rgba(240,244,252,.82) 100%);z-index:0"></div>
   <div class="hero-inner" style="position:relative;z-index:1">
-    <div>
-      <div class="season-tag">Набор открыт — лето-осень 2026</div>
-      <h1 style="font-family:'Playfair Display',serif">Сезонная работа в Англии —<br><em>вакансии на сезон 2026</em></h1>
-      <p class="hero-lead">Грибные фермы, овощные склады и теплицы. Закрытые помещения с климат-контролем, стабильный график, жильё включено. Без опыта и языка — 75% коллег говорят по-русски. Сезонная виза, контракт, рекрутинг бесплатный.</p>
 
-      <!-- 4 карточки с преимуществами -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px">
-        <div style="padding:12px 14px;background:rgba(26,79,214,.06);border:1px solid rgba(26,79,214,.12)">
-          <div style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:2px">~€2 260–2 380/мес</div>
-          <div style="font-size:11.5px;color:var(--ink-mid)">и жильё уже включено</div>
-        </div>
-        <div style="padding:12px 14px;background:rgba(13,107,56,.06);border:1px solid rgba(13,107,56,.12)">
-          <div style="font-size:14px;font-weight:700;color:var(--green);margin-bottom:2px">Вакансия бесплатна · 0 €</div>
-          <div style="font-size:11.5px;color:var(--ink-mid)">нам платит работодатель</div>
-        </div>
-        <div style="padding:12px 14px;background:rgba(154,112,16,.06);border:1px solid rgba(154,112,16,.12)">
-          <div style="font-size:14px;font-weight:700;color:var(--gold);margin-bottom:2px">Официальный контракт</div>
-          <div style="font-size:11.5px;color:var(--ink-mid)">сезонная виза</div>
-        </div>
-        <div style="padding:12px 14px;background:rgba(26,43,82,.06);border:1px solid rgba(26,43,82,.12)">
-          <div style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:2px">Вас встретят</div>
-          <div style="font-size:11.5px;color:var(--ink-mid)">координатор + русскоязычная бригада</div>
-        </div>
+    <!-- TOP ROW: tag + headline left, money block right -->
+    <div class="hero-top mob-1col" style="display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center;margin-bottom:24px">
+      <div>
+        <div class="season-tag">Набор открыт · Сезон 2026</div>
+        <h1 style="font-family:'Playfair Display',serif;margin-bottom:12px">Работа в Англии<br><em>лето-осень 2026</em></h1>
+        <p class="hero-lead" style="margin-bottom:0">Грибные фермы, овощные склады и теплицы. Закрытые помещения с климат-контролем. Жильё на ферме включено.</p>
       </div>
 
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <button class="btn-main" onclick="document.getElementById('vacancies').scrollIntoView({behavior:'smooth'})">Выбрать вакансию ↓</button>
-        <button class="btn-line" onclick="toggleMsg()" style="min-height:48px">✉ Написать нам</button>
+      <!-- Money block — правая колонка -->
+      <div style="background:var(--navy);padding:24px 26px;color:#fff;position:relative">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px">На руки в месяц</div>
+        <div style="font-family:'Playfair Display',serif;font-size:clamp(34px,4.2vw,46px);font-weight:600;color:#fde68a;line-height:1;letter-spacing:-.5px">£1 900–2 000</div>
+        <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:rgba(255,255,255,.7);line-height:1.5">
+          <span style="color:#86efac;font-weight:600">≈ €2 260–2 380</span> в евро<br>
+          <span style="color:rgba(255,255,255,.45);font-size:12px">Ставка 12.90–13.55 фунтов в час</span>
+        </div>
       </div>
-      <div style="font-size:11px;color:var(--ink-light);margin-top:10px">Лицензия №05580634 · Госпрограмма сезонной работы Великобритании</div>
+    </div>
+
+    <!-- Divider line -->
+    <div style="height:1px;background:linear-gradient(to right, transparent, var(--border) 20%, var(--border) 80%, transparent);margin-bottom:24px"></div>
+
+    <!-- Benefits row — 4 пункта с иконками без фоновых карточек -->
+    <div class="hero-benefits mob-2col" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:24px">
+      <div style="display:flex;gap:10px;align-items:flex-start">
+        <div style="width:32px;height:32px;background:rgba(13,107,56,.1);color:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px">✓</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:2px">Бесплатно</div>
+          <div style="font-size:11.5px;color:var(--ink-mid);line-height:1.5">За вас платит работодатель</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start">
+        <div style="width:32px;height:32px;background:rgba(26,79,214,.1);color:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px">✓</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:2px">Жильё включено</div>
+          <div style="font-size:11.5px;color:var(--ink-mid);line-height:1.5">Караван на ферме</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start">
+        <div style="width:32px;height:32px;background:rgba(154,112,16,.1);color:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px">✓</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:2px">Без английского</div>
+          <div style="font-size:11.5px;color:var(--ink-mid);line-height:1.5">75% коллег по-русски</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start">
+        <div style="width:32px;height:32px;background:rgba(26,43,82,.1);color:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px">✓</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:2px">Сезонная виза</div>
+          <div style="font-size:11.5px;color:var(--ink-mid);line-height:1.5">6 мес · контракт</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTAs -->
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+      <button class="btn-main" onclick="document.getElementById('vacancies').scrollIntoView({behavior:'smooth'})">Выбрать вакансию ↓</button>
+      <button class="btn-line" onclick="toggleMsg()" style="min-height:48px">✉ Написать нам</button>
+      <span style="font-size:11.5px;color:var(--ink-light);margin-left:auto">Лицензия №05580634 · Госпрограмма UK</span>
     </div>
 
   </div>
