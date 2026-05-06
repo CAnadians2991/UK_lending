@@ -617,6 +617,30 @@ footer a:hover{color:var(--navy)}
   .gallery-tab iframe{min-height:250px!important}
   .announce{font-size:11.5px;padding:8px 14px}
 }
+/* MOBILE COMPACTNESS — сократить общую длину сайта на мобильном */
+@media(max-width:640px){
+  section{padding:36px 20px!important}
+  .container{padding:0 16px!important}
+  .sh{font-size:24px!important;line-height:1.15!important}
+  .hero h1{font-size:28px!important;line-height:1.1!important;margin-bottom:10px!important}
+  .hero-lead{font-size:14px!important;line-height:1.6!important;margin-bottom:16px!important}
+  .stag{font-size:10px!important;margin-bottom:8px!important}
+  .sb{font-size:13.5px!important;line-height:1.6!important}
+  .hero{padding:20px 16px 32px!important}
+  /* Calculator on mobile — smaller numbers */
+  .cr-big{font-size:34px!important}
+  /* Cards on mobile — less padding */
+  .mob-1col[style*="grid-template-columns"]{gap:10px!important}
+  /* Vacancies section padding tighter */
+  #vacancies{padding:36px 16px!important}
+  #vacancies > .container > div[style*="grid-template-columns"]{gap:12px!important}
+  /* Hide non-essential decorations to reduce noise on mobile */
+  #our-candidates{padding:32px 16px!important}
+  /* Shrink trust strip on mobile */
+  section[aria-label="Гарантии"]{padding:18px 16px!important}
+  section[aria-label="Гарантии"] .container > div{grid-template-columns:1fr!important;gap:10px!important}
+  section[aria-label="Гарантии"] .container > div > div{padding:0!important;border:none!important}
+}
 </style>
 <script type="application/ld+json">
 {
@@ -801,6 +825,32 @@ footer a:hover{color:var(--navy)}
   </div>
 </section>
 
+<!-- ТРАСТ-СТРОКА: бесплатно + лицензия + документы -->
+<section style="background:var(--navy);padding:24px 20px;color:#fff" aria-label="Гарантии">
+  <div class="container" style="max-width:980px">
+    <div class="mob-1col" style="display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="width:42px;height:42px;background:rgba(253,230,138,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:22px">🛡</div>
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:#fde68a;line-height:1.2;margin-bottom:2px">Это бесплатно</div>
+          <div style="font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.5">За кандидата платит работодатель. Так делается во всей Великобритании — это закон.</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;padding:0 20px;border-left:1px solid rgba(255,255,255,.12);border-right:1px solid rgba(255,255,255,.12)">
+        <div style="width:42px;height:42px;background:rgba(168,200,255,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px">📋</div>
+        <div>
+          <div style="font-size:13px;font-weight:600;color:#fff;line-height:1.3;margin-bottom:2px">Лицензия №05580634</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.55);line-height:1.5">Госпрограмма правительства UK</div>
+        </div>
+      </div>
+      <a href="#documents" onclick="document.getElementById('documents').scrollIntoView({behavior:'smooth'});return false" style="display:inline-flex;align-items:center;gap:8px;padding:11px 18px;background:var(--blue);color:#fff;text-decoration:none;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;white-space:nowrap;flex-shrink:0">
+        Проверить документы
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 
 <!-- VACANCIES SELECTOR -->
 <section style="background:var(--surface);border-top:1px solid var(--border);padding:52px 32px" id="vacancies" aria-label="Вакансии">
@@ -819,7 +869,7 @@ footer a:hover{color:var(--navy)}
         <div style="padding:20px;flex:1;display:flex;flex-direction:column">
           <h3 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--navy);margin-bottom:6px">Грибная ферма</h3>
           <div style="display:inline-flex;align-items:baseline;gap:8px;margin-bottom:10px">
-            <span style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--blue)">12.90 ф/час</span>
+            <span style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--blue)">12.90 фунтов в час</span>
             <span style="font-size:12px;color:var(--ink-light)">~£1 900/мес ≈ €2 260</span>
           </div>
           <p style="font-size:13px;color:var(--ink-mid);line-height:1.65;margin-bottom:12px">Сбор шампиньонов в закрытых ангарах с климат-контролем (+18–22°C круглый год).</p>
@@ -851,12 +901,11 @@ footer a:hover{color:var(--navy)}
         <div style="position:relative;aspect-ratio:16/10;overflow:hidden">
           <img src="assets/packaging-line.jpg" alt="Склад с овощами и фруктами" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
           <div style="position:absolute;top:10px;left:10px;background:var(--navy);color:#fff;padding:4px 10px;font-size:11px;font-weight:700;letter-spacing:.5px">ВАКАНСИЯ 2</div>
-          <div style="position:absolute;top:10px;right:10px;background:var(--green);color:#fff;padding:4px 10px;font-size:11px;font-weight:700">+5% К ГРИБАМ</div>
         </div>
         <div style="padding:20px;flex:1;display:flex;flex-direction:column">
           <h3 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--navy);margin-bottom:6px">Овощной склад</h3>
           <div style="display:inline-flex;align-items:baseline;gap:8px;margin-bottom:10px">
-            <span style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--blue)">13.55 ф/час</span>
+            <span style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--blue)">13.55 фунтов в час</span>
             <span style="font-size:12px;color:var(--ink-light)">~£2 000/мес ≈ €2 380</span>
           </div>
           <p style="font-size:13px;color:var(--ink-mid);line-height:1.65;margin-bottom:12px">Сортировка, упаковка и маркировка свежих овощей и фруктов на крытом складе.</p>
@@ -888,12 +937,11 @@ footer a:hover{color:var(--navy)}
         <div style="position:relative;aspect-ratio:16/10;overflow:hidden">
           <img src="assets/farm-aerial-wide.jpg" alt="Теплицы и парники" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
           <div style="position:absolute;top:10px;left:10px;background:var(--navy);color:#fff;padding:4px 10px;font-size:11px;font-weight:700;letter-spacing:.5px">ВАКАНСИЯ 3</div>
-          <div style="position:absolute;top:10px;right:10px;background:var(--green);color:#fff;padding:4px 10px;font-size:11px;font-weight:700">+5% К ГРИБАМ</div>
         </div>
         <div style="padding:20px;flex:1;display:flex;flex-direction:column">
           <h3 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--navy);margin-bottom:6px">Теплицы и парники</h3>
           <div style="display:inline-flex;align-items:baseline;gap:8px;margin-bottom:10px">
-            <span style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--blue)">13.55 ф/час</span>
+            <span style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--blue)">13.55 фунтов в час</span>
             <span style="font-size:12px;color:var(--ink-light)">~£2 000/мес ≈ €2 380</span>
           </div>
           <p style="font-size:13px;color:var(--ink-mid);line-height:1.65;margin-bottom:12px">Высадка рассады, уход и сбор урожая (томаты, огурцы, перцы, ягоды) в крытых теплицах.</p>
@@ -1037,7 +1085,7 @@ footer a:hover{color:var(--navy)}
     </div>
 
     <div style="margin-top:16px;padding:14px 18px;background:var(--blue-soft);border:1px solid var(--border);border-left:3px solid var(--blue)">
-      <p style="font-size:13px;color:var(--ink-mid);line-height:1.7"><strong style="color:var(--navy)">Одна программа, разные ставки.</strong> Грибная ферма — 12.90 ф/час, склад и теплицы — 13.55 ф/час (+5%). Жильё, виза, рекрутинг — везде одинаково.</p>
+      <p style="font-size:13px;color:var(--ink-mid);line-height:1.7"><strong style="color:var(--navy)">Одна программа, разные ставки.</strong> Грибная ферма — 12.90 фунтов в час, склад и теплицы — 13.55 фунтов в час. Жильё, виза, рекрутинг — везде одинаково.</p>
     </div>
 
     <!-- Почему такая зарплата -->
@@ -1552,7 +1600,7 @@ footer a:hover{color:var(--navy)}
     <div class="faq-wrap">
 <div class="faq-item open">
   <button class="faq-btn">Какие есть вакансии и какая платит больше?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
-  <div class="faq-ans">Сейчас открыты 3 вакансии: <strong>грибная ферма</strong> (12.90 ф/час, ~£1 900/мес), <strong>овощной склад</strong> (13.55 ф/час, ~£2 000/мес) и <strong>теплицы и парники</strong> (13.55 ф/час, ~£2 000/мес). Склад и теплицы платят на 5% больше грибов. Условия (виза, жильё, рекрутинг бесплатный) — везде одинаковые. Если не уверены — менеджер поможет выбрать.</div>
+  <div class="faq-ans">Сейчас открыты 3 вакансии: <strong>грибная ферма</strong> (12.90 фунтов в час, ~£1 900/мес), <strong>овощной склад</strong> (13.55 фунтов в час, ~£2 000/мес) и <strong>теплицы и парники</strong> (13.55 фунтов в час, ~£2 000/мес). Склад и теплицы платят на 5% больше грибов. Условия (виза, жильё, рекрутинг бесплатный) — везде одинаковые. Если не уверены — менеджер поможет выбрать.</div>
 </div>
 <div class="faq-item">
   <button class="faq-btn">Можно ли выбрать вакансию или распределяют сами?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
@@ -1615,9 +1663,9 @@ footer a:hover{color:var(--navy)}
           <div class="fg"><label>Какая вакансия?</label>
             <select id="vacancyField" autocomplete="off">
               <option value="any">Любая · уточнить с менеджером</option>
-              <option value="mushroom">Грибная ферма · 12.90 ф/час</option>
-              <option value="warehouse">Овощной склад · 13.55 ф/час</option>
-              <option value="greenhouse">Теплицы и парники · 13.55 ф/час</option>
+              <option value="mushroom">Грибная ферма · 12.90 фунтов в час</option>
+              <option value="warehouse">Овощной склад · 13.55 фунтов в час</option>
+              <option value="greenhouse">Теплицы и парники · 13.55 фунтов в час</option>
             </select>
           </div>
           <div class="fg"><label>Как с вами связаться?</label>
