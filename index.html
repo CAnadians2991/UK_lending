@@ -640,16 +640,13 @@ footer a:hover{color:var(--navy)}
   section[aria-label="Гарантии"]{padding:18px 16px!important}
   section[aria-label="Гарантии"] .container > div{grid-template-columns:1fr!important;gap:10px!important}
   section[aria-label="Гарантии"] .container > div > div{padding:0!important;border:none!important}
-  /* HERO mobile: money block above text */
-  .hero-top{grid-template-columns:1fr!important;gap:18px!important;margin-bottom:18px!important}
-  .hero-top > div:nth-child(2){order:-1;padding:18px 20px!important}
+  /* HERO mobile compactness */
   .hero-benefits{grid-template-columns:1fr 1fr!important;gap:14px!important;margin-bottom:18px!important}
+  .hero-compare{grid-template-columns:1fr!important;margin-bottom:18px!important}
+  .hero-compare > div:nth-child(2){display:none!important}
+  .hero-compare > div:first-child{border-bottom:1px solid var(--border)}
   .hero h1{font-size:24px!important}
-  .hero-lead{font-size:13.5px!important}
-  /* CTA row на мобильном — лицензия снизу отдельно */
-  .hero-inner > div:last-child > span:last-child{order:99;width:100%;text-align:center;margin:8px 0 0 0!important;padding-top:8px;border-top:1px solid var(--border-light)}
-  .hero-inner > div:last-child{flex-wrap:wrap!important}
-  .hero-inner > div:last-child button{flex:1;min-width:140px}
+  .hero-lead{font-size:13.5px!important;margin-bottom:18px!important}
 }
 </style>
 <script type="application/ld+json">
@@ -801,30 +798,30 @@ footer a:hover{color:var(--navy)}
   <div class="hero-overlay" style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.95) 55%,rgba(240,244,252,.82) 100%);z-index:0"></div>
   <div class="hero-inner" style="position:relative;z-index:1">
 
-    <!-- TOP ROW: tag + headline left, money block right -->
-    <div class="hero-top mob-1col" style="display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center;margin-bottom:24px">
-      <div>
-        <div class="season-tag">Набор открыт · Сезон 2026</div>
-        <h1 style="font-family:'Playfair Display',serif;margin-bottom:12px">Работа в Англии<br><em>лето-осень 2026</em></h1>
-        <p class="hero-lead" style="margin-bottom:0">Грибные фермы, овощные склады и теплицы. Закрытые помещения с климат-контролем. Жильё на ферме включено.</p>
-      </div>
+    <!-- Заголовок -->
+    <h1 style="font-family:'Playfair Display',serif;margin-bottom:14px">Работа в Англии<br><em>лето-осень 2026</em></h1>
 
-      <!-- Money block — правая колонка -->
-      <div style="background:var(--navy);padding:24px 26px;color:#fff;position:relative">
-        <div style="font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px">На руки в месяц</div>
-        <div style="font-family:'Playfair Display',serif;font-size:clamp(34px,4.2vw,46px);font-weight:600;color:#fde68a;line-height:1;letter-spacing:-.5px">£1 900–2 000</div>
-        <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:rgba(255,255,255,.7);line-height:1.5">
-          <span style="color:#86efac;font-weight:600">≈ €2 260–2 380</span> в евро<br>
-          <span style="color:rgba(255,255,255,.45);font-size:12px">Ставка 12.90–13.55 фунтов в час</span>
-        </div>
+    <!-- Подзаголовок -->
+    <p class="hero-lead" style="margin-bottom:22px;max-width:600px">Грибные фермы, овощные склады и теплицы. Закрытые помещения с климат-контролем. Жильё на ферме включено. Без опыта и языка.</p>
+
+    <!-- Компактное сравнение Европа vs Англия -->
+    <div class="hero-compare mob-1col" style="display:grid;grid-template-columns:1fr auto 1fr;gap:0;border:1px solid var(--border);margin-bottom:24px;align-items:stretch">
+      <div style="padding:14px 18px">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-light);margin-bottom:4px">Европа · после аренды</div>
+        <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--ink-mid);line-height:1.1">€800–1 000</div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;padding:0 14px;color:var(--ink-light);font-size:18px;border-left:1px solid var(--border);border-right:1px solid var(--border);background:var(--surface)">→</div>
+      <div style="padding:14px 18px;background:var(--green-bg)">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:4px">Англия · жильё включено</div>
+        <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--green);line-height:1.1">€2 260–2 380 <span style="font-size:13px;color:var(--ink-mid);font-weight:400">(£1 900–2 000)</span></div>
       </div>
     </div>
 
-    <!-- Divider line -->
-    <div style="height:1px;background:linear-gradient(to right, transparent, var(--border) 20%, var(--border) 80%, transparent);margin-bottom:24px"></div>
+    <!-- Тонкая линия-разделитель -->
+    <div style="height:1px;background:linear-gradient(to right, transparent, var(--border) 20%, var(--border) 80%, transparent);margin-bottom:22px"></div>
 
-    <!-- Benefits row — 4 пункта с иконками без фоновых карточек -->
-    <div class="hero-benefits mob-2col" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:24px">
+    <!-- 4 преимущества с иконками -->
+    <div class="hero-benefits mob-2col" style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:26px">
       <div style="display:flex;gap:10px;align-items:flex-start">
         <div style="width:32px;height:32px;background:rgba(13,107,56,.1);color:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px">✓</div>
         <div>
@@ -855,41 +852,17 @@ footer a:hover{color:var(--navy)}
       </div>
     </div>
 
-    <!-- CTAs -->
-    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
-      <button class="btn-main" onclick="document.getElementById('vacancies').scrollIntoView({behavior:'smooth'})">Выбрать вакансию ↓</button>
-      <button class="btn-line" onclick="toggleMsg()" style="min-height:48px">✉ Написать нам</button>
-      <span style="font-size:11.5px;color:var(--ink-light);margin-left:auto">Лицензия №05580634 · Госпрограмма UK</span>
+    <!-- CTA кнопки полоской друг под другом -->
+    <div style="display:flex;flex-direction:column;gap:10px;max-width:380px">
+      <button class="btn-main" onclick="document.getElementById('vacancies').scrollIntoView({behavior:'smooth'})" style="width:100%">Выбрать вакансию ↓</button>
+      <button class="btn-line" onclick="toggleMsg()" style="width:100%;min-height:48px">✉ Написать нам</button>
     </div>
+
+    <div style="font-size:11.5px;color:var(--ink-light);margin-top:14px">Лицензия №05580634 · Госпрограмма Великобритании</div>
 
   </div>
 </section>
 
-<!-- ТРАСТ-СТРОКА: бесплатно + лицензия + документы -->
-<section style="background:var(--navy);padding:24px 20px;color:#fff" aria-label="Гарантии">
-  <div class="container" style="max-width:980px">
-    <div class="mob-1col" style="display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center">
-      <div style="display:flex;align-items:center;gap:12px">
-        <div style="width:42px;height:42px;background:rgba(253,230,138,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:22px">🛡</div>
-        <div>
-          <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:#fde68a;line-height:1.2;margin-bottom:2px">Это бесплатно</div>
-          <div style="font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.5">За кандидата платит работодатель. Так делается во всей Великобритании — это закон.</div>
-        </div>
-      </div>
-      <div style="display:flex;align-items:center;gap:12px;padding:0 20px;border-left:1px solid rgba(255,255,255,.12);border-right:1px solid rgba(255,255,255,.12)">
-        <div style="width:42px;height:42px;background:rgba(168,200,255,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px">📋</div>
-        <div>
-          <div style="font-size:13px;font-weight:600;color:#fff;line-height:1.3;margin-bottom:2px">Лицензия №05580634</div>
-          <div style="font-size:12px;color:rgba(255,255,255,.55);line-height:1.5">Госпрограмма правительства UK</div>
-        </div>
-      </div>
-      <a href="#documents" onclick="document.getElementById('documents').scrollIntoView({behavior:'smooth'});return false" style="display:inline-flex;align-items:center;gap:8px;padding:11px 18px;background:var(--blue);color:#fff;text-decoration:none;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;white-space:nowrap;flex-shrink:0">
-        Проверить документы
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
 
 
 <!-- VACANCIES SELECTOR -->
@@ -1016,143 +989,7 @@ footer a:hover{color:var(--navy)}
 </section>
 
 <!-- НАШИ КАНДИДАТЫ -->
-<section style="background:var(--white);border-top:1px solid var(--border);padding:52px 32px" id="our-candidates" aria-label="Наши кандидаты на работе">
-  <div class="container">
-    <p class="stag" style="justify-content:center">Реальная жизнь · Сезон 2025</p>
-    <h2 class="sh" style="text-align:center">Наши кандидаты <em>на работе</em></h2>
-    <p class="sb" style="text-align:center;max-width:520px;margin-left:auto;margin-right:auto">Это фото с прошлого сезона. Реальные люди, реальные смены, реальные караваны. Не стоковые картинки.</p>
 
-    <div class="mob-2col" style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:32px">
-      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
-        <img src="assets/hands-mushrooms.jpg" alt="Кандидат собирает шампиньоны" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
-          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">Утренняя смена</div>
-          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">Сбор грибов · Кент</div>
-        </div>
-      </div>
-      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
-        <img src="assets/packaging-line.jpg" alt="Работа на складе с овощами" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
-          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">Конвейер упаковки</div>
-          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">Овощной склад · Линкольншир</div>
-        </div>
-      </div>
-      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
-        <img src="assets/caravan-deck.jpg" alt="Перерыв на террасе каравана" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
-          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">После смены</div>
-          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">Терраса каравана</div>
-        </div>
-      </div>
-      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
-        <img src="assets/mushroom-crates.jpg" alt="Готовая продукция в ящиках" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
-          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">Конец смены</div>
-          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">Готово к отгрузке</div>
-        </div>
-      </div>
-      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
-        <img src="assets/hangar-aisle.jpg" alt="Бригада в проходе склада" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
-          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">Начало смены</div>
-          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">Бригада идёт на участок</div>
-        </div>
-      </div>
-      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
-        <img src="assets/caravan-kitchen.jpg" alt="Кухня в караване" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
-          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">Готовим ужин</div>
-          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">Полная кухня · своя</div>
-        </div>
-      </div>
-      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
-        <img src="assets/mushroom-hand-closeup.jpg" alt="Сбор грибов крупно" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
-          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">Ручной сбор</div>
-          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">По стандарту качества</div>
-        </div>
-      </div>
-      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
-        <img src="assets/visa-couple.jpg" alt="Пара с визами" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
-          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">Семейная пара</div>
-          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">Поехали вместе · 2025</div>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top:18px;text-align:center">
-      <p style="font-size:12px;color:var(--ink-light);font-style:italic">Хотите больше фото и видео? Напишите менеджеру — пришлёт реальные кадры с конкретных ферм где есть свободные места.</p>
-    </div>
-  </div>
-</section>
-
-<!-- JOB DESCRIPTION -->
-<section style="background:var(--white);border-top:1px solid var(--border);padding:52px 32px" id="math">
-  <div class="container">
-    <p class="stag">Общие условия</p>
-    <h2 class="sh">Что общего <em>у всех 3 вакансий</em></h2>
-
-    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px">
-      <div style="background:var(--surface);border:1px solid var(--border);overflow:hidden">
-        <img src="assets/hangar-shelves-long.jpg" alt="Закрытое помещение" loading="lazy" style="width:100%;height:120px;object-fit:cover;display:block">
-        <div style="padding:20px">
-          <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:8px">Закрытое помещение</div>
-          <p style="font-size:13px;color:var(--ink-mid);line-height:1.8">Все 3 вакансии — работа в крытых ангарах, складах и теплицах с климат-контролем. Без дождя, ветра, жары и холода. Чистая спецодежда.</p>
-        </div>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border);overflow:hidden">
-        <img src="assets/farm-aerial-close.jpg" alt="Стабильный график" loading="lazy" style="width:100%;height:120px;object-fit:cover;display:block">
-        <div style="padding:20px">
-          <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:8px">Стабильный график</div>
-          <p style="font-size:13px;color:var(--ink-mid);line-height:1.8">Смены по 8–10 часов, 6 дней в неделю. Утренние и дневные смены. <strong>Ночных смен нет.</strong> Один выходной в неделю. Сверхурочные ×1.5.</p>
-        </div>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border);overflow:hidden">
-        <img src="assets/visa-1.jpg" alt="Сезонная виза 6 месяцев" loading="lazy" style="width:100%;height:120px;object-fit:cover;display:block">
-        <div style="padding:20px">
-          <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:8px">Сезонная виза 6 мес</div>
-          <p style="font-size:13px;color:var(--ink-mid);line-height:1.8">Рабочая виза на <strong>6 месяцев</strong>. Продлить в Англии нельзя — таков закон. После окончания — возвращаетесь домой. На следующий сезон можно подать снова.</p>
-        </div>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border);overflow:hidden">
-        <img src="assets/visa-couple.jpg" alt="Пары и дети" loading="lazy" style="width:100%;height:120px;object-fit:cover;display:block">
-        <div style="padding:20px">
-          <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:8px">Пары и дети</div>
-          <p style="font-size:13px;color:var(--ink-mid);line-height:1.8">Можно ехать парой — каждый подаёт визу отдельно. Дети от 6 лет — тоже нужна виза. Пары могут жить вместе при наличии мест.</p>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top:16px;padding:14px 18px;background:var(--blue-soft);border:1px solid var(--border);border-left:3px solid var(--blue)">
-      <p style="font-size:13px;color:var(--ink-mid);line-height:1.7"><strong style="color:var(--navy)">Одна программа, разные ставки.</strong> Грибная ферма — 12.90 фунтов в час, склад и теплицы — 13.55 фунтов в час. Жильё, виза, рекрутинг — везде одинаково.</p>
-    </div>
-
-    <!-- Почему такая зарплата -->
-    <div style="margin-top:20px;background:linear-gradient(135deg,var(--gold-bg) 0%,#fff8e1 100%);border:1px solid rgba(154,112,16,.25);border-left:4px solid var(--gold);padding:20px 24px">
-      <div style="display:flex;gap:12px;align-items:flex-start">
-        <div style="font-size:24px;line-height:1">💰</div>
-        <div style="flex:1">
-          <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px">Почему такая большая зарплата?</div>
-          <div style="font-size:13.5px;color:var(--ink-mid);line-height:1.75;margin-bottom:12px">В Великобритании <strong>минимальная зарплата по закону — 12.71 фунтов/час</strong> (≈15.10 евро). Платить меньше — незаконно. Ваша ставка <strong>12.90 фунтов/час</strong> — чуть выше минимума. <a href="https://www.gov.uk/national-minimum-wage-rates" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:underline;text-underline-offset:2px">Проверить закон →</a></div>
-          <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px">
-            <div style="background:var(--white);border:1px solid rgba(154,112,16,.2);padding:12px 14px">
-              <div style="font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:4px">🏠 Проживание — бесплатно</div>
-              <div style="font-size:12.5px;color:var(--ink-mid);line-height:1.6">Сам каравaн не стоит ничего. Платите только коммунальные услуги (вода, электричество).</div>
-            </div>
-            <div style="background:var(--white);border:1px solid rgba(154,112,16,.2);padding:12px 14px">
-              <div style="font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:4px">🍽 Еда — дёшево</div>
-              <div style="font-size:12.5px;color:var(--ink-mid);line-height:1.6">На фермах есть столовые с очень низкими ценами для работников. Готовить дома не обязательно.</div>
-            </div>
-          </div>
-          <div style="margin-top:10px;font-size:12px;color:var(--ink-light);line-height:1.6">Поэтому почти всё, что заработаете — остаётся вам. Это главное отличие от работы в других странах Европы.</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-<!-- END JOB DESCRIPTION -->
 
 <!-- HOUSING -->
 <section style="background:var(--white);border-top:1px solid var(--border);padding:52px 32px" id="housing">
@@ -1268,141 +1105,74 @@ footer a:hover{color:var(--navy)}
   </div>
 </section>
 
-<!-- SAFETY -->
-<section style="background:var(--navy);padding:52px 32px" id="safety">
-  <div class="container">
-    <div class="stage-label" style="display:none">Стадия 5 — Безопасность</div>
-    <h2 class="sh" style="color:#fff;margin-bottom:8px">Как отличить нас<br><em style="color:#fde68a">от мошенников?</em></h2>
-    <p style="font-size:15px;color:rgba(255,255,255,.4);margin-bottom:32px;font-weight:300">В этой сфере действительно много обмана. Вот конкретные признаки.</p>
 
-    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
-      <!-- Scam checks -->
-      <div>
-        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:14px">Наши гарантии</div>
-        <div class="scam-check">
-          <div class="scam-check-icon">✓</div>
-          <div><strong>Контракт ДО любых расходов</strong><span>Подписываете официальный документ со всеми цифрами до того, как заплатили £1. Мошенники никогда не дают контракт до оплаты.</span></div>
-        </div>
-        <div class="scam-check">
-          <div class="scam-check-icon">✓</div>
-          <div><strong>£319 консульский сбор — только через официальный сайт правительства</strong><span>Это плата государству Великобритании за визу. Деньги идут в казну UK напрямую — мы и работодатель ничего не получаем. Получаете официальную квитанцию.</span></div>
-        </div>
-        <div class="scam-check">
-          <div class="scam-check-icon">✓</div>
-          <div><strong>Виза через официальный сайт</strong><span>Не сторонний сайт, не «визовый центр» без лицензии — только официальный сайт правительства. Заявка идёт напрямую.</span></div>
-        </div>
-        <div class="scam-check">
-          <div class="scam-check-icon">✓</div>
-          <div><strong>Лицензированный оператор</strong><span>Проверьте сами за 30 секунд: найдите 05580634 на сайте правительства Великобритании. Компания активна с 2005 года.</span></div>
-        </div>
-        <div class="scam-check">
-          <div class="scam-check-icon">✓</div>
-          <div><strong>Наш номер в госреестре: 05580634</strong><span>Правительство Великобритании публикует официальный список. Pro-Force Ltd — в нём. Ссылки ниже.</span></div>
-        </div>
-        <div class="scam-check">
-          <div class="scam-check-icon">✓</div>
-          <div><strong>Рекрутинг бесплатный — нам платит работодатель, не вы</strong><span>По закону Великобритании брать деньги с кандидатов за трудоустройство запрещено.</span></div>
-        </div>
-        <div class="scam-check">
-          <div class="scam-check-icon">✓</div>
-          <div><strong>Единственный расход — £319 консульский сбор за визу</strong><span>Это плата правительству Великобритании за визу — обязательна для всех в мире, не покрывается работодателем. Не нам, не агентству. Оплачивается через официальный сайт государства, получаете квитанцию.</span></div>
-        </div>
-        <div class="scam-check">
-          <div class="scam-check-icon">✓</div>
-          <div><strong>Это государственная программа, а не частный рекрутинг</strong><span>Программа сезонных работников правительства Великобритании. Работает с 2005 года.</span></div>
-        </div>
-        <div style="background:rgba(253,230,138,.08);border:1px solid rgba(253,230,138,.15);padding:14px 16px;margin-top:10px">
-          <div style="font-size:12.5px;font-weight:700;color:#fde68a;margin-bottom:5px">Главный признак мошенничества:</div>
-          <div style="font-size:12.5px;color:rgba(255,255,255,.45);line-height:1.65">Если просят деньги до подписания контракта — это мошенники. Всегда, без исключений.</div>
+<section style="background:var(--white);border-top:1px solid var(--border);padding:52px 32px" id="our-candidates" aria-label="Наши кандидаты на работе">
+  <div class="container">
+    <p class="stag" style="justify-content:center">Реальная жизнь · Сезон 2025</p>
+    <h2 class="sh" style="text-align:center">Наши кандидаты <em>на работе</em></h2>
+    <p class="sb" style="text-align:center;max-width:520px;margin-left:auto;margin-right:auto">Это фото с прошлого сезона. Реальные люди, реальные смены, реальные караваны. Не стоковые картинки.</p>
+
+    <div class="mob-2col" style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:32px">
+      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
+        <img src="assets/hands-mushrooms.jpg" alt="Кандидат собирает шампиньоны" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
+          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">Утренняя смена</div>
+          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">Сбор грибов · Кент</div>
         </div>
       </div>
-
-      <!-- Pro-Force official data + verify links -->
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:20px">
-          <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:12px">Работодатель и спонсор визы</div>
-          <div style="font-size:20px;font-family:'Playfair Display',serif;font-weight:600;color:#fff;margin-bottom:12px">Pro-Force Limited</div>
-          <div style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;margin-bottom:16px">
-            <div style="display:flex;justify-content:space-between"><span style="color:rgba(255,255,255,.35)">Рег. номер</span><span style="color:#fde68a;font-weight:700;letter-spacing:1px">05580634</span></div>
-            <div style="display:flex;justify-content:space-between"><span style="color:rgba(255,255,255,.35)">Статус</span><span style="color:#86efac;font-weight:600">Активна</span></div>
-            <div style="display:flex;justify-content:space-between"><span style="color:rgba(255,255,255,.35)">Основана</span><span style="color:rgba(255,255,255,.7)">3 октября 2005</span></div>
-            <div style="display:flex;justify-content:space-between"><span style="color:rgba(255,255,255,.35)">Лицензия</span><span style="color:rgba(255,255,255,.7)">Правительство Великобритании</span></div>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:8px">
-            <a href="https://find-and-update.company-information.service.gov.uk/company/05580634" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;padding:10px 13px;background:rgba(255,255,255,.06);color:#a8c8ff;font-size:12.5px;font-weight:600;text-decoration:none">
-              <span>Проверить в Госреестре компаний Великобритании</span>
-              <span style="font-size:14px">→</span>
-            </a>
-            <a href="https://www.gov.uk/government/publications/seasonal-worker-visa-licensed-operators" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;padding:10px 13px;background:rgba(255,255,255,.06);color:#a8c8ff;font-size:12.5px;font-weight:600;text-decoration:none">
-              <span>Список операторов — Официальный сайт правительства</span>
-              <span style="font-size:14px">→</span>
-            </a>
-            <a href="https://www.pro-force.co.uk" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;padding:10px 13px;background:rgba(255,255,255,.06);color:#a8c8ff;font-size:12.5px;font-weight:600;text-decoration:none">
-              <span>pro-force.co.uk — официальный сайт</span>
-              <span style="font-size:14px">→</span>
-            </a>
-          </div>
+      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
+        <img src="assets/packaging-line.jpg" alt="Работа на складе с овощами" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
+          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">Конвейер упаковки</div>
+          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">Овощной склад · Линкольншир</div>
         </div>
-
-        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);padding:18px 20px">
-          <div style="font-size:12.5px;font-weight:700;color:rgba(255,255,255,.6);margin-bottom:8px">Пример контракта</div>
-          <div style="font-size:12.5px;color:rgba(255,255,255,.35);line-height:1.65;margin-bottom:12px">Контракт на двух языках (русский + английский). Подписываете ДО любых расходов. Можно изучить сколько угодно.</div>
-          <button onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})" style="background:var(--blue);color:#fff;border:none;padding:10px 18px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif">Запросить пример контракта →</button>
+      </div>
+      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
+        <img src="assets/caravan-deck.jpg" alt="Перерыв на террасе каравана" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
+          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">После смены</div>
+          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">Терраса каравана</div>
+        </div>
+      </div>
+      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
+        <img src="assets/mushroom-crates.jpg" alt="Готовая продукция в ящиках" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
+          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">Конец смены</div>
+          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">Готово к отгрузке</div>
+        </div>
+      </div>
+      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
+        <img src="assets/hangar-aisle.jpg" alt="Бригада в проходе склада" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
+          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">Начало смены</div>
+          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">Бригада идёт на участок</div>
+        </div>
+      </div>
+      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
+        <img src="assets/caravan-kitchen.jpg" alt="Кухня в караване" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
+          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">Готовим ужин</div>
+          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">Полная кухня · своя</div>
+        </div>
+      </div>
+      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
+        <img src="assets/mushroom-hand-closeup.jpg" alt="Сбор грибов крупно" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
+          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">Ручной сбор</div>
+          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">По стандарту качества</div>
+        </div>
+      </div>
+      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
+        <img src="assets/visa-couple.jpg" alt="Пара с визами" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
+          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">Семейная пара</div>
+          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">Поехали вместе · 2025</div>
         </div>
       </div>
     </div>
 
-    <!-- Proof: visas + reviews (merged from proof section) -->
-    <div style="margin-top:36px;padding-top:32px;border-top:1px solid rgba(255,255,255,.08)">
-      <div class="counter-badge" style="margin-bottom:16px">
-        <div class="cb-num">200+</div>
-        <div class="cb-text">кандидатов уже<br>получили визу и уехали</div>
-      </div>
-      <h3 style="font-family:'Playfair Display',serif;font-size:clamp(20px,2.4vw,30px);font-weight:600;color:#fff;margin-bottom:8px">200+ кандидатов уже уехали — вот их визы</h3>
-      <p style="font-size:14px;color:rgba(255,255,255,.4);margin-bottom:20px;font-weight:300">Настоящие рабочие визы наших кандидатов. Не картинки из интернета — реальные документы.</p>
-
-      <div class="proof-grid">
-        <div class="proof-card">
-          <div class="proof-card-img"><img src="assets/visa-1.jpg" alt="Рабочая виза Великобритании" loading="lazy"></div>
-          <div class="proof-card-body">
-            <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:3px">D — РАБОЧАЯ ВИЗА (СЕЗОННЫЙ РАБОТНИК)</div>
-            <div style="font-size:12px;color:var(--ink-light)">Кандидат из Узбекистана · Сезон 2026</div>
-          </div>
-        </div>
-        <div class="proof-card">
-          <div class="proof-card-img"><img src="assets/visa-2.jpg" alt="Рабочая виза Великобритании 2" loading="lazy"></div>
-          <div class="proof-card-body">
-            <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:3px">D — РАБОЧАЯ ВИЗА (СЕЗОННЫЙ РАБОТНИК)</div>
-            <div style="font-size:12px;color:var(--ink-light)">Кандидат из Узбекистана · Сезон 2026</div>
-          </div>
-        </div>
-        <div class="proof-card">
-          <div class="proof-card-img"><img src="assets/visa-couple.jpg" alt="Пара с визами" loading="lazy"></div>
-          <div class="proof-card-body">
-            <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:3px">Пара — оба получили визу</div>
-            <div style="font-size:12px;color:var(--ink-light)">Уехали вместе · Сезон 2026</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Visa decoding -->
-      <div class="mob-1col" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:18px 22px;margin-top:14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0">
-        <div style="padding:0 18px 0 0;border-right:1px solid rgba(255,255,255,.08)">
-          <div style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;color:rgba(255,255,255,.3);margin-bottom:6px;text-transform:uppercase">Что написано в визе</div>
-          <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.8;font-family:'Courier New',monospace;background:rgba(255,255,255,.05);padding:10px 12px;border:1px solid rgba(255,255,255,.08)">Type: <strong style="color:#fff">D — TEMPORARY WORK</strong><br>(SEASONAL WORKER) MIGRANT<br>Valid: до 6 месяцев</div>
-        </div>
-        <div style="padding:0 18px;border-right:1px solid rgba(255,255,255,.08)">
-          <div style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;color:rgba(255,255,255,.3);margin-bottom:6px;text-transform:uppercase">Номер приглашения — что это</div>
-          <div style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.75">Официальный номер приглашения от работодателя Pro-Force Ltd. Выдаётся после подтверждения трудоустройства.</div>
-        </div>
-        <div style="padding:0 0 0 18px">
-          <div style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;color:rgba(255,255,255,.3);margin-bottom:6px;text-transform:uppercase">Проверьте работодателя</div>
-          <div style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.75;margin-bottom:10px">Pro-Force Ltd, рег. №05580634:</div>
-          <a href="https://find-and-update.company-information.service.gov.uk/company/05580634" target="_blank" rel="noopener" style="display:block;font-size:12px;font-weight:700;color:#a8c8ff;text-decoration:underline;text-underline-offset:2px;word-break:break-all">Госреестр компаний Великобритании →</a>
-          <a href="https://www.gov.uk/government/publications/seasonal-worker-visa-licensed-operators" target="_blank" rel="noopener" style="display:block;font-size:12px;font-weight:700;color:#a8c8ff;text-decoration:underline;text-underline-offset:2px;margin-top:6px">Список операторов — Официальный сайт правительства →</a>
-        </div>
-      </div>
-
+    <div style="margin-top:18px;text-align:center">
+      <p style="font-size:12px;color:var(--ink-light);font-style:italic">Хотите больше фото и видео? Напишите менеджеру — пришлёт реальные кадры с конкретных ферм где есть свободные места.</p>
     </div>
   </div>
 </section>
@@ -1492,45 +1262,6 @@ footer a:hover{color:var(--navy)}
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section style="background:var(--surface);border-top:1px solid var(--border);padding:52px 32px" id="reviews">
-  <div class="container">
-    <p class="stag" style="justify-content:center">Отзывы</p>
-    <h2 class="sh" style="text-align:center">Что говорят<br><em>наши кандидаты</em></h2>
-    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:32px">
-      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
-        <div class="t-stars" style="margin-bottom:12px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:14px">"Боялась, что обман. Но всё так, как говорили — виза настоящая, зарплата каждую неделю."</div>
-        <div style="font-size:12.5px;font-weight:600;color:var(--navy)">Оксана М. <span style="font-weight:400;color:var(--ink-muted)">· грибная ферма, 2024</span></div>
-      </div>
-      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
-        <div class="t-stars" style="margin-bottom:12px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:14px">"Ехал с женой — поселили вместе. Брал сверхурочные — один месяц вышло больше £3 000."</div>
-        <div style="font-size:12.5px;font-weight:600;color:var(--navy)">Дмитрий К. <span style="font-weight:400;color:var(--ink-muted)">· грибная ферма, 2024</span></div>
-      </div>
-      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
-        <div class="t-stars" style="margin-bottom:12px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:14px">"Работала на овощном складе. Платят больше чем на грибах, работа полегче — сортировка и упаковка."</div>
-        <div style="font-size:12.5px;font-weight:600;color:var(--navy)">Светлана Б. <span style="font-weight:400;color:var(--ink-muted)">· склад, 2024</span></div>
-      </div>
-      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
-        <div class="t-stars" style="margin-bottom:12px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:14px">"Склад — конвейер и упаковка. Тепло, сухо. Ставка выше грибов, и сверхурочные брал каждую неделю."</div>
-        <div style="font-size:12.5px;font-weight:600;color:var(--navy)">Андрей Л. <span style="font-weight:400;color:var(--ink-muted)">· склад, 2024</span></div>
-      </div>
-      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
-        <div class="t-stars" style="margin-bottom:12px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:14px">"Работал в теплице с томатами. Чистый воздух, тепло. Платили каждую неделю."</div>
-        <div style="font-size:12.5px;font-weight:600;color:var(--navy)">Виктор П. <span style="font-weight:400;color:var(--ink-muted)">· теплица, 2024</span></div>
-      </div>
-      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
-        <div class="t-stars" style="margin-bottom:12px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:14px">"Половина бригады из Украины и Молдовы. Английский вообще не нужен. Караван оказался нормальным."</div>
-        <div style="font-size:12.5px;font-weight:600;color:var(--navy)">Наталья В. <span style="font-weight:400;color:var(--ink-muted)">· теплица, 2024</span></div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- PROCESS -->
 <section style="background:var(--white);border-top:1px solid var(--border);padding:52px 32px" id="process">
@@ -1657,6 +1388,46 @@ footer a:hover{color:var(--navy)}
   </div>
 </section>
 
+
+<!-- REVIEWS -->
+<section style="background:var(--surface);border-top:1px solid var(--border);padding:52px 32px" id="reviews">
+  <div class="container">
+    <p class="stag" style="justify-content:center">Отзывы</p>
+    <h2 class="sh" style="text-align:center">Что говорят<br><em>наши кандидаты</em></h2>
+    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:32px">
+      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
+        <div class="t-stars" style="margin-bottom:12px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:14px">"Боялась, что обман. Но всё так, как говорили — виза настоящая, зарплата каждую неделю."</div>
+        <div style="font-size:12.5px;font-weight:600;color:var(--navy)">Оксана М. <span style="font-weight:400;color:var(--ink-muted)">· грибная ферма, 2024</span></div>
+      </div>
+      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
+        <div class="t-stars" style="margin-bottom:12px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:14px">"Ехал с женой — поселили вместе. Брал сверхурочные — один месяц вышло больше £3 000."</div>
+        <div style="font-size:12.5px;font-weight:600;color:var(--navy)">Дмитрий К. <span style="font-weight:400;color:var(--ink-muted)">· грибная ферма, 2024</span></div>
+      </div>
+      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
+        <div class="t-stars" style="margin-bottom:12px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:14px">"Работала на овощном складе. Платят больше чем на грибах, работа полегче — сортировка и упаковка."</div>
+        <div style="font-size:12.5px;font-weight:600;color:var(--navy)">Светлана Б. <span style="font-weight:400;color:var(--ink-muted)">· склад, 2024</span></div>
+      </div>
+      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
+        <div class="t-stars" style="margin-bottom:12px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:14px">"Склад — конвейер и упаковка. Тепло, сухо. Ставка выше грибов, и сверхурочные брал каждую неделю."</div>
+        <div style="font-size:12.5px;font-weight:600;color:var(--navy)">Андрей Л. <span style="font-weight:400;color:var(--ink-muted)">· склад, 2024</span></div>
+      </div>
+      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
+        <div class="t-stars" style="margin-bottom:12px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:14px">"Работал в теплице с томатами. Чистый воздух, тепло. Платили каждую неделю."</div>
+        <div style="font-size:12.5px;font-weight:600;color:var(--navy)">Виктор П. <span style="font-weight:400;color:var(--ink-muted)">· теплица, 2024</span></div>
+      </div>
+      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
+        <div class="t-stars" style="margin-bottom:12px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:14px">"Половина бригады из Украины и Молдовы. Английский вообще не нужен. Караван оказался нормальным."</div>
+        <div style="font-size:12.5px;font-weight:600;color:var(--navy)">Наталья В. <span style="font-weight:400;color:var(--ink-muted)">· теплица, 2024</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- FAQ -->
 <section class="faq-sec" id="faq">
