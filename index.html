@@ -812,7 +812,7 @@ footer a:hover{color:var(--navy)}
       <h1 style="font-family:'Playfair Display',serif;font-size:clamp(34px,4.6vw,56px);font-weight:600;line-height:1.05;color:var(--navy);margin-bottom:18px;letter-spacing:-.5px">Работа в Англии<br><em style="color:var(--blue);font-style:normal">для всех</em></h1>
 
       <!-- Один сильный подзаголовок -->
-      <p style="font-size:17px;color:var(--ink-mid);line-height:1.6;margin-bottom:28px;max-width:520px;font-weight:400">Легальная сезонная работа на фермах Великобритании. <strong style="color:var(--navy);font-weight:600">Без опыта, без языка, без оплаты вперёд.</strong></p>
+      <p style="font-size:17px;color:var(--ink-mid);line-height:1.6;margin-bottom:28px;max-width:520px;font-weight:400">Легальная сезонная работа на фермах Великобритании. <strong style="color:var(--navy);font-weight:600">Без опыта, без языка. Бесплатная вакансия.</strong></p>
 
       <!-- Зарплата + жильё в одной строке -->
       <div style="display:flex;align-items:flex-end;gap:16px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--border)">
@@ -850,17 +850,49 @@ footer a:hover{color:var(--navy)}
       </div>
     </div>
 
-    <!-- ПРАВАЯ КОЛОНКА: ФОТО + плашка -->
-    <div class="hero-image-col" style="position:relative;background-image:url('assets/farm-aerial-wide.jpg');background-size:cover;background-position:center;min-height:520px">
-      <!-- Лёгкий тёмный градиент для читаемости -->
-      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,43,82,.05) 0%,rgba(26,43,82,.55) 100%)"></div>
+    <!-- ПРАВАЯ КОЛОНКА: КОЛЛАЖ из 4 фото — что вас ждёт -->
+    <div class="hero-image-col" style="position:relative;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;background:var(--border);min-height:520px">
 
-      <!-- Плашка-карточка снизу справа -->
-      <div style="position:absolute;bottom:24px;left:24px;right:24px;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);padding:18px 22px;border-left:3px solid var(--blue)">
-        <div style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);margin-bottom:6px">3 вакансии · сезон 2026</div>
-        <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--navy);line-height:1.3;margin-bottom:4px">Грибные фермы · Овощные склады · Теплицы</div>
-        <div style="font-size:12.5px;color:var(--ink-mid);line-height:1.55">Закрытые помещения с климат-контролем. Не поле, не улица. Стабильный график 6 дней в неделю.</div>
+      <!-- Фото 1: Работа — сбор грибов -->
+      <div style="position:relative;overflow:hidden">
+        <img src="assets/mushroom-hand-closeup.jpg" alt="Сбор грибов на ферме" loading="eager" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
+          <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;color:#fde68a">РАБОТА</div>
+          <div style="font-size:13px;font-weight:700;color:#fff;margin-top:2px">Грибные фермы</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.7);margin-top:1px">£12.90 фунтов в час</div>
+        </div>
       </div>
+
+      <!-- Фото 2: Работа — склад/упаковка -->
+      <div style="position:relative;overflow:hidden">
+        <img src="assets/packaging-line.jpg" alt="Овощной склад — конвейер упаковки" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
+          <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;color:#fde68a">РАБОТА</div>
+          <div style="font-size:13px;font-weight:700;color:#fff;margin-top:2px">Склад · Теплица</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.7);margin-top:1px">£13.55 фунтов в час</div>
+        </div>
+      </div>
+
+      <!-- Фото 3: Жильё снаружи -->
+      <div style="position:relative;overflow:hidden">
+        <img src="assets/caravan-exterior-1.jpg" alt="Караван — жильё на ферме включено" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,107,56,.92));padding:14px 12px 10px">
+          <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;color:#bbf7d0">ЖИЛЬЁ</div>
+          <div style="font-size:13px;font-weight:700;color:#fff;margin-top:2px">Караван на ферме</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.85);margin-top:1px">включено бесплатно</div>
+        </div>
+      </div>
+
+      <!-- Фото 4: Жильё внутри / кухня -->
+      <div style="position:relative;overflow:hidden">
+        <img src="assets/caravan-kitchen.jpg" alt="Кухня внутри каравана" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,107,56,.92));padding:14px 12px 10px">
+          <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;color:#bbf7d0">ЖИЛЬЁ</div>
+          <div style="font-size:13px;font-weight:700;color:#fff;margin-top:2px">Кухня + душ</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.85);margin-top:1px">всё для жизни</div>
+        </div>
+      </div>
+
     </div>
 
   </div>
