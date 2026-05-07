@@ -641,11 +641,13 @@ footer a:hover{color:var(--navy)}
   section[aria-label="Гарантии"] .container > div{grid-template-columns:1fr!important;gap:10px!important}
   section[aria-label="Гарантии"] .container > div > div{padding:0!important;border:none!important}
   /* HERO mobile compactness */
-  .hero-inner{padding:32px 20px 36px!important}
+  .hero-bg-image{height:50%!important;background-position:center 25%!important}
+  .hero-wave{top:46%!important;height:8%!important}
+  .hero-inner{padding:240px 20px 36px!important}
   .hero h1{font-size:30px!important;line-height:1.08!important}
   .hero p{font-size:14.5px!important}
-  .hero-facts{grid-template-columns:1fr 1fr!important;gap:12px 20px!important;justify-content:start!important;text-align:left}
-  .hero > .hero-inner > div[style*="grid-template-columns:auto auto auto"]{grid-template-columns:1fr!important;gap:12px!important;text-align:center;width:100%;max-width:340px;margin-left:auto;margin-right:auto}
+  .hero-facts{grid-template-columns:1fr 1fr!important;gap:12px 20px!important;justify-content:center!important;text-align:left}
+  .hero > .hero-inner > div[style*="grid-template-columns:auto auto auto"]{grid-template-columns:1fr!important;gap:12px!important;text-align:center;width:100%;max-width:340px;margin-left:auto;margin-right:auto;padding:16px 20px!important}
   .hero > .hero-inner > div[style*="grid-template-columns:auto auto auto"] > div{text-align:center!important}
   .hero > .hero-inner > div[style*="grid-template-columns:auto auto auto"] > div:nth-child(2){display:none}
 }
@@ -795,53 +797,59 @@ footer a:hover{color:var(--navy)}
      STAGE 1 — HOOK
      Що це? Чому мені цікаво?
 ════════════════════════════════════════════ -->
-<section class="hero" id="top" aria-label="Описание вакансии" style="background:var(--white);padding:0;min-height:auto;border-bottom:1px solid var(--border)">
-  <div class="hero-inner" style="max-width:980px;margin:0 auto;padding:48px 32px 56px;width:100%;text-align:center">
+<section class="hero" id="top" aria-label="Описание вакансии" style="background:var(--navy);padding:0;min-height:auto;position:relative;overflow:hidden">
 
-    <!-- Микро-метка с зелёной точкой -->
-    <div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:22px;justify-content:center">
-      <span style="width:8px;height:8px;border-radius:50%;background:#4cd87a;animation:pd 2s infinite"></span>
-      Набор открыт · 2026
+  <!-- Фоновое изображение -->
+  <div class="hero-bg-image" style="position:absolute;top:0;left:0;right:0;height:60%;background-image:url('assets/hero-strawberry.jpg');background-size:cover;background-position:center 30%;z-index:0"></div>
+
+  <!-- Тёмный градиент для читаемости текста на фото -->
+  <div style="position:absolute;top:0;left:0;right:0;height:60%;background:linear-gradient(180deg,rgba(26,43,82,.15) 0%,rgba(26,43,82,.4) 70%,rgba(26,43,82,.95) 100%);z-index:1"></div>
+
+  <!-- Волнистая навигация (граница между фото и navy) -->
+  <svg class="hero-wave" style="position:absolute;top:55%;left:0;right:0;width:100%;height:10%;z-index:2;display:block" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,80 Q360,0 720,60 T1440,40 L1440,120 L0,120 Z" fill="#1a2b52"/>
+  </svg>
+
+  <div class="hero-inner" style="position:relative;z-index:3;max-width:980px;margin:0 auto;padding:280px 32px 48px;width:100%;text-align:center;color:#fff">
+
+    <!-- Большой заголовок -->
+    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,60px);font-weight:600;line-height:1.05;color:#fff;margin-bottom:18px;letter-spacing:-.5px;text-shadow:0 2px 16px rgba(0,0,0,.35)">Сезонная работа<br>в Англии — <em style="color:#fde68a;font-style:normal">для всех</em></h1>
+
+    <!-- Подзаголовок -->
+    <p style="font-size:17px;color:rgba(255,255,255,.85);line-height:1.6;margin:0 auto 28px;max-width:580px;font-weight:400">Легальная работа на фермах Великобритании. <strong style="color:#fff;font-weight:600">Без опыта, без языка. Бесплатная вакансия.</strong></p>
+
+    <!-- Главный блок: зарплата + жильё -->
+    <div style="display:inline-grid;grid-template-columns:auto auto auto;align-items:center;gap:24px;padding:18px 28px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px);margin-bottom:28px">
+      <div style="text-align:left">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:3px">На руки в месяц</div>
+        <div style="font-family:'Playfair Display',serif;font-size:34px;font-weight:600;color:#fde68a;line-height:1">от £1 900</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,.5);margin-top:2px">≈ €2 260 евро</div>
+      </div>
+      <div style="font-size:22px;color:rgba(255,255,255,.4);font-weight:300">+</div>
+      <div style="text-align:left">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#86efac;margin-bottom:3px">Жильё</div>
+        <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:#86efac;line-height:1">включено</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,.5);margin-top:2px">караван на ферме</div>
+      </div>
     </div>
 
-    <!-- Большой заголовок по центру -->
-    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,60px);font-weight:600;line-height:1.05;color:var(--navy);margin-bottom:18px;letter-spacing:-.5px">Сезонная работа<br>в Англии — <em style="color:var(--blue);font-style:normal">для всех</em></h1>
-
-    <!-- Простой подзаголовок -->
-    <p style="font-size:17px;color:var(--ink-mid);line-height:1.6;margin:0 auto 32px;max-width:580px;font-weight:400">Легальная работа на фермах Великобритании. <strong style="color:var(--navy);font-weight:600">Без опыта, без языка. Бесплатная вакансия.</strong></p>
-
-    <!-- Главный блок: зарплата + жильё в одной карточке -->
-    <div style="display:inline-grid;grid-template-columns:auto auto auto;align-items:center;gap:24px;padding:18px 28px;border:1px solid var(--border);background:var(--white);margin-bottom:28px">
-      <div style="text-align:left">
-        <div style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-light);margin-bottom:3px">На руки в месяц</div>
-        <div style="font-family:'Playfair Display',serif;font-size:34px;font-weight:600;color:var(--navy);line-height:1">от £1 900</div>
-        <div style="font-size:11.5px;color:var(--ink-light);margin-top:2px">≈ €2 260 евро</div>
-      </div>
-      <div style="font-size:22px;color:var(--ink-light);font-weight:300">+</div>
-      <div style="text-align:left">
-        <div style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:3px">Жильё</div>
-        <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--green);line-height:1">включено</div>
-        <div style="font-size:11.5px;color:var(--ink-light);margin-top:2px">караван на ферме</div>
-      </div>
-    </div>
-
-    <!-- 4 факта в строку (на мобильном 2x2) -->
+    <!-- 4 факта -->
     <ul class="hero-facts mob-2col" style="list-style:none;padding:0;margin:0 auto 28px;display:grid;grid-template-columns:repeat(4,auto);justify-content:center;gap:14px 32px;max-width:920px">
-      <li style="display:flex;gap:8px;align-items:center;font-size:13.5px;color:var(--ink-mid)"><span style="color:var(--green);font-weight:700;font-size:16px">✓</span>Бесплатно</li>
-      <li style="display:flex;gap:8px;align-items:center;font-size:13.5px;color:var(--ink-mid)"><span style="color:var(--green);font-weight:700;font-size:16px">✓</span>Все по-русски</li>
-      <li style="display:flex;gap:8px;align-items:center;font-size:13.5px;color:var(--ink-mid)"><span style="color:var(--green);font-weight:700;font-size:16px">✓</span>Опыт не нужен</li>
-      <li style="display:flex;gap:8px;align-items:center;font-size:13.5px;color:var(--ink-mid)"><span style="color:var(--green);font-weight:700;font-size:16px">✓</span>Виза + контракт</li>
+      <li style="display:flex;gap:8px;align-items:center;font-size:13.5px;color:rgba(255,255,255,.85)"><span style="color:#86efac;font-weight:700;font-size:16px">✓</span>Бесплатно</li>
+      <li style="display:flex;gap:8px;align-items:center;font-size:13.5px;color:rgba(255,255,255,.85)"><span style="color:#86efac;font-weight:700;font-size:16px">✓</span>Все по-русски</li>
+      <li style="display:flex;gap:8px;align-items:center;font-size:13.5px;color:rgba(255,255,255,.85)"><span style="color:#86efac;font-weight:700;font-size:16px">✓</span>Опыт не нужен</li>
+      <li style="display:flex;gap:8px;align-items:center;font-size:13.5px;color:rgba(255,255,255,.85)"><span style="color:#86efac;font-weight:700;font-size:16px">✓</span>Виза + контракт</li>
     </ul>
 
-    <!-- Кнопки полоской -->
+    <!-- Кнопки -->
     <div style="display:flex;flex-direction:column;gap:10px;max-width:380px;margin:0 auto 16px">
-      <button class="btn-main" onclick="document.getElementById('vacancies').scrollIntoView({behavior:'smooth'})" style="width:100%">Узнать о вакансиях ↓</button>
-      <button class="btn-line" onclick="toggleMsg()" style="width:100%;min-height:48px">✉ Написать в мессенджер</button>
+      <button class="btn-main" onclick="document.getElementById('vacancies').scrollIntoView({behavior:'smooth'})" style="width:100%;background:#fff;color:var(--navy)">Узнать о вакансиях ↓</button>
+      <button class="btn-line" onclick="toggleMsg()" style="width:100%;min-height:48px;background:transparent;color:#fff;border-color:rgba(255,255,255,.3)">✉ Написать в мессенджер</button>
     </div>
 
-    <!-- Лицензия с щитом -->
-    <div style="display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-light)">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    <!-- Лицензия -->
+    <div style="display:inline-flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.55)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       Лицензия №05580634 · Госпрограмма правительства Великобритании
     </div>
 
