@@ -641,14 +641,13 @@ footer a:hover{color:var(--navy)}
   section[aria-label="Гарантии"] .container > div{grid-template-columns:1fr!important;gap:10px!important}
   section[aria-label="Гарантии"] .container > div > div{padding:0!important;border:none!important}
   /* HERO mobile compactness */
-  .hero-split{grid-template-columns:1fr!important;min-height:auto!important}
-  .hero-split > div:first-child{padding:28px 20px 24px!important;order:2}
-  .hero-image-col{min-height:240px!important;order:1}
-  .hero-image-col > div:last-child{bottom:14px!important;left:14px!important;right:14px!important;padding:12px 16px!important}
-  .hero-image-col > div:last-child > div:nth-child(2){font-size:14px!important}
-  .hero-image-col > div:last-child > div:nth-child(3){font-size:11.5px!important}
-  .hero h1{font-size:28px!important}
-  .hero ul{grid-template-columns:1fr!important;gap:8px!important}
+  .hero-inner{padding:32px 20px 36px!important}
+  .hero h1{font-size:30px!important;line-height:1.08!important}
+  .hero p{font-size:14.5px!important}
+  .hero-facts{grid-template-columns:1fr 1fr!important;gap:12px 20px!important;justify-content:start!important;text-align:left}
+  .hero > .hero-inner > div[style*="grid-template-columns:auto auto auto"]{grid-template-columns:1fr!important;gap:12px!important;text-align:center;width:100%;max-width:340px;margin-left:auto;margin-right:auto}
+  .hero > .hero-inner > div[style*="grid-template-columns:auto auto auto"] > div{text-align:center!important}
+  .hero > .hero-inner > div[style*="grid-template-columns:auto auto auto"] > div:nth-child(2){display:none}
 }
 </style>
 <script type="application/ld+json">
@@ -796,103 +795,54 @@ footer a:hover{color:var(--navy)}
      STAGE 1 — HOOK
      Що це? Чому мені цікаво?
 ════════════════════════════════════════════ -->
-<section class="hero" id="top" aria-label="Описание вакансии" style="background:var(--white);padding:0;min-height:auto">
-  <div class="hero-split mob-1col" style="display:grid;grid-template-columns:1.05fr .95fr;max-width:1280px;margin:0 auto;min-height:520px">
+<section class="hero" id="top" aria-label="Описание вакансии" style="background:var(--white);padding:0;min-height:auto;border-bottom:1px solid var(--border)">
+  <div class="hero-inner" style="max-width:980px;margin:0 auto;padding:48px 32px 56px;width:100%;text-align:center">
 
-    <!-- ЛЕВАЯ КОЛОНКА: КОНТЕНТ -->
-    <div style="padding:48px 40px;display:flex;flex-direction:column;justify-content:center;background:var(--white)">
+    <!-- Микро-метка с зелёной точкой -->
+    <div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:22px;justify-content:center">
+      <span style="width:8px;height:8px;border-radius:50%;background:#4cd87a;animation:pd 2s infinite"></span>
+      Набор открыт · 2026
+    </div>
 
-      <!-- Микро-метка -->
-      <div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:18px">
-        <span style="width:8px;height:8px;border-radius:50%;background:#4cd87a;animation:pd 2s infinite"></span>
-        Набор открыт · 2026
+    <!-- Большой заголовок по центру -->
+    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,60px);font-weight:600;line-height:1.05;color:var(--navy);margin-bottom:18px;letter-spacing:-.5px">Сезонная работа<br>в Англии — <em style="color:var(--blue);font-style:normal">для всех</em></h1>
+
+    <!-- Простой подзаголовок -->
+    <p style="font-size:17px;color:var(--ink-mid);line-height:1.6;margin:0 auto 32px;max-width:580px;font-weight:400">Легальная работа на фермах Великобритании. <strong style="color:var(--navy);font-weight:600">Без опыта, без языка. Бесплатная вакансия.</strong></p>
+
+    <!-- Главный блок: зарплата + жильё в одной карточке -->
+    <div style="display:inline-grid;grid-template-columns:auto auto auto;align-items:center;gap:24px;padding:18px 28px;border:1px solid var(--border);background:var(--white);margin-bottom:28px">
+      <div style="text-align:left">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-light);margin-bottom:3px">На руки в месяц</div>
+        <div style="font-family:'Playfair Display',serif;font-size:34px;font-weight:600;color:var(--navy);line-height:1">от £1 900</div>
+        <div style="font-size:11.5px;color:var(--ink-light);margin-top:2px">≈ €2 260 евро</div>
       </div>
-
-      <!-- Заголовок — большой, с акцентом на главном -->
-      <h1 style="font-family:'Playfair Display',serif;font-size:clamp(34px,4.6vw,56px);font-weight:600;line-height:1.05;color:var(--navy);margin-bottom:18px;letter-spacing:-.5px">Работа в Англии<br><em style="color:var(--blue);font-style:normal">для всех</em></h1>
-
-      <!-- Один сильный подзаголовок -->
-      <p style="font-size:17px;color:var(--ink-mid);line-height:1.6;margin-bottom:28px;max-width:520px;font-weight:400">Легальная сезонная работа на фермах Великобритании. <strong style="color:var(--navy);font-weight:600">Без опыта, без языка. Бесплатная вакансия.</strong></p>
-
-      <!-- Зарплата + жильё в одной строке -->
-      <div style="display:flex;align-items:flex-end;gap:16px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--border)">
-        <div>
-          <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-light);margin-bottom:4px">На руки в месяц</div>
-          <div style="font-family:'Playfair Display',serif;font-size:38px;font-weight:600;color:var(--navy);line-height:1">от £1 900</div>
-          <div style="font-size:12px;color:var(--ink-light);margin-top:2px">≈ €2 260 евро</div>
-        </div>
-        <div style="font-size:24px;color:var(--ink-light);padding:0 4px;line-height:1">+</div>
-        <div>
-          <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:4px">Жильё</div>
-          <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:600;color:var(--green);line-height:1">включено</div>
-          <div style="font-size:12px;color:var(--ink-light);margin-top:2px">караван на ферме</div>
-        </div>
-      </div>
-
-      <!-- 4 факта мини-строкой -->
-      <ul style="list-style:none;padding:0;margin:0 0 28px;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px">
-        <li style="display:flex;gap:8px;align-items:center;font-size:13.5px;color:var(--ink-mid)"><span style="color:var(--green);font-weight:700;font-size:16px">✓</span>Бесплатно — платит работодатель</li>
-        <li style="display:flex;gap:8px;align-items:center;font-size:13.5px;color:var(--ink-mid)"><span style="color:var(--green);font-weight:700;font-size:16px">✓</span>Все по-русски — бригада из СНГ</li>
-        <li style="display:flex;gap:8px;align-items:center;font-size:13.5px;color:var(--ink-mid)"><span style="color:var(--green);font-weight:700;font-size:16px">✓</span>Учим на месте — опыт не нужен</li>
-        <li style="display:flex;gap:8px;align-items:center;font-size:13.5px;color:var(--ink-mid)"><span style="color:var(--green);font-weight:700;font-size:16px">✓</span>Сезонная виза · контракт</li>
-      </ul>
-
-      <!-- Кнопки -->
-      <div style="display:flex;flex-direction:column;gap:10px;max-width:380px;margin-bottom:14px">
-        <button class="btn-main" onclick="document.getElementById('vacancies').scrollIntoView({behavior:'smooth'})" style="width:100%">Узнать о вакансиях ↓</button>
-        <button class="btn-line" onclick="toggleMsg()" style="width:100%;min-height:48px">✉ Написать в мессенджер</button>
-      </div>
-
-      <!-- Лицензия с шилдом -->
-      <div style="display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-light)">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Лицензия №05580634 · Госпрограмма правительства Великобритании
+      <div style="font-size:22px;color:var(--ink-light);font-weight:300">+</div>
+      <div style="text-align:left">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:3px">Жильё</div>
+        <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--green);line-height:1">включено</div>
+        <div style="font-size:11.5px;color:var(--ink-light);margin-top:2px">караван на ферме</div>
       </div>
     </div>
 
-    <!-- ПРАВАЯ КОЛОНКА: КОЛЛАЖ из 4 фото — что вас ждёт -->
-    <div class="hero-image-col" style="position:relative;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;background:var(--border);min-height:520px">
+    <!-- 4 факта в строку (на мобильном 2x2) -->
+    <ul class="hero-facts mob-2col" style="list-style:none;padding:0;margin:0 auto 28px;display:grid;grid-template-columns:repeat(4,auto);justify-content:center;gap:14px 32px;max-width:920px">
+      <li style="display:flex;gap:8px;align-items:center;font-size:13.5px;color:var(--ink-mid)"><span style="color:var(--green);font-weight:700;font-size:16px">✓</span>Бесплатно</li>
+      <li style="display:flex;gap:8px;align-items:center;font-size:13.5px;color:var(--ink-mid)"><span style="color:var(--green);font-weight:700;font-size:16px">✓</span>Все по-русски</li>
+      <li style="display:flex;gap:8px;align-items:center;font-size:13.5px;color:var(--ink-mid)"><span style="color:var(--green);font-weight:700;font-size:16px">✓</span>Опыт не нужен</li>
+      <li style="display:flex;gap:8px;align-items:center;font-size:13.5px;color:var(--ink-mid)"><span style="color:var(--green);font-weight:700;font-size:16px">✓</span>Виза + контракт</li>
+    </ul>
 
-      <!-- Фото 1: Работа — сбор грибов -->
-      <div style="position:relative;overflow:hidden">
-        <img src="assets/mushroom-hand-closeup.jpg" alt="Сбор грибов на ферме" loading="eager" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
-          <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;color:#fde68a">РАБОТА</div>
-          <div style="font-size:13px;font-weight:700;color:#fff;margin-top:2px">Грибные фермы</div>
-          <div style="font-size:11px;color:rgba(255,255,255,.7);margin-top:1px">£12.90 фунтов в час</div>
-        </div>
-      </div>
+    <!-- Кнопки полоской -->
+    <div style="display:flex;flex-direction:column;gap:10px;max-width:380px;margin:0 auto 16px">
+      <button class="btn-main" onclick="document.getElementById('vacancies').scrollIntoView({behavior:'smooth'})" style="width:100%">Узнать о вакансиях ↓</button>
+      <button class="btn-line" onclick="toggleMsg()" style="width:100%;min-height:48px">✉ Написать в мессенджер</button>
+    </div>
 
-      <!-- Фото 2: Работа — склад/упаковка -->
-      <div style="position:relative;overflow:hidden">
-        <img src="assets/packaging-line.jpg" alt="Овощной склад — конвейер упаковки" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
-          <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;color:#fde68a">РАБОТА</div>
-          <div style="font-size:13px;font-weight:700;color:#fff;margin-top:2px">Склад · Теплица</div>
-          <div style="font-size:11px;color:rgba(255,255,255,.7);margin-top:1px">£13.55 фунтов в час</div>
-        </div>
-      </div>
-
-      <!-- Фото 3: Жильё снаружи -->
-      <div style="position:relative;overflow:hidden">
-        <img src="assets/caravan-exterior-1.jpg" alt="Караван — жильё на ферме включено" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,107,56,.92));padding:14px 12px 10px">
-          <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;color:#bbf7d0">ЖИЛЬЁ</div>
-          <div style="font-size:13px;font-weight:700;color:#fff;margin-top:2px">Караван на ферме</div>
-          <div style="font-size:11px;color:rgba(255,255,255,.85);margin-top:1px">включено бесплатно</div>
-        </div>
-      </div>
-
-      <!-- Фото 4: Жильё внутри / кухня -->
-      <div style="position:relative;overflow:hidden">
-        <img src="assets/caravan-kitchen.jpg" alt="Кухня внутри каравана" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(13,107,56,.92));padding:14px 12px 10px">
-          <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;color:#bbf7d0">ЖИЛЬЁ</div>
-          <div style="font-size:13px;font-weight:700;color:#fff;margin-top:2px">Кухня + душ</div>
-          <div style="font-size:11px;color:rgba(255,255,255,.85);margin-top:1px">всё для жизни</div>
-        </div>
-      </div>
-
+    <!-- Лицензия с щитом -->
+    <div style="display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-light)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Лицензия №05580634 · Госпрограмма правительства Великобритании
     </div>
 
   </div>
