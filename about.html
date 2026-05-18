@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Про нас — HR & Recruit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..800,0..100;1,9..144,300..800,0..100&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    .about-hero {
+      padding: 96px 0 64px;
+    }
+    .about-title {
+      font-size: clamp(3rem, 8vw, 7rem);
+      line-height: 0.92; letter-spacing: -0.03em;
+      font-variation-settings: "opsz" 144;
+      margin-bottom: 32px;
+    }
+    .about-title em { font-style: italic; color: var(--accent); font-variation-settings: "opsz" 144, "SOFT" 70; }
+
+    .pull-quote {
+      font-family: var(--font-display); font-style: italic;
+      font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+      line-height: 1.3; letter-spacing: -0.01em;
+      max-width: 900px;
+      padding: 64px 0;
+      border-top: 1px solid var(--line-strong);
+      border-bottom: 1px solid var(--line-strong);
+      margin: 48px 0;
+      font-variation-settings: "opsz" 48, "SOFT" 60;
+    }
+    .pull-quote::before {
+      content: "—";
+      display: block;
+      font-size: 0.7em;
+      color: var(--accent);
+      margin-bottom: 16px;
+      font-style: normal;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin: 64px 0;
+    }
+    .value-card {
+      padding: 40px 0;
+      border-top: 2px solid var(--ink);
+    }
+    .value-num {
+      font-family: var(--font-display); font-style: italic;
+      font-size: 1rem;
+      color: var(--accent);
+      margin-bottom: 16px;
+      font-variation-settings: "opsz" 18, "SOFT" 80;
+    }
+    .value-title {
+      font-family: var(--font-display);
+      font-size: 1.625rem;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      margin-bottom: 16px;
+    }
+    .value-text { color: var(--ink-soft); font-size: 0.9375rem; line-height: 1.6; }
+
+    .stat-band {
+      background: var(--bg-dark); color: var(--bg);
+      padding: 80px 0;
+    }
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+    .stat {
+      padding-right: 32px;
+      border-right: 1px solid rgba(255,255,255,0.12);
+    }
+    .stat:last-child { border-right: 0; }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      line-height: 1; margin-bottom: 8px;
+      letter-spacing: -0.025em;
+      font-variation-settings: "opsz" 96;
+    }
+    .stat-num em { font-style: italic; color: var(--brass); }
+    .stat-label {
+      font-size: 0.875rem;
+      color: rgba(245,241,232,0.7);
+      line-height: 1.4;
+    }
+
+    @media (max-width: 1024px) {
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .stat-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .stat { border-right: 0; padding-right: 0; }
+    }
+    @media (max-width: 768px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .stat-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="siteHeader"></div>
+
+<!-- HERO -->
+<section class="about-hero">
+  <div class="container">
+    <div class="eyebrow eyebrow-accent" style="margin-bottom: 24px;">Про компанію</div>
+    <h1 class="display about-title">
+      Британське агентство<br>
+      для&nbsp;тих, хто <em>боїться</em><br>
+      бути ошуканим.
+    </h1>
+    <p class="lede" style="max-width: 60ch;">
+      HR&nbsp;&amp;&nbsp;Recruit&nbsp;Ltd&nbsp;— зареєстрована у&nbsp;Companies&nbsp;House Великобританії компанія, що&nbsp;займається працевлаштуванням
+      кандидатів зі&nbsp;Східної Європи на&nbsp;офіційні позиції у&nbsp;ЄС&nbsp;та&nbsp;UK. Ми&nbsp;побудували бізнес-модель так, щоб&nbsp;вам не&nbsp;довелося ризикувати грошима до&nbsp;того,
+      як&nbsp;ви&nbsp;побачите контракт.
+    </p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="section">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 64px; align-items: start;">
+      <div>
+        <div class="eyebrow eyebrow-accent" style="margin-bottom: 16px;">Історія</div>
+        <h2 class="display" style="font-size: clamp(2rem, 3.5vw, 2.75rem);">
+          Чому ми<br>
+          <em style="color: var(--accent);">існуємо</em>.
+        </h2>
+      </div>
+      <div style="max-width: 640px;">
+        <p style="font-size: 1.0625rem; line-height: 1.65; color: var(--ink); margin-bottom: 20px;">
+          На&nbsp;ринку працевлаштування в&nbsp;Європі повно посередників, які беруть передоплату «за&nbsp;вакансію»,
+          а&nbsp;потім або&nbsp;зникають, або&nbsp;відправляють людей на&nbsp;роботи, що&nbsp;не&nbsp;відповідають обіцяним умовам.
+        </p>
+        <p style="font-size: 1.0625rem; line-height: 1.65; color: var(--ink); margin-bottom: 20px;">
+          Це&nbsp;створює дві проблеми. Перша&nbsp;— кандидати втрачають гроші. Друга, не&nbsp;менш важлива&nbsp;— чесні агентства
+          змушені конкурувати з&nbsp;шахраями за&nbsp;тих самих людей. У&nbsp;результаті виграє той, хто&nbsp;голосніше кричить
+          «найкраща ставка&nbsp;€3000!»&nbsp;— а&nbsp;не&nbsp;той, хто&nbsp;реально дбає про&nbsp;кандидата.
+        </p>
+        <p style="font-size: 1.0625rem; line-height: 1.65; color: var(--ink); margin-bottom: 20px;">
+          Ми&nbsp;побудували компанію за&nbsp;іншою логікою. Реєстрація у&nbsp;Companies&nbsp;House (це&nbsp;відкритий державний реєстр Великобританії,
+          номер можна перевірити онлайн). Платежі через Stripe&nbsp;— систему, яка&nbsp;обслуговує Amazon і&nbsp;Google,
+          з&nbsp;офіційним чеком і&nbsp;захистом покупця. Публічна оферта з&nbsp;конкретними відсотками повернення. Підбір вакансії
+          й&nbsp;інтерв'ю з&nbsp;роботодавцем&nbsp;— завжди безкоштовно.
+        </p>
+        <p style="font-size: 1.0625rem; line-height: 1.65; color: var(--ink);">
+          Ми&nbsp;беремо гроші лише за&nbsp;конкретну роботу&nbsp;— підготовку документів та&nbsp;супровід прибуття. І&nbsp;тільки після&nbsp;того,
+          як&nbsp;у&nbsp;вас на&nbsp;руках уже&nbsp;є&nbsp;офіційний job offer.
+        </p>
+      </div>
+    </div>
+
+    <blockquote class="pull-quote">
+      Якщо ви&nbsp;платите за&nbsp;вакансію&nbsp;— ви&nbsp;платите за&nbsp;обіцянку.
+      Якщо ви&nbsp;платите за&nbsp;документи&nbsp;— ви&nbsp;платите за&nbsp;конкретну роботу,
+      результат якої <em>можна&nbsp;потримати в&nbsp;руках</em>.
+    </blockquote>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section" style="background: var(--bg-elev);">
+  <div class="container">
+    <div style="max-width: 720px; margin-bottom: 48px;">
+      <div class="eyebrow eyebrow-accent" style="margin-bottom: 16px;">Принципи</div>
+      <h2 class="display" style="font-size: clamp(2rem, 4vw, 3rem);">
+        Три речі, які ми<br>
+        <em style="color: var(--accent);">ніколи</em> не&nbsp;робимо.
+      </h2>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-num">— 01 —</div>
+        <h3 class="value-title">Не&nbsp;беремо плату за&nbsp;вакансію</h3>
+        <p class="value-text">
+          Підбір позицій, інтерв'ю з&nbsp;роботодавцем, отримання job&nbsp;offer&nbsp;— все&nbsp;це&nbsp;безкоштовно.
+          Якщо вакансія вас не&nbsp;влаштує&nbsp;— ви&nbsp;нічого не&nbsp;втратите.
+        </p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">— 02 —</div>
+        <h3 class="value-title">Не&nbsp;обіцяємо «чудес»</h3>
+        <p class="value-text">
+          €3000 чистими за&nbsp;збір полуниці&nbsp;— це&nbsp;шахрайство. Ми&nbsp;показуємо реальні ставки нашого ринку
+          з&nbsp;офіційних контрактів. Зазвичай €1800–2200 нетто.
+        </p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">— 03 —</div>
+        <h3 class="value-title">Не&nbsp;беремо готівку</h3>
+        <p class="value-text">
+          Всі платежі&nbsp;— через Stripe з&nbsp;офіційним чеком. Ніяких переказів на&nbsp;карту менеджеру,
+          ніяких «оплат на&nbsp;місці», ніяких сірих схем.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<section class="stat-band">
+  <div class="container">
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat-num"><em>5</em></div>
+        <div class="stat-label">країн ЄС та&nbsp;Великобританія</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><em>20+</em></div>
+        <div class="stat-label">актуальних офіційних вакансій</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><em>2023</em></div>
+        <div class="stat-label">рік реєстрації у Companies House</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><em>£12.21</em></div>
+        <div class="stat-label">мінімальна ставка UK / год нашими вакансіями</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY DETAILS -->
+<section class="section">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px;">
+      <div>
+        <div class="eyebrow eyebrow-accent" style="margin-bottom: 16px;">Юридичні дані</div>
+        <h2 class="display" style="font-size: clamp(1.75rem, 3vw, 2.5rem); margin-bottom: 32px;">
+          Інформація для&nbsp;перевірки.
+        </h2>
+        <p style="color: var(--ink-soft); margin-bottom: 16px;">
+          Все, що про нас можна перевірити в офіційних державних реєстрах:
+        </p>
+        <a href="https://find-and-update.company-information.service.gov.uk/company/15117049" target="_blank" rel="noopener" class="btn btn-primary btn-arrow">
+          Запис у Companies House
+        </a>
+      </div>
+      <div style="background: var(--bg-elev); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 32px;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <tr style="border-bottom: 1px solid var(--line);">
+            <td style="padding: 14px 0; font-size: 0.8125rem; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.08em; width: 45%;">Юр. найменування</td>
+            <td style="padding: 14px 0; font-family: var(--font-display); font-size: 1rem;">HR &amp; Recruit Limited</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--line);">
+            <td style="padding: 14px 0; font-size: 0.8125rem; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.08em;">Company Number</td>
+            <td style="padding: 14px 0; font-family: var(--font-mono); font-size: 1rem; letter-spacing: 0.05em;">15117049</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--line);">
+            <td style="padding: 14px 0; font-size: 0.8125rem; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.08em;">Дата реєстрації</td>
+            <td style="padding: 14px 0; font-family: var(--font-display); font-size: 1rem;">5 вересня 2023</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--line);">
+            <td style="padding: 14px 0; font-size: 0.8125rem; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.08em;">Статус</td>
+            <td style="padding: 14px 0; font-family: var(--font-display); font-size: 1rem; color: var(--success);">Active</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--line);">
+            <td style="padding: 14px 0; font-size: 0.8125rem; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.08em;">SIC коди</td>
+            <td style="padding: 14px 0; font-family: var(--font-mono); font-size: 0.9375rem; line-height: 1.6;">
+              78109&nbsp;· 78200&nbsp;· 78300
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 14px 0; font-size: 0.8125rem; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.08em;">Адреса</td>
+            <td style="padding: 14px 0; font-family: var(--font-display); font-size: 0.9375rem; line-height: 1.45;">59-61 Charlotte Street,<br>St Pauls Square, Birmingham,<br>B3 1PX, United Kingdom</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="background: var(--bg-dark); color: var(--bg); padding-top: 80px; padding-bottom: 80px; text-align: center;">
+  <div class="container">
+    <div class="eyebrow" style="color: var(--brass); margin-bottom: 24px;">Хочете дізнатися більше?</div>
+    <h2 class="display" style="color: var(--bg); font-size: clamp(2.25rem, 4.5vw, 3.5rem); margin-bottom: 32px;">
+      Зв'яжіться <em style="color: var(--brass);">з&nbsp;нами</em>.
+    </h2>
+    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+      <a href="contacts.html" class="btn btn-accent btn-lg">Контакти</a>
+      <a href="services.html" class="btn btn-ghost btn-lg" style="color: var(--bg); border-color: rgba(245,241,232,0.3);">Послуги&nbsp;та&nbsp;ціни</a>
+    </div>
+  </div>
+</section>
+
+<div id="siteFooter"></div>
+<div id="siteCookies"></div>
+<div id="siteMessenger"></div>
+
+<script src="data/site.js"></script>
+<script src="js/main.js"></script>
+<script>initSite("about");</script>
+
+</body>
+</html>

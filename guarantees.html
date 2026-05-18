@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Гарантії та ліцензії — HR & Recruit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..800,0..100;1,9..144,300..800,0..100&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    .guarantee-hero { padding: 96px 0 64px; border-bottom: 1px solid var(--line); }
+    .check-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin: 64px 0;
+    }
+    .check-card {
+      background: var(--bg-elev);
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      padding: 40px;
+      position: relative;
+    }
+    .check-mark {
+      display: inline-flex;
+      align-items: center; justify-content: center;
+      width: 56px; height: 56px;
+      background: var(--bg-dark); color: var(--bg);
+      border-radius: 14px;
+      margin-bottom: 24px;
+    }
+    .check-mark svg { width: 28px; height: 28px; }
+    .check-title {
+      font-family: var(--font-display);
+      font-size: 1.625rem;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      margin-bottom: 16px;
+    }
+    .check-text { color: var(--ink-soft); font-size: 0.9375rem; line-height: 1.6; margin-bottom: 20px; }
+    .check-link {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 2px;
+    }
+
+    .promise-list { list-style: none; padding: 0; margin: 0; }
+    .promise-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 32px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+    .promise-item:last-child { border-bottom: 0; }
+    .promise-num {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--accent);
+      font-variation-settings: "opsz" 96;
+      letter-spacing: -0.025em;
+    }
+    .promise-item h4 { font-size: 1.375rem; margin-bottom: 10px; }
+    .promise-item p { color: var(--ink-soft); font-size: 0.9375rem; line-height: 1.6; }
+
+    @media (max-width: 1024px) {
+      .check-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .promise-item { grid-template-columns: 1fr; gap: 16px; }
+      .promise-num { font-size: 2.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="siteHeader"></div>
+
+<section class="guarantee-hero">
+  <div class="container">
+    <div class="eyebrow eyebrow-accent" style="margin-bottom: 24px;">Гарантії та офіційні документи</div>
+    <h1 class="display" style="font-size: clamp(3rem, 7vw, 6rem); line-height: 0.95; letter-spacing: -0.025em; margin-bottom: 32px; max-width: 16ch;">
+      Все, що про нас можна <em style="color: var(--accent); font-style: italic;">перевірити</em>.
+    </h1>
+    <p class="lede" style="max-width: 60ch;">
+      Чесне агентство має один простий маркер&nbsp;— відкритість у&nbsp;державних реєстрах і&nbsp;готовність надати всі&nbsp;офіційні номери, посилання та&nbsp;документи. Ось наші.
+    </p>
+  </div>
+</section>
+
+<!-- CHECK CARDS -->
+<section class="section">
+  <div class="container">
+    <div class="check-grid">
+      <div class="check-card">
+        <div class="check-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        </div>
+        <h3 class="check-title">Реєстрація у&nbsp;Companies&nbsp;House (UK)</h3>
+        <p class="check-text">
+          HR&nbsp;&amp;&nbsp;Recruit Limited, Company Number 15117049. Зареєстрована 5&nbsp;вересня 2023&nbsp;року
+          в&nbsp;офіційному державному реєстрі Великобританії. Статус&nbsp;— Active.
+        </p>
+        <a href="https://find-and-update.company-information.service.gov.uk/company/15117049" target="_blank" rel="noopener" class="check-link">Перевірити в Companies House →</a>
+      </div>
+
+      <div class="check-card">
+        <div class="check-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20"/><path d="M7 15h2"/></svg>
+        </div>
+        <h3 class="check-title">Платежі через Stripe</h3>
+        <p class="check-text">
+          Всі оплати йдуть через Stripe Payments Europe&nbsp;— це&nbsp;PCI&nbsp;DSS Level&nbsp;1, найвищий стандарт безпеки.
+          Ваші дані карти ніколи не&nbsp;потрапляють на&nbsp;наш сервер.
+        </p>
+        <a href="https://stripe.com/legal" target="_blank" rel="noopener" class="check-link">Правила Stripe →</a>
+      </div>
+
+      <div class="check-card">
+        <div class="check-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <h3 class="check-title">Публічна оферта</h3>
+        <p class="check-text">
+          Всі умови співпраці, ціни, порядок повернення коштів та&nbsp;юрисдикція спорів&nbsp;— у&nbsp;відкритому документі.
+          Текст не&nbsp;змінюється після&nbsp;оплати&nbsp;— те, що&nbsp;ви&nbsp;підписали, залишається в&nbsp;силі.
+        </p>
+        <a href="offer.html" class="check-link">Читати оферту →</a>
+      </div>
+
+      <div class="check-card">
+        <div class="check-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l9 4v6c0 5-3.5 9.5-9 10-5.5-.5-9-5-9-10V6z"/></svg>
+        </div>
+        <h3 class="check-title">UK Consumer Rights Act&nbsp;2015</h3>
+        <p class="check-text">
+          Як&nbsp;британська компанія, ми&nbsp;підпадаємо під&nbsp;найжорсткіше у&nbsp;Європі законодавство захисту споживачів.
+          Юрисдикція спорів&nbsp;— суди Англії та&nbsp;Уельсу.
+        </p>
+        <a href="https://www.legislation.gov.uk/ukpga/2015/15" target="_blank" rel="noopener" class="check-link">Текст закону →</a>
+      </div>
+
+      <div class="check-card">
+        <div class="check-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3 class="check-title">14-денне cooling-off</h3>
+        <p class="check-text">
+          За&nbsp;Consumer&nbsp;Contracts Regulations 2013 ви&nbsp;маєте право відмовитись від&nbsp;послуги протягом 14&nbsp;днів,
+          якщо&nbsp;роботи ще&nbsp;не&nbsp;розпочаті. Ця&nbsp;опція явно зазначається при&nbsp;оплаті&nbsp;через Stripe.
+        </p>
+        <a href="offer.html#refund" class="check-link">Деталі повернення →</a>
+      </div>
+
+      <div class="check-card">
+        <div class="check-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3 class="check-title">SIC коди&nbsp;— кадрова діяльність</h3>
+        <p class="check-text">
+          Наша заявлена діяльність у&nbsp;Companies&nbsp;House&nbsp;— 78109, 78200, 78300. Це&nbsp;означає, що&nbsp;ми&nbsp;офіційно
+          є&nbsp;агентством зайнятості, а&nbsp;не&nbsp;«консалтинговою» компанією, яка&nbsp;випадково займається працевлаштуванням.
+        </p>
+        <a href="https://resources.companieshouse.gov.uk/sic/" target="_blank" rel="noopener" class="check-link">Що означає SIC →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 PROMISES -->
+<section class="section" style="background: var(--bg-elev);">
+  <div class="container">
+    <div style="max-width: 720px; margin-bottom: 48px;">
+      <div class="eyebrow eyebrow-accent" style="margin-bottom: 16px;">П'ять обіцянок</div>
+      <h2 class="display" style="font-size: clamp(2rem, 4vw, 3rem);">
+        Що ми <em style="color: var(--accent);">гарантуємо</em><br>
+        кожному кандидату.
+      </h2>
+    </div>
+
+    <ul class="promise-list">
+      <li class="promise-item">
+        <div class="promise-num">01</div>
+        <div>
+          <h4>Підбір вакансії та інтерв'ю — безкоштовно</h4>
+          <p>
+            Ви не платите ні копійки за пошук позиції, презентацію роботодавцю, інтерв'ю
+            або отримання job offer. Якщо умови вакансії не влаштовують — ви нічого не втратили.
+          </p>
+        </div>
+      </li>
+      <li class="promise-item">
+        <div class="promise-num">02</div>
+        <div>
+          <h4>100% повернення, якщо відмова не з вашої вини</h4>
+          <p>
+            Якщо консульство або роботодавець відмовляють з причин, які не залежать від вашої поведінки
+            або наданих даних — ми повертаємо всю сплачену суму. Без зайвих запитань.
+          </p>
+        </div>
+      </li>
+      <li class="promise-item">
+        <div class="promise-num">03</div>
+        <div>
+          <h4>Офіційний контракт за законом країни</h4>
+          <p>
+            Кожна вакансія&nbsp;— це&nbsp;офіційний трудовий договір, оформлений за&nbsp;законодавством країни прибуття:
+            UK&nbsp;Seasonal&nbsp;Worker, AÜG (Німеччина), WAADI (Нідерланди), грецький&nbsp;ТК, CCNL&nbsp;Turismo (Італія).
+          </p>
+        </div>
+      </li>
+      <li class="promise-item">
+        <div class="promise-num">04</div>
+        <div>
+          <h4>Stripe-чек на email одразу після оплати</h4>
+          <p>
+            Кожна оплата фіксується офіційним чеком Stripe з вашим іменем, сумою, описом послуги
+            та номером транзакції. Це повноцінний фінансовий документ для звітності.
+          </p>
+        </div>
+      </li>
+      <li class="promise-item">
+        <div class="promise-num">05</div>
+        <div>
+          <h4>Підтримка 24/7 перші 14 днів</h4>
+          <p>
+            Після прибуття ваш координатор на зв'язку цілодобово. Будь-яка проблема — від загубленої
+            валізи до конфлікту з менеджером — реагуємо в межах години.
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="background: var(--bg-dark); color: var(--bg); padding-top: 80px; padding-bottom: 80px; text-align: center;">
+  <div class="container">
+    <div class="eyebrow" style="color: var(--brass); margin-bottom: 24px;">Готові почати?</div>
+    <h2 class="display" style="color: var(--bg); font-size: clamp(2.25rem, 4.5vw, 3.5rem); margin-bottom: 32px;">
+      Залишіть заявку <em style="color: var(--brass);">безкоштовно</em>.
+    </h2>
+    <a href="index.html#apply" class="btn btn-accent btn-lg btn-arrow">До форми заявки</a>
+  </div>
+</section>
+
+<div id="siteFooter"></div>
+<div id="siteCookies"></div>
+<div id="siteMessenger"></div>
+
+<script src="data/site.js"></script>
+<script src="js/main.js"></script>
+<script>initSite("guarantees");</script>
+
+</body>
+</html>

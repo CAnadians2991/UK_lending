@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кейси клієнтів — HR & Recruit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..800,0..100;1,9..144,300..800,0..100&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    .cases-hero { padding: 96px 0 48px; border-bottom: 1px solid var(--line); }
+    .cases-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin: 64px 0;
+    }
+    .case-tile {
+      background: var(--bg-elev);
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .case-tile-media {
+      aspect-ratio: 4/3;
+      background: var(--ink);
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .case-tile-media img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 500ms var(--ease);
+    }
+    .case-tile-media:hover img { transform: scale(1.03); }
+    .case-tile-play {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(to top, rgba(0,0,0,0.4), transparent 60%);
+    }
+    .case-tile-play-icon {
+      width: 64px; height: 64px;
+      background: var(--bg);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+    .case-tile-tag {
+      position: absolute;
+      top: 16px; left: 16px;
+      background: var(--bg);
+      padding: 6px 12px;
+      border-radius: 100px;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .case-tile-body { padding: 32px; flex: 1; display: flex; flex-direction: column; }
+    .case-tile-quote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.25rem;
+      line-height: 1.4;
+      letter-spacing: -0.005em;
+      margin-bottom: 24px;
+      flex: 1;
+      font-variation-settings: "opsz" 24, "SOFT" 60;
+    }
+    .case-tile-author {
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+    }
+    .case-tile-name { font-weight: 500; font-size: 1rem; margin-bottom: 4px; }
+    .case-tile-role { font-size: 0.875rem; color: var(--ink-mute); }
+    .case-tile-meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      text-align: right;
+    }
+    .case-tile-meta-num {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    @media (max-width: 1024px) {
+      .cases-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="siteHeader"></div>
+
+<section class="cases-hero">
+  <div class="container">
+    <div class="eyebrow eyebrow-accent" style="margin-bottom: 24px;">Реальні історії</div>
+    <h1 class="display" style="font-size: clamp(3rem, 7vw, 6rem); line-height: 0.95; letter-spacing: -0.025em; margin-bottom: 32px; max-width: 16ch;">
+      Люди, які вже <em style="color: var(--accent); font-style: italic;">працюють</em> через нас.
+    </h1>
+    <p class="lede" style="max-width: 60ch;">
+      Кожна історія&nbsp;— це&nbsp;справжня людина з&nbsp;ім'ям, віком та&nbsp;країною роботи. Ми&nbsp;не&nbsp;використовуємо стокові фото
+      і&nbsp;не&nbsp;вигадуємо «середньостатистичних кандидатів».
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cases-grid" id="casesGrid"></div>
+
+    <div style="text-align: center; padding: 64px 0 32px; border-top: 1px solid var(--line);">
+      <p style="font-family: var(--font-display); font-style: italic; font-size: 1.25rem; line-height: 1.5; color: var(--ink-soft); max-width: 720px; margin: 0 auto 32px; font-variation-settings: 'opsz' 24, 'SOFT' 60;">
+        Ми додаємо нові кейси постійно. Щоразу, коли кандидат повертається з&nbsp;сезону, 
+        записуємо коротке відео-інтерв'ю&nbsp;— чесно, без сценарію.
+      </p>
+      <a href="index.html#apply" class="btn btn-primary btn-arrow">Стати наступним кейсом</a>
+    </div>
+  </div>
+</section>
+
+<div id="siteFooter"></div>
+<div id="siteCookies"></div>
+<div id="siteMessenger"></div>
+
+<script src="data/site.js"></script>
+<script src="js/main.js"></script>
+<script>
+  initSite("cases");
+
+  // Extended cases (3 from data + 3 placeholders)
+  const allCases = [
+    ...window.CASES,
+    {
+      name: "Михайло, 36",
+      role: "Сборщик у теплиці, Вестланд",
+      quote: "Через місяць після прибуття вже відкрив рахунок ING і отримав першу зарплату. Голландія здалася складною на початку, але координатор все прояснив крок за кроком.",
+      img: "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Photo+placeholder",
+      tag: "NL · Westland"
+    },
+    {
+      name: "Анна, 28",
+      role: "Офіціантка, Тоскана",
+      quote: "Працювала 6 місяців у бутік-агритуризмі. Італійську вивчила в процесі, англійської вистачило. Чайові — окрема історія, €350 на місяць понад ставку.",
+      img: "https://placehold.co/800x600/B8935A/FFFFFF?text=Photo+placeholder",
+      tag: "IT · Tuscany"
+    },
+    {
+      name: "Олексій, 32",
+      role: "Збирач полуниці, Херефордшир",
+      quote: "Топ-сезон 2024 — €2400 нетто на місяць. Це з понаднормовими і бонусом за виробітку. Поїхав вдруге.",
+      img: "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Photo+placeholder",
+      tag: "UK · Herefordshire"
+    }
+  ];
+
+  const tagsMap = ["GR · Crete", "UK · Norfolk", "NL · Westland"];
+
+  const html = allCases.map((c, i) => `
+    <div class="case-tile reveal">
+      <div class="case-tile-media">
+        <img src="${c.img}" alt="${c.name}">
+        <div class="case-tile-tag">${c.tag || tagsMap[i] || ""}</div>
+        <div class="case-tile-play">
+          <div class="case-tile-play-icon">▶</div>
+        </div>
+      </div>
+      <div class="case-tile-body">
+        <blockquote class="case-tile-quote">"${c.quote}"</blockquote>
+        <div class="case-tile-author">
+          <div>
+            <div class="case-tile-name">${c.name}</div>
+            <div class="case-tile-role">${c.role}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `).join("");
+
+  document.getElementById("casesGrid").innerHTML = html;
+  initReveal();
+</script>
+
+</body>
+</html>

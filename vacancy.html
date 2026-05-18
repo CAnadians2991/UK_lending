@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Вакансія — HR & Recruit</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..800,0..100;1,9..144,300..800,0..100&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    .breadcrumb {
+      padding: 24px 0 16px;
+      font-family: var(--font-mono); font-size: 0.75rem;
+      letter-spacing: 0.08em; color: var(--ink-mute);
+      text-transform: uppercase;
+    }
+    .breadcrumb a { color: var(--ink-soft); }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb-sep { margin: 0 12px; opacity: 0.4; }
+
+    .vac-hero {
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--line);
+    }
+    .vac-hero-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 80px;
+      align-items: end;
+    }
+    .vac-hero-meta {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;
+    }
+    .vac-tag {
+      font-size: 0.75rem; font-weight: 500;
+      padding: 6px 12px; border-radius: 100px;
+      background: var(--bg-elev); border: 1px solid var(--line);
+      color: var(--ink-soft);
+    }
+    .vac-tag.is-country {
+      background: var(--bg-dark); color: var(--bg); border-color: var(--bg-dark);
+    }
+    .vac-title {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 0.95; letter-spacing: -0.025em;
+      font-variation-settings: "opsz" 144;
+      margin-bottom: 24px;
+    }
+    .vac-location {
+      font-family: var(--font-display); font-style: italic;
+      font-size: 1.5rem; color: var(--ink-mute);
+      font-variation-settings: "opsz" 32, "SOFT" 60;
+    }
+
+    .vac-rate-card {
+      background: var(--bg-dark); color: var(--bg);
+      padding: 36px;
+      border-radius: var(--r-lg);
+    }
+    .vac-rate-eyebrow {
+      font-size: 0.75rem; text-transform: uppercase;
+      letter-spacing: 0.14em; font-weight: 500;
+      color: var(--brass); margin-bottom: 8px;
+    }
+    .vac-rate-num {
+      font-family: var(--font-display); font-size: 4rem;
+      font-variant-numeric: tabular-nums;
+      line-height: 1; letter-spacing: -0.025em;
+      font-variation-settings: "opsz" 96;
+      margin-bottom: 4px;
+    }
+    .vac-rate-meta {
+      font-size: 0.875rem; color: rgba(245,241,232,0.7);
+      margin-bottom: 24px;
+    }
+    .vac-rate-row {
+      display: flex; justify-content: space-between;
+      padding: 12px 0;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      font-size: 0.875rem;
+    }
+    .vac-rate-row-label { color: rgba(245,241,232,0.65); }
+    .vac-rate-row-val { font-family: var(--font-display); font-weight: 500; }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 240px 240px;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .gallery img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: var(--r-md);
+      cursor: pointer;
+      transition: opacity var(--dur) var(--ease);
+    }
+    .gallery img:hover { opacity: 0.92; }
+    .gallery-main {
+      grid-row: span 2; grid-column: 1;
+    }
+    .gallery-caption {
+      font-family: var(--font-mono); font-size: 0.7rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--ink-mute); margin-bottom: 32px;
+    }
+
+    /* Detail block */
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .detail-section {
+      padding: 40px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .detail-section:last-child { border-bottom: 0; }
+    .detail-section-title {
+      font-family: var(--font-display); font-size: 1.75rem;
+      margin-bottom: 20px; letter-spacing: -0.015em;
+    }
+    .detail-list { list-style: none; padding: 0; margin: 0; }
+    .detail-list li {
+      display: flex; gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: flex-start;
+    }
+    .detail-list li:last-child { border-bottom: 0; }
+    .detail-list-bullet {
+      flex-shrink: 0;
+      width: 24px; height: 24px;
+      background: var(--bg-elev);
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-variant-numeric: tabular-nums;
+      color: var(--accent);
+      margin-top: 1px;
+    }
+
+    /* Included grid */
+    .incl-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      margin-bottom: 48px;
+    }
+    .incl-card {
+      background: var(--bg-elev);
+      padding: 24px;
+    }
+    .incl-card-label {
+      font-size: 0.7rem; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--ink-mute);
+      margin-bottom: 8px; font-family: var(--font-mono);
+    }
+    .incl-card-value {
+      font-family: var(--font-display); font-size: 1.0625rem;
+      line-height: 1.35; letter-spacing: -0.005em;
+    }
+
+    /* Cost summary card */
+    .cost-card {
+      background: var(--bg-elev);
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      position: sticky; top: 96px;
+    }
+    .cost-row {
+      display: flex; justify-content: space-between;
+      align-items: baseline;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.9375rem;
+    }
+    .cost-row.is-total {
+      border-bottom: 0; padding-top: 18px; padding-bottom: 0;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+    .cost-row-val { font-variant-numeric: tabular-nums; }
+
+    /* Application strip */
+    .apply-strip {
+      background: var(--bg-dark); color: var(--bg);
+      padding: 80px 0;
+    }
+    .apply-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    @media (max-width: 1024px) {
+      .vac-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .detail-grid { grid-template-columns: 1fr; gap: 40px; }
+      .cost-card { position: static; }
+      .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 200px; }
+      .gallery-main { grid-column: 1 / span 2; }
+      .apply-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 768px) {
+      .incl-grid { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr; grid-template-rows: 220px 160px 160px 160px; }
+      .gallery-main { grid-column: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="siteHeader"></div>
+
+<main id="vacancyMain"></main>
+
+<div id="siteFooter"></div>
+<div id="siteCookies"></div>
+<div id="siteMessenger"></div>
+
+<script src="data/site.js"></script>
+<script src="js/main.js"></script>
+<script>
+  const ICONS = {
+    home:   '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-7 9 7v11a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2v-5h-4v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>',
+    doc:    '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="14" x2="15" y2="14"/></svg>',
+    shield: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4v6c0 5-3.5 9.5-9 10-5.5-.5-9-5-9-10V6z"/></svg>',
+    plane:  '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>',
+    money:  '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+    back:   '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>',
+    wifi:   '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>',
+    food:   '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>'
+  };
+
+  const id = getQueryParam("id");
+  const vac = window.VACANCIES.find(v => v.id === id);
+
+  if (!vac) {
+    document.getElementById("vacancyMain").innerHTML = `
+      <div class="container" style="padding: 120px 0; text-align: center;">
+        <h1 class="display">Вакансію не знайдено</h1>
+        <p class="lede" style="margin: 24px 0;">Можливо, вона вже зайнята. Перевірте інші відкриті позиції.</p>
+        <a href="index.html" class="btn btn-primary">На головну</a>
+      </div>`;
+  } else {
+    document.title = `${vac.title}, ${vac.countryName} — €${vac.rate}/міс — HR & Recruit`;
+
+    const isUK = vac.country === "uk";
+    const docPrice = isUK ? 300 : 200;
+    const arrPrice = isUK ? 250 : 150;
+    const totalPrice = isUK ? 500 : 320;
+
+    const similar = window.VACANCIES.filter(v => v.country === vac.country && v.id !== vac.id).slice(0, 3);
+
+    const html = `
+      <!-- Breadcrumb -->
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Головна</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="country.html?c=${vac.country}">${vac.countryName}</a>
+          <span class="breadcrumb-sep">/</span>
+          <span>${vac.title}</span>
+        </div>
+      </div>
+
+      <!-- HERO -->
+      <section class="vac-hero">
+        <div class="container">
+          <div class="vac-hero-grid">
+            <div>
+              <div class="vac-hero-meta">
+                <span class="vac-tag is-country">${vac.countryName}</span>
+                <span class="vac-tag">${vac.type}</span>
+                <span class="vac-tag">Контракт: ${vac.contract}</span>
+                <span class="vac-tag">Старт: ${vac.start}</span>
+              </div>
+              <h1 class="vac-title display">${vac.title}</h1>
+              <div class="vac-location">${vac.city}</div>
+            </div>
+            <div class="vac-rate-card">
+              <div class="vac-rate-eyebrow">Ставка</div>
+              <div class="vac-rate-num">${fmtEur(vac.rate)}</div>
+              <div class="vac-rate-meta">${vac.rateMeta}</div>
+              <div class="vac-rate-row">
+                <span class="vac-rate-row-label">Графік</span>
+                <span class="vac-rate-row-val">${vac.hours}</span>
+              </div>
+              <div class="vac-rate-row">
+                <span class="vac-rate-row-label">Понаднормові</span>
+                <span class="vac-rate-row-val">${vac.overtime}</span>
+              </div>
+              <div class="vac-rate-row">
+                <span class="vac-rate-row-label">Проживання</span>
+                <span class="vac-rate-row-val" style="font-size: 0.8125rem; text-align: right; max-width: 60%;">${vac.accommodation}</span>
+              </div>
+              <a href="#apply" class="btn btn-accent" style="width: 100%; margin-top: 24px;">Відгукнутися</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORK GALLERY -->
+      <section class="section">
+        <div class="container">
+          <div class="eyebrow eyebrow-accent" style="margin-bottom: 16px;">Що це за робота</div>
+          <h2 class="display" style="font-size: clamp(1.75rem, 3vw, 2.5rem); margin-bottom: 40px; max-width: 720px;">
+            ${vac.summary.split(".")[0]}.
+          </h2>
+
+          <div class="gallery">
+            <img class="gallery-main" src="${vac.gallery[0]}" alt="Робоче місце">
+            <img src="${vac.gallery[1]}" alt="">
+            <img src="${vac.gallery[2]}" alt="">
+            <img src="${vac.gallery[3]}" alt="">
+            <img src="${vac.img}" alt="">
+          </div>
+          <div class="gallery-caption">Робоче місце · ${vac.city} · фото з об'єкта</div>
+
+          <p style="font-family: var(--font-display); font-size: 1.25rem; line-height: 1.55; max-width: 720px; color: var(--ink-soft); font-variation-settings: 'opsz' 24; letter-spacing: -0.005em;">
+            ${vac.summary}
+          </p>
+        </div>
+      </section>
+
+      <!-- DUTIES / REQUIREMENTS -->
+      <section class="section" style="background: var(--bg-elev); padding-top: 80px; padding-bottom: 80px;">
+        <div class="container">
+          <div class="detail-grid">
+            <div>
+              <div class="detail-section">
+                <div class="eyebrow eyebrow-accent" style="margin-bottom: 12px;">Обов'язки</div>
+                <h3 class="detail-section-title">Що ви будете робити</h3>
+                <ul class="detail-list">
+                  ${vac.duties.map((d, i) => `
+                    <li>
+                      <span class="detail-list-bullet">${String(i+1).padStart(2,"0")}</span>
+                      <span>${d}</span>
+                    </li>
+                  `).join("")}
+                </ul>
+              </div>
+
+              <div class="detail-section">
+                <div class="eyebrow eyebrow-accent" style="margin-bottom: 12px;">Вимоги</div>
+                <h3 class="detail-section-title">Що потрібно мати</h3>
+                <ul class="detail-list">
+                  ${vac.requirements.map((r, i) => `
+                    <li>
+                      <span class="detail-list-bullet">${String(i+1).padStart(2,"0")}</span>
+                      <span>${r}</span>
+                    </li>
+                  `).join("")}
+                </ul>
+              </div>
+            </div>
+
+            <!-- Sticky cost card -->
+            <aside>
+              <div class="cost-card">
+                <div class="eyebrow eyebrow-accent" style="margin-bottom: 12px;">Вартість для вас</div>
+                <h4 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 24px; line-height: 1.15;">
+                  Прозоро,<br>без сюрпризів
+                </h4>
+
+                <div class="cost-row">
+                  <span>Підбір вакансії</span>
+                  <span class="cost-row-val" style="color: var(--success); font-weight: 500;">безкоштовно</span>
+                </div>
+                <div class="cost-row">
+                  <span>Інтерв'ю з роботодавцем</span>
+                  <span class="cost-row-val" style="color: var(--success); font-weight: 500;">безкоштовно</span>
+                </div>
+                <div class="cost-row">
+                  <span>Document Service</span>
+                  <span class="cost-row-val">€${docPrice}</span>
+                </div>
+                <div class="cost-row">
+                  <span>Arrival Service <em style="font-style: normal; color: var(--ink-mute); font-size: 0.8125rem;">(опціонально)</em></span>
+                  <span class="cost-row-val">€${arrPrice}</span>
+                </div>
+                <div class="cost-row is-total">
+                  <span>Разом</span>
+                  <span class="cost-row-val">€${docPrice}–${totalPrice}</span>
+                </div>
+
+                <p style="margin-top: 20px; font-size: 0.8125rem; color: var(--ink-mute); line-height: 1.5;">
+                  Оплата через Stripe, чек одразу на email. Гарантія повернення згідно з <a href="offer.html" style="color: var(--ink); border-bottom: 1px solid var(--line-strong);">офертою</a>.
+                </p>
+
+                <a href="#apply" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Відгукнутися →</a>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- INCLUDED BENEFITS -->
+      <section class="section">
+        <div class="container">
+          <div class="eyebrow eyebrow-accent" style="margin-bottom: 12px;">Включено</div>
+          <h2 class="display" style="font-size: clamp(2rem, 3.5vw, 2.75rem); margin-bottom: 48px; max-width: 600px;">
+            Що ви отримуєте<br>
+            <em style="color: var(--accent);">разом</em> з контрактом
+          </h2>
+
+          <div class="incl-grid">
+            ${vac.included.map(i => `
+              <div class="incl-card">
+                <div class="incl-card-label">${ICONS[i.icon] || ""} ${i.label}</div>
+                <div class="incl-card-value">${i.value}</div>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      </section>
+
+      <!-- ACCOMMODATION GALLERY -->
+      <section class="section" style="background: var(--bg-elev); padding-top: 80px;">
+        <div class="container">
+          <div class="eyebrow eyebrow-accent" style="margin-bottom: 12px;">Житло</div>
+          <h2 class="display" style="font-size: clamp(2rem, 3.5vw, 2.75rem); margin-bottom: 40px; max-width: 600px;">
+            Де ви будете жити
+          </h2>
+          <div class="gallery">
+            <img class="gallery-main" src="${vac.housing[0]}" alt="Житло">
+            <img src="${vac.housing[1]}" alt="">
+            <img src="${vac.housing[2]}" alt="">
+            <img src="${vac.housing[3]}" alt="">
+            <img src="${vac.housing[0]}" alt="">
+          </div>
+          <div class="gallery-caption">${vac.accommodation}</div>
+        </div>
+      </section>
+
+      <!-- APPLY -->
+      <section class="apply-strip" id="apply">
+        <div class="container">
+          <div class="apply-grid">
+            <div>
+              <div class="eyebrow" style="color: var(--brass); margin-bottom: 16px;">Залишити заявку</div>
+              <h2 class="display" style="color: var(--bg); font-size: clamp(2.25rem, 4vw, 3.5rem); margin-bottom: 24px;">
+                Відгукнутися<br>
+                на <em style="color: var(--brass);">${vac.title.toLowerCase()}</em>
+              </h2>
+              <p class="lede" style="color: rgba(245,241,232,0.75); margin-bottom: 32px;">
+                Менеджер зв'яжеться протягом 24 годин. Все на цьому етапі —
+                <strong style="color: var(--bg);">безкоштовно</strong>. Платні послуги після job offer.
+              </p>
+              <div style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; color: rgba(245,241,232,0.5); text-transform: uppercase;">
+                ID вакансії: ${vac.id}
+              </div>
+            </div>
+            <form onsubmit="event.preventDefault(); alert('Демо-форма'); this.reset();" style="background: var(--bg-elev); color: var(--ink); padding: 32px; border-radius: var(--r-lg);">
+              <div class="field">
+                <label class="field-label">Ім'я та прізвище</label>
+                <input class="field-input" type="text" required placeholder="Анна Коваленко">
+              </div>
+              <div class="field">
+                <label class="field-label">Телефон</label>
+                <input class="field-input" type="tel" required placeholder="+380 ...">
+              </div>
+              <div class="field">
+                <label class="field-label">Email</label>
+                <input class="field-input" type="email" required>
+              </div>
+              <div class="field">
+                <label class="field-label">Месенджер</label>
+                <select class="field-select">
+                  <option>Telegram</option>
+                  <option>WhatsApp</option>
+                  <option>Viber</option>
+                </select>
+              </div>
+              <div class="field">
+                <label class="checkbox">
+                  <input type="checkbox" required>
+                  <span>Згоден на обробку персональних даних згідно <a href="privacy.html" style="text-decoration: underline;">політики</a>.</span>
+                </label>
+              </div>
+              <button class="btn btn-accent" style="width: 100%;">Надіслати заявку</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- SIMILAR -->
+      <section class="section">
+        <div class="container">
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; gap: 24px; flex-wrap: wrap;">
+            <div>
+              <div class="eyebrow eyebrow-accent" style="margin-bottom: 12px;">Схожі вакансії</div>
+              <h2 class="display" style="font-size: clamp(1.75rem, 3vw, 2.5rem);">
+                Ще в ${vac.countryName}
+              </h2>
+            </div>
+            <a href="country.html?c=${vac.country}" class="btn btn-ghost">Усі вакансії →</a>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+            ${similar.map(s => `
+              <a href="vacancy.html?id=${s.id}" class="vacancy-card">
+                <img class="vacancy-card-img" src="${s.img}" alt="">
+                <div class="vacancy-card-body">
+                  <div class="vacancy-card-meta">
+                    <span>${s.type}</span>
+                    <span>•</span>
+                    <span>${s.start}</span>
+                  </div>
+                  <h4 class="vacancy-card-name">${s.title}</h4>
+                  <div class="vacancy-card-loc">${s.city}</div>
+                  <div class="vacancy-card-rate">
+                    <div class="vacancy-card-rate-num">${fmtEur(s.rate)}</div>
+                    <div class="vacancy-card-rate-label">${s.rateMeta}</div>
+                  </div>
+                </div>
+              </a>
+            `).join("")}
+          </div>
+        </div>
+      </section>
+    `;
+
+    document.getElementById("vacancyMain").innerHTML = html;
+  }
+
+  initSite("country");
+  initReveal();
+</script>
+
+</body>
+</html>

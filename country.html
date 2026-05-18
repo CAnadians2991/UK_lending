@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Країна — HR & Recruit</title>
+  <meta name="description" content="Вакансії за країною — HR & Recruit, британське кадрове агентство.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..800,0..100;1,9..144,300..800,0..100&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* Page-local refinements */
+    .country-hero {
+      position: relative;
+      padding: 80px 0 64px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+    .country-hero-meta {
+      display: flex; align-items: center; gap: 16px;
+      font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em;
+      color: var(--ink-mute); text-transform: uppercase; margin-bottom: 24px;
+    }
+    .country-hero-meta-code {
+      background: var(--bg-dark); color: var(--bg); padding: 4px 10px; border-radius: 4px;
+      font-weight: 500;
+    }
+    .country-hero-title {
+      font-size: clamp(3.5rem, 9vw, 8rem);
+      line-height: 0.92; letter-spacing: -0.03em;
+      font-variation-settings: "opsz" 144;
+      margin-bottom: 32px;
+    }
+    .country-hero-title em { font-style: italic; color: var(--accent); font-variation-settings: "opsz" 144, "SOFT" 70; }
+
+    .country-hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 64px;
+      align-items: end;
+    }
+    .country-hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+    }
+    .country-hero-stat {
+      padding: 24px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .country-hero-stat:nth-child(2n) { border-right: 0; }
+    .country-hero-stat:nth-last-child(-n+2) { border-bottom: 0; }
+    .country-hero-stat-num {
+      font-family: var(--font-display); font-size: 2.25rem;
+      font-variation-settings: "opsz" 48; line-height: 1; margin-bottom: 6px;
+      letter-spacing: -0.015em;
+    }
+    .country-hero-stat-label {
+      font-size: 0.8125rem; color: var(--ink-mute);
+    }
+
+    .country-image-band {
+      width: 100%;
+      height: clamp(280px, 40vh, 480px);
+      background-size: cover; background-position: center;
+      position: relative;
+      border-bottom: 1px solid var(--line);
+    }
+    .country-image-band::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 60%, rgba(245, 241, 232, 0.4));
+    }
+    .country-image-band-caption {
+      position: absolute; left: 32px; bottom: 24px;
+      font-family: var(--font-mono); font-size: 0.7rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--bg); background: rgba(0,0,0,0.5);
+      padding: 8px 14px; border-radius: 4px;
+      backdrop-filter: blur(4px);
+    }
+
+    /* Vacancy filters */
+    .vacancy-filters {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .filter-chip {
+      padding: 8px 16px;
+      border: 1px solid var(--line-strong);
+      border-radius: 100px;
+      font-size: 0.875rem; font-weight: 500;
+      background: transparent;
+      transition: all var(--dur) var(--ease);
+      cursor: pointer;
+    }
+    .filter-chip:hover { background: var(--bg-elev); }
+    .filter-chip.is-active { background: var(--bg-dark); color: var(--bg); border-color: var(--bg-dark); }
+
+    /* Country info cards */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+    }
+    .info-card {
+      background: var(--bg-elev);
+      padding: 32px;
+    }
+    .info-card-icon {
+      width: 40px; height: 40px;
+      background: var(--bg-dark); color: var(--bg);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-style: italic;
+      font-size: 1.125rem;
+      margin-bottom: 20px;
+    }
+    .info-card-title {
+      font-family: var(--font-display); font-size: 1.375rem;
+      letter-spacing: -0.01em; margin-bottom: 10px;
+      line-height: 1.15;
+    }
+    .info-card-text { font-size: 0.9375rem; color: var(--ink-soft); line-height: 1.55; }
+
+    @media (max-width: 1024px) {
+      .country-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .info-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .country-hero-stats { grid-template-columns: 1fr; }
+      .country-hero-stat { border-right: 0 !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="siteHeader"></div>
+
+<main id="countryMain">
+  <!-- Filled by JS -->
+</main>
+
+<div id="siteFooter"></div>
+<div id="siteCookies"></div>
+<div id="siteMessenger"></div>
+
+<script src="data/site.js"></script>
+<script src="js/main.js"></script>
+<script>
+  /* ============ COUNTRY-SPECIFIC CONTENT ============ */
+  const COUNTRY_DETAILS = {
+    uk: {
+      ru: "Велика Британія", code: "UK", color: "#1B3A2F",
+      tagline: "Сезонна виза, прямі контракти, найвищі ставки серед агро-направлень",
+      band: "https://placehold.co/2400x900/1B3A2F/F5F1E8?text=United+Kingdom&font=lato",
+      bandCaption: "Norfolk County · Eastern England",
+      stats: [
+        { num: "4", label: "вакансії" },
+        { num: "€2&thinsp;050", label: "середня ставка / міс нетто" },
+        { num: "4–6 міс", label: "контракт" },
+        { num: "€550", label: "сервіс HR&Recruit" }
+      ],
+      visaInfo: {
+        type: "UK Seasonal Worker Visa (Route)",
+        duration: "до 6 місяців на сезон",
+        sector: "Edible horticulture, ornamental horticulture",
+        rate: "не нижче £12.21/год (національний мінімум)"
+      },
+      info: [
+        { icon: "01", title: "Сезонна виза", text: "UK Seasonal Worker Route — спеціальна категорія для сільгоспробіт. Sponsor — конкретна ферма. Документи готуються 4–6 тижнів." },
+        { icon: "02", title: "Прямий контракт", text: "Договір укладається напряму між вами та британським роботодавцем. Зарплата надходить на UK bank account, який ми допоможемо відкрити." },
+        { icon: "03", title: "Що потрібно", text: "Закордонний паспорт зі строком дії 18+ місяців, відсутність судимостей (police check), готовність до фізичної праці. Англійська — не обов'язково." }
+      ],
+      faq: [
+        { q: "Який стандарт мінімальної ставки в UK?", a: "З квітня 2025 — £12.21 за годину (national minimum wage for over-21s). Усі вакансії, які ми пропонуємо, дотримуються цього мінімуму. Більшість позицій оплачуються вище за рахунок понаднормових." },
+        { q: "Чи можна продовжити контракт?", a: "Seasonal Worker Visa не дозволяє продовження в межах одного сезону, але ви можете подати документи на наступний сезон (зазвичай весна–осінь). Багато наших кандидатів повертаються 2–3 роки поспіль." },
+        { q: "Чи можна перевезти родину?", a: "Seasonal Worker Visa не передбачає dependants (членів сім'ї). Це короткостроковий тип візи. Для довгострокового переїзду треба інші маршрути — Skilled Worker або сімейні візи." },
+        { q: "Який пакет документів готується нашим коштом?", a: "Усі переклади, координація з консульством, оплата консульського збору з вашого боку. Sponsor letter та CoS — оформляє роботодавець, ми його координуємо." }
+      ]
+    },
+    germany: {
+      ru: "Німеччина", code: "DE", color: "#244A3D",
+      tagline: "Стабільні довгострокові контракти, виробництво, склади та сезонні зборки",
+      band: "https://placehold.co/2400x900/244A3D/F5F1E8?text=Germany&font=lato",
+      bandCaption: "Leipzig · Saxony",
+      stats: [
+        { num: "4", label: "вакансії" },
+        { num: "€2&thinsp;000", label: "середня ставка / міс нетто" },
+        { num: "9–12 міс", label: "контракт" },
+        { num: "€350", label: "сервіс HR&Recruit" }
+      ],
+      visaInfo: {
+        type: "Beschäftigungsvisum / Saisonarbeit",
+        duration: "70–90 днів (сезон) або 12+ міс (постійні)",
+        sector: "Manufacturing, logistics, agriculture",
+        rate: "€12.82/год (Mindestlohn 2025), вище для kваліфікованих"
+      },
+      info: [
+        { icon: "01", title: "Leiharbeit за AÜG", text: "Працевлаштування через ліцензовані Personaldienstleister-агентства. Договір регулюється Arbeitnehmerüberlassungsgesetz — це повний пакет соцпакету." },
+        { icon: "02", title: "Соцпакет", text: "Krankenversicherung (TK / AOK), pension contributions, оплачувана відпустка від 24 днів. Все офіційно проводиться через ваш Steuer-ID." },
+        { icon: "03", title: "Перспектива", text: "Через 6 місяців у Leiharbeit працедавець часто пропонує перехід у штат на пряму угоду — це шлях до Blue Card та довгострокового перебування." }
+      ],
+      faq: [
+        { q: "Що таке AÜG?", a: "Arbeitnehmerüberlassungsgesetz — закон про тимчасове працевлаштування через ліцензовані агентства. Ваш контракт фактично з агентством, а робота — на підприємстві-замовнику. Це повністю легально та поширене в Німеччині." },
+        { q: "Як з податками?", a: "Lohnsteuer (прибутковий податок) утримується автоматично з зарплати. Перший рік ви платите за стандартною шкалою. Якщо немає сім'ї в Німеччині — клас 1. Більшість українців отримують часткове повернення податку через річну декларацію." },
+        { q: "Коли стану на Anmeldung?", a: "У перші 14 днів після приїзду треба зареєструватися в Bürgeramt. Ми допомагаємо забронювати слот і підготувати документи — без цього не відкрити банківський рахунок." },
+        { q: "Якою буде моя реальна зарплата на руки?", a: "Брутто-нетто співвідношення приблизно 65–70% залежно від класу. Тобто з брутто €2900 ви отримуєте близько €2000 нетто. Це після всіх податків і страхових внесків." }
+      ]
+    },
+    netherlands: {
+      ru: "Нідерланди", code: "NL", color: "#2D6A4F",
+      tagline: "Phase A Uitzendcontract, найбільший тепличний регіон ЄС, логістичні хаби",
+      band: "https://placehold.co/2400x900/2D6A4F/F5F1E8?text=Netherlands&font=lato",
+      bandCaption: "Westland · Glass City",
+      stats: [
+        { num: "4", label: "вакансії" },
+        { num: "€2&thinsp;150", label: "середня ставка / міс нетто" },
+        { num: "12 міс", label: "контракт + продовження" },
+        { num: "€350", label: "сервіс HR&Recruit" }
+      ],
+      visaInfo: {
+        type: "Uitzendovereenkomst (Phase A)",
+        duration: "до 52 тижнів у фазі A",
+        sector: "Greenhouse, logistics, food production",
+        rate: "€14.06/год (Wettelijk minimumloon 2025)"
+      },
+      info: [
+        { icon: "01", title: "Phase A контракт", text: "Найгнучкіша форма за WAADI: ви працюєте через uitzendbureau, але отримуєте всі соцгарантії. До 52 тижнів роботи у фазі A, після чого автоматично перехід у Phase B." },
+        { icon: "02", title: "BSN та банк", text: "Burgerservicenummer треба отримати в перші 5 днів. Без BSN не виплачується зарплата. Ми супроводжуємо до муніципалітету і допомагаємо відкрити рахунок у ING або ABN AMRO." },
+        { icon: "03", title: "Zorgverzekering", text: "Медична страховка обов'язкова за законом. Уважно перевіряємо, що uitzendbureau оформлює її правильно і утримує внески з ставки (зазвичай €130–150/міс)." }
+      ],
+      faq: [
+        { q: "Чим відрізняється Phase A від Phase B та C?", a: "Phase A — найбільш гнучка, договір може бути припинено з тижневим попередженням. Phase B (після 52 тижнів) — стабільніша, з обов'язковими виплатами. Phase C — постійний контракт. Більшість новачків починають з Phase A, через рік переходять у B." },
+        { q: "Чому ставка вища, ніж у Німеччині?", a: "Голландський мінімум вищий — €14.06/год проти €12.82 у Німеччині. Плюс додаткові надбавки за нічні зміни, вихідні та свята. У результаті брутто на 15–20% вище." },
+        { q: "Як з житлом?", a: "Більшість працедавців пропонують корпоративне житло — будинки на 4–6 чоловік. Удержання €100–120/тиждень. Це включає комуналку та Wi-Fi. Окремо знімати квартиру в перші місяці нереально через дорожнечу." },
+        { q: "Чи можна перейти у штат?", a: "Так, після Phase B багато компаній пропонують пряму угоду. Це шлях до довгострокового перебування і навіть отримання paspoort через 5 років." }
+      ]
+    },
+    greece: {
+      ru: "Греція", code: "GR", color: "#1B3A2F",
+      tagline: "Готелі 4★ та 5★ на островах. Безкоштовне проживання та харчування. Сезон квітень–жовтень",
+      band: "https://placehold.co/2400x900/1B3A2F/F5F1E8?text=Greece+Islands&font=lato",
+      bandCaption: "Crete · Hersonissos",
+      stats: [
+        { num: "4", label: "вакансії" },
+        { num: "€1&thinsp;900", label: "середня ставка / міс + чайові" },
+        { num: "5–6 міс", label: "сезон" },
+        { num: "€350", label: "сервіс HR&Recruit" }
+      ],
+      visaInfo: {
+        type: "Σύμβαση ορισμένου χρόνου (сезонний контракт)",
+        duration: "5–6 місяців (квітень–жовтень)",
+        sector: "HoReCa — готелі, ресторани",
+        rate: "€830/міс мін., але в реальності €1800–2000 за рахунок надбавок"
+      },
+      info: [
+        { icon: "01", title: "Безкоштовно живете та їсте", text: "Усі позиції в готелях включають проживання в персонал-блоці та триразове харчування. Реальна економія — €400–500 на місяць, які залишаються вашими." },
+        { icon: "02", title: "ΙΚΑ — соцстрахування", text: "Прямий контракт з готелем за грецьким Трудовим кодексом. ΙΚΑ нараховується автоматично — ваш стаж і медичне страхування офіційні." },
+        { icon: "03", title: "Чайові", text: "В готелях 5★ All-Inclusive персонал ділить чайові пропорційно — €100–250 на місяць понад ставку для horничних, до €400 для офіціантів. Не гарантовано контрактом, але реально." }
+      ],
+      faq: [
+        { q: "Коли починається сезон?", a: "Більшість готелів відкривають сезон у квітні (Великодні свята). Закриваються в жовтні–листопаді. Найдовші контракти — на островах Крит та Родос (до 7 місяців), найкоротші — на менш популярних островах (4–5 місяців)." },
+        { q: "Чи можна повернутися на наступний сезон?", a: "Так, і це дуже бажано для роботодавця. Більшість наших кандидатів повертаються 2–3 сезони поспіль до того ж готелю — менш організаційних витрат для всіх." },
+        { q: "Як з англійською?", a: "Для горничних та kitchen porter — базовий A1 вистачить. Для офіціантів та ресепшен — обов'язково B1. Багато готелів обслуговують гостей з СНД, тому російська/українська теж є перевагою." },
+        { q: "Що з податками?", a: "Грецький прибутковий податок утримується з зарплати. На сезонників діє знижена ставка. Сумарна нетто-ставка приблизно 80–85% від брутто." }
+      ]
+    },
+    italy: {
+      ru: "Італія", code: "IT", color: "#244A3D",
+      tagline: "Готелі та курортні комплекси. Адріатичне узбережжя, Тоскана, Амальфі. CCNL Turismo",
+      band: "https://placehold.co/2400x900/244A3D/F5F1E8?text=Italy&font=lato",
+      bandCaption: "Amalfi Coast · Campania",
+      stats: [
+        { num: "4", label: "вакансії" },
+        { num: "€1&thinsp;950", label: "середня ставка / міс + чайові" },
+        { num: "5–7 міс", label: "сезон" },
+        { num: "€350", label: "сервіс HR&Recruit" }
+      ],
+      visaInfo: {
+        type: "Contratto stagionale (CCNL Turismo)",
+        duration: "5–7 місяців",
+        sector: "HoReCa — готелі, агритуризми, ресторани",
+        rate: "€1450/міс мін. CCNL, в реальності €1800–2050 нетто"
+      },
+      info: [
+        { icon: "01", title: "CCNL Turismo", text: "Контратто стагіонале — спеціальний сезонний договір за галузевою угодою CCNL Turismo. Включає всі соцгарантії, відпустку (pro rata), TFR (вихідну допомогу)." },
+        { icon: "02", title: "INPS + INAIL", text: "Соцвнески (INPS) і страхування від нещасних випадків (INAIL) — обов'язкові. Ваш стаж в Італії офіційно зараховується, можна претендувати на пенсійні нарахування." },
+        { icon: "03", title: "TFR та conguaglio", text: "В кінці сезону отримуєте TFR (Trattamento di Fine Rapporto) — близько 7% від загальної суми зарплат. Також conguaglio — перерахунок податків, часто з поверненням." }
+      ],
+      faq: [
+        { q: "Що таке TFR?", a: "Trattamento di Fine Rapporto — обов'язкова виплата при завершенні трудових відносин в Італії. Це 6.91% від суми всіх ваших зарплат за сезон. Виплачується автоматично разом з останньою зарплатою. На сезон 6 місяців це додаткові €750–900." },
+        { q: "Чи потрібна італійська мова?", a: "Для горничної та laundry — ні, базової англійської достатньо. Для офіціанта в туристичних готелях — обов'язкова англійська B1, італійська — велика перевага. Для ресепшен — обов'язково англійська та італійська." },
+        { q: "Чи можна продовжити в інший заклад?", a: "Stagionale прив'язаний до конкретного роботодавця. Але якщо ваш роботодавець закривається в жовтні, а в листопаді відкривається інший — ми можемо допомогти з переходом у межах того ж сезонного дозволу. Це називається 'continuità stagionale'." },
+        { q: "Як з оподаткуванням?", a: "Прибутковий податок (IRPEF) — прогресивна шкала, для сезонників в середньому 23%. Соцвнески (INPS) — близько 9.5% з зарплати працівника. Сумарно з брутто €2500 на руки приходить €1850–1950." }
+      ]
+    }
+  };
+
+  const slug = getQueryParam("c") || "uk";
+  const country = COUNTRY_DETAILS[slug];
+  if (!country) {
+    document.getElementById("countryMain").innerHTML = `
+      <div class="container" style="padding: 120px 0; text-align: center;">
+        <h1 class="display">Країну не знайдено</h1>
+        <p class="lede" style="margin: 24px 0;">Перевірте посилання або поверніться на головну.</p>
+        <a href="index.html" class="btn btn-primary">На головну</a>
+      </div>`;
+  } else {
+    document.title = `${country.ru} — вакансії — HR & Recruit`;
+    const vacancies = window.VACANCIES.filter(v => v.country === slug);
+
+    const html = `
+      <!-- HERO -->
+      <section class="country-hero">
+        <div class="container">
+          <div class="country-hero-meta">
+            <span class="country-hero-meta-code">${country.code}</span>
+            <span>${country.ru}</span>
+            <span>•</span>
+            <span>${vacancies.length} актуальних вакансій</span>
+          </div>
+          <h1 class="display country-hero-title">${country.ru} <em>·</em><br>офіційно</h1>
+          <div class="country-hero-grid">
+            <p class="lede" style="max-width: 50ch;">${country.tagline}.</p>
+            <div class="country-hero-stats">
+              ${country.stats.map(s => `
+                <div class="country-hero-stat">
+                  <div class="country-hero-stat-num">${s.num}</div>
+                  <div class="country-hero-stat-label">${s.label}</div>
+                </div>
+              `).join("")}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- IMAGE BAND -->
+      <div class="country-image-band" style="background-image: url('${country.band}');">
+        <div class="country-image-band-caption">${country.bandCaption}</div>
+      </div>
+
+      <!-- VISA / WORK INFO -->
+      <section class="section">
+        <div class="container">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-bottom: 64px;">
+            <div>
+              <div class="eyebrow eyebrow-accent" style="margin-bottom: 16px;">Основа діяльності</div>
+              <h2 class="display" style="margin-bottom: 24px;">
+                Як влаштоване<br>
+                <em style="color: var(--accent);">працевлаштування</em>.
+              </h2>
+              <p class="lede">
+                Усі вакансії оформлюються офіційно з прямим контрактом між кандидатом
+                та роботодавцем. Без сірих схем, без посередників на місці.
+              </p>
+            </div>
+            <div style="background: var(--bg-elev); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 32px;">
+              <table style="width: 100%; border-collapse: collapse;">
+                <tr style="border-bottom: 1px solid var(--line);">
+                  <td style="padding: 12px 0; font-size: 0.8125rem; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.08em; width: 40%;">Тип контракту</td>
+                  <td style="padding: 12px 0; font-family: var(--font-display); font-size: 0.9375rem;">${country.visaInfo.type}</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--line);">
+                  <td style="padding: 12px 0; font-size: 0.8125rem; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.08em;">Тривалість</td>
+                  <td style="padding: 12px 0; font-family: var(--font-display); font-size: 0.9375rem;">${country.visaInfo.duration}</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--line);">
+                  <td style="padding: 12px 0; font-size: 0.8125rem; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.08em;">Сектор</td>
+                  <td style="padding: 12px 0; font-family: var(--font-display); font-size: 0.9375rem;">${country.visaInfo.sector}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 0; font-size: 0.8125rem; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.08em;">Мін. ставка</td>
+                  <td style="padding: 12px 0; font-family: var(--font-display); font-size: 0.9375rem;">${country.visaInfo.rate}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="info-grid">
+            ${country.info.map(i => `
+              <div class="info-card">
+                <div class="info-card-icon">${i.icon}</div>
+                <h4 class="info-card-title">${i.title}</h4>
+                <p class="info-card-text">${i.text}</p>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      </section>
+
+      <!-- VACANCIES -->
+      <section class="section" style="background: var(--bg-elev); padding-top: 64px;">
+        <div class="container">
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; gap: 24px; flex-wrap: wrap;">
+            <div>
+              <div class="eyebrow eyebrow-accent" style="margin-bottom: 12px;">Актуальні вакансії</div>
+              <h2 class="display" style="font-size: clamp(2rem, 3.5vw, 2.75rem);">
+                ${vacancies.length} відкритих позицій
+              </h2>
+            </div>
+            <a href="#apply" class="btn btn-primary">Відгукнутися на всі →</a>
+          </div>
+
+          <div class="vacancy-list">
+            ${vacancies.map(v => `
+              <a href="vacancy.html?id=${v.id}" class="vacancy-row">
+                <div class="vacancy-row-title">
+                  <div class="vacancy-row-name">${v.title}</div>
+                  <div class="vacancy-row-loc">${v.city} • ${v.contract}</div>
+                </div>
+                <div class="vacancy-row-tag">${v.type}</div>
+                <div class="vacancy-row-date">
+                  <div style="font-size: 0.75rem; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2px;">Старт</div>
+                  ${v.start}
+                </div>
+                <div>
+                  <div class="vacancy-row-rate">${fmtEur(v.rate)}</div>
+                  <span class="vacancy-row-rate-meta">${v.rateMeta}</span>
+                </div>
+                <div class="vacancy-row-arrow">→</div>
+              </a>
+            `).join("")}
+          </div>
+        </div>
+      </section>
+
+      <!-- COUNTRY-SPECIFIC FAQ -->
+      <section class="section">
+        <div class="container">
+          <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start;">
+            <div>
+              <div class="eyebrow eyebrow-accent" style="margin-bottom: 16px;">Запитання</div>
+              <h2 class="display">
+                Спеціально про<br>
+                <em style="color: var(--accent);">${country.ru}</em>.
+              </h2>
+              <p style="margin-top: 24px; color: var(--ink-soft);">
+                Загальні запитання щодо оплати та умов — на <a href="services.html" style="border-bottom: 1px solid var(--line-strong); color: var(--ink);">сторінці послуг</a>.
+              </p>
+            </div>
+            <div class="faq">
+              ${country.faq.map(f => `
+                <div class="faq-item">
+                  <div class="faq-q">
+                    <span>${f.q}</span>
+                    <span class="faq-toggle"></span>
+                  </div>
+                  <div class="faq-a">${f.a}</div>
+                </div>
+              `).join("")}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section" id="apply" style="background: var(--bg-dark); color: var(--bg); padding-top: 80px; padding-bottom: 80px;">
+        <div class="container" style="text-align: center;">
+          <div class="eyebrow" style="color: var(--brass); margin-bottom: 16px;">Залишити заявку</div>
+          <h2 class="display" style="color: var(--bg); font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 24px;">
+            Готові поїхати<br>
+            у <em style="color: var(--brass);">${country.ru}</em>?
+          </h2>
+          <p class="lede" style="color: rgba(245,241,232,0.75); max-width: 540px; margin: 0 auto 40px;">
+            Заявка та інтерв'ю — безкоштовно. Платні послуги — лише після офіційного job offer.
+          </p>
+          <a href="index.html#apply" class="btn btn-accent btn-lg btn-arrow">Заповнити заявку</a>
+        </div>
+      </section>
+    `;
+
+    document.getElementById("countryMain").innerHTML = html;
+  }
+
+  initSite("country");
+  initFAQ();
+  initReveal();
+</script>
+
+</body>
+</html>

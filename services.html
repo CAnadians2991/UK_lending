@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Послуги та ціни — HR & Recruit</title>
+  <meta name="description" content="Document Service та Arrival Service. Прозорі ціни через Stripe. Гарантія повернення.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..800,0..100;1,9..144,300..800,0..100&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* Service hero */
+    .svc-hero {
+      padding: 96px 0 64px;
+      border-bottom: 1px solid var(--line);
+    }
+    .svc-hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 8px 16px;
+      background: var(--bg-elev);
+      border: 1px solid var(--line-strong);
+      border-radius: 100px;
+      margin-bottom: 32px;
+      font-family: var(--font-mono); font-size: 0.75rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .svc-hero-title {
+      font-size: clamp(2.75rem, 7vw, 5.5rem);
+      line-height: 0.95; letter-spacing: -0.025em;
+      font-variation-settings: "opsz" 144;
+      margin-bottom: 32px; max-width: 18ch;
+    }
+    .svc-hero-title em { font-style: italic; color: var(--accent); font-variation-settings: "opsz" 144, "SOFT" 60; }
+
+    /* Pricing comparison */
+    .price-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 80px;
+    }
+    .pc-card {
+      background: var(--bg-elev);
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      padding: 48px;
+      position: relative;
+    }
+    .pc-card.is-uk {
+      background: var(--bg-dark); color: var(--bg);
+      border-color: var(--bg-dark);
+    }
+    .pc-card.is-uk .pc-eyebrow { color: var(--brass); }
+    .pc-card.is-uk .pc-name { color: var(--bg); }
+    .pc-card.is-uk .pc-flag { background: var(--brass); color: var(--bg-dark); }
+    .pc-card.is-uk .pc-line { border-color: rgba(255,255,255,0.12); }
+    .pc-card.is-uk .pc-line-label { color: rgba(245,241,232,0.65); }
+    .pc-card.is-uk .pc-meta { color: rgba(245,241,232,0.65); }
+
+    .pc-flag {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 4px 12px; background: var(--ink); color: var(--bg);
+      border-radius: 100px;
+      font-family: var(--font-mono); font-size: 0.7rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 24px; font-weight: 500;
+    }
+    .pc-eyebrow {
+      font-size: 0.75rem; letter-spacing: 0.14em;
+      text-transform: uppercase; font-weight: 500;
+      color: var(--accent); margin-bottom: 12px;
+    }
+    .pc-name {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 2.75rem);
+      line-height: 1; letter-spacing: -0.015em;
+      margin-bottom: 32px;
+    }
+    .pc-name em { font-style: italic; color: var(--accent); }
+    .pc-prices {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 32px;
+    }
+    .pc-card.is-uk .pc-prices { border-color: rgba(255,255,255,0.15); }
+    .pc-price-cell {
+      padding: 24px 0;
+      border-right: 1px solid var(--line);
+      text-align: center;
+    }
+    .pc-card.is-uk .pc-price-cell { border-color: rgba(255,255,255,0.12); }
+    .pc-price-cell:last-child { border-right: 0; }
+    .pc-price-cell.is-combo {
+      background: rgba(0,0,0,0.03);
+      position: relative;
+    }
+    .pc-card.is-uk .pc-price-cell.is-combo { background: rgba(255,255,255,0.05); }
+    .pc-price-cell.is-combo::before {
+      content: "Економія";
+      position: absolute;
+      top: 8px; right: 8px;
+      font-size: 0.65rem;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .pc-card.is-uk .pc-price-cell.is-combo::before { color: var(--brass); }
+    .pc-price-label {
+      font-size: 0.7rem; letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: 8px;
+    }
+    .pc-card.is-uk .pc-price-label { color: rgba(245,241,232,0.55); }
+    .pc-price-num {
+      font-family: var(--font-display);
+      font-size: 2.25rem; line-height: 1;
+      letter-spacing: -0.02em;
+      font-variant-numeric: tabular-nums;
+      font-variation-settings: "opsz" 48;
+    }
+
+    .pc-includes { list-style: none; padding: 0; margin: 0 0 32px; }
+    .pc-line {
+      display: flex; gap: 12px; align-items: flex-start;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.9375rem;
+    }
+    .pc-line:last-child { border-bottom: 0; }
+    .pc-check {
+      flex-shrink: 0; width: 18px; height: 18px;
+      color: var(--success); margin-top: 2px;
+    }
+    .pc-card.is-uk .pc-check { color: var(--brass); }
+    .pc-meta {
+      font-size: 0.875rem; color: var(--ink-mute);
+      margin-bottom: 24px; padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* Service deep dive */
+    .svc-section {
+      padding: 96px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .svc-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .svc-grid-title {
+      position: sticky; top: 96px;
+    }
+    .svc-step {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 24px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .svc-step:last-child { border-bottom: 0; }
+    .svc-step-num {
+      font-family: var(--font-display);
+      font-size: 2rem; line-height: 1;
+      color: var(--accent);
+      font-variation-settings: "opsz" 32;
+      letter-spacing: -0.015em;
+    }
+    .svc-step h4 { margin-bottom: 8px; font-size: 1.25rem; }
+    .svc-step p { color: var(--ink-soft); font-size: 0.9375rem; }
+
+    /* Refund matrix */
+    .refund-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--bg-elev);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+    .refund-table th {
+      background: var(--bg-dark); color: var(--bg);
+      padding: 16px 24px;
+      text-align: left;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .refund-table td {
+      padding: 20px 24px;
+      border-top: 1px solid var(--line);
+      vertical-align: top;
+    }
+    .refund-table td:first-child {
+      font-family: var(--font-display);
+      font-size: 1.0625rem;
+      color: var(--ink);
+      width: 50%;
+    }
+    .refund-percent {
+      display: inline-flex;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      font-weight: 500;
+    }
+    .refund-100 { background: #D4F1E2; color: var(--success); }
+    .refund-90 { background: #E7F1D4; color: #4D6A19; }
+    .refund-50 { background: #FFF1D6; color: var(--warning); }
+    .refund-0 { background: #FFE0D0; color: var(--accent); }
+
+    /* Key callout */
+    .callout {
+      background: var(--bg-dark); color: var(--bg);
+      padding: 48px;
+      border-radius: var(--r-lg);
+      position: relative;
+      margin: 64px 0;
+    }
+    .callout-mark {
+      position: absolute; top: 16px; left: 32px;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 5rem; line-height: 1;
+      color: var(--brass);
+      opacity: 0.5;
+      font-variation-settings: "opsz" 144;
+    }
+    .callout-eyebrow {
+      font-size: 0.75rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--brass);
+      margin-bottom: 16px; font-weight: 500;
+    }
+    .callout-text {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 1.8vw, 1.625rem);
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+      margin-bottom: 0;
+      max-width: 720px;
+      position: relative; z-index: 1;
+      font-variation-settings: "opsz" 32;
+    }
+    .callout-text em { font-style: italic; color: var(--brass); }
+
+    /* Trust strip */
+    .trust-strip {
+      background: var(--bg-elev);
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-bottom: 64px;
+    }
+    .trust-item-icon {
+      width: 32px; height: 32px;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+    .trust-item-title {
+      font-family: var(--font-display);
+      font-size: 1.0625rem;
+      letter-spacing: -0.005em;
+      margin-bottom: 4px;
+    }
+    .trust-item-text {
+      font-size: 0.8125rem;
+      color: var(--ink-mute);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 1024px) {
+      .price-compare { grid-template-columns: 1fr; }
+      .svc-grid { grid-template-columns: 1fr; gap: 40px; }
+      .svc-grid-title { position: static; }
+      .trust-strip { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .pc-prices { grid-template-columns: 1fr; }
+      .pc-price-cell { border-right: 0 !important; border-bottom: 1px solid var(--line); }
+      .pc-price-cell:last-child { border-bottom: 0; }
+      .trust-strip { grid-template-columns: 1fr; }
+      .pc-card { padding: 32px 24px; }
+      .refund-table th, .refund-table td { padding: 12px; font-size: 0.875rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="siteHeader"></div>
+
+<!-- HERO -->
+<section class="svc-hero">
+  <div class="container">
+    <div class="svc-hero-eyebrow">
+      <span style="width: 6px; height: 6px; background: var(--success); border-radius: 50%;"></span>
+      Дві послуги · одна філософія · нульові сюрпризи
+    </div>
+    <h1 class="svc-hero-title display">
+      Платіть тільки<br>
+      за конкретне.<br>
+      Підбір — <em>безкоштовно</em>.
+    </h1>
+    <p class="lede" style="max-width: 60ch;">
+      Ми не беремо грошей за вакансії та інтерв'ю — інакше у нас не було б стимулу
+      підбирати найкращі позиції. Наші платні послуги&nbsp;— це&nbsp;підготовка документів
+      та&nbsp;супровід прибуття. Все через Stripe з&nbsp;офіційним чеком та&nbsp;офертою.
+    </p>
+  </div>
+</section>
+
+<!-- PRICING COMPARISON -->
+<section class="section">
+  <div class="container">
+    <div class="price-compare">
+      <!-- UK -->
+      <div class="pc-card is-uk">
+        <span class="pc-flag">🇬🇧 UK · Великобританія</span>
+        <div class="pc-eyebrow" style="color: var(--brass);">Розширений пакет</div>
+        <h3 class="pc-name">United <em>Kingdom</em></h3>
+
+        <div class="pc-prices">
+          <div class="pc-price-cell">
+            <div class="pc-price-label">Документи</div>
+            <div class="pc-price-num">€300</div>
+          </div>
+          <div class="pc-price-cell">
+            <div class="pc-price-label">Зустріч</div>
+            <div class="pc-price-num">€250</div>
+          </div>
+          <div class="pc-price-cell is-combo">
+            <div class="pc-price-label">Combo</div>
+            <div class="pc-price-num">€500</div>
+          </div>
+        </div>
+
+        <ul class="pc-includes">
+          <li class="pc-line">
+            <svg class="pc-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            Координація Certificate of Sponsorship з UK-роботодавцем
+          </li>
+          <li class="pc-line">
+            <svg class="pc-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            Запис на biometric у визовому центрі
+          </li>
+          <li class="pc-line">
+            <svg class="pc-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            Переклади + нотаріальне завірення
+          </li>
+          <li class="pc-line">
+            <svg class="pc-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            Зустріч у Гетвік/Хітроу, трансфер
+          </li>
+          <li class="pc-line">
+            <svg class="pc-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            Допомога з NIN та UK bank account
+          </li>
+        </ul>
+
+        <p class="pc-meta">
+          <strong style="color: var(--bg);">Чому UK дорожче</strong><br>
+          UK Visa System вимагає більше документів: CoS, biometric, додаткові переклади,
+          police check. Об'єм роботи&nbsp;більший, тому пакет коштує дорожче, ніж ЄС.
+        </p>
+
+        <a href="country.html?c=uk" class="btn btn-accent" style="width: 100%;">UK вакансії →</a>
+      </div>
+
+      <!-- EU -->
+      <div class="pc-card">
+        <span class="pc-flag">🇪🇺 EU · Євросоюз</span>
+        <div class="pc-eyebrow">Стандартний пакет</div>
+        <h3 class="pc-name">European <em>Union</em></h3>
+
+        <div class="pc-prices">
+          <div class="pc-price-cell">
+            <div class="pc-price-label">Документи</div>
+            <div class="pc-price-num">€200</div>
+          </div>
+          <div class="pc-price-cell">
+            <div class="pc-price-label">Зустріч</div>
+            <div class="pc-price-num">€150</div>
+          </div>
+          <div class="pc-price-cell is-combo">
+            <div class="pc-price-label">Combo</div>
+            <div class="pc-price-num">€320</div>
+          </div>
+        </div>
+
+        <ul class="pc-includes">
+          <li class="pc-line">
+            <svg class="pc-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            Запит та координація контракту з роботодавцем
+          </li>
+          <li class="pc-line">
+            <svg class="pc-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            Підготовка work permit application
+          </li>
+          <li class="pc-line">
+            <svg class="pc-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            Переклади та легалізація документів
+          </li>
+          <li class="pc-line">
+            <svg class="pc-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            Зустріч в аеропорту, трансфер до роботодавця
+          </li>
+          <li class="pc-line">
+            <svg class="pc-check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            BSN / Anmeldung / ΙΚΑ / INPS — допомога з оформленням
+          </li>
+        </ul>
+
+        <p class="pc-meta">
+          Працює для Німеччини, Нідерландів, Греції та Італії. Усі країни ЄС мають
+          єдиний європейський стандарт оформлення трудових документів.
+        </p>
+
+        <a href="country.html?c=germany" class="btn btn-primary" style="width: 100%;">Усі ЄС напрямки →</a>
+      </div>
+    </div>
+
+    <!-- Trust strip -->
+    <div class="trust-strip">
+      <div>
+        <svg class="trust-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l9 4v6c0 5-3.5 9.5-9 10-5.5-.5-9-5-9-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        <div class="trust-item-title">Stripe Payments</div>
+        <div class="trust-item-text">PCI DSS Level 1. Ваші дані карт не зберігаються на нашому сервері.</div>
+      </div>
+      <div>
+        <svg class="trust-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        <div class="trust-item-title">UK Companies House</div>
+        <div class="trust-item-text">HR &amp; Recruit Ltd · Company No. 15117049. Активна реєстрація.</div>
+      </div>
+      <div>
+        <svg class="trust-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        <div class="trust-item-title">Публічна оферта</div>
+        <div class="trust-item-text">Всі умови, гарантії та повернення прописані у відкритому документі.</div>
+      </div>
+      <div>
+        <svg class="trust-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <div class="trust-item-title">UK Consumer Rights Act 2015</div>
+        <div class="trust-item-text">Діяльність регулюється британським законодавством захисту споживачів.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENT SERVICE DEEP DIVE -->
+<section class="svc-section" id="uk" style="background: var(--bg-elev);">
+  <div class="container">
+    <div class="svc-grid">
+      <div class="svc-grid-title">
+        <div class="eyebrow eyebrow-accent" style="margin-bottom: 16px;">01 · Document Service</div>
+        <h2 class="display" style="font-size: clamp(2rem, 4vw, 3.25rem); margin-bottom: 24px;">
+          Що саме<br>
+          <em style="color: var(--accent);">входить</em><br>
+          у підготовку<br>
+          документів
+        </h2>
+        <p style="color: var(--ink-soft); font-size: 0.9375rem; line-height: 1.6;">
+          Це не «одна папка з паперами». Це послідовність із 6 етапів, які займають
+          2–6 тижнів залежно від країни.
+        </p>
+        <div style="margin-top: 32px; padding: 24px; background: var(--bg); border-radius: var(--r-lg); border: 1px solid var(--line);">
+          <div class="eyebrow" style="margin-bottom: 8px;">Тривалість</div>
+          <div style="font-family: var(--font-display); font-size: 1.5rem;">
+            UK: <strong>4–6 тижнів</strong><br>
+            ЄС: <strong>2–4 тижні</strong>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="svc-step">
+          <div class="svc-step-num">01</div>
+          <div>
+            <h4>Запит документів від роботодавця</h4>
+            <p>Запитуємо у роботодавця sponsor letter (UK) або робочий контракт (ЄС). Перевіряємо, що документ оформлений за законом країни та містить всі обов'язкові поля.</p>
+          </div>
+        </div>
+        <div class="svc-step">
+          <div class="svc-step-num">02</div>
+          <div>
+            <h4>Підготовка ваших документів</h4>
+            <p>Сканування та переклад: закордонний паспорт, диплом (якщо потрібен), довідка про відсутність судимості, медична довідка. Усі переклади — присяжними перекладачами з апостилем для UK.</p>
+          </div>
+        </div>
+        <div class="svc-step">
+          <div class="svc-step-num">03</div>
+          <div>
+            <h4>Заповнення work permit application</h4>
+            <p>Заповнюємо офіційні форми разом з вами: для UK — gov.uk skilled worker visa, для ЄС — національні форми (Auslandsvertretung, IND, Ergani, Sportello Unico).</p>
+          </div>
+        </div>
+        <div class="svc-step">
+          <div class="svc-step-num">04</div>
+          <div>
+            <h4>Запис на біометрію та консульське інтерв'ю</h4>
+            <p>Бронюємо слот у візовому центрі або консульстві. Для UK — VFS Global. Для ЄС — у країнах прийому або в Україні через консульства.</p>
+          </div>
+        </div>
+        <div class="svc-step">
+          <div class="svc-step-num">05</div>
+          <div>
+            <h4>Супровід до отримання візи / work permit</h4>
+            <p>Відслідковуємо статус заявки, відповідаємо на додаткові запити консульства. Передаємо готову візу разом з пакетом документів.</p>
+          </div>
+        </div>
+        <div class="svc-step">
+          <div class="svc-step-num">06</div>
+          <div>
+            <h4>Передача готового пакета</h4>
+            <p>Ви отримуєте: оригінал sponsor letter / контракту, перекладені документи, копії всіх submissions, інструкцію для перетину кордону. <strong>На цьому Document Service вважається оказаним.</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARRIVAL SERVICE DEEP DIVE -->
+<section class="svc-section" id="eu">
+  <div class="container">
+    <div class="svc-grid">
+      <div class="svc-grid-title">
+        <div class="eyebrow eyebrow-accent" style="margin-bottom: 16px;">02 · Arrival Service</div>
+        <h2 class="display" style="font-size: clamp(2rem, 4vw, 3.25rem); margin-bottom: 24px;">
+          Що відбувається<br>
+          у <em style="color: var(--accent);">перші 14 днів</em><br>
+          після приземлення
+        </h2>
+        <p style="color: var(--ink-soft); font-size: 0.9375rem; line-height: 1.6;">
+          Перший тиждень у новій країні — найскладніший. Без BSN неможливо отримати
+          зарплату. Без Anmeldung — відкрити рахунок. Без SIM-картки — зв'язатися ні з ким.
+        </p>
+        <div style="margin-top: 32px; padding: 24px; background: var(--bg-elev); border-radius: var(--r-lg); border: 1px solid var(--line);">
+          <div class="eyebrow" style="margin-bottom: 8px;">Опціонально</div>
+          <div style="font-family: var(--font-display); font-size: 1.0625rem; line-height: 1.4;">
+            Можна відмовитися від&nbsp;Arrival і&nbsp;добиратися самостійно. Ставка не&nbsp;змінюється.
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="svc-step">
+          <div class="svc-step-num">01</div>
+          <div>
+            <h4>Зустріч в аеропорту</h4>
+            <p>Координатор зустрічає вас у залі прильоту з табличкою. Допомагає з валізами, проводить до транспорту. Контактні дані координатора отримуєте за 48 годин до вильоту.</p>
+          </div>
+        </div>
+        <div class="svc-step">
+          <div class="svc-step-num">02</div>
+          <div>
+            <h4>Трансфер до місця роботи</h4>
+            <p>Машина, мікроавтобус або поїзд — залежно від відстані. Для віддалених ферм UK — мікроавтобус прямо з Гетвіку. Для голландських теплиць — машина з аеропорту Схипхол.</p>
+          </div>
+        </div>
+        <div class="svc-step">
+          <div class="svc-step-num">03</div>
+          <div>
+            <h4>Заселення</h4>
+            <p>Показуємо кімнату, кухню, спільні зони. Передаємо ключі, контакти господаря або менеджера житла. Перевіряємо, що все працює — Wi-Fi, опалення, гаряча вода.</p>
+          </div>
+        </div>
+        <div class="svc-step">
+          <div class="svc-step-num">04</div>
+          <div>
+            <h4>SIM-картка та інтернет</h4>
+            <p>Везе́мо до точки продажу SIM. Допомагаємо вибрати тариф (зазвичай €15–25/міс з безліміт-інтернетом). Налаштовуємо WhatsApp та інші меседжери для роботи.</p>
+          </div>
+        </div>
+        <div class="svc-step">
+          <div class="svc-step-num">05</div>
+          <div>
+            <h4>Реєстрація: BSN / Anmeldung / NIN</h4>
+            <p>Голландія — Burgerservicenummer у муніципалітеті. Німеччина — Anmeldung у Bürgeramt. UK — National Insurance Number (онлайн заявка + інтерв'ю). Греція — ΑΦΜ + ΙΚΑ. Італія — Codice Fiscale + INPS.</p>
+          </div>
+        </div>
+        <div class="svc-step">
+          <div class="svc-step-num">06</div>
+          <div>
+            <h4>Відкриття банківського рахунку</h4>
+            <p>Записуємо у банк (ING / ABN AMRO для NL, Sparkasse / N26 для DE, Monzo / Revolut для UK). Супроводжуємо на зустріч, перекладаємо при потребі.</p>
+          </div>
+        </div>
+        <div class="svc-step">
+          <div class="svc-step-num">07</div>
+          <div>
+            <h4>Знайомство з роботодавцем</h4>
+            <p>Перший робочий день — координатор проводжає вас до прохідної, представляє керівнику. Якщо є мовний бар'єр — допомагаємо з першими інструкціями.</p>
+          </div>
+        </div>
+        <div class="svc-step">
+          <div class="svc-step-num">08</div>
+          <div>
+            <h4>Підтримка 24/7 перші 14 днів</h4>
+            <p>Координатор на зв'язку цілодобово. Будь-яка проблема — пишете в месенджер, реагуємо у межах години. Після 14 днів переходимо на standard support (відповідь у межах робочого дня).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFUND POLICY -->
+<section class="svc-section" style="background: var(--bg-elev);">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 64px; align-items: start; margin-bottom: 48px;">
+      <div>
+        <div class="eyebrow eyebrow-accent" style="margin-bottom: 16px;">03 · Гарантія повернення</div>
+        <h2 class="display" style="font-size: clamp(2rem, 4vw, 3.25rem);">
+          Прозоро,<br>
+          <em style="color: var(--accent);">по&nbsp;днях</em>.
+        </h2>
+        <p style="margin-top: 24px; color: var(--ink-soft); font-size: 0.9375rem; line-height: 1.6;">
+          Не «можливо повернемо». Конкретні відсотки, прив'язані до етапу виконання.
+          Все прописано у публічній оферті.
+        </p>
+      </div>
+      <div>
+        <table class="refund-table">
+          <thead>
+            <tr>
+              <th>Ситуація</th>
+              <th>Document Service</th>
+              <th>Arrival Service</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Відмова до початку робіт</td>
+              <td><span class="refund-percent refund-90">90%</span></td>
+              <td><span class="refund-percent refund-90">за&nbsp;14+ днів — 90%</span></td>
+            </tr>
+            <tr>
+              <td>Роботи в процесі</td>
+              <td><span class="refund-percent refund-50">50%</span></td>
+              <td><span class="refund-percent refund-50">3–14 днів — 50%</span></td>
+            </tr>
+            <tr>
+              <td>Роботи завершені, документи передані</td>
+              <td><span class="refund-percent refund-0">0%</span></td>
+              <td><span class="refund-percent refund-0">&lt;3 днів — 0%</span></td>
+            </tr>
+            <tr>
+              <td>Відмова консульства або роботодавця <em style="font-style: normal; color: var(--ink-mute); font-size: 0.8125rem;">(не з вини кандидата)</em></td>
+              <td><span class="refund-percent refund-100">100%</span></td>
+              <td><span class="refund-percent refund-100">100%</span></td>
+            </tr>
+            <tr>
+              <td>Кандидат надав неправдиві дані</td>
+              <td><span class="refund-percent refund-0">0%</span></td>
+              <td><span class="refund-percent refund-0">0%</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Key callout -->
+    <div class="callout">
+      <div class="callout-mark">"</div>
+      <div class="callout-eyebrow">Ключовий пункт оферти</div>
+      <p class="callout-text">
+        Document Service вважається наданим у момент <em>передачі кандидату готового пакета документів</em>
+        або їх подачі у відповідний орган/роботодавцю. Період очікування рішення консульства,
+        узгодження work&nbsp;permit чи фактичного початку трудових відносин не&nbsp;входить у&nbsp;предмет договору
+        і&nbsp;не&nbsp;є&nbsp;підставою для&nbsp;повернення коштів у&nbsp;разі&nbsp;відмови кандидата від&nbsp;вакансії після&nbsp;отримання готових документів.
+      </p>
+    </div>
+
+    <p style="font-size: 0.875rem; color: var(--ink-mute); max-width: 720px; line-height: 1.6;">
+      <strong style="color: var(--ink);">Чому так:</strong> підготовка повного пакету документів займає
+      від&nbsp;2 до&nbsp;6&nbsp;тижнів роботи нашої команди. Якщо ви&nbsp;отримали готові документи на&nbsp;руки і&nbsp;далі прийняли рішення
+      не&nbsp;виїжджати&nbsp;— це&nbsp;ваше право, але&nbsp;послуга з&nbsp;нашого боку вже&nbsp;виконана. Ця&nbsp;формула захищає
+      обидві сторони&nbsp;— ви&nbsp;точно знаєте, за&nbsp;що&nbsp;платите, ми&nbsp;точно знаємо, коли&nbsp;робота вважається завершеною.
+    </p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start;">
+      <div>
+        <div class="eyebrow eyebrow-accent" style="margin-bottom: 16px;">04 · FAQ</div>
+        <h2 class="display">
+          Часті<br>
+          <em style="color: var(--accent);">запитання</em>.
+        </h2>
+      </div>
+      <div class="faq" id="faqList"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section" style="background: var(--bg-dark); color: var(--bg); padding-top: 96px; padding-bottom: 96px; text-align: center;">
+  <div class="container">
+    <div class="eyebrow" style="color: var(--brass); margin-bottom: 24px;">Зробити перший крок</div>
+    <h2 class="display" style="color: var(--bg); font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 24px; max-width: 18ch; margin-left: auto; margin-right: auto;">
+      Підбір вакансії та інтерв'ю —<br>
+      <em style="color: var(--brass);">безкоштовно</em>.
+    </h2>
+    <p class="lede" style="color: rgba(245,241,232,0.75); max-width: 540px; margin: 0 auto 40px;">
+      Заявка ні до чого не зобов'язує. Платні послуги — лише після офіційного job offer і за вашим рішенням.
+    </p>
+    <a href="index.html#apply" class="btn btn-accent btn-lg btn-arrow">Залишити заявку</a>
+  </div>
+</section>
+
+<div id="siteFooter"></div>
+<div id="siteCookies"></div>
+<div id="siteMessenger"></div>
+
+<script src="data/site.js"></script>
+<script src="js/main.js"></script>
+<script>
+  initSite("services");
+
+  // Render FAQ
+  const faqHtml = window.FAQ.map(f => `
+    <div class="faq-item">
+      <div class="faq-q">
+        <span>${f.q}</span>
+        <span class="faq-toggle"></span>
+      </div>
+      <div class="faq-a">${f.a}</div>
+    </div>
+  `).join("");
+  document.getElementById("faqList").innerHTML = faqHtml;
+
+  initFAQ();
+  initReveal();
+</script>
+
+</body>
+</html>
