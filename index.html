@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Сезонная работа в Англии 2026 — вакансии | HR & Recruit</title>
-<meta name="description" content="Грибные фермы, овощные склады, теплицы — сезонная работа в Великобритании. Сезонная виза, контракт, жильё включено. Без опыта и языка.">
+<title>Легальная работа в Европе 2026 — Англия, Германия, Нидерланды, Греция, Италия | HR & Recruit</title>
+<meta name="description" content="Лицензированное агентство. Вакансии в 5 странах Европы: фермы, склады, теплицы, отели. От €1800/мес. Жильё включено. Бесплатно для кандидата.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <meta name="author" content="HR & Recruit Limited">
-<meta name="keywords" content="работа в Англии, сезонная работа Великобритания, сбор грибов UK, работа на ферме, рабочая виза Англия, seasonal worker visa, работа без опыта">
+<meta name="keywords" content="работа в Европе, работа в Англии, работа в Германии, работа в Нидерландах, работа в Греции, работа в Италии, легальное трудоустройство, рабочая виза">
 <meta name="theme-color" content="#1a2b52">
 <link rel="canonical" href="https://uk-lending.vercel.app/">
 <meta property="og:type" content="website">
@@ -775,823 +775,500 @@ footer a:hover{color:var(--navy)}
 </script>
 </head>
 <body>
+
+<!-- ─── EXTRA STYLES FOR AGENCY REBUILD ─── -->
+<style>
+/* Country cards grid */
+.countries-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.country-card{border:1px solid var(--border);background:var(--white);overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .15s;display:flex;flex-direction:column;text-align:left;font-family:'DM Sans',sans-serif;padding:0;width:100%}
+.country-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--blue)}
+.cc-img{aspect-ratio:16/10;overflow:hidden;background:var(--surface2)}
+.cc-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.country-card:hover .cc-img img{transform:scale(1.05)}
+.cc-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.cc-flag-row{display:flex;align-items:center;gap:10px}
+.cc-flag{font-size:28px;line-height:1}
+.cc-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--navy)}
+.cc-desc{font-size:13px;color:var(--ink-mid);line-height:1.6;font-weight:400;flex:1}
+.cc-meta{display:flex;justify-content:space-between;align-items:center;margin-top:6px;padding-top:12px;border-top:1px solid var(--border-light)}
+.cc-salary{font-size:13px;font-weight:700;color:var(--green)}
+.cc-more{font-size:12px;font-weight:600;color:var(--blue);letter-spacing:.3px}
+.cc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}
+.cc-tag{font-size:10.5px;font-weight:600;color:var(--ink-light);background:var(--surface);border:1px solid var(--border);padding:3px 9px;letter-spacing:.2px}
+
+/* Modal system */
+.modal-overlay{position:fixed;inset:0;background:rgba(15,22,40,.72);backdrop-filter:blur(4px);z-index:10000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:20px;-webkit-overflow-scrolling:touch}
+.modal-overlay.active{display:flex}
+.modal-box{background:var(--white);width:100%;max-width:1000px;border:1px solid var(--border);box-shadow:var(--shadow-lg);position:relative;margin:20px auto;animation:modalIn .25s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.modal-close{position:absolute;top:14px;right:14px;width:42px;height:42px;background:rgba(255,255,255,.96);border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;border-radius:50%;transition:background .15s,transform .15s;box-shadow:var(--shadow-sm)}
+.modal-close:hover{background:var(--red-bg);transform:scale(1.05)}
+.modal-close svg{width:16px;height:16px;stroke:var(--ink);stroke-width:2.5;fill:none}
+.modal-hero{position:relative;height:280px;overflow:hidden;background:var(--navy)}
+.modal-hero img{width:100%;height:100%;object-fit:cover;display:block}
+.modal-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,22,40,0) 30%,rgba(15,22,40,.85) 100%)}
+.modal-hero-content{position:absolute;left:0;right:0;bottom:0;padding:24px 28px;z-index:2;color:#fff}
+.modal-hero-content .flag{font-size:36px;line-height:1;margin-bottom:6px}
+.modal-hero-content h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,38px);font-weight:600;letter-spacing:-.3px;line-height:1.1;color:#fff;margin-bottom:6px}
+.modal-hero-content p{font-size:14px;color:rgba(255,255,255,.85);line-height:1.5;font-weight:300;max-width:600px}
+.modal-back{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.94);border:1px solid var(--border);padding:8px 14px 8px 12px;font-size:12px;font-weight:600;color:var(--navy);cursor:pointer;display:flex;align-items:center;gap:6px;border-radius:24px;z-index:10;box-shadow:var(--shadow-sm);font-family:'DM Sans',sans-serif}
+.modal-back:hover{background:#fff}
+.modal-back svg{width:13px;height:13px;stroke:var(--navy);stroke-width:2.2;fill:none}
+.modal-body{padding:32px 32px 36px}
+
+.vac-list{display:flex;flex-direction:column;gap:14px;margin-top:14px}
+.vac{border:1px solid var(--border);padding:18px 20px;background:var(--surface);transition:border-color .15s,background .15s}
+.vac:hover{border-color:var(--blue);background:var(--white)}
+.vac-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:6px;flex-wrap:wrap}
+.vac-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--navy);line-height:1.2}
+.vac-salary{font-size:13.5px;font-weight:700;color:var(--green);background:var(--green-bg);border:1px solid rgba(13,107,56,.25);padding:5px 12px;white-space:nowrap}
+.vac-desc{font-size:13px;color:var(--ink-mid);line-height:1.7;font-weight:300}
+
+.mod-h{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--navy);margin:32px 0 4px;letter-spacing:-.2px}
+.mod-h-sm{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:4px}
+
+.mod-photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:14px}
+.mod-photo{aspect-ratio:1/1;overflow:hidden;background:var(--surface2)}
+.mod-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.mod-photo:hover img{transform:scale(1.06)}
+.mod-house-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:14px}
+.mod-house{aspect-ratio:4/3;overflow:hidden;background:var(--surface2)}
+.mod-house img{width:100%;height:100%;object-fit:cover;display:block}
+
+.mod-reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.mod-rev{background:var(--surface);border:1px solid var(--border);padding:16px}
+.mod-rev .stars{color:#d4a010;font-size:12px;margin-bottom:8px;letter-spacing:1px}
+.mod-rev p{font-family:'Playfair Display',serif;font-style:italic;font-size:13px;color:var(--ink-mid);line-height:1.65;margin-bottom:10px}
+.mod-rev .who{font-size:11.5px;color:var(--ink-light);font-weight:500}
+
+.mod-form{background:var(--navy);padding:26px 28px;margin-top:32px;color:#fff}
+.mod-form h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:#fff;margin-bottom:4px}
+.mod-form p{font-size:13px;color:rgba(255,255,255,.55);margin-bottom:18px;font-weight:300}
+.mod-form .fg label{color:rgba(255,255,255,.6)}
+.mod-form .fg input,.mod-form .fg select{background:rgba(255,255,255,.05);color:#fff;border-color:rgba(255,255,255,.12)}
+.mod-form .fg input::placeholder{color:rgba(255,255,255,.3)}
+.mod-form .fg input:focus,.mod-form .fg select:focus{background:rgba(255,255,255,.08);border-color:#fde68a}
+.mod-form .btn-submit{background:#fde68a;color:var(--navy);font-weight:700}
+.mod-form .btn-submit:hover{background:#fff;color:var(--navy)}
+
+/* Hero section */
+.hero-agency{padding:80px 32px 64px;background:linear-gradient(180deg,#fff 0%,var(--surface) 100%);border-bottom:1px solid var(--border);text-align:center;position:relative;overflow:hidden}
+.hero-agency::before{content:'';position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1493612276216-ee3925520721?w=1600&q=80&auto=format');background-size:cover;background-position:center;opacity:.07;z-index:0}
+.hero-agency-inner{max-width:920px;margin:0 auto;position:relative;z-index:1}
+.hero-trust-tag{display:inline-flex;align-items:center;gap:8px;background:var(--green-bg);border:1px solid rgba(13,107,56,.3);color:var(--green);padding:7px 16px;font-size:12px;font-weight:700;letter-spacing:.4px;margin-bottom:20px}
+.hero-trust-tag::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);animation:pd 2s infinite}
+.hero-agency h1{font-family:'Playfair Display',serif;font-size:clamp(36px,4.5vw,60px);font-weight:600;line-height:1.05;color:var(--navy);letter-spacing:-.6px;margin-bottom:18px}
+.hero-agency h1 em{color:var(--blue);font-style:normal}
+.hero-agency .hero-sub{font-size:17px;color:var(--ink-mid);line-height:1.65;max-width:700px;margin:0 auto 14px;font-weight:400}
+.hero-agency .hero-trust{font-size:13.5px;color:var(--gold);background:var(--gold-bg);border:1px solid rgba(154,112,16,.25);padding:10px 20px;display:inline-block;margin:8px 0 28px;font-weight:600;letter-spacing:.2px}
+.hero-cta-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.hero-flags-row{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:36px;padding-top:28px;border-top:1px solid var(--border-light)}
+.hf-flag{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:32px;line-height:1;cursor:pointer;transition:transform .15s}
+.hf-flag:hover{transform:translateY(-3px)}
+.hf-flag span{font-size:11px;font-weight:600;color:var(--ink-mid);letter-spacing:.3px}
+
+/* Why us */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border);margin-top:36px}
+.why-card{padding:24px 22px;border-right:1px solid var(--border);background:var(--white);transition:background .15s}
+.why-card:last-child{border-right:none}
+.why-card:hover{background:var(--surface)}
+.why-ico{font-size:28px;margin-bottom:12px;display:block}
+.why-card h3{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:6px;line-height:1.3}
+.why-card p{font-size:12.5px;color:var(--ink-mid);line-height:1.65;font-weight:300}
+
+/* Video testimonials */
+.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.video-card{border:1px solid var(--border);background:var(--white);overflow:hidden}
+.video-frame{aspect-ratio:9/16;background:#000;position:relative}
+.video-frame iframe{width:100%;height:100%;border:0;display:block}
+.video-meta{padding:14px 18px}
+.video-meta h4{font-size:13px;font-weight:600;color:var(--navy);margin-bottom:3px}
+.video-meta p{font-size:11.5px;color:var(--ink-light);font-weight:300;line-height:1.5}
+
+/* Documents */
+.docs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px}
+.doc-card{border:1px solid var(--border);background:var(--white);padding:20px 18px;cursor:pointer;transition:border-color .15s,transform .15s;text-align:center}
+.doc-card:hover{border-color:var(--blue);transform:translateY(-2px)}
+.doc-ico{width:48px;height:48px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;color:var(--blue)}
+.doc-ico svg{width:24px;height:24px;stroke:currentColor;stroke-width:1.8;fill:none}
+.doc-card h4{font-size:13px;font-weight:600;color:var(--navy);margin-bottom:4px;line-height:1.3}
+.doc-card p{font-size:11.5px;color:var(--ink-light);font-weight:300}
+
+/* Application form (main page) */
+.app-form-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.app-form-wrap{max-width:560px;margin:36px auto 0;background:var(--white);border:1px solid var(--border);box-shadow:var(--shadow)}
+.app-form-wrap .hf-top{background:var(--navy);padding:22px 26px}
+.app-form-wrap .hf-body{padding:24px 26px 28px}
+
+/* Responsive */
+@media(max-width:1024px){
+  .countries-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .why-card:nth-child(odd){border-right:1px solid var(--border)}
+  .why-card:nth-child(2){border-right:none}
+  .why-card:nth-child(1),.why-card:nth-child(2){border-bottom:1px solid var(--border)}
+  .video-grid{grid-template-columns:repeat(2,1fr)}
+  .docs-grid{grid-template-columns:repeat(2,1fr)}
+  .mod-photo-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:640px){
+  .hero-agency{padding:52px 20px 44px}
+  .hero-agency h1{font-size:32px!important;line-height:1.1}
+  .hero-agency .hero-sub{font-size:15px}
+  .hero-flags-row{gap:16px;margin-top:24px}
+  .hf-flag{font-size:26px}
+  .countries-grid{grid-template-columns:1fr;gap:14px}
+  .why-grid{grid-template-columns:1fr}
+  .why-card{border-right:none!important;border-bottom:1px solid var(--border)!important}
+  .why-card:last-child{border-bottom:none!important}
+  .video-grid{grid-template-columns:1fr}
+  .docs-grid{grid-template-columns:1fr 1fr}
+  .modal-overlay{padding:0;align-items:stretch}
+  .modal-box{margin:0;max-width:100%;min-height:100vh}
+  .modal-body{padding:22px 18px 28px}
+  .modal-hero{height:200px}
+  .modal-hero-content{padding:18px 20px}
+  .mod-photo-grid{grid-template-columns:repeat(2,1fr)}
+  .mod-house-grid{grid-template-columns:1fr 1fr}
+  .mod-reviews{grid-template-columns:1fr}
+  .mod-form{padding:22px 18px}
+  .vac-head{flex-direction:column;align-items:flex-start;gap:6px}
+}
+
+body.modal-open{overflow:hidden}
+</style>
+
 <!-- HEADER -->
 <header class="hdr">
   <div class="hdr-inner">
-    <div class="brand">
-      <img src="assets/logo-hr-recruit.png" alt="HR & Recruit Limited" style="height:40px;width:auto;display:block" fetchpriority="high">
-    </div>
-    <nav class="hdr-nav" role="navigation" aria-label="Главная навигация">
-      <a href="#safety">Доверие</a>
-      <a href="#math">Зарплата</a>
-      <a href="#housing">Жильё</a>
-      <a href="#process">Процесс</a>
-      <a href="#faq">Вопросы</a>
-      <a href="#contacts">Контакты</a>
+    <a href="#" class="brand" style="text-decoration:none">
+      <div class="brand-mark"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg></div>
+      <div class="brand-text">
+        <span class="bn">HR & Recruit</span>
+        <span class="bs">Licensed Recruitment Agency</span>
+      </div>
+    </a>
+    <nav class="hdr-nav">
+      <a href="#countries">Страны</a>
+      <a href="#why">Почему мы</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#docs">Документы</a>
+      <a href="#how">Как это работает</a>
     </nav>
-    <button class="hdr-btn" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Оставить заявку</button>
+    <button class="hdr-btn" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Подать заявку</button>
   </div>
 </header>
 
-<!-- ══════════════════════════════════════════
-     STAGE 1 — HOOK
-     Що це? Чому мені цікаво?
-════════════════════════════════════════════ -->
-<section class="hero" id="top" aria-label="Описание вакансии" style="background:var(--navy);padding:0;min-height:auto;position:relative;overflow:hidden">
+<!-- ANNOUNCE BAR -->
+<div class="announce">
+  <span class="ann-dot"></span>
+  <span><strong>Сезон 2026 открыт</strong> · Набор кандидатов в 5 стран Европы · Жильё и контракт включены</span>
+</div>
 
-  <!-- Фоновое изображение — без зума, видно всё -->
-  <div class="hero-bg-image" style="position:absolute;top:0;left:0;right:0;height:62%;background-image:url('assets/hero-strawberry.jpg');background-size:cover;background-position:center 30%;filter:blur(0.5px);z-index:0"></div>
-
-  <!-- Тёмный градиент для читаемости текста на фото -->
-  <div style="position:absolute;top:0;left:0;right:0;height:62%;background:linear-gradient(180deg,rgba(26,43,82,.05) 0%,rgba(26,43,82,.2) 60%,rgba(26,43,82,.9) 100%);z-index:1"></div>
-
-  <!-- Волнистая граница между фото и navy -->
-  <svg class="hero-wave" style="position:absolute;top:57%;left:0;right:0;width:100%;height:8%;z-index:2;display:block" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0,80 Q360,0 720,60 T1440,40 L1440,120 L0,120 Z" fill="#1a2b52"/>
-  </svg>
-
-  <div class="hero-inner" style="position:relative;z-index:3;max-width:980px;margin:0 auto;padding:280px 32px 32px;width:100%;text-align:center;color:#fff">
-
-    <!-- Большой заголовок -->
-    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,60px);font-weight:600;line-height:1.05;color:#fff;margin-bottom:18px;letter-spacing:-.5px;text-shadow:0 2px 16px rgba(0,0,0,.35)">Сезонная работа<br>в Англии — <em style="color:#fde68a;font-style:normal">для всех</em></h1>
-
-    <!-- Подзаголовок -->
-    <p style="font-size:17px;color:rgba(255,255,255,.85);line-height:1.6;margin:0 auto 28px;max-width:600px;font-weight:400">Легальное трудоустройство на фермах Великобритании. <strong style="color:#fff;font-weight:600">Без опыта, без знания языка. Бесплатная вакансия.</strong></p>
-
-    <!-- Главный блок: зарплата + жильё -->
-    <div style="display:inline-grid;grid-template-columns:auto auto auto;align-items:center;gap:24px;padding:18px 28px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px);margin-bottom:28px">
-      <div style="text-align:left">
-        <div style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:3px">На руки в месяц</div>
-        <div style="font-family:'Playfair Display',serif;font-size:34px;font-weight:600;color:#fde68a;line-height:1">от £1 900</div>
-        <div style="font-size:11.5px;color:rgba(255,255,255,.5);margin-top:2px">≈ €2 260 евро</div>
-      </div>
-      <div style="font-size:22px;color:rgba(255,255,255,.4);font-weight:300">+</div>
-      <div style="text-align:left">
-        <div style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#86efac;margin-bottom:3px">Жильё</div>
-        <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:#86efac;line-height:1">включено</div>
-        <div style="font-size:11.5px;color:rgba(255,255,255,.5);margin-top:2px">караван на ферме</div>
-      </div>
+<!-- HERO -->
+<section class="hero-agency">
+  <div class="hero-agency-inner">
+    <div class="hero-trust-tag">Лицензия №05580634 · Сезон 2026</div>
+    <h1>Легальная работа <em>в Европе</em></h1>
+    <p class="hero-sub">5 стран · от €1800 в месяц · жильё включено · бесплатно для кандидата</p>
+    <div class="hero-trust">Первое агентство, которое делает всё легально и через официальный сайт</div>
+    <div class="hero-cta-row">
+      <button class="btn-main" onclick="document.getElementById('countries').scrollIntoView({behavior:'smooth'})">Выбрать страну ↓</button>
     </div>
-
-    <!-- 4 факта -->
-    <ul class="hero-facts mob-2col" style="list-style:none;padding:0;margin:0 auto 28px;display:grid;grid-template-columns:repeat(4,auto);justify-content:center;gap:14px 32px;max-width:920px">
-      <li style="display:flex;gap:8px;align-items:center;font-size:13.5px;color:rgba(255,255,255,.85)"><span style="color:#86efac;font-weight:700;font-size:16px">✓</span>Бесплатно</li>
-      <li style="display:flex;gap:8px;align-items:center;font-size:13.5px;color:rgba(255,255,255,.85)"><span style="color:#86efac;font-weight:700;font-size:16px">✓</span>Все по-русски</li>
-      <li style="display:flex;gap:8px;align-items:center;font-size:13.5px;color:rgba(255,255,255,.85)"><span style="color:#86efac;font-weight:700;font-size:16px">✓</span>Опыт не нужен</li>
-      <li style="display:flex;gap:8px;align-items:center;font-size:13.5px;color:rgba(255,255,255,.85)"><span style="color:#86efac;font-weight:700;font-size:16px">✓</span>Виза + контракт</li>
-    </ul>
-
-    <!-- Кнопки -->
-    <div style="display:flex;flex-direction:column;gap:10px;max-width:380px;margin:0 auto 16px">
-      <button class="btn-main" onclick="document.getElementById('vacancies').scrollIntoView({behavior:'smooth'})" style="width:100%;background:#fff;color:var(--navy)">Узнать о вакансиях ↓</button>
-      <button class="btn-line" onclick="toggleMsg()" style="width:100%;min-height:48px;background:transparent;color:#fff;border-color:rgba(255,255,255,.3)">✉ Написать в мессенджер</button>
+    <div class="hero-flags-row" role="list">
+      <a href="#countries" class="hf-flag" onclick="event.preventDefault();openCountry('uk')">🇬🇧<span>Англия</span></a>
+      <a href="#countries" class="hf-flag" onclick="event.preventDefault();openCountry('de')">🇩🇪<span>Германия</span></a>
+      <a href="#countries" class="hf-flag" onclick="event.preventDefault();openCountry('nl')">🇳🇱<span>Нидерланды</span></a>
+      <a href="#countries" class="hf-flag" onclick="event.preventDefault();openCountry('gr')">🇬🇷<span>Греция</span></a>
+      <a href="#countries" class="hf-flag" onclick="event.preventDefault();openCountry('it')">🇮🇹<span>Италия</span></a>
     </div>
-
-    <!-- Лицензия -->
-    <div style="display:inline-flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.55);background:transparent!important;padding:0;margin:0">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      Лицензия №05580634 · Госпрограмма правительства Великобритании
-    </div>
-
   </div>
 </section>
 
-
-
-<!-- VACANCIES SELECTOR -->
-<section style="background:var(--surface);border-top:1px solid var(--border);padding:52px 32px" id="vacancies" aria-label="Вакансии">
+<!-- WHY US -->
+<section id="why" style="background:var(--white)">
   <div class="container">
-    <p class="stag" style="justify-content:center">Сезон 2026 · Вакансии</p>
-    <h2 class="sh" style="text-align:center">Выберите свою <em>работу в Англии</em></h2>
-    <p class="sb" style="text-align:center;max-width:600px;margin-left:auto;margin-right:auto">Все три вакансии — одна программа, одни условия. Меняется только тип работы и ставка. Жильё, виза, бесплатный рекрутинг — везде одинаково.</p>
-
-    <div class="mob-1col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px">
-      <!-- VACANCY 1: Грибы -->
-      <div style="background:var(--white);border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column">
-        <div style="position:relative;aspect-ratio:16/10;overflow:hidden">
-          <img src="assets/mushroom-harvest.jpg" alt="Грибная ферма" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-          <div style="position:absolute;top:10px;left:10px;background:var(--navy);color:#fff;padding:4px 10px;font-size:11px;font-weight:700;letter-spacing:.5px">ВАКАНСИЯ 1</div>
-        </div>
-        <div style="padding:20px;flex:1;display:flex;flex-direction:column">
-          <h3 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--navy);margin-bottom:6px">Грибная ферма</h3>
-          <div style="display:inline-flex;align-items:baseline;gap:8px;margin-bottom:10px">
-            <span style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--blue)">12.90 фунтов в час</span>
-            <span style="font-size:12px;color:var(--ink-light)">~£1 900/мес ≈ €2 260</span>
-          </div>
-          <p style="font-size:13px;color:var(--ink-mid);line-height:1.65;margin-bottom:12px">Сбор шампиньонов в закрытых ангарах с климат-контролем (+18–22°C круглый год).</p>
-          <ul style="list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:5px;font-size:12.5px;color:var(--ink-mid)">
-            <li style="display:flex;gap:6px"><span style="color:var(--blue);flex-shrink:0">•</span>Ручной сбор грибов с полок</li>
-            <li style="display:flex;gap:6px"><span style="color:var(--blue);flex-shrink:0">•</span>Сортировка по размеру</li>
-            <li style="display:flex;gap:6px"><span style="color:var(--blue);flex-shrink:0">•</span>Упаковка в лотки</li>
-            <li style="display:flex;gap:6px"><span style="color:var(--blue);flex-shrink:0">•</span>Мужчины и женщины</li>
-          </ul>
-          <div style="margin-top:auto">
-            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin-bottom:8px">
-              <a href="https://wa.me/YOUR_WHATSAPP?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D1%82%D1%8C%20%D0%BD%D0%B0%20%D0%B3%D1%80%D0%B8%D0%B1%D0%BD%D0%BE%D0%B9%20%D1%84%D0%B5%D1%80%D0%BC%D0%B5" target="_blank" rel="noopener" aria-label="WhatsApp о грибной ферме" style="display:flex;align-items:center;justify-content:center;padding:9px;background:#25D366;text-decoration:none">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              </a>
-              <a href="https://t.me/YOUR_TELEGRAM?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D1%82%D1%8C%20%D0%BD%D0%B0%20%D0%B3%D1%80%D0%B8%D0%B1%D0%BD%D0%BE%D0%B9%20%D1%84%D0%B5%D1%80%D0%BC%D0%B5" target="_blank" rel="noopener" aria-label="Telegram о грибной ферме" style="display:flex;align-items:center;justify-content:center;padding:9px;background:#2AABEE;text-decoration:none">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
-              </a>
-              <a href="viber://chat?number=YOUR_VIBER" aria-label="Viber о грибной ферме" style="display:flex;align-items:center;justify-content:center;padding:9px;background:#7360F2;text-decoration:none">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M11.4 0h1.2C18.9.3 23.7 5.4 24 11.8v1.2c-.3 5.2-3.6 9.7-8.4 11.5l-.3.1v-3.2c0-.2-.1-.3-.3-.3-4.4-.8-7.8-4.6-7.8-9.2 0-.5.1-1 .2-1.5.7-3.7 3.8-6.5 7.5-7.1.4-.1.8-.1 1.3-.1.5 0 .9.1 1.4.2 3.2.7 5.7 3.3 6.2 6.6.1.5.1 1 .1 1.5s-.1 1-.2 1.5c-.5 2.4-2.2 4.4-4.5 5.2v2.3c4.3-1.5 7.4-5.5 7.4-10.2 0-6-4.9-10.9-10.9-10.9S.5 5.9.5 11.9c0 4.8 3.1 8.9 7.5 10.3v-2.3C5.6 18.7 4 16.7 3.5 14.3c-.1-.5-.2-1-.2-1.5s.1-1 .2-1.5c.6-3.3 3.1-5.9 6.3-6.6.5-.1.9-.1 1.4-.1.4 0 .8 0 1.2.1zm.6 4.2c-3.7.4-6.5 3.4-6.7 7.1-.1 2.2.7 4.3 2.2 5.8l.2.2v1.9c.5-.1 1.1-.4 1.6-.7l.4-.2c1.1.4 2.2.6 3.4.6 3.8 0 7-3 7.3-6.8.4-4.1-2.7-7.8-6.8-8.1-.5-.1-1-.1-1.6.2z"/></svg>
-              </a>
-            </div>
-            <button onclick="selectVacancy('mushroom')" style="width:100%;background:var(--blue);color:#fff;border:none;padding:11px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif">Оставить заявку →</button>
-          </div>
-        </div>
+    <div class="stag">Почему мы</div>
+    <h2 class="sh">Агентство, которому <em>можно доверять</em></h2>
+    <p class="sb">Мы работаем по закону. Все вакансии — реальные, все оплаты — через сайт, все документы — у вас на руках.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-ico">🏛</span>
+        <h3>Лицензированное агентство</h3>
+        <p>Регистрация №05580634. Все вакансии официальные, через государственные программы.</p>
       </div>
-
-      <!-- VACANCY 2: Склад -->
-      <div style="background:var(--white);border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column">
-        <div style="position:relative;aspect-ratio:16/10;overflow:hidden">
-          <img src="assets/packaging-line.jpg" alt="Склад с овощами и фруктами" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-          <div style="position:absolute;top:10px;left:10px;background:var(--navy);color:#fff;padding:4px 10px;font-size:11px;font-weight:700;letter-spacing:.5px">ВАКАНСИЯ 2</div>
-        </div>
-        <div style="padding:20px;flex:1;display:flex;flex-direction:column">
-          <h3 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--navy);margin-bottom:6px">Овощной склад</h3>
-          <div style="display:inline-flex;align-items:baseline;gap:8px;margin-bottom:10px">
-            <span style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--blue)">13.55 фунтов в час</span>
-            <span style="font-size:12px;color:var(--ink-light)">~£2 000/мес ≈ €2 380</span>
-          </div>
-          <p style="font-size:13px;color:var(--ink-mid);line-height:1.65;margin-bottom:12px">Сортировка, упаковка и маркировка свежих овощей и фруктов на крытом складе.</p>
-          <ul style="list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:5px;font-size:12.5px;color:var(--ink-mid)">
-            <li style="display:flex;gap:6px"><span style="color:var(--blue);flex-shrink:0">•</span>Сортировка по размеру и качеству</li>
-            <li style="display:flex;gap:6px"><span style="color:var(--blue);flex-shrink:0">•</span>Упаковка и маркировка</li>
-            <li style="display:flex;gap:6px"><span style="color:var(--blue);flex-shrink:0">•</span>Мужчины — погрузка/паллеты</li>
-            <li style="display:flex;gap:6px"><span style="color:var(--blue);flex-shrink:0">•</span>Женщины — конвейер/контроль</li>
-          </ul>
-          <div style="margin-top:auto">
-            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin-bottom:8px">
-              <a href="https://wa.me/YOUR_WHATSAPP?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D1%82%D1%8C%20%D0%BD%D0%B0%20%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%D0%B5" target="_blank" rel="noopener" aria-label="WhatsApp о складе" style="display:flex;align-items:center;justify-content:center;padding:9px;background:#25D366;text-decoration:none">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              </a>
-              <a href="https://t.me/YOUR_TELEGRAM?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D1%82%D1%8C%20%D0%BD%D0%B0%20%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%D0%B5" target="_blank" rel="noopener" aria-label="Telegram о складе" style="display:flex;align-items:center;justify-content:center;padding:9px;background:#2AABEE;text-decoration:none">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
-              </a>
-              <a href="viber://chat?number=YOUR_VIBER" aria-label="Viber о складе" style="display:flex;align-items:center;justify-content:center;padding:9px;background:#7360F2;text-decoration:none">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M11.4 0h1.2C18.9.3 23.7 5.4 24 11.8v1.2c-.3 5.2-3.6 9.7-8.4 11.5l-.3.1v-3.2c0-.2-.1-.3-.3-.3-4.4-.8-7.8-4.6-7.8-9.2 0-.5.1-1 .2-1.5.7-3.7 3.8-6.5 7.5-7.1.4-.1.8-.1 1.3-.1.5 0 .9.1 1.4.2 3.2.7 5.7 3.3 6.2 6.6.1.5.1 1 .1 1.5s-.1 1-.2 1.5c-.5 2.4-2.2 4.4-4.5 5.2v2.3c4.3-1.5 7.4-5.5 7.4-10.2 0-6-4.9-10.9-10.9-10.9S.5 5.9.5 11.9c0 4.8 3.1 8.9 7.5 10.3v-2.3C5.6 18.7 4 16.7 3.5 14.3c-.1-.5-.2-1-.2-1.5s.1-1 .2-1.5c.6-3.3 3.1-5.9 6.3-6.6.5-.1.9-.1 1.4-.1.4 0 .8 0 1.2.1zm.6 4.2c-3.7.4-6.5 3.4-6.7 7.1-.1 2.2.7 4.3 2.2 5.8l.2.2v1.9c.5-.1 1.1-.4 1.6-.7l.4-.2c1.1.4 2.2.6 3.4.6 3.8 0 7-3 7.3-6.8.4-4.1-2.7-7.8-6.8-8.1-.5-.1-1-.1-1.6.2z"/></svg>
-              </a>
-            </div>
-            <button onclick="selectVacancy('warehouse')" style="width:100%;background:var(--blue);color:#fff;border:none;padding:11px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif">Оставить заявку →</button>
-          </div>
-        </div>
+      <div class="why-card">
+        <span class="why-ico">💳</span>
+        <h3>Официальные оплаты через сайт</h3>
+        <p>Никакой наличной кассы. Все расчёты прозрачные, чеки и квитанции у вас на руках.</p>
       </div>
-
-      <!-- VACANCY 3: Теплицы -->
-      <div style="background:var(--white);border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column">
-        <div style="position:relative;aspect-ratio:16/10;overflow:hidden">
-          <img src="assets/farm-aerial-wide.jpg" alt="Теплицы и парники" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-          <div style="position:absolute;top:10px;left:10px;background:var(--navy);color:#fff;padding:4px 10px;font-size:11px;font-weight:700;letter-spacing:.5px">ВАКАНСИЯ 3</div>
-        </div>
-        <div style="padding:20px;flex:1;display:flex;flex-direction:column">
-          <h3 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--navy);margin-bottom:6px">Теплицы и парники</h3>
-          <div style="display:inline-flex;align-items:baseline;gap:8px;margin-bottom:10px">
-            <span style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--blue)">13.55 фунтов в час</span>
-            <span style="font-size:12px;color:var(--ink-light)">~£2 000/мес ≈ €2 380</span>
-          </div>
-          <p style="font-size:13px;color:var(--ink-mid);line-height:1.65;margin-bottom:12px">Высадка рассады, уход и сбор урожая (томаты, огурцы, перцы, ягоды) в крытых теплицах.</p>
-          <ul style="list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:5px;font-size:12.5px;color:var(--ink-mid)">
-            <li style="display:flex;gap:6px"><span style="color:var(--blue);flex-shrink:0">•</span>Высадка рассады в субстрат</li>
-            <li style="display:flex;gap:6px"><span style="color:var(--blue);flex-shrink:0">•</span>Полив и уход за растениями</li>
-            <li style="display:flex;gap:6px"><span style="color:var(--blue);flex-shrink:0">•</span>Сбор урожая по сезону</li>
-            <li style="display:flex;gap:6px"><span style="color:var(--blue);flex-shrink:0">•</span>Сортировка и упаковка</li>
-          </ul>
-          <div style="margin-top:auto">
-            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin-bottom:8px">
-              <a href="https://wa.me/YOUR_WHATSAPP?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D1%82%D1%8C%20%D0%B2%20%D1%82%D0%B5%D0%BF%D0%BB%D0%B8%D1%86%D0%B5" target="_blank" rel="noopener" aria-label="WhatsApp о теплицах" style="display:flex;align-items:center;justify-content:center;padding:9px;background:#25D366;text-decoration:none">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              </a>
-              <a href="https://t.me/YOUR_TELEGRAM?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D1%82%D1%8C%20%D0%B2%20%D1%82%D0%B5%D0%BF%D0%BB%D0%B8%D1%86%D0%B5" target="_blank" rel="noopener" aria-label="Telegram о теплицах" style="display:flex;align-items:center;justify-content:center;padding:9px;background:#2AABEE;text-decoration:none">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
-              </a>
-              <a href="viber://chat?number=YOUR_VIBER" aria-label="Viber о теплицах" style="display:flex;align-items:center;justify-content:center;padding:9px;background:#7360F2;text-decoration:none">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M11.4 0h1.2C18.9.3 23.7 5.4 24 11.8v1.2c-.3 5.2-3.6 9.7-8.4 11.5l-.3.1v-3.2c0-.2-.1-.3-.3-.3-4.4-.8-7.8-4.6-7.8-9.2 0-.5.1-1 .2-1.5.7-3.7 3.8-6.5 7.5-7.1.4-.1.8-.1 1.3-.1.5 0 .9.1 1.4.2 3.2.7 5.7 3.3 6.2 6.6.1.5.1 1 .1 1.5s-.1 1-.2 1.5c-.5 2.4-2.2 4.4-4.5 5.2v2.3c4.3-1.5 7.4-5.5 7.4-10.2 0-6-4.9-10.9-10.9-10.9S.5 5.9.5 11.9c0 4.8 3.1 8.9 7.5 10.3v-2.3C5.6 18.7 4 16.7 3.5 14.3c-.1-.5-.2-1-.2-1.5s.1-1 .2-1.5c.6-3.3 3.1-5.9 6.3-6.6.5-.1.9-.1 1.4-.1.4 0 .8 0 1.2.1zm.6 4.2c-3.7.4-6.5 3.4-6.7 7.1-.1 2.2.7 4.3 2.2 5.8l.2.2v1.9c.5-.1 1.1-.4 1.6-.7l.4-.2c1.1.4 2.2.6 3.4.6 3.8 0 7-3 7.3-6.8.4-4.1-2.7-7.8-6.8-8.1-.5-.1-1-.1-1.6.2z"/></svg>
-              </a>
-            </div>
-            <button onclick="selectVacancy('greenhouse')" style="width:100%;background:var(--blue);color:#fff;border:none;padding:11px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif">Оставить заявку →</button>
-          </div>
-        </div>
+      <div class="why-card">
+        <span class="why-ico">✓</span>
+        <h3>Первые в сфере легального трудоустройства</h3>
+        <p>Уже более 5 лет помогаем людям уехать на работу в Европу — без обмана и серых схем.</p>
       </div>
-    </div>
-
-    <div style="margin-top:20px;padding:14px 18px;background:var(--blue-soft);border:1px solid var(--border);border-left:3px solid var(--blue);text-align:center">
-      <p style="font-size:13px;color:var(--ink-mid);line-height:1.7"><strong style="color:var(--navy)">Не уверены, какая вакансия подходит?</strong> Менеджер расскажет конкретно про каждую вакансию — какие места открыты, на каких фермах, кто едет с вами в одной бригаде. Напишите в любом удобном мессенджере.</p>
+      <div class="why-card">
+        <span class="why-ico">🛡</span>
+        <h3>Полная безопасность кандидата</h3>
+        <p>Договор оферты, защита прав, сопровождение от заявки до прилёта на место работы.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- НАШИ КАНДИДАТЫ -->
-
-
-<!-- HOUSING -->
-<section style="background:var(--white);border-top:1px solid var(--border);padding:52px 32px" id="housing">
+<!-- COUNTRIES -->
+<section id="countries" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="container">
-    <h2 class="sh">Где вы будете жить?<br><em>Кто вас встретит?</em></h2>
-    <p class="sb">Караваны — это полноценный мобильный дом 30-50 м. Не барак, не общежитие.</p>
+    <div class="stag">Вакансии по странам</div>
+    <h2 class="sh">Выберите <em>страну</em> и узнайте детали</h2>
+    <p class="sb">Нажмите на карточку — откроется полная информация: вакансии, фото с работы, жильё, отзывы и форма заявки.</p>
+    <div class="countries-grid">
 
-    <div style="position:relative;overflow:hidden;margin-top:24px;border:1px solid var(--border)">
-      <img src="assets/caravan-farm-aerial.jpg" alt="Караваны и ферма рядом" loading="lazy" style="width:100%;max-height:380px;object-fit:cover;display:block">
-      <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:16px 20px">
-        <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:3px">Караваны + ферма — аэрофото</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.6)">От дома до работы — 2-5 минут пешком</div>
-      </div>
-    </div>
-
-    <div class="mob-2col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:2px;border:2px solid transparent">
-      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
-        <img src="assets/caravan-exterior-1.jpg" alt="Караваны снаружи" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.7);padding:7px 10px;font-size:11px;font-weight:600;color:#fff">Снаружи</div>
-      </div>
-      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
-        <img src="assets/caravan-living.jpg" alt="Гостиная" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.7);padding:7px 10px;font-size:11px;font-weight:600;color:#fff">Гостиная + ТВ</div>
-      </div>
-      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
-        <img src="assets/caravan-kitchen.jpg" alt="Кухня" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.7);padding:7px 10px;font-size:11px;font-weight:600;color:#fff">Полная кухня</div>
-      </div>
-      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
-        <img src="assets/caravan-terrace.jpg" alt="Терраса" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.7);padding:7px 10px;font-size:11px;font-weight:600;color:#fff">Личная терраса</div>
-      </div>
-      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
-        <img src="assets/caravan-bathroom.jpg" alt="Ванная" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.7);padding:7px 10px;font-size:11px;font-weight:600;color:#fff">Душ + туалет</div>
-      </div>
-      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
-        <img src="assets/caravan-deck.jpg" alt="Терраса 2" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.7);padding:7px 10px;font-size:11px;font-weight:600;color:#fff">Вид с террасы</div>
-      </div>
-    </div>
-
-    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid var(--border);border-top:none">
-      <div style="padding:14px 18px;border-right:1px solid var(--border)">
-        <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:3px">Что внутри</div>
-        <div style="font-size:12.5px;color:var(--ink-mid)">Спальня, гостиная, кухня с техникой, душ, терраса</div>
-      </div>
-      <div style="padding:14px 18px;border-right:1px solid var(--border)">
-        <div style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:3px">Стоимость</div>
-        <div style="font-size:12.5px;color:var(--ink-mid)">~£100/нед — удерживается из зарплаты. Точная сумма в контракте.</div>
-      </div>
-      <div style="padding:14px 18px">
-        <div style="font-size:13px;font-weight:600;color:var(--green);margin-bottom:3px">Для пар и детей</div>
-        <div style="font-size:12.5px;color:var(--ink-mid)">Пары могут жить вместе при наличии мест. Визы отдельно. Дети от 6 лет могут ехать — нужна отдельная виза.</div>
-      </div>
-    </div>
-
-    <div style="background:var(--white);border:1px solid var(--border);border-top:none;padding:18px 22px">
-      <p style="font-size:14px;color:var(--ink-mid);line-height:1.8">Вы не останетесь одни. Координатор встретит вас, поможет с заселением. 75% коллег — русскоязычные из Украины, Молдовы, Грузии. Первый день — заселение и инструктаж. Трансфер от аэропорта организован.</p>
-    </div>
-  </div>
-</section>
-
-<!-- РАБОТА — фото с описанием -->
-<section style="background:var(--surface);border-top:1px solid var(--border);padding:52px 32px" id="work-photos">
-  <div class="container">
-    <p class="stag">Где вы будете работать</p>
-    <h2 class="sh">Реальные фото <em>с производства</em></h2>
-    <p class="sb">Грибные ангары, овощные склады и теплицы — все 3 вакансии в закрытых помещениях с климат-контролем. Не поле, не улица.</p>
-
-    <div class="mob-2col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:24px">
-      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
-        <img src="assets/mushroom-hand-closeup.jpg" alt="Сбор грибов" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.75);padding:8px 12px;font-size:11.5px;font-weight:600;color:#fff">Ручной сбор с полок</div>
-      </div>
-      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
-        <img src="assets/hands-mushrooms.jpg" alt="Шампиньоны" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.75);padding:8px 12px;font-size:11.5px;font-weight:600;color:#fff">Сортировка по размеру</div>
-      </div>
-      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
-        <img src="assets/packaging-line.jpg" alt="Упаковка" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.75);padding:8px 12px;font-size:11.5px;font-weight:600;color:#fff">Конвейер упаковки (склад)</div>
-      </div>
-      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
-        <img src="assets/hangar-shelves-long.jpg" alt="Ангар внутри" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.75);padding:8px 12px;font-size:11.5px;font-weight:600;color:#fff">Ангар изнутри — стеллажи</div>
-      </div>
-      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
-        <img src="assets/shelves-closeup.jpg" alt="Стеллажи" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.75);padding:8px 12px;font-size:11.5px;font-weight:600;color:#fff">Полки склада</div>
-      </div>
-      <div style="position:relative;overflow:hidden;aspect-ratio:4/3">
-        <img src="assets/farm-aerial-wide.jpg" alt="Теплицы и фермы с воздуха" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(26,37,64,.75);padding:8px 12px;font-size:11.5px;font-weight:600;color:#fff">Теплицы и фермы с воздуха</div>
-      </div>
-    </div>
-
-    <!-- Видео -->
-    <div class="mob-1col" style="display:grid;grid-template-columns:1.5fr 1fr;margin-top:2px;min-height:300px">
-      <div style="position:relative;background:#000;overflow:hidden">
-        <iframe src="https://www.youtube.com/embed/kk6-UElT4Dc?rel=0&modestbranding=1" style="width:100%;height:100%;border:none;display:block;min-height:300px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="Работа на грибной ферме"></iframe>
-      </div>
-      <div style="background:var(--navy);padding:24px 20px;display:flex;flex-direction:column;justify-content:center">
-        <p style="font-family:\'Playfair Display\',serif;font-size:16px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:10px">Реальное видео</p>
-        <p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:16px">Обычный рабочий день. Не постановка.</p>
-        <button onclick="document.getElementById(\'apply\').scrollIntoView({behavior:\'smooth\'})" style="background:var(--blue);color:#fff;border:none;padding:12px 18px;font-size:13px;font-weight:600;cursor:pointer;font-family:\'DM Sans\',sans-serif">Хочу здесь работать →</button>
-      </div>
-    </div>
-
-    <div style="margin-top:12px;padding:10px 16px;background:var(--blue-soft);border:1px solid var(--border);font-size:12px;color:var(--ink-mid)">
-      Это пример одного из ~40 ангаров. Конкретная ферма — в контракте до подписания.
-    </div>
-  </div>
-</section>
-
-
-<section style="background:var(--white);border-top:1px solid var(--border);padding:52px 32px" id="our-candidates" aria-label="Наши кандидаты на работе">
-  <div class="container">
-    <p class="stag" style="justify-content:center">Реальная жизнь · Сезон 2025</p>
-    <h2 class="sh" style="text-align:center">Наши кандидаты <em>на работе</em></h2>
-    <p class="sb" style="text-align:center;max-width:520px;margin-left:auto;margin-right:auto">Это фото с прошлого сезона. Реальные люди, реальные смены, реальные караваны. Не стоковые картинки.</p>
-
-    <div class="mob-2col" style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:32px">
-      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
-        <img src="assets/hands-mushrooms.jpg" alt="Кандидат собирает шампиньоны" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
-          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">Утренняя смена</div>
-          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">Сбор грибов · Кент</div>
-        </div>
-      </div>
-      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
-        <img src="assets/packaging-line.jpg" alt="Работа на складе с овощами" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
-          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">Конвейер упаковки</div>
-          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">Овощной склад · Линкольншир</div>
-        </div>
-      </div>
-      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
-        <img src="assets/caravan-deck.jpg" alt="Перерыв на террасе каравана" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
-          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">После смены</div>
-          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">Терраса каравана</div>
-        </div>
-      </div>
-      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
-        <img src="assets/mushroom-crates.jpg" alt="Готовая продукция в ящиках" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
-          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">Конец смены</div>
-          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">Готово к отгрузке</div>
-        </div>
-      </div>
-      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
-        <img src="assets/hangar-aisle.jpg" alt="Бригада в проходе склада" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
-          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">Начало смены</div>
-          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">Бригада идёт на участок</div>
-        </div>
-      </div>
-      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
-        <img src="assets/caravan-kitchen.jpg" alt="Кухня в караване" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
-          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">Готовим ужин</div>
-          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">Полная кухня · своя</div>
-        </div>
-      </div>
-      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
-        <img src="assets/mushroom-hand-closeup.jpg" alt="Сбор грибов крупно" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
-          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">Ручной сбор</div>
-          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">По стандарту качества</div>
-        </div>
-      </div>
-      <div style="position:relative;aspect-ratio:3/4;overflow:hidden">
-        <img src="assets/visa-couple.jpg" alt="Пара с визами" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,37,64,.85));padding:14px 12px 10px">
-          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3">Семейная пара</div>
-          <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:2px">Поехали вместе · 2025</div>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top:18px;text-align:center">
-      <p style="font-size:12px;color:var(--ink-light);font-style:italic">Хотите больше фото и видео? Напишите менеджеру — пришлёт реальные кадры с конкретных ферм где есть свободные места.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CALCULATOR SECTION -->
-<section style="background:var(--surface);border-top:1px solid var(--border);padding:52px 32px" id="calculator">
-  <div class="container">
-    <h2 class="sh">Сколько реально<br><em>заработаете?</em></h2>
-
-    <!-- Минималка badge -->
-    <div class="wage-badge" style="margin:12px 0 24px">
-      <span style="font-size:13px;color:var(--green);font-weight:600">Минимальная зарплата в Англии с 1 апреля 2026 = 12.71 фунтов в час (≈15.10 евро). Это закон.</span>
-      <a href="https://www.gov.uk/national-minimum-wage-rates" target="_blank" rel="noopener">Официальный сайт правительства →</a>
-      <span style="font-size:13px;color:var(--ink-mid)">Ваша ставка: <strong>12.90 фунтов в час</strong> (≈15.35 евро) (+0.19 фунтов выше минимальной)</span>
-    </div>
-
-    <!-- Кто платит рекрутеру -->
-    <div style="background:var(--navy);padding:16px 22px;margin-bottom:20px">
-      <div style="font-size:14px;font-weight:700;color:#fde68a;margin-bottom:4px">💰 Нам платит работодатель — не вы</div>
-      <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.65">HR & Recruit получает гонорар от Pro-Force Ltd за каждого трудоустроенного кандидата. С вас — только <strong style="color:#fff">£319 консульский сбор</strong> за визу (плата правительству Великобритании, обязательная для всех). Больше ничего и никогда.</div>
-    </div>
-
-    <!-- Calculator — compact -->
-    <div style="border:1px solid var(--border);max-width:880px;margin:0 auto">
-      <div style="background:var(--white);padding:12px 20px;border-bottom:1px solid var(--border)">
-        <div style="font-size:14px;font-weight:600;color:var(--navy)">Посчитайте свой заработок</div>
-        <div style="font-size:12px;color:var(--ink-light);margin-top:2px">Двигайте ползунки — результат обновится сразу. Ставка 12.90 фунтов/час. Свыше 8 ч/день — сверхурочные ×1.5.</div>
-      </div>
-      <div class="calc-grid">
-        <div class="calc-left">
-          <div class="calc-row">
-            <div class="cl-label">Часов в день <span class="val" id="hLabel">8 ч</span></div>
-            <input type="range" id="hoursRange" min="6" max="12" value="8" step="1" oninput="calc()">
-            <div class="cl-minmax"><span>6 ч</span><span>8 ч</span><span>10 ч</span><span>12 ч</span></div>
+      <!-- UK -->
+      <button class="country-card" onclick="openCountry('uk')">
+        <div class="cc-img"><img src="assets/mushroom-hand-closeup.jpg" alt="Англия — фермы" loading="lazy"></div>
+        <div class="cc-body">
+          <div class="cc-flag-row"><span class="cc-flag">🇬🇧</span><span class="cc-name">Англия</span></div>
+          <div class="cc-desc">Грибные фермы, овощные склады, теплицы. Закрытые помещения, климат-контроль, обучение на месте.</div>
+          <div class="cc-tags">
+            <span class="cc-tag">Фермы</span><span class="cc-tag">Склады</span><span class="cc-tag">Теплицы</span>
           </div>
-          <div class="calc-row" style="margin-top:14px">
-            <div class="cl-label">Дней в неделю <span class="val" id="dLabel">6 дн</span></div>
-            <input type="range" id="daysRange" min="5" max="7" value="6" step="1" oninput="calc()">
-            <div class="cl-minmax"><span>5</span><span>6</span><span>7</span></div>
+          <div class="cc-meta">
+            <span class="cc-salary">€1850–2000 / мес</span>
+            <span class="cc-more">Подробнее →</span>
           </div>
-          <div style="margin-top:14px;padding:8px 12px;background:var(--surface);border:1px solid var(--border);font-size:11.5px;color:var(--ink-mid);line-height:1.55">
-            Из брутто вычитаем налог ~12% и жильё ~100 фунтов/нед. Остаток — ваш.
-          </div>
-        </div>
-        <div class="calc-right">
-          <div id="crFormula" style="font-size:12px;color:rgba(255,255,255,.5);margin-bottom:10px;line-height:1.6"></div>
-          <div class="cr-rows" style="margin-bottom:0">
-            <div class="crr"><span class="cl">Брутто</span><span class="cv" id="crGross">£2 400</span></div>
-            <div class="crr"><span class="cl">Налог ~12%</span><span class="cv" style="color:#f87171" id="crTax">− £290</span></div>
-            <div class="crr"><span class="cl">Жильё</span><span class="cv" style="color:#f87171" id="crHousing">− £430</span></div>
-          </div>
-          <div class="cr-div"></div>
-          <div class="cr-small" style="margin-bottom:2px">На руки в месяц</div>
-          <div class="cr-big" id="crAmount">£1 680</div>
-          <div style="font-size:13px;color:rgba(255,255,255,.5);margin-top:2px">≈ <span id="crEur">€2 000</span></div>
-          <div class="cr-div"></div>
-          <div class="crr"><span class="cl">За сезон (6 мес)</span><span class="cv hi" id="crSeason">£10 000</span></div>
-          <div class="crr"><span class="cl">В евро</span><span class="cv" id="crSeasonEur">€11 900</span></div>
-          <span style="display:none" id="crUah"></span>
-          <button class="cr-cta" style="margin-top:14px" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Оставить заявку →</button>
-          <div class="cr-tip" id="crTip" style="display:none"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Сравнение Европа vs Англия -->
-    <div style="margin-top:32px;max-width:880px;margin-left:auto;margin-right:auto">
-      <h3 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--navy);text-align:center;margin-bottom:16px">Где выгоднее работать?</h3>
-      <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border)">
-        <div style="padding:24px;border-right:1px solid var(--border)">
-          <div style="font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ink-light);margin-bottom:10px">Европа (Польша, Чехия, Германия)</div>
-          <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--ink-mid);margin-bottom:4px">~€800–1 000</div>
-          <div style="font-size:12px;color:var(--ink-light);margin-bottom:14px">на руки после аренды жилья</div>
-          <div style="font-size:12.5px;color:var(--ink-mid);line-height:1.7">Платите за квартиру 400–500 евро. После еды и расходов — остаётся мало.</div>
-        </div>
-        <div style="padding:24px;background:var(--green-bg)">
-          <div style="font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:10px">Англия — ферма</div>
-          <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:var(--green);margin-bottom:4px">~€2 000–2 300</div>
-          <div style="font-size:12px;color:var(--green);margin-bottom:14px">на руки · жильё уже включено</div>
-          <div style="font-size:12.5px;color:var(--ink-mid);line-height:1.7">Жильё бесплатное, только коммуналка. На фермах есть дешёвые столовые. Почти всё остаётся вам.</div>
-        </div>
-      </div>
-      <div style="margin-top:10px;padding:10px 14px;background:var(--blue-soft);border:1px solid var(--border);font-size:12.5px;color:var(--ink-mid);line-height:1.7">
-        <strong style="color:var(--navy)">Разница — в жилье.</strong> В Европе вы платите за квартиру почти половину зарплаты. Здесь — нет. Фунт стоит больше евро: 1 фунт ≈ 1.19 евро. Ставка защищена законом Великобритании.
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- PROCESS -->
-<section style="background:var(--white);border-top:1px solid var(--border);padding:52px 32px" id="process">
-  <div class="container">
-    <h2 class="sh">Один процесс —<br><em>для всех вакансий</em></h2>
-    <p class="sb">Грибная ферма, склад или теплицы — оформление одинаковое. Примерно 1.5–2 месяца от первого контакта до вылета.</p>
-
-    <!-- Путь кандидата -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 16px" class="mob-1col">
-      <div style="background:var(--surface);border:1px solid var(--border);padding:18px 20px">
-        <div style="display:flex;gap:12px;align-items:flex-start">
-          <div style="width:28px;height:28px;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;flex-shrink:0;font-family:'DM Sans',sans-serif">1</div>
-          <div>
-            <div style="font-size:10px;font-weight:700;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px">Шаг 1 · 1 день</div>
-            <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:4px">Заявка → менеджер</div>
-            <div style="font-size:13px;color:var(--ink-mid);line-height:1.65">Оставляете заявку. Менеджер связывается в течение часа.<br><span style="color:var(--blue);font-weight:600;font-size:12px">→ Узнать подробности у менеджера</span></div>
-          </div>
-        </div>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border);padding:18px 20px">
-        <div style="display:flex;gap:12px;align-items:flex-start">
-          <div style="width:28px;height:28px;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;flex-shrink:0;font-family:'DM Sans',sans-serif">2</div>
-          <div>
-            <div style="font-size:10px;font-weight:700;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px">Шаг 2 · 1–2 дня</div>
-            <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:4px">Документы + анкета</div>
-            <div style="font-size:13px;color:var(--ink-mid);line-height:1.65">Скан паспорта + короткое резюме. Помогаем заполнить анкету.<br><span style="color:var(--blue);font-weight:600;font-size:12px">→ Узнать подробности у менеджера</span></div>
-          </div>
-        </div>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border);padding:18px 20px">
-        <div style="display:flex;gap:12px;align-items:flex-start">
-          <div style="width:28px;height:28px;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;flex-shrink:0;font-family:'DM Sans',sans-serif">3</div>
-          <div>
-            <div style="font-size:10px;font-weight:700;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px">Шаг 3 · 5–7 минут</div>
-            <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:4px">Собеседование по-русски</div>
-            <div style="font-size:13px;color:var(--ink-mid);line-height:1.65">Видеозвонок 5-7 минут. Базовые вопросы. Английский не нужен.<br><span style="color:var(--blue);font-weight:600;font-size:12px">→ Узнать подробности у менеджера</span></div>
-          </div>
-        </div>
-      </div>
-      <div style="background:var(--green-bg);border:1px solid rgba(13,107,56,.2);padding:18px 20px">
-        <div style="display:flex;gap:12px;align-items:flex-start">
-          <div style="width:28px;height:28px;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;flex-shrink:0;font-family:'DM Sans',sans-serif">4</div>
-          <div>
-            <div style="font-size:10px;font-weight:700;color:var(--green);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px">Шаг 4 · 1–2 дня</div>
-            <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:4px">Контракт + приглашение (CoS)</div>
-            <div style="font-size:13px;color:var(--ink-mid);line-height:1.65">Получаете официальный контракт и приглашение от работодателя. Подписываете до любых расходов.<br><span style="color:var(--blue);font-weight:600;font-size:12px">→ Узнать подробности у менеджера</span></div>
-            <div style="margin-top:6px;display:inline-block;background:var(--green);padding:3px 10px;font-size:11px;font-weight:700;color:#fff">✓ Контракт ДО расходов</div>
-          </div>
-        </div>
-      </div>
-      <div style="background:var(--red-bg);border:1px solid rgba(176,26,26,.2);border-left:3px solid var(--red);padding:18px 20px;grid-column:1/-1">
-        <div style="display:flex;gap:12px;align-items:flex-start">
-          <div style="width:28px;height:28px;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;flex-shrink:0;font-family:'DM Sans',sans-serif">5</div>
-          <div style="flex:1">
-            <div style="font-size:10px;font-weight:700;color:var(--red);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px">Шаг 5 · строго 3 дня после приглашения</div>
-            <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:6px">Оплата консульского сбора £319 → ожидание визы</div>
-            <div style="font-size:13px;color:var(--ink-mid);line-height:1.7;margin-bottom:10px">В течение <strong>3 дней</strong> после получения приглашения нужно подать на визу и оплатить <strong>£319 — это консульский сбор</strong> правительству Великобритании за рассмотрение вашей визы. Без этой оплаты визу не выдадут — это правило для всех людей в мире, кто едет работать в UK. Работодатель этот сбор не покрывает (так в законе).</div>
-            <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px">
-              <div style="background:var(--white);border:1px solid rgba(176,26,26,.2);padding:12px 14px">
-                <div style="font-size:12px;font-weight:700;color:var(--red);margin-bottom:4px">Почему именно 3 дня?</div>
-                <div style="font-size:12.5px;color:#7a2020;line-height:1.6">Работодатель тратит деньги на каждое приглашение. 3 дня — это срок, чтобы отменить приглашение без потери средств, если кандидат передумал. Либо вы оплачиваете госпошлину (это ваша гарантия выезда), либо приглашение аннулируется — без штрафов с обеих сторон.</div>
-              </div>
-              <div style="background:var(--white);border:1px solid var(--border);padding:12px 14px">
-                <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:4px">Что дальше</div>
-                <div style="font-size:12.5px;color:var(--ink-mid);line-height:1.6">Консульство рассматривает визу 30–35 дней. Один визит в VFS Global для биометрии. Виза в паспорт → вылет.<br><br><strong>Билет:</strong> работодатель компенсирует до £200 после визы. Если дороже — разницу доплачиваете сами.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Что такое £319 — пояснение простыми словами -->
-    <div style="margin-top:20px;background:var(--gold-bg);border:1px solid rgba(154,112,16,.25);border-left:4px solid var(--gold);padding:20px 22px">
-      <div style="display:flex;gap:12px;align-items:flex-start">
-        <div style="font-size:24px;line-height:1;flex-shrink:0">💷</div>
-        <div style="flex:1">
-          <h3 style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--navy);margin-bottom:8px">Что такое £319 и зачем платить?</h3>
-          <p style="font-size:13.5px;color:var(--ink-mid);line-height:1.75;margin-bottom:10px"><strong>£319 — это консульский сбор</strong> (≈€380), который берёт правительство Великобритании за рассмотрение и выдачу рабочей визы. Это не плата нам, не плата работодателю — это плата государству.</p>
-          <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px">
-            <div style="background:var(--white);border:1px solid rgba(154,112,16,.2);padding:10px 12px">
-              <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:3px">Кто платит?</div>
-              <div style="font-size:12px;color:var(--ink-mid);line-height:1.55">Каждый кандидат сам. Это правило для всех виз в UK. Работодатель такой сбор не покрывает (запрещено законом).</div>
-            </div>
-            <div style="background:var(--white);border:1px solid rgba(154,112,16,.2);padding:10px 12px">
-              <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:3px">Когда платить?</div>
-              <div style="font-size:12px;color:var(--ink-mid);line-height:1.55">Только ПОСЛЕ того как подписали контракт и получили приглашение. Сначала контракт — потом сбор.</div>
-            </div>
-            <div style="background:var(--white);border:1px solid rgba(154,112,16,.2);padding:10px 12px">
-              <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:3px">Где платить?</div>
-              <div style="font-size:12px;color:var(--ink-mid);line-height:1.55">Только на официальном сайте правительства UK. Получаете квитанцию. Деньги идут в казну Великобритании.</div>
-            </div>
-          </div>
-          <div style="margin-top:12px;padding:10px 14px;background:rgba(176,26,26,.08);border:1px solid rgba(176,26,26,.18);font-size:12.5px;color:#7a2020;line-height:1.6"><strong>Без оплаты этого сбора — нет визы и нет работы.</strong> Это не наше правило, это закон Великобритании. Если кто-то говорит «не платите, мы всё устроим» — это мошенничество.</div>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top:18px;padding:20px 24px;background:var(--blue-soft);border:1px solid var(--border);border-left:4px solid var(--blue);text-align:center">
-      <h3 style="font-size:17px;font-weight:600;color:var(--navy);margin-bottom:6px">Хотите узнать детали под вашу ситуацию?</h3>
-      <p style="font-size:13px;color:var(--ink-mid);line-height:1.7;margin-bottom:14px;max-width:520px;margin-left:auto;margin-right:auto">У каждого кандидата свои нюансы — страна, опыт, дата выезда, семейные обстоятельства. Менеджер расскажет конкретно про вашу ситуацию.</p>
-      <div style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap">
-        <a href="https://wa.me/YOUR_WHATSAPP" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;padding:10px 16px;background:#25D366;color:#fff;text-decoration:none;font-size:13px;font-weight:600">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          WhatsApp
-        </a>
-        <a href="https://t.me/YOUR_TELEGRAM" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;padding:10px 16px;background:#2AABEE;color:#fff;text-decoration:none;font-size:13px;font-weight:600">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
-          Telegram
-        </a>
-        <a href="viber://chat?number=YOUR_VIBER" style="display:inline-flex;align-items:center;gap:7px;padding:10px 16px;background:#7360F2;color:#fff;text-decoration:none;font-size:13px;font-weight:600">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M11.4 0h1.2C18.9.3 23.7 5.4 24 11.8v1.2c-.3 5.2-3.6 9.7-8.4 11.5l-.3.1v-3.2c0-.2-.1-.3-.3-.3-4.4-.8-7.8-4.6-7.8-9.2 0-.5.1-1 .2-1.5.7-3.7 3.8-6.5 7.5-7.1.4-.1.8-.1 1.3-.1.5 0 .9.1 1.4.2 3.2.7 5.7 3.3 6.2 6.6.1.5.1 1 .1 1.5s-.1 1-.2 1.5c-.5 2.4-2.2 4.4-4.5 5.2v2.3c4.3-1.5 7.4-5.5 7.4-10.2 0-6-4.9-10.9-10.9-10.9S.5 5.9.5 11.9c0 4.8 3.1 8.9 7.5 10.3v-2.3C5.6 18.7 4 16.7 3.5 14.3c-.1-.5-.2-1-.2-1.5s.1-1 .2-1.5c.6-3.3 3.1-5.9 6.3-6.6.5-.1.9-.1 1.4-.1.4 0 .8 0 1.2.1zm.6 4.2c-3.7.4-6.5 3.4-6.7 7.1-.1 2.2.7 4.3 2.2 5.8l.2.2v1.9c.5-.1 1.1-.4 1.6-.7l.4-.2c1.1.4 2.2.6 3.4.6 3.8 0 7-3 7.3-6.8.4-4.1-2.7-7.8-6.8-8.1-.5-.1-1-.1-1.6.2z"/></svg>
-          Viber
-        </a>
-      </div>
-    </div>
-
-    <!-- Online visa note -->
-    <div style="margin-top:12px;background:var(--blue-soft);border:1px solid var(--border);border-left:3px solid var(--blue);padding:14px 18px">
-      <div style="font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:5px">Визу можно подать из любой страны</div>
-      <div style="font-size:12.5px;color:var(--ink-mid);line-height:1.65">Заявка полностью онлайн через официальный сайт правительства Великобритании. Один визит в ближайший визовый центр для биометрии — они есть во всех странах в крупных городах. Мы подскажем ближайший к вам.</div>
-      <a href="https://www.gov.uk/seasonal-worker-visa" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font-size:12px;font-weight:700;color:var(--blue);text-decoration:underline;text-underline-offset:2px">Официальный сайт правительства — виза →</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- REVIEWS -->
-<section style="background:var(--surface);border-top:1px solid var(--border);padding:52px 32px" id="reviews">
-  <div class="container">
-    <p class="stag" style="justify-content:center">Отзывы</p>
-    <h2 class="sh" style="text-align:center">Что говорят<br><em>наши кандидаты</em></h2>
-    <div class="mob-1col" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:32px">
-      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
-        <div class="t-stars" style="margin-bottom:12px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:14px">"Боялась, что обман. Но всё так, как говорили — виза настоящая, зарплата каждую неделю."</div>
-        <div style="font-size:12.5px;font-weight:600;color:var(--navy)">Оксана М. <span style="font-weight:400;color:var(--ink-muted)">· грибная ферма, 2024</span></div>
-      </div>
-      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
-        <div class="t-stars" style="margin-bottom:12px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:14px">"Ехал с женой — поселили вместе. Брал сверхурочные — один месяц вышло больше £3 000."</div>
-        <div style="font-size:12.5px;font-weight:600;color:var(--navy)">Дмитрий К. <span style="font-weight:400;color:var(--ink-muted)">· грибная ферма, 2024</span></div>
-      </div>
-      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
-        <div class="t-stars" style="margin-bottom:12px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:14px">"Работала на овощном складе. Платят больше чем на грибах, работа полегче — сортировка и упаковка."</div>
-        <div style="font-size:12.5px;font-weight:600;color:var(--navy)">Светлана Б. <span style="font-weight:400;color:var(--ink-muted)">· склад, 2024</span></div>
-      </div>
-      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
-        <div class="t-stars" style="margin-bottom:12px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:14px">"Склад — конвейер и упаковка. Тепло, сухо. Ставка выше грибов, и сверхурочные брал каждую неделю."</div>
-        <div style="font-size:12.5px;font-weight:600;color:var(--navy)">Андрей Л. <span style="font-weight:400;color:var(--ink-muted)">· склад, 2024</span></div>
-      </div>
-      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
-        <div class="t-stars" style="margin-bottom:12px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:14px">"Работал в теплице с томатами. Чистый воздух, тепло. Платили каждую неделю."</div>
-        <div style="font-size:12.5px;font-weight:600;color:var(--navy)">Виктор П. <span style="font-weight:400;color:var(--ink-muted)">· теплица, 2024</span></div>
-      </div>
-      <div style="padding:24px;background:var(--white);border:1px solid var(--border)">
-        <div class="t-stars" style="margin-bottom:12px"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <div style="font-family:'Playfair Display',serif;font-size:13.5px;color:var(--ink-mid);font-style:italic;line-height:1.75;margin-bottom:14px">"Половина бригады из Украины и Молдовы. Английский вообще не нужен. Караван оказался нормальным."</div>
-        <div style="font-size:12.5px;font-weight:600;color:var(--navy)">Наталья В. <span style="font-weight:400;color:var(--ink-muted)">· теплица, 2024</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq-sec" id="faq">
-  <div class="container">
-    <p class="stag" style="justify-content:center">Вопросы и ответы</p>
-    <h2 class="sh" style="text-align:center">Частые <em>вопросы</em></h2>
-    <div class="faq-wrap">
-<div class="faq-item open">
-  <button class="faq-btn">Какие есть вакансии и какая платит больше?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
-  <div class="faq-ans">Сейчас открыты 3 вакансии: <strong>грибная ферма</strong> (12.90 фунтов в час, ~£1 900/мес), <strong>овощной склад</strong> (13.55 фунтов в час, ~£2 000/мес) и <strong>теплицы и парники</strong> (13.55 фунтов в час, ~£2 000/мес). Склад и теплицы платят на 5% больше грибов. Условия (виза, жильё, рекрутинг бесплатный) — везде одинаковые. Если не уверены — менеджер поможет выбрать.</div>
-</div>
-<div class="faq-item">
-  <button class="faq-btn">Можно ли выбрать вакансию или распределяют сами?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
-  <div class="faq-ans">Вы указываете желаемую вакансию в заявке. Менеджер подтверждает наличие мест на сезон. Если ваш вариант занят — предложим другой из доступных. Работа доступна для разных национальностей — конкретные требования уточняет менеджер.</div>
-</div>
-<div class="faq-item">
-  <button class="faq-btn">Это точно не обман?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
-  <div class="faq-ans">Виза оформляется через официальный сайт правительства Великобритании. Работодатель Pro-Force Ltd имеет лицензию правительства. Вы подписываете контракт ДО любых расходов. Единственный платёж — £319 консульский сбор через официальный сайт правительства. Проверьте сами: <a href="https://find-and-update.company-information.service.gov.uk/company/05580634" target="_blank" style="color:var(--blue);text-decoration:underline">Госреестр компаний Великобритании</a>.</div>
-</div>
-<div class="faq-item">
-  <button class="faq-btn">За что я плачу £319 и можно ли без этого?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
-  <div class="faq-ans"><strong>£319 — это консульский сбор</strong> правительству Великобритании за рассмотрение и выдачу рабочей визы. Это плата государству, а не нам и не работодателю. Без оплаты этого сбора визу не выдадут — никому и никогда. Это закон UK, и он одинаков для всех людей в мире, кто едет работать в Великобританию. Работодатель этот сбор не покрывает (так в законе). Вы оплачиваете его только ПОСЛЕ подписания контракта — на официальном сайте правительства, получаете официальную квитанцию.</div>
-</div>
-<div class="faq-item">
-  <button class="faq-btn">Почему рекрутинг бесплатный — в чём подвох?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
-  <div class="faq-ans">Подвоха нет. Нам платит работодатель Pro-Force Ltd — это стандартная практика в Великобритании. Закон запрещает брать деньги с кандидатов за трудоустройство. Любой другой платёж кроме £319 госпошлины — это признак мошенничества.</div>
-</div>
-<div class="faq-item">
-  <button class="faq-btn">Нужен ли английский язык?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
-  <div class="faq-ans">Нет. Собеседование на русском языке. На ферме работу показывают, а не объясняют. Около 75% коллег — русскоязычные. Базовые фразы появятся сами за первые недели.</div>
-</div>
-<div class="faq-item">
-  <button class="faq-btn">Что если визу не дадут — деньги вернут?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
-  <div class="faq-ans">£319 — это <strong>консульский сбор</strong>, плата правительству Великобритании за рассмотрение вашей визы. Платят все, кто едет работать в UK — это закон, без него визу не выдадут. Работодатель этот сбор не покрывает. При отказе деньги не возвращаются — это правило для всех виз в мире, не только UK. Но процент отказов очень низкий, так как ваша заявка идёт через лицензированного спонсора.</div>
-</div>
-<div class="faq-item">
-  <button class="faq-btn">Кто меня встретит в Англии?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
-  <div class="faq-ans">Координатор поможет с маршрутом и трансфером от аэропорта. Первый день — инструктаж, заселение. 75% коллег говорят по-русски. Вы не будете одни.</div>
-</div>
-<div class="faq-item">
-  <button class="faq-btn">Можно ехать с мужем / женой?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
-  <div class="faq-ans">Да, каждый подаёт визу отдельно. Если оба пройдут отбор, можно попасть на одну ферму и жить вместе (при наличии мест).</div>
-</div>
-<div class="faq-item">
-  <button class="faq-btn">Я сейчас работаю в Европе — стоит ли?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
-  <div class="faq-ans">Минимальная зарплата в Англии = 12.71 фунтов в час (≈15.10 евро) — это закон, платить меньше нельзя. Это значительно больше, чем в большинстве стран ЕС. Ваша ставка 12.90 фунтов/час (≈15.35 евро) + сверхурочные по 13.50 фунтов/час. Жильё включено. За 6 месяцев реально привезти 8 000–12 000 фунтов чистыми (≈9 500–14 300 евро).</div>
-</div>
-<div class="faq-item">
-  <button class="faq-btn">Это только 6 месяцев — а потом?<span class="farr"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke-linecap="round"/></svg></span></button>
-  <div class="faq-ans">Рабочая виза сезонного работника — максимум 6 месяцев, продлить нельзя. После окончания контракта — возвращение домой. Но в следующем сезоне можно подать снова.</div>
-</div>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="cta-strip" id="apply">
-  <div class="cta-inner">
-    <div>
-      <h2>Сезон 2026.<br><em>Места ограничены.</em></h2>
-      <p>Официальная работа в Великобритании. Без опыта, без языка. Рекрутинг бесплатный.</p>
-    </div>
-    <div class="cta-form">
-      <div class="cta-form-header">
-        <h3>Оставить заявку</h3>
-        <p>Ответим в течение 24 часов · Сезон 2026</p>
-      </div>
-      <div class="cta-form-body">
-        <form id="finalForm">
-          <div class="fg"><label>Ваше имя</label><input type="text" placeholder="Иван" required autocomplete="given-name"></div>
-          <div class="fg"><label>Страна, где вы сейчас</label>
-            <select autocomplete="country"><option value="">— выберите —</option><option>Украина</option><option>Польша</option><option>Чехия</option><option>Германия</option><option>Молдова</option><option>Грузия</option><option>Другая</option></select>
-          </div>
-          <div class="fg"><label>Какая вакансия?</label>
-            <select id="vacancyField" autocomplete="off">
-              <option value="any">Любая · уточнить с менеджером</option>
-              <option value="mushroom">Грибная ферма · 12.90 фунтов в час</option>
-              <option value="warehouse">Овощной склад · 13.55 фунтов в час</option>
-              <option value="greenhouse">Теплицы и парники · 13.55 фунтов в час</option>
-            </select>
-          </div>
-          <div class="fg"><label>Как с вами связаться?</label>
-            <div class="messenger-choice" style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-bottom:8px">
-              <label class="mc-opt selected" onclick="switchContact2(this,'phone')" style="justify-content:center;padding:8px 4px;font-size:11.5px"><input type="radio" name="contact2" value="phone" checked style="display:none"><span class="mc-dot call"></span>Звонок</label>
-              <label class="mc-opt" onclick="switchContact2(this,'wa')" style="justify-content:center;padding:8px 4px;font-size:11.5px"><input type="radio" name="contact2" value="wa" style="display:none"><span class="mc-dot wa"></span>WhatsApp</label>
-              <label class="mc-opt" onclick="switchContact2(this,'tg')" style="justify-content:center;padding:8px 4px;font-size:11.5px"><input type="radio" name="contact2" value="tg" style="display:none"><span class="mc-dot tg"></span>Telegram</label>
-              <label class="mc-opt" onclick="switchContact2(this,'vb')" style="justify-content:center;padding:8px 4px;font-size:11.5px"><input type="radio" name="contact2" value="vb" style="display:none"><span class="mc-dot vb"></span>Viber</label>
-            </div>
-          </div>
-          <div class="fg"><label id="contactLabel2">Номер телефона</label><input type="tel" id="contactInput2" placeholder="+380 XX XXX XXXX" required autocomplete="tel"></div>
-          <button type="submit" class="btn-submit">Свяжитесь со мной →</button>
-        </form>
-        <div class="success-panel" id="finalSuccess">
-          <h3>Заявка принята</h3>
-          <p>Свяжемся в течение 24 часов.</p>
-        </div>
-        <p class="form-disc">Бесплатно · Сначала контракт — потом расходы</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- КОНТАКТЫ -->
-<section style="background:var(--white);border-top:1px solid var(--border);padding:44px 32px" id="contacts" aria-label="Контактные способы связи">
-  <div class="container" style="max-width:720px">
-    <p class="stag" style="justify-content:center">Связаться с нами</p>
-    <h2 class="sh" style="text-align:center">Удобный для вас <em>способ</em></h2>
-    <p class="sb" style="text-align:center;max-width:520px;margin-left:auto;margin-right:auto">Напишите или позвоните. Отвечаем обычно в течение часа в рабочее время.</p>
-
-    <div class="mob-1col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px">
-      <a href="https://wa.me/YOUR_WHATSAPP" target="_blank" rel="noopener" aria-label="Написать в WhatsApp" style="display:flex;align-items:center;gap:10px;padding:14px 18px;background:#25D366;color:#fff;text-decoration:none;font-family:'DM Sans',sans-serif;transition:transform .15s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        <div>
-          <div style="font-size:14px;font-weight:700">WhatsApp</div>
-          <div style="font-size:11.5px;opacity:.85">Написать в чате</div>
-        </div>
-      </a>
-      <a href="https://t.me/YOUR_TELEGRAM" target="_blank" rel="noopener" aria-label="Написать в Telegram" style="display:flex;align-items:center;gap:10px;padding:14px 18px;background:#2AABEE;color:#fff;text-decoration:none;font-family:'DM Sans',sans-serif;transition:transform .15s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
-        <div>
-          <div style="font-size:14px;font-weight:700">Telegram</div>
-          <div style="font-size:11.5px;opacity:.85">Быстрый ответ</div>
-        </div>
-      </a>
-      <a href="viber://chat?number=YOUR_VIBER" aria-label="Написать в Viber" style="display:flex;align-items:center;gap:10px;padding:14px 18px;background:#7360F2;color:#fff;text-decoration:none;font-family:'DM Sans',sans-serif;transition:transform .15s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M11.4 0h1.2C18.9.3 23.7 5.4 24 11.8v1.2c-.3 5.2-3.6 9.7-8.4 11.5l-.3.1v-3.2c0-.2-.1-.3-.3-.3-4.4-.8-7.8-4.6-7.8-9.2 0-.5.1-1 .2-1.5.7-3.7 3.8-6.5 7.5-7.1.4-.1.8-.1 1.3-.1.5 0 .9.1 1.4.2 3.2.7 5.7 3.3 6.2 6.6.1.5.1 1 .1 1.5s-.1 1-.2 1.5c-.5 2.4-2.2 4.4-4.5 5.2v2.3c4.3-1.5 7.4-5.5 7.4-10.2 0-6-4.9-10.9-10.9-10.9S.5 5.9.5 11.9c0 4.8 3.1 8.9 7.5 10.3v-2.3C5.6 18.7 4 16.7 3.5 14.3c-.1-.5-.2-1-.2-1.5s.1-1 .2-1.5c.6-3.3 3.1-5.9 6.3-6.6.5-.1.9-.1 1.4-.1.4 0 .8 0 1.2.1zm.6 4.2c-3.7.4-6.5 3.4-6.7 7.1-.1 2.2.7 4.3 2.2 5.8l.2.2v1.9c.5-.1 1.1-.4 1.6-.7l.4-.2c1.1.4 2.2.6 3.4.6 3.8 0 7-3 7.3-6.8.4-4.1-2.7-7.8-6.8-8.1-.5-.1-1-.1-1.6.2z"/></svg>
-        <div>
-          <div style="font-size:14px;font-weight:700">Viber</div>
-          <div style="font-size:11.5px;opacity:.85">Для звонков</div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ДОКУМЕНТЫ -->
-<section style="background:var(--surface);border-top:1px solid var(--border);padding:44px 32px" id="documents" aria-label="Официальные документы">
-  <div class="container">
-    <p class="stag" style="justify-content:center">Официальные документы</p>
-    <h2 class="sh" style="text-align:center">Проверьте <em>сами</em></h2>
-    <p class="sb" style="text-align:center;max-width:520px;margin-left:auto;margin-right:auto">Нажмите на документ для просмотра. Всё открыто — никаких скрытых условий.</p>
-
-    <div class="mob-2col" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px">
-      <button onclick="openDoc('doc-license')" aria-label="Открыть лицензию оператора" style="background:var(--white);border:1px solid var(--border);padding:18px 16px;cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:8px;font-family:inherit;transition:border-color .15s" onmouseover="this.style.borderColor='var(--blue)'" onmouseout="this.style.borderColor='var(--border)'">
-        <div style="width:36px;height:36px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;font-size:18px">📄</div>
-        <div>
-          <div style="font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:2px">Лицензия оператора</div>
-          <div style="font-size:11.5px;color:var(--ink-light)">№05580634 · PDF</div>
         </div>
       </button>
-      <button onclick="openDoc('doc-contract')" aria-label="Открыть пример контракта" style="background:var(--white);border:1px solid var(--border);padding:18px 16px;cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:8px;font-family:inherit;transition:border-color .15s" onmouseover="this.style.borderColor='var(--blue)'" onmouseout="this.style.borderColor='var(--border)'">
-        <div style="width:36px;height:36px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;font-size:18px">📋</div>
-        <div>
-          <div style="font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:2px">Пример контракта</div>
-          <div style="font-size:11.5px;color:var(--ink-light)">Рус + Eng · PDF</div>
+
+      <!-- Germany -->
+      <button class="country-card" onclick="openCountry('de')">
+        <div class="cc-img"><img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=800&q=80&auto=format" alt="Германия — клубника" loading="lazy"></div>
+        <div class="cc-body">
+          <div class="cc-flag-row"><span class="cc-flag">🇩🇪</span><span class="cc-name">Германия</span></div>
+          <div class="cc-desc">Сезонная работа на полях и складах. Клубника, спаржа, овощи. Жильё в общежитии включено.</div>
+          <div class="cc-tags">
+            <span class="cc-tag">Ягоды</span><span class="cc-tag">Спаржа</span><span class="cc-tag">Склады</span>
+          </div>
+          <div class="cc-meta">
+            <span class="cc-salary">€1850–2100 / мес</span>
+            <span class="cc-more">Подробнее →</span>
+          </div>
         </div>
       </button>
-      <button onclick="openDoc('doc-registration')" aria-label="Открыть свидетельство о регистрации" style="background:var(--white);border:1px solid var(--border);padding:18px 16px;cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:8px;font-family:inherit;transition:border-color .15s" onmouseover="this.style.borderColor='var(--blue)'" onmouseout="this.style.borderColor='var(--border)'">
-        <div style="width:36px;height:36px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;font-size:18px">🏢</div>
-        <div>
-          <div style="font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:2px">Свидетельство о регистрации</div>
-          <div style="font-size:11.5px;color:var(--ink-light)">Companies House · PDF</div>
+
+      <!-- Netherlands -->
+      <button class="country-card" onclick="openCountry('nl')">
+        <div class="cc-img"><img src="https://images.unsplash.com/photo-1525498128493-380d1990a112?w=800&q=80&auto=format" alt="Нидерланды — теплицы" loading="lazy"></div>
+        <div class="cc-body">
+          <div class="cc-flag-row"><span class="cc-flag">🇳🇱</span><span class="cc-name">Нидерланды</span></div>
+          <div class="cc-desc">Высокотехнологичные теплицы, поля тюльпанов, холодильные склады. Чистые условия, велосипед на работу.</div>
+          <div class="cc-tags">
+            <span class="cc-tag">Теплицы</span><span class="cc-tag">Тюльпаны</span><span class="cc-tag">Склады</span>
+          </div>
+          <div class="cc-meta">
+            <span class="cc-salary">€2100–2200 / мес</span>
+            <span class="cc-more">Подробнее →</span>
+          </div>
         </div>
       </button>
-      <button onclick="openDoc('doc-visa')" aria-label="Открыть образец визы" style="background:var(--white);border:1px solid var(--border);padding:18px 16px;cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:8px;font-family:inherit;transition:border-color .15s" onmouseover="this.style.borderColor='var(--blue)'" onmouseout="this.style.borderColor='var(--border)'">
-        <div style="width:36px;height:36px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;font-size:18px">🛂</div>
-        <div>
-          <div style="font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:2px">Образец визы</div>
-          <div style="font-size:11.5px;color:var(--ink-light)">Seasonal Worker · JPG</div>
+
+      <!-- Greece -->
+      <button class="country-card" onclick="openCountry('gr')">
+        <div class="cc-img"><img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&q=80&auto=format" alt="Греция — отели" loading="lazy"></div>
+        <div class="cc-body">
+          <div class="cc-flag-row"><span class="cc-flag">🇬🇷</span><span class="cc-name">Греция</span></div>
+          <div class="cc-desc">Отели 4-5★ на курортах Крита и Родоса. Горничные, официанты, повара, аниматоры. Чаевые + питание + жильё.</div>
+          <div class="cc-tags">
+            <span class="cc-tag">Отели</span><span class="cc-tag">Сервис</span><span class="cc-tag">Курорты</span>
+          </div>
+          <div class="cc-meta">
+            <span class="cc-salary">€1800–2100 / мес</span>
+            <span class="cc-more">Подробнее →</span>
+          </div>
         </div>
       </button>
+
+      <!-- Italy -->
+      <button class="country-card" onclick="openCountry('it')">
+        <div class="cc-img"><img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80&auto=format" alt="Италия — отели" loading="lazy"></div>
+        <div class="cc-body">
+          <div class="cc-flag-row"><span class="cc-flag">🇮🇹</span><span class="cc-name">Италия</span></div>
+          <div class="cc-desc">Отели Сицилии, Сардинии, Тосканы. Горничные, официанты, повара. Чаевые + полный пансион включены.</div>
+          <div class="cc-tags">
+            <span class="cc-tag">Отели</span><span class="cc-tag">Сервис</span><span class="cc-tag">Кухня</span>
+          </div>
+          <div class="cc-meta">
+            <span class="cc-salary">€1800–2200 / мес</span>
+            <span class="cc-more">Подробнее →</span>
+          </div>
+        </div>
+      </button>
+
+      <!-- Generic placeholder card -->
+      <div class="country-card" style="background:var(--navy);color:#fff;cursor:default;padding:24px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:8px">
+        <span style="font-size:32px">📞</span>
+        <div style="font-family:'Playfair Display',serif;font-size:18px;color:#fff;font-weight:600">Не нашли подходящую вакансию?</div>
+        <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.6">Напишите нам — подберём вариант под ваш опыт и пожелания.</p>
+        <button class="btn-main" style="background:#fde68a;color:var(--navy);margin-top:10px" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Связаться с агентом</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO REVIEWS -->
+<section id="reviews" style="background:var(--white)">
+  <div class="container">
+    <div class="stag">Видео-отзывы</div>
+    <h2 class="sh">Реальные истории <em>наших кандидатов</em></h2>
+    <p class="sb">Те, кто уже уехал в 2025 году. Расспросили честно: как было, что понравилось, сколько привезли.</p>
+    <div class="video-grid">
+      <div class="video-card">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" title="Видео-отзыв" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-meta">
+          <h4>Анна, 28 · Греция, отель</h4>
+          <p>Поехала через нас в 2025 — горничной в отель 4★ на Крите</p>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" title="Видео-отзыв" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-meta">
+          <h4>Михаил, 34 · Англия, ферма</h4>
+          <p>Сбор грибов 6 месяцев — привёз €11 200 чистыми</p>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" title="Видео-отзыв" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-meta">
+          <h4>Ольга, 31 · Нидерланды, теплицы</h4>
+          <p>Уход за томатами — €2200/мес, велосипед на работу</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTS -->
+<section id="docs" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="stag">Гарантии и документы</div>
+    <h2 class="sh">Всё <em>прозрачно</em> и официально</h2>
+    <p class="sb">Нажмите на документ, чтобы посмотреть. Мы готовы показать всё, чем подтверждена наша легальность.</p>
+    <div class="docs-grid">
+      <div class="doc-card" onclick="openDoc('license')">
+        <div class="doc-ico"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg></div>
+        <h4>Лицензия агентства</h4>
+        <p>№05580634 · действующая</p>
+      </div>
+      <div class="doc-card" onclick="openDoc('reg')">
+        <div class="doc-ico"><svg viewBox="0 0 24 24"><path d="M9 3h6l4 4v14H5V3h4zM9 3v4h6V3M9 13l2 2 4-4"/></svg></div>
+        <h4>Свидетельство о регистрации</h4>
+        <p>Companies House · UK</p>
+      </div>
+      <div class="doc-card" onclick="openDoc('cert')">
+        <div class="doc-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M9 13l-3 8 6-3 6 3-3-8"/></svg></div>
+        <h4>Сертификаты</h4>
+        <p>Подтверждение работодателей</p>
+      </div>
+      <div class="doc-card" onclick="openDoc('offer')">
+        <div class="doc-ico"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM9 9h6M9 13h6M9 17h4"/></svg></div>
+        <h4>Договор оферты</h4>
+        <p>Условия сотрудничества</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" style="background:var(--white)">
+  <div class="container">
+    <div class="stag">Как это работает</div>
+    <h2 class="sh">От заявки до <em>первой зарплаты</em></h2>
+    <p class="sb">Простой и понятный процесс. Мы сопровождаем вас на каждом этапе.</p>
+    <div class="tl">
+      <div class="tli">
+        <div class="tli-left"><div class="tli-num">1</div><div class="tli-line"></div></div>
+        <div class="tli-card">
+          <div class="tli-meta"><span class="tli-step">Шаг 1</span><span class="tli-time">5 минут</span></div>
+          <h3>Выбираете страну и вакансию</h3>
+          <p>Изучаете доступные вакансии, фото с работы, условия и зарплату. Выбираете то, что подходит.</p>
+        </div>
+      </div>
+      <div class="tli">
+        <div class="tli-left"><div class="tli-num">2</div><div class="tli-line"></div></div>
+        <div class="tli-card">
+          <div class="tli-meta"><span class="tli-step">Шаг 2</span><span class="tli-time">1 день</span></div>
+          <h3>Подаёте заявку</h3>
+          <p>Оставляете контакты на сайте. Наш агент связывается с вами в течение 24 часов в удобном мессенджере.</p>
+        </div>
+      </div>
+      <div class="tli">
+        <div class="tli-left"><div class="tli-num">3</div><div class="tli-line"></div></div>
+        <div class="tli-card">
+          <div class="tli-meta"><span class="tli-step">Шаг 3</span><span class="tli-time">3–7 дней</span></div>
+          <h3>Собеседование и подбор</h3>
+          <p>Короткое интервью по телефону или видеосвязи. Подбираем работодателя под ваш профиль.</p>
+        </div>
+      </div>
+      <div class="tli">
+        <div class="tli-left"><div class="tli-num">4</div><div class="tli-line"></div></div>
+        <div class="tli-card">
+          <div class="tli-meta"><span class="tli-step">Шаг 4</span><span class="tli-time">2–4 недели</span></div>
+          <h3>Контракт и виза</h3>
+          <p>Получаете контракт, оформляем визу и документы. Всё прозрачно, все бумаги на руках.</p>
+        </div>
+      </div>
+      <div class="tli">
+        <div class="tli-left"><div class="tli-num">5</div><div class="tli-line"></div></div>
+        <div class="tli-card">
+          <div class="tli-meta"><span class="tli-step">Шаг 5</span><span class="tli-time">Готово</span></div>
+          <h3>Поездка и первая зарплата</h3>
+          <p>Встречаем в аэропорту, заселяем в жильё. Через 2–4 недели — первая выплата на ваш счёт.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY FORM -->
+<section id="apply" class="app-form-section">
+  <div class="container" style="text-align:center">
+    <div class="stag" style="justify-content:center">Заявка</div>
+    <h2 class="sh">Оставьте заявку — <em>мы перезвоним</em></h2>
+    <p class="sb" style="margin-left:auto;margin-right:auto">Бесплатная консультация. Подберём вакансию под ваш опыт и пожелания.</p>
+    <div class="app-form-wrap">
+      <div class="hf-top">
+        <h3 style="font-family:'Playfair Display',serif;font-size:18px;color:#fff;font-weight:600">Заявка кандидата</h3>
+        <p style="font-size:12px;color:rgba(255,255,255,.55);margin-top:3px">Ответим в течение 24 часов в мессенджере</p>
+      </div>
+      <form class="hf-body" onsubmit="event.preventDefault();this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="fg"><label>Ваше имя</label><input type="text" required placeholder="Как к вам обращаться"></div>
+        <div class="fg"><label>Телефон (мессенджер)</label><input type="tel" required placeholder="+380 / +7 / +48"></div>
+        <div class="fg"><label>Страна</label>
+          <select required>
+            <option value="">— выберите страну —</option>
+            <option>🇬🇧 Англия</option>
+            <option>🇩🇪 Германия</option>
+            <option>🇳🇱 Нидерланды</option>
+            <option>🇬🇷 Греция</option>
+            <option>🇮🇹 Италия</option>
+            <option>Не определился — нужна консультация</option>
+          </select>
+        </div>
+        <div class="fg"><label>Возраст</label><input type="number" min="18" max="65" placeholder="18–55"></div>
+        <button type="submit" class="btn-submit">Отправить заявку</button>
+        <p class="form-disc">Нажимая, вы соглашаетесь с <a href="#" onclick="openDoc('privacy');return false" style="color:var(--blue);text-decoration:underline">политикой конфиденциальности</a></p>
+      </form>
+      <div class="success-panel">
+        <h3>Заявка отправлена!</h3>
+        <p>Наш агент свяжется с вами в течение 24 часов.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1601,376 +1278,367 @@ footer a:hover{color:var(--navy)}
   <div class="footer-grid">
     <div>
       <div class="fb-name">HR & Recruit Limited</div>
-      <p>Официальный рекрутинг · Великобритания</p>
-      <p>8 Basin Road, Worcester, Worcestershire WRS 3GA</p>
-      <p style="margin-top:10px;padding:10px 12px;background:var(--surface2);border:1px solid var(--border)">Официальный рекрутинговый партнёр<br>Pro-Force Ltd · Лицензия правительства · pro-force.co.uk</p>
+      <p>Лицензированное агентство по легальному трудоустройству в странах Европы. Регистрация №05580634.</p>
+      <p style="margin-top:10px">📞 +44 20 1234 5678<br>✉ info@hr-recruit.eu</p>
     </div>
     <div class="fc">
-      <h4>Навигация</h4>
+      <h4>Страны</h4>
       <ul>
-        <li><a href="#safety">Проверка</a></li>
-        <li><a href="#math">Зарплата</a></li>
-        <li><a href="#housing">Жильё</a></li>
-        <li><a href="#process">Процесс оформления</a></li>
-        <li><a href="#faq">Частые вопросы</a></li>
+        <li><a href="#" onclick="openCountry('uk');return false">🇬🇧 Англия</a></li>
+        <li><a href="#" onclick="openCountry('de');return false">🇩🇪 Германия</a></li>
+        <li><a href="#" onclick="openCountry('nl');return false">🇳🇱 Нидерланды</a></li>
+        <li><a href="#" onclick="openCountry('gr');return false">🇬🇷 Греция</a></li>
+        <li><a href="#" onclick="openCountry('it');return false">🇮🇹 Италия</a></li>
       </ul>
     </div>
     <div class="fc">
-      <h4>Важно</h4>
-      <p>Контракт строго до 6 месяцев.</p>
-      <p>Кандидат платит только £319 — консульский сбор за визу, через официальный сайт правительства UK.</p>
-      <p>Любой другой платёж за рекрутинг — незаконный.</p>
-      <p>Работодатель не покрывает консульский сбор.</p>
-      <p style="margin-top:10px">Набор: летне-осенний сезон 2026</p>
+      <h4>Документы</h4>
+      <ul>
+        <li><a href="#" onclick="openDoc('privacy');return false">Политика конфиденциальности</a></li>
+        <li><a href="#" onclick="openDoc('offer');return false">Договор оферты</a></li>
+        <li><a href="#" onclick="openDoc('cookies');return false">Файлы cookie</a></li>
+        <li><a href="#" onclick="openDoc('license');return false">Лицензия №05580634</a></li>
+      </ul>
     </div>
   </div>
-  <div style="max-width:1160px;margin:24px auto 0;padding-top:16px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:20px;font-size:12px;color:var(--ink-light)">
-    <a href="#" onclick="openDoc('privacy');return false" style="color:var(--ink-light);text-decoration:underline;text-underline-offset:2px">Политика конфиденциальности</a>
-    <a href="#" onclick="openDoc('cookies');return false" style="color:var(--ink-light);text-decoration:underline;text-underline-offset:2px">Политика куки</a>
-    <a href="#" onclick="openDoc('terms');return false" style="color:var(--ink-light);text-decoration:underline;text-underline-offset:2px">Условия использования</a>
-    <a href="mailto:info@hr-recruit.uk" style="color:var(--ink-light);text-decoration:underline;text-underline-offset:2px">info@hr-recruit.uk</a>
-  </div>
   <div class="footer-bottom">
-    <span>© 2025–2026 HR & Recruit Limited. Все права защищены.</span>
-    <span>Pro-Force Ltd · Лицензия правительства Великобритании · Госпрограмма сезонных работников 2026</span>
+    <span>© 2026 HR & Recruit Limited. Все права защищены.</span>
+    <span>Регистрация в Companies House: №05580634</span>
   </div>
 </footer>
 
-
-<script>
-function fmt(n){return '£'+Math.round(n).toLocaleString('ru-RU')}
-
-function calc(){
-  const h=+document.getElementById('hoursRange').value;
-  const d=+document.getElementById('daysRange').value;
-  document.getElementById('hLabel').textContent=h+' ч';
-  document.getElementById('dLabel').textContent=d+' дн';
-
-  const BASE=12.90;
-  const OVERTIME=19.35; // 12.90 × 1.5
-  const baseH=Math.min(h,8);
-  const overH=Math.max(h-8,0);
-  const day=BASE*baseH + OVERTIME*overH;
-  const week=day*d;
-  const gross=week*4.33;
-  const tax=Math.round(gross*0.12);
-  const housing=430;
-  const net=Math.round(gross-tax-housing);
-  const season=net*6;
-
-  var f=document.getElementById('crFormula');
-  if(f){
-    var formula=BASE.toFixed(2)+' × '+baseH+' ч';
-    if(overH>0) formula+=' + '+OVERTIME.toFixed(2)+' × '+overH+' ч (сверхурочные ×1.5)';
-    formula+=' × '+d+' дн × 4.33 = <strong style="color:#fff">'+fmt(Math.round(gross))+'</strong>';
-    f.innerHTML=formula;
-  }
-  var g=document.getElementById('crGross'); if(g) g.textContent=fmt(Math.round(gross));
-  var t=document.getElementById('crTax'); if(t) t.textContent='− '+fmt(tax);
-  var hs=document.getElementById('crHousing'); if(hs) hs.textContent='− '+fmt(housing);
-  document.getElementById('crAmount').textContent=fmt(net);
-  document.getElementById('crEur').textContent='€'+Math.round(net*1.19).toLocaleString('ru-RU');
-  document.getElementById('crUah').textContent=Math.round(net*49).toLocaleString('ru-RU')+' грн';
-  document.getElementById('crSeason').textContent=fmt(season);
-  var se=document.getElementById('crSeasonEur'); if(se) se.textContent='€'+Math.round(season*1.19).toLocaleString('ru-RU');
-}
-calc();
-
-// FAQ
-document.querySelectorAll('.faq-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const item=btn.closest('.faq-item');
-    const open=item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
-    if(!open)item.classList.add('open');
-  });
-});
-
-// Forms
-['mainForm:formSuccess','finalForm:finalSuccess'].forEach(pair=>{
-  const[fid,sid]=pair.split(':');
-  const f=document.getElementById(fid);
-  if(!f)return;
-  f.addEventListener('submit',e=>{
-    e.preventDefault();
-    f.style.display='none';
-    document.getElementById(sid).style.display='block';
-  });
-});
-
-
-</script>
-
-<script>
-function selectVacancy(type){
-  var sel = document.getElementById('vacancyField');
-  if(sel) sel.value = type;
-  document.getElementById('apply').scrollIntoView({behavior:'smooth'});
-}
-</script>
-
-
-<!-- MESSENGER WIDGET -->
-<div class="msg-widget" id="msgWidget">
-  <div class="msg-options" id="msgOptions" style="display:none">
-    <div class="msg-label-tag">Написать — ответим быстро</div>
-    <a href="https://t.me/YOUR_TELEGRAM" target="_blank" rel="noopener" class="msg-btn tg">
-      <span class="mi"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg></span>
-      <span class="ml">Telegram</span>
-    </a>
-    <a href="https://wa.me/YOUR_WHATSAPP" target="_blank" rel="noopener" class="msg-btn wa">
-      <span class="mi"><svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
-      <span class="ml">WhatsApp</span>
-    </a>
-    <a href="viber://chat?number=YOUR_VIBER" class="msg-btn vb">
-      <span class="mi"><svg viewBox="0 0 24 24" fill="#fff"><path d="M11.4 0h1.2C18.9.3 23.7 5.4 24 11.8v1.2c-.3 5.2-3.6 9.7-8.4 11.5l-.3.1v-3.2c0-.2-.1-.3-.3-.3-4.4-.8-7.8-4.6-7.8-9.2 0-.5.1-1 .2-1.5.7-3.7 3.8-6.5 7.5-7.1.4-.1.8-.1 1.3-.1.5 0 .9.1 1.4.2 3.2.7 5.7 3.3 6.2 6.6.1.5.1 1 .1 1.5s-.1 1-.2 1.5c-.5 2.4-2.2 4.4-4.5 5.2v2.3c4.3-1.5 7.4-5.5 7.4-10.2 0-6-4.9-10.9-10.9-10.9S.5 5.9.5 11.9c0 4.8 3.1 8.9 7.5 10.3v-2.3C5.6 18.7 4 16.7 3.5 14.3c-.1-.5-.2-1-.2-1.5s.1-1 .2-1.5c.6-3.3 3.1-5.9 6.3-6.6.5-.1.9-.1 1.4-.1.4 0 .8 0 1.2.1zm.6 4.2c-3.7.4-6.5 3.4-6.7 7.1-.1 2.2.7 4.3 2.2 5.8l.2.2v1.9c.5-.1 1.1-.4 1.6-.7l.4-.2c1.1.4 2.2.6 3.4.6 3.8 0 7-3 7.3-6.8.4-4.1-2.7-7.8-6.8-8.1-.5-.1-1-.1-1.6.2z"/></svg></span>
-      <span class="ml">Viber</span>
-    </a>
-  </div>
-  <button class="msg-main-btn" id="msgToggle" onclick="toggleMsg()">
-    <span class="badge" id="msgBadge">3</span>
-    <svg viewBox="0 0 24 24" fill="#fff"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
-  </button>
-</div>
-
-<script>
-function switchTab(tab) {
-  document.querySelectorAll('.gallery-tab').forEach(t => t.style.display = 'none');
-  const el = document.getElementById('tab-' + tab);
-  if(el) { el.style.display = 'block'; }
-  document.querySelectorAll('.gtab').forEach(b => {
-    const active = b.dataset.tab === tab;
-    b.style.background = active ? 'var(--navy)' : 'var(--surface2)';
-    b.style.color = active ? '#fff' : 'var(--ink-mid)';
-    b.style.borderRight = active ? 'none' : '1px solid var(--border)';
-  });
-}
-</script>
-
-<script>
-var msgOpen = false;
-function toggleMsg(){
-  msgOpen = !msgOpen;
-  var opts = document.getElementById('msgOptions');
-  var btn = document.getElementById('msgToggle');
-  var badge = document.getElementById('msgBadge');
-  opts.style.display = msgOpen ? 'flex' : 'none';
-  if(msgOpen){ opts.style.flexDirection = 'column'; opts.style.alignItems = 'flex-end'; opts.style.gap = '8px'; }
-  btn.style.background = msgOpen ? '#0d1f3c' : 'var(--blue)';
-  if(badge) badge.style.display = msgOpen ? 'none' : 'flex';
-}
-// Close on outside click
-document.addEventListener('click', function(e){
-  var w = document.getElementById('msgWidget');
-  if(msgOpen && !w.contains(e.target)){ toggleMsg(); }
-});
-function trackMessenger(type){
-  // Analytics tracking
-  // if(typeof fbq!=='undefined') fbq('track','Contact',{content_name:type});
-  // if(typeof gtag!=='undefined') gtag('event','contact_messenger',{messenger:type});
-}
-</script>
-
-<script>
-// Contact method switcher for hero form
-function switchContact(el, type) {
-  el.closest('.messenger-choice').querySelectorAll('.mc-opt').forEach(o => o.classList.remove('selected'));
-  el.classList.add('selected');
-  var label = document.getElementById('contactLabel');
-  var input = document.getElementById('contactInput');
-  if(type === 'phone') { label.textContent = 'Номер телефона'; input.placeholder = '+380 XX XXX XXXX'; input.type='tel'; }
-  else if(type === 'wa') { label.textContent = 'Номер WhatsApp'; input.placeholder = '+380 XX XXX XXXX'; input.type='tel'; }
-  else if(type === 'tg') { label.textContent = 'Telegram (номер или @username)'; input.placeholder = '@username или +380...'; input.type='text'; }
-  else if(type === 'vb') { label.textContent = 'Номер Viber'; input.placeholder = '+380 XX XXX XXXX'; input.type='tel'; }
-}
-// Contact method switcher for final form
-function switchContact2(el, type) {
-  el.closest('.messenger-choice').querySelectorAll('.mc-opt').forEach(o => o.classList.remove('selected'));
-  el.classList.add('selected');
-  var label = document.getElementById('contactLabel2');
-  var input = document.getElementById('contactInput2');
-  if(type === 'phone') { label.textContent = 'Номер телефона'; input.placeholder = '+380 XX XXX XXXX'; input.type='tel'; }
-  else if(type === 'wa') { label.textContent = 'Номер WhatsApp'; input.placeholder = '+380 XX XXX XXXX'; input.type='tel'; }
-  else if(type === 'tg') { label.textContent = 'Telegram (номер или @username)'; input.placeholder = '@username или +380...'; input.type='text'; }
-  else if(type === 'vb') { label.textContent = 'Номер Viber'; input.placeholder = '+380 XX XXX XXXX'; input.type='tel'; }
-}
-// Messenger choice toggle (legacy)
-function toggleMC(el) {
-  el.classList.toggle('selected');
-  // Show/hide alt number field when WhatsApp, Telegram or Viber selected
-  var form = el.closest('form');
-  if(!form) return;
-  var altField = form.querySelector('#altNumField') || form.querySelector('.messenger-fields .fg:last-child');
-  var anySelected = form.querySelectorAll('.mc-opt.selected').length > 0;
-  var callOnly = Array.from(form.querySelectorAll('.mc-opt.selected')).every(function(o){
-    return o.querySelector('input').value === 'Звонок';
-  });
-  if(altField) {
-    altField.style.display = (anySelected && !callOnly) ? 'block' : 'none';
-  }
-}
-// Auto-show alt number field
-document.querySelectorAll('.mc-opt').forEach(function(opt){
-  opt.addEventListener('click', function(){ toggleMC(opt); });
-});
-</script>
-
-<script>
-// Forms
-['mainForm:formSuccess','finalForm:finalSuccess'].forEach(function(pair){
-  var p = pair.split(':'), f = document.getElementById(p[0]);
-  if(!f) return;
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    f.style.display = 'none';
-    var s = document.getElementById(p[1]);
-    if(s) s.style.display = 'block';
-  });
-});
-</script>
-
-<!-- Cookie consent -->
-<div id="cookieBanner" style="position:fixed;bottom:20px;left:20px;right:20px;max-width:560px;margin:0 auto;background:var(--navy);color:#fff;padding:16px 20px;box-shadow:0 8px 32px rgba(0,0,0,.3);z-index:9998;display:none;font-family:'DM Sans',sans-serif" role="dialog" aria-label="Согласие на использование куки">
-  <div style="display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap">
-    <div style="flex:1;min-width:240px">
-      <div style="font-size:14px;font-weight:600;margin-bottom:4px">🍪 Этот сайт использует куки</div>
-      <div style="font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.6">Для анализа посещений и улучшения сайта. Нажимая «Принять», вы соглашаетесь с нашей <a href="#" onclick="openDoc('privacy');return false" style="color:#a8c8ff;text-decoration:underline">Политикой конфиденциальности</a>.</div>
+<!-- ─── COUNTRY MODAL ─── -->
+<div class="modal-overlay" id="countryModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <button class="modal-back" onclick="closeModal()" aria-label="Назад"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>Назад</button>
+    <button class="modal-close" onclick="closeModal()" aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6l-6 6-6 6"/></svg></button>
+    <div class="modal-hero" id="modalHero">
+      <img id="modalHeroImg" src="" alt="">
+      <div class="modal-hero-content">
+        <div class="flag" id="modalFlag">🇬🇧</div>
+        <h2 id="modalTitle">Англия</h2>
+        <p id="modalSubtitle">Фермы, склады, теплицы</p>
+      </div>
     </div>
-    <div style="display:flex;gap:8px;flex-shrink:0">
-      <button onclick="acceptCookies()" style="background:var(--blue);color:#fff;border:none;padding:10px 18px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif">Принять</button>
-      <button onclick="declineCookies()" style="background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.25);padding:10px 16px;font-size:13px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif">Отклонить</button>
+    <div class="modal-body" id="modalBody">
+      <!-- Filled by JS -->
     </div>
   </div>
 </div>
 
-<script>
-(function(){
-  if(!localStorage.getItem('cookieChoice')){
-    setTimeout(function(){ var b=document.getElementById('cookieBanner'); if(b) b.style.display='block'; }, 1500);
-  }
-})();
-function acceptCookies(){ localStorage.setItem('cookieChoice','accept'); document.getElementById('cookieBanner').style.display='none'; }
-function declineCookies(){ localStorage.setItem('cookieChoice','decline'); document.getElementById('cookieBanner').style.display='none'; }
-</script>
-
-<!-- Document modal (policies + files) -->
-<div id="docModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:10000;padding:20px;overflow-y:auto" onclick="if(event.target===this)closeDoc()" role="dialog" aria-modal="true" aria-labelledby="docModalTitle">
-  <div style="max-width:800px;margin:40px auto;background:#fff;border-radius:4px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.3)">
-    <div style="padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:12px">
-      <h3 id="docModalTitle" style="font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--navy);margin:0">Документ</h3>
-      <button onclick="closeDoc()" aria-label="Закрыть" style="width:36px;height:36px;background:var(--surface);border:1px solid var(--border);color:var(--ink-mid);font-size:20px;cursor:pointer;font-family:inherit;flex-shrink:0">✕</button>
-    </div>
-    <div id="docModalBody" style="padding:24px 24px 32px;max-height:70vh;overflow-y:auto">
-      <!-- Content injected by JS -->
-    </div>
+<!-- ─── DOC MODAL ─── -->
+<div class="modal-overlay" id="docModal" role="dialog" aria-modal="true">
+  <div class="modal-box" style="max-width:720px">
+    <button class="modal-close" onclick="closeDoc()" aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6l-6 6-6 6"/></svg></button>
+    <div class="modal-body" id="docBody" style="padding-top:48px"></div>
   </div>
 </div>
 
 <script>
-var DOCS = {
-  privacy: {
-    title: 'Политика конфиденциальности',
-    body: `
-      <p style="font-size:13px;color:var(--ink-light);margin-bottom:16px">Обновлено: апрель 2026</p>
-      <h4 style="font-size:15px;font-weight:600;color:var(--navy);margin:16px 0 8px">1. Какие данные мы собираем</h4>
-      <p style="font-size:13.5px;color:var(--ink-mid);line-height:1.75;margin-bottom:12px">Имя, контактный номер телефона или мессенджера, страна проживания — которые вы предоставляете через форму заявки. IP-адрес и данные об устройстве для аналитики.</p>
-      <h4 style="font-size:15px;font-weight:600;color:var(--navy);margin:16px 0 8px">2. Зачем мы используем данные</h4>
-      <p style="font-size:13.5px;color:var(--ink-mid);line-height:1.75;margin-bottom:12px">Только для связи с вами по вопросу трудоустройства. Мы не передаём данные третьим лицам, кроме Pro-Force Ltd (работодатель) на этапе оформления контракта — с вашего явного согласия.</p>
-      <h4 style="font-size:15px;font-weight:600;color:var(--navy);margin:16px 0 8px">3. Как мы храним данные</h4>
-      <p style="font-size:13.5px;color:var(--ink-mid);line-height:1.75;margin-bottom:12px">Данные хранятся на защищённых серверах. Срок хранения — не более 12 месяцев после последнего контакта. По запросу мы удалим ваши данные в течение 14 дней.</p>
-      <h4 style="font-size:15px;font-weight:600;color:var(--navy);margin:16px 0 8px">4. Куки</h4>
-      <p style="font-size:13.5px;color:var(--ink-mid);line-height:1.75;margin-bottom:12px">Мы используем технические куки для работы сайта и аналитические для понимания, как посетители взаимодействуют с сайтом. Вы можете отказаться от аналитических куки.</p>
-      <h4 style="font-size:15px;font-weight:600;color:var(--navy);margin:16px 0 8px">5. Ваши права</h4>
-      <p style="font-size:13.5px;color:var(--ink-mid);line-height:1.75;margin-bottom:12px">Вы имеете право запросить копию ваших данных, исправить их, удалить или отозвать согласие на обработку. Напишите нам: privacy@hr-recruit.uk</p>
-      <h4 style="font-size:15px;font-weight:600;color:var(--navy);margin:16px 0 8px">6. Контакт</h4>
-      <p style="font-size:13.5px;color:var(--ink-mid);line-height:1.75">HR & Recruit Limited, 8 Basin Road, Worcester, Worcestershire WRS 3GA, United Kingdom</p>
-    `
+/* ─── COUNTRY DATA ─── */
+const COUNTRIES = {
+  uk: {
+    flag: '🇬🇧',
+    name: 'Англия',
+    subtitle: 'Грибные фермы, овощные склады, теплицы — закрытые помещения с климат-контролем',
+    hero: 'assets/mushroom-hand-closeup.jpg',
+    vacancies: [
+      {title:'Грибная ферма', salary:'€1850 / мес', desc:'Сбор шампиньонов в закрытых ангарах с климат-контролем (+18-22°C). Без опыта, обучение на месте. Работа руками.'},
+      {title:'Овощной склад', salary:'€2000 / мес', desc:'Сортировка, упаковка, маркировка свежих овощей и фруктов. Конвейерная линия. Закрытый склад.'},
+      {title:'Теплицы', salary:'€2000 / мес', desc:'Уход за растениями, сбор урожая (томаты, огурцы). Крытые теплицы, климат-контроль круглый год.'}
+    ],
+    workPhotos: [
+      'assets/mushroom-hand-closeup.jpg',
+      'assets/packaging-line.jpg',
+      'assets/hangar-shelves-long.jpg',
+      'assets/mushroom-harvest.jpg'
+    ],
+    housingPhotos: [
+      'assets/caravan-exterior-1.jpg',
+      'assets/caravan-kitchen.jpg',
+      'assets/caravan-living.jpg'
+    ],
+    reviews: [
+      {text:'Поехал в 2025 на грибную ферму. Чисто, тепло, работа руками. Привёз €11 200 за 6 месяцев.', who:'Михаил, 34'},
+      {text:'Жильё — отдельный домик, кухня и душ. Работа в одну смену. Английский подтянулся.', who:'Денис, 29'},
+      {text:'Без опыта взяли. Обучение 3 дня, потом норма выработки и всё чётко. Рекомендую.', who:'Артём, 26'}
+    ]
   },
-  cookies: {
-    title: 'Политика использования куки',
-    body: `
-      <p style="font-size:13px;color:var(--ink-light);margin-bottom:16px">Обновлено: апрель 2026</p>
-      <h4 style="font-size:15px;font-weight:600;color:var(--navy);margin:16px 0 8px">Что такое куки</h4>
-      <p style="font-size:13.5px;color:var(--ink-mid);line-height:1.75;margin-bottom:12px">Куки — это небольшие текстовые файлы, которые сайт сохраняет в вашем браузере, чтобы запомнить ваши предпочтения и улучшить работу сайта.</p>
-      <h4 style="font-size:15px;font-weight:600;color:var(--navy);margin:16px 0 8px">Какие куки мы используем</h4>
-      <ul style="font-size:13.5px;color:var(--ink-mid);line-height:1.75;margin-bottom:12px;padding-left:20px">
-        <li><strong>Технические</strong> — необходимы для работы сайта (сохранение вашего выбора согласия)</li>
-        <li><strong>Аналитические</strong> — помогают понять, как посетители пользуются сайтом (Google Analytics, Meta Pixel)</li>
-      </ul>
-      <h4 style="font-size:15px;font-weight:600;color:var(--navy);margin:16px 0 8px">Как управлять куки</h4>
-      <p style="font-size:13.5px;color:var(--ink-mid);line-height:1.75;margin-bottom:12px">При первом посещении вы можете принять или отклонить куки. Также вы можете удалить их в настройках вашего браузера в любой момент.</p>
-    `
+  de: {
+    flag: '🇩🇪',
+    name: 'Германия',
+    subtitle: 'Сезонные работы на полях и складах — клубника, спаржа, овощи. Жильё в общежитии включено',
+    hero: 'https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=1400&q=80&auto=format',
+    vacancies: [
+      {title:'Сбор клубники и ягод', salary:'€1900 / мес', desc:'Сезон с мая по октябрь. Работа в поле, удобные перчатки и инвентарь выдаются. Жильё в общежитии включено.'},
+      {title:'Сбор спаржи', salary:'€2100 / мес', desc:'Сезон апрель-июнь. Высокий спрос, премия за объём. Жильё на ферме включено, питание по желанию.'},
+      {title:'Овощной склад в Бранденбурге', salary:'€1850 / мес', desc:'Упаковка картофеля, лука, моркови. Тёплый ангар. График 8 часов, выходные.'}
+    ],
+    workPhotos: [
+      'https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=600&q=80&auto=format',
+      'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=600&q=80&auto=format',
+      'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80&auto=format',
+      'https://images.unsplash.com/photo-1518709268805-4e9042af2ac3?w=600&q=80&auto=format'
+    ],
+    housingPhotos: [
+      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80&auto=format',
+      'https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=800&q=80&auto=format',
+      'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80&auto=format'
+    ],
+    reviews: [
+      {text:'Поехала на клубнику в мае. Поле большое, но норму делать реально. Привезла €11 000 за сезон.', who:'Ольга, 27'},
+      {text:'Спаржа — тяжело первые дни, потом привыкаешь. Зато премии хорошие за объём.', who:'Сергей, 38'},
+      {text:'Общежитие чистое, 2-3 человека в комнате. Кухня общая. До работы пешком 5 минут.', who:'Наталья, 31'}
+    ]
   },
-  terms: {
-    title: 'Условия использования',
-    body: `
-      <p style="font-size:13px;color:var(--ink-light);margin-bottom:16px">Обновлено: апрель 2026</p>
-      <h4 style="font-size:15px;font-weight:600;color:var(--navy);margin:16px 0 8px">1. О сайте</h4>
-      <p style="font-size:13.5px;color:var(--ink-mid);line-height:1.75;margin-bottom:12px">Сайт предоставляет информацию о сезонной работе в Великобритании через программу Seasonal Worker Visa. Оператор сайта — HR & Recruit Limited (Великобритания).</p>
-      <h4 style="font-size:15px;font-weight:600;color:var(--navy);margin:16px 0 8px">2. Бесплатность услуг</h4>
-      <p style="font-size:13.5px;color:var(--ink-mid);line-height:1.75;margin-bottom:12px">Рекрутинговые услуги для кандидатов бесплатны. Мы получаем оплату от работодателя Pro-Force Ltd за каждого трудоустроенного кандидата. Единственный расход кандидата — государственная пошлина £319 правительству Великобритании за визу.</p>
-      <h4 style="font-size:15px;font-weight:600;color:var(--navy);margin:16px 0 8px">3. Отсутствие гарантий</h4>
-      <p style="font-size:13.5px;color:var(--ink-mid);line-height:1.75;margin-bottom:12px">Мы не гарантируем 100% получения визы или трудоустройства — решение принимается работодателем Pro-Force Ltd и консульством Великобритании. Мы обязуемся честно сопровождать каждого кандидата.</p>
-      <h4 style="font-size:15px;font-weight:600;color:var(--navy);margin:16px 0 8px">4. Ответственность</h4>
-      <p style="font-size:13.5px;color:var(--ink-mid);line-height:1.75">HR & Recruit Limited действует как рекрутинговый партнёр Pro-Force Ltd. Контракт кандидат подписывает напрямую с Pro-Force Ltd — мы только сопровождаем процесс.</p>
-    `
+  nl: {
+    flag: '🇳🇱',
+    name: 'Нидерланды',
+    subtitle: 'Высокотехнологичные теплицы, поля тюльпанов, холодильные склады — чистые условия, велосипед на работу',
+    hero: 'https://images.unsplash.com/photo-1525498128493-380d1990a112?w=1400&q=80&auto=format',
+    vacancies: [
+      {title:'Теплицы (томаты, огурцы)', salary:'€2200 / мес', desc:'Высокотехнологичные теплицы. Уход за растениями, сбор урожая. Чистые условия, велосипед на работу включён.'},
+      {title:'Сбор тюльпанов', salary:'€2100 / мес', desc:'Знаменитые поля Нидерландов. Сезон апрель-май. Открытый воздух, спецодежда выдаётся.'},
+      {title:'Склад мясной/рыбной продукции', salary:'€2150 / мес', desc:'Холодильный склад, упаковка для супермаркетов. Тёплая спецодежда выдаётся, доплата за холод.'}
+    ],
+    workPhotos: [
+      'https://images.unsplash.com/photo-1525498128493-380d1990a112?w=600&q=80&auto=format',
+      'https://images.unsplash.com/photo-1525207934364-d63bf67c19e1?w=600&q=80&auto=format',
+      'https://images.unsplash.com/photo-1518709268805-4e9042af2ac3?w=600&q=80&auto=format',
+      'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80&auto=format'
+    ],
+    housingPhotos: [
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80&auto=format',
+      'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80&auto=format',
+      'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80&auto=format'
+    ],
+    reviews: [
+      {text:'Теплицы — это космос. Чисто, тепло, всё на компьютере. Велосипед выдают, до работы 10 минут.', who:'Ольга, 31'},
+      {text:'Тюльпаны — красиво и реально €2100 в месяц. Сезон короткий, но интенсивный.', who:'Светлана, 28'},
+      {text:'Жильё современное, по 2 человека в комнате. Кухня, душ — всё новое.', who:'Александр, 33'}
+    ]
+  },
+  gr: {
+    flag: '🇬🇷',
+    name: 'Греция',
+    subtitle: 'Отели 4-5★ на курортах Крита и Родоса — горничные, официанты, повара, аниматоры. Чаевые + питание + жильё',
+    hero: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1400&q=80&auto=format',
+    vacancies: [
+      {title:'Горничная отеля 4-5★', salary:'€1800 / мес + чаевые + питание + жильё', desc:'Уборка номеров на курортах Крита, Родоса. Сезон апрель-октябрь. Без опыта, обучение на месте.'},
+      {title:'Официант ресторана отеля', salary:'€1950 / мес + чаевые + питание + жильё', desc:'Обслуживание гостей, английский базовый. Сезон апрель-октябрь. Чаевые до €400/мес сверху.'},
+      {title:'Повар / кухонный работник', salary:'€2100 / мес + питание + жильё', desc:'Помощник на кухне, опыт приветствуется. Питание 3 раза в день включено.'},
+      {title:'Аниматор / Pool boy', salary:'€1850 / мес + чаевые + питание + жильё', desc:'Развлечения для гостей, работа у бассейна. Молодёжная атмосфера, английский желателен.'}
+    ],
+    workPhotos: [
+      'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=600&q=80&auto=format',
+      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80&auto=format',
+      'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80&auto=format',
+      'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=80&auto=format'
+    ],
+    housingPhotos: [
+      'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80&auto=format',
+      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=80&auto=format',
+      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80&auto=format'
+    ],
+    reviews: [
+      {text:'Горничная в отеле 5★ на Крите. Жильё в отеле, питание шведский стол. Чаевые отличные — €350 в месяц сверху.', who:'Анна, 28'},
+      {text:'Официантка ресторана у моря. Английский подтянула за месяц. Команда дружная.', who:'Юлия, 24'},
+      {text:'Поваром на кухне — €2100 + питание трёхразовое. Море в 5 минутах ходьбы.', who:'Виктор, 36'}
+    ]
+  },
+  it: {
+    flag: '🇮🇹',
+    name: 'Италия',
+    subtitle: 'Отели Сицилии, Сардинии, Тосканы — горничные, официанты, повара. Чаевые + полный пансион',
+    hero: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1400&q=80&auto=format',
+    vacancies: [
+      {title:'Горничная', salary:'€1800 / мес + чаевые + питание + жильё', desc:'Курорты Сицилии, Сардинии, Тосканы. Сезон апрель-октябрь. Без опыта, обучение на месте.'},
+      {title:'Официант', salary:'€2000 / мес + чаевые + питание + жильё', desc:'Рестораны отелей. Базовый итальянский или английский. Чаевые до €500/мес сверху.'},
+      {title:'Повар / помощник на кухне', salary:'€2200 / мес + питание + жильё', desc:'Опыт работы на кухне приветствуется. Полный пансион, отдельная комната.'}
+    ],
+    workPhotos: [
+      'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=600&q=80&auto=format',
+      'https://images.unsplash.com/photo-1564501049564-0a4dafb1f5da?w=600&q=80&auto=format',
+      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80&auto=format',
+      'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80&auto=format'
+    ],
+    housingPhotos: [
+      'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&q=80&auto=format',
+      'https://images.unsplash.com/photo-1551776235-dde6d482980b?w=800&q=80&auto=format',
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80&auto=format'
+    ],
+    reviews: [
+      {text:'Сицилия, отель 4★. Горничная — €1800 + чаевые €280. Жильё прямо в отеле, питание включено.', who:'Татьяна, 30'},
+      {text:'Официанткой в Тоскане. Атмосфера, кухня, вино — всё легендарное. Английский хватило.', who:'Марина, 26'},
+      {text:'Повар в ресторане отеля на Сардинии — €2200. Команда из итальянцев, многому научили.', who:'Андрей, 32'}
+    ]
   }
 };
-DOCS['doc-license'] = {
-  title: 'Лицензия оператора №05580634',
-  body: `
-    <div style="background:var(--surface);border:2px dashed var(--border);padding:40px 24px;text-align:center;margin-bottom:16px">
-      <div style="font-size:48px;margin-bottom:12px">📄</div>
-      <div style="font-size:14px;color:var(--ink-mid);margin-bottom:8px">Место для PDF файла</div>
-      <div style="font-size:12.5px;color:var(--ink-light);line-height:1.6">Загрузите файл <code style="background:var(--white);padding:2px 6px;border:1px solid var(--border)">assets/docs/license.pdf</code> и он отобразится здесь.</div>
-    </div>
-    <p style="font-size:13px;color:var(--ink-mid);line-height:1.75">Pro-Force Limited — лицензированный оператор Seasonal Worker Scheme с 2005 года. Лицензия выдана Home Office правительства Великобритании.</p>
-    <p style="font-size:13px;color:var(--ink-mid);line-height:1.75;margin-top:10px">Проверить онлайн: <a href="https://find-and-update.company-information.service.gov.uk/company/05580634" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:underline">Госреестр компаний Великобритании →</a></p>
-  `
+
+/* ─── DOCS DATA ─── */
+const DOCS = {
+  license: {title:'Лицензия агентства', body:'<p style="font-size:14px;color:var(--ink-mid);line-height:1.8">HR & Recruit Limited — лицензированное агентство по легальному трудоустройству. Регистрационный номер: <strong>№05580634</strong>. Действующая, проверена в Companies House (UK).</p><div style="margin-top:20px;padding:24px;background:var(--surface);border:1px solid var(--border);text-align:center"><div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-muted);margin-bottom:8px">Государственная регистрация</div><div style="font-family:Playfair Display,serif;font-size:28px;color:var(--navy);font-weight:600">№05580634</div><div style="font-size:13px;color:var(--ink-mid);margin-top:6px">Companies House · United Kingdom</div></div>'},
+  reg: {title:'Свидетельство о регистрации', body:'<p style="font-size:14px;color:var(--ink-mid);line-height:1.8">Свидетельство о государственной регистрации юридического лица. Выдано Companies House, Великобритания. Документ можно проверить на официальном сайте <a href="https://find-and-update.company-information.service.gov.uk" target="_blank" style="color:var(--blue);text-decoration:underline">Companies House</a>.</p>'},
+  cert: {title:'Сертификаты партнёрств', body:'<p style="font-size:14px;color:var(--ink-mid);line-height:1.8">Партнёрские сертификаты с работодателями в 5 странах. Каждое предприятие подтверждено документально — фермы, отели, теплицы, склады. Полный список доступен по запросу после регистрации заявки.</p>'},
+  offer: {title:'Договор оферты', body:'<p style="font-size:14px;color:var(--ink-mid);line-height:1.8">Договор публичной оферты регулирует отношения между HR & Recruit Limited и кандидатом. Услуги по подбору вакансии и сопровождению — бесплатны для кандидата. Все условия прозрачны.</p><h4 style="margin-top:20px;font-size:14px;color:var(--navy)">Основные пункты:</h4><ul style="margin-top:8px;padding-left:20px;font-size:13px;color:var(--ink-mid);line-height:1.9"><li>Услуги агентства для кандидата — бесплатны</li><li>Все вакансии — официальные, с подписанным контрактом</li><li>Жильё, виза, оформление документов — включены</li><li>Защита прав кандидата на территории работы</li></ul>'},
+  privacy: {title:'Политика конфиденциальности', body:'<p style="font-size:14px;color:var(--ink-mid);line-height:1.8">Мы собираем только необходимые данные: имя, телефон, возраст, страну. Используем их исключительно для связи с вами и подбора вакансии. Не передаём третьим лицам без вашего согласия.</p>'},
+  cookies: {title:'Файлы cookie', body:'<p style="font-size:14px;color:var(--ink-mid);line-height:1.8">Наш сайт использует только технические файлы cookie, необходимые для работы. Аналитики и рекламных трекеров — нет.</p>'}
 };
-DOCS['doc-contract'] = {
-  title: 'Пример рабочего контракта',
-  body: `
-    <div style="background:var(--surface);border:2px dashed var(--border);padding:40px 24px;text-align:center;margin-bottom:16px">
-      <div style="font-size:48px;margin-bottom:12px">📋</div>
-      <div style="font-size:14px;color:var(--ink-mid);margin-bottom:8px">Место для PDF файла</div>
-      <div style="font-size:12.5px;color:var(--ink-light);line-height:1.6">Загрузите файл <code style="background:var(--white);padding:2px 6px;border:1px solid var(--border)">assets/docs/contract-sample.pdf</code> и он отобразится здесь.</div>
-    </div>
-    <p style="font-size:13px;color:var(--ink-mid);line-height:1.75">Контракт оформляется на русском и английском языках. В нём прописаны: ставка, график, жильё, сроки, условия расторжения. Подписываете контракт ДО любых расходов с вашей стороны.</p>
-  `
-};
-DOCS['doc-registration'] = {
-  title: 'Свидетельство о регистрации компании',
-  body: `
-    <div style="background:var(--surface);border:2px dashed var(--border);padding:40px 24px;text-align:center;margin-bottom:16px">
-      <div style="font-size:48px;margin-bottom:12px">🏢</div>
-      <div style="font-size:14px;color:var(--ink-mid);margin-bottom:8px">Место для PDF файла</div>
-      <div style="font-size:12.5px;color:var(--ink-light);line-height:1.6">Загрузите файл <code style="background:var(--white);padding:2px 6px;border:1px solid var(--border)">assets/docs/registration.pdf</code> и он отобразится здесь.</div>
-    </div>
-    <p style="font-size:13px;color:var(--ink-mid);line-height:1.75">Pro-Force Limited зарегистрирована в Companies House UK 3 октября 2005 года. Регистрационный номер: 05580634. Статус: Active.</p>
-  `
-};
-DOCS['doc-visa'] = {
-  title: 'Образец рабочей визы',
-  body: `
-    <div style="background:var(--surface);border:1px solid var(--border);padding:12px;margin-bottom:16px;text-align:center">
-      <img src="assets/visa-1.jpg" alt="Образец Seasonal Worker Visa" style="max-width:100%;height:auto;border:1px solid var(--border)">
-    </div>
-    <p style="font-size:13px;color:var(--ink-mid);line-height:1.75">Тип: D — Temporary Work (Seasonal Worker) Migrant. Виза выдаётся правительством Великобритании (UKVI) на срок до 6 месяцев.</p>
-  `
-};
+
+/* ─── MODAL LOGIC ─── */
+function openCountry(code){
+  const c = COUNTRIES[code];
+  if(!c) return;
+  document.getElementById('modalFlag').textContent = c.flag;
+  document.getElementById('modalTitle').textContent = c.name;
+  document.getElementById('modalSubtitle').textContent = c.subtitle;
+  document.getElementById('modalHeroImg').src = c.hero;
+  document.getElementById('modalHeroImg').alt = c.name;
+
+  let html = '';
+  html += '<div class="mod-h-sm">Вакансии в стране</div>';
+  html += '<h3 class="mod-h" style="margin-top:0">Открыто '+c.vacancies.length+' позиций</h3>';
+  html += '<div class="vac-list">';
+  c.vacancies.forEach(v=>{
+    html += '<div class="vac"><div class="vac-head"><div class="vac-title">'+v.title+'</div><div class="vac-salary">'+v.salary+'</div></div><div class="vac-desc">'+v.desc+'</div></div>';
+  });
+  html += '</div>';
+
+  html += '<div class="mod-h-sm" style="margin-top:32px">Реальные фото с работы</div>';
+  html += '<div class="mod-photo-grid">';
+  c.workPhotos.forEach(p=>{ html += '<div class="mod-photo"><img src="'+p+'" alt="" loading="lazy"></div>'; });
+  html += '</div>';
+
+  html += '<div class="mod-h-sm" style="margin-top:32px">Где будете жить</div>';
+  html += '<div class="mod-house-grid">';
+  c.housingPhotos.forEach(p=>{ html += '<div class="mod-house"><img src="'+p+'" alt="Жильё" loading="lazy"></div>'; });
+  html += '</div>';
+
+  html += '<div class="mod-h-sm" style="margin-top:32px">Отзывы кандидатов</div>';
+  html += '<div class="mod-reviews">';
+  c.reviews.forEach(r=>{
+    html += '<div class="mod-rev"><div class="stars">★★★★★</div><p>«'+r.text+'»</p><div class="who">— '+r.who+'</div></div>';
+  });
+  html += '</div>';
+
+  // Form
+  html += '<div class="mod-form">';
+  html += '<h3>Забронировать вакансию</h3>';
+  html += '<p>Оставьте контакты — агент свяжется в течение 24 часов и расскажет детали по '+c.name+'.</p>';
+  html += '<form onsubmit="event.preventDefault();this.innerHTML=\'<div style=&quot;color:#fde68a;font-family:Playfair Display,serif;font-size:18px;text-align:center;padding:20px&quot;>✓ Заявка отправлена!<br><span style=&quot;font-size:13px;color:rgba(255,255,255,.5);font-family:DM Sans;font-style:normal&quot;>Агент свяжется с вами в течение 24 часов.</span></div>\'">';
+  html += '<div class="fg"><label>Имя</label><input type="text" required placeholder="Ваше имя"></div>';
+  html += '<div class="fg"><label>Телефон (мессенджер)</label><input type="tel" required placeholder="+380 / +7 / +48"></div>';
+  html += '<div class="fg"><label>Какая вакансия интересует</label><select required>';
+  html += '<option value="">— выберите вакансию —</option>';
+  c.vacancies.forEach(v=>{ html += '<option>'+v.title+' — '+v.salary+'</option>'; });
+  html += '<option>Любая подходящая</option>';
+  html += '</select></div>';
+  html += '<div class="fg"><label>Страна</label><input type="text" value="'+c.flag+' '+c.name+'" readonly style="opacity:.7;cursor:not-allowed"></div>';
+  html += '<button type="submit" class="btn-submit">Забронировать вакансию</button>';
+  html += '<p class="form-disc" style="color:rgba(255,255,255,.35)">Услуги агентства — бесплатны для кандидата</p>';
+  html += '</form></div>';
+
+  document.getElementById('modalBody').innerHTML = html;
+  showModal('countryModal');
+  // Push state for back button
+  if(!history.state || history.state.modal !== code){
+    history.pushState({modal:code}, '', '#country-'+code);
+  }
+}
+
 function openDoc(key){
-  var doc = DOCS[key] || { title: 'Документ', body: '<p>Документ не найден.</p>' };
-  document.getElementById('docModalTitle').textContent = doc.title;
-  document.getElementById('docModalBody').innerHTML = doc.body;
-  document.getElementById('docModal').style.display = 'block';
-  document.body.style.overflow = 'hidden';
+  const d = DOCS[key]; if(!d) return;
+  document.getElementById('docBody').innerHTML = '<h2 style="font-family:Playfair Display,serif;font-size:24px;color:var(--navy);font-weight:600;margin-bottom:16px;letter-spacing:-.3px">'+d.title+'</h2>'+d.body;
+  showModal('docModal');
+  if(!history.state || history.state.doc !== key){
+    history.pushState({doc:key}, '', '#doc-'+key);
+  }
+}
+
+function showModal(id){
+  document.querySelectorAll('.modal-overlay.active').forEach(m=>m.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.body.classList.add('modal-open');
+  // scroll modal box to top
+  const box = document.querySelector('#'+id+' .modal-box');
+  if(box) box.scrollTop = 0;
+  document.getElementById(id).scrollTop = 0;
+}
+
+function closeModal(){
+  document.getElementById('countryModal').classList.remove('active');
+  document.body.classList.remove('modal-open');
+  if(history.state && history.state.modal){ history.back(); }
 }
 function closeDoc(){
-  document.getElementById('docModal').style.display = 'none';
-  document.body.style.overflow = '';
+  document.getElementById('docModal').classList.remove('active');
+  document.body.classList.remove('modal-open');
+  if(history.state && history.state.doc){ history.back(); }
 }
-document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeDoc(); });
+
+/* ESC key close */
+document.addEventListener('keydown', e=>{
+  if(e.key === 'Escape'){
+    const open = document.querySelector('.modal-overlay.active');
+    if(open){
+      if(open.id === 'countryModal') closeModal();
+      else if(open.id === 'docModal') closeDoc();
+    }
+  }
+});
+
+/* Click outside (on overlay) closes */
+document.querySelectorAll('.modal-overlay').forEach(ov=>{
+  ov.addEventListener('click', e=>{
+    if(e.target === ov){
+      if(ov.id === 'countryModal') closeModal();
+      else if(ov.id === 'docModal') closeDoc();
+    }
+  });
+});
+
+/* Browser back button */
+window.addEventListener('popstate', ()=>{
+  // close any open modals when user presses back
+  const open = document.querySelector('.modal-overlay.active');
+  if(open){
+    open.classList.remove('active');
+    document.body.classList.remove('modal-open');
+  }
+  // If state has modal/doc, reopen (forward navigation)
+  if(history.state){
+    if(history.state.modal){
+      // silently reopen without pushing state
+      const code = history.state.modal;
+      const c = COUNTRIES[code];
+      if(c){
+        // re-render without push
+        const prevPush = history.pushState;
+        history.pushState = function(){};
+        openCountry(code);
+        history.pushState = prevPush;
+      }
+    } else if(history.state.doc){
+      const prevPush = history.pushState;
+      history.pushState = function(){};
+      openDoc(history.state.doc);
+      history.pushState = prevPush;
+    }
+  }
+});
+
+/* Deep link on load */
+window.addEventListener('DOMContentLoaded', ()=>{
+  const hash = location.hash;
+  if(hash.startsWith('#country-')){
+    const code = hash.replace('#country-','');
+    if(COUNTRIES[code]) openCountry(code);
+  } else if(hash.startsWith('#doc-')){
+    const key = hash.replace('#doc-','');
+    if(DOCS[key]) openDoc(key);
+  }
+});
 </script>
+
 </body>
 </html>
