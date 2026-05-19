@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..800,0..100;1,9..144,300..800,0..100&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 
   <style>
@@ -155,9 +155,11 @@
 <div id="siteFooter"></div>
 <div id="siteCookies"></div>
 <div id="siteMessenger"></div>
+<div id="siteMobileSticky"></div>
 
 <script src="data/site.js"></script>
-<script src="js/main.js"></script>
+<script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
 <script>
   /* ============ COUNTRY-SPECIFIC CONTENT ============ */
   const COUNTRY_DETAILS = {
@@ -304,6 +306,118 @@
         { q: "Чи потрібна італійська мова?", a: "Для горничної та laundry — ні, базової англійської достатньо. Для офіціанта в туристичних готелях — обов'язкова англійська B1, італійська — велика перевага. Для ресепшен — обов'язково англійська та італійська." },
         { q: "Чи можна продовжити в інший заклад?", a: "Stagionale прив'язаний до конкретного роботодавця. Але якщо ваш роботодавець закривається в жовтні, а в листопаді відкривається інший — ми можемо допомогти з переходом у межах того ж сезонного дозволу. Це називається 'continuità stagionale'." },
         { q: "Як з оподаткуванням?", a: "Прибутковий податок (IRPEF) — прогресивна шкала, для сезонників в середньому 23%. Соцвнески (INPS) — близько 9.5% з зарплати працівника. Сумарно з брутто €2500 на руки приходить €1850–1950." }
+      ]
+    },
+    czechia: {
+      ru: "Чехія", code: "CZ", color: "#3A4E6B",
+      tagline: "Lex Ukraine — свободный доступ к рынку труда. Заводы, стройка, водители",
+      band: "https://placehold.co/2400x900/3A4E6B/F5F1E8?text=Czechia&font=lato",
+      bandCaption: "Pilsen · Bohemia",
+      stats: [
+        { num: "5", label: "вакансий" },
+        { num: "€1&thinsp;550", label: "средняя ставка / мес нетто" },
+        { num: "12 мес", label: "контракт" },
+        { num: "€320", label: "сервис HR&Recruit" }
+      ],
+      visaInfo: {
+        type: "Temporary Protection (Lex Ukraine)",
+        duration: "до 31 марта 2027 (автопродление)",
+        sector: "Manufacturing, construction, logistics",
+        rate: "от 22,400 CZK/мес (минимум 2026)"
+      },
+      info: [
+        { icon: "01", title: "Lex Ukraine TP", text: "Виза-стикер D/DO/667. Свободный доступ к рынку труда без отдельного work permit. Просто паспорт + регистрация в OAMP." },
+        { icon: "02", title: "Прямой контракт", text: "Работодатель оформляет договор напрямую. Здоровотне поіштене (медстраховка) и социальные взносы — за счёт работодателя." },
+        { icon: "03", title: "Перспектива 5 лет", text: "С 2025 — special long-term ВНЖ для TP-холдеров с доходом 440k CZK/год. Путь к долгосрочному резиденству." }
+      ],
+      faq: [
+        { q: "Какая минимальная зарплата в Чехии?", a: "В 2026 — 22,400 CZK брутто/мес (~€880). Большинство вакансий, которые мы предлагаем, платят 25,000-40,000 CZK." },
+        { q: "Нужно ли знать чешский?", a: "Для большинства производственных позиций — нет. Для строителей и водителей А1-А2 желателен. На многих заводах есть украинские бригадиры." },
+        { q: "Принимают ли из всех регионов Украины?", a: "Да, без ограничений по регионам." }
+      ]
+    },
+    denmark: {
+      ru: "Данія", code: "DK", color: "#5A4D3F",
+      tagline: "Special Law L145 — украинцы работают с момента подачи. Высокие зарплаты по collective agreements",
+      band: "https://placehold.co/2400x900/5A4D3F/F5F1E8?text=Denmark&font=lato",
+      bandCaption: "Jutland · Aarhus region",
+      stats: [
+        { num: "4", label: "вакансии" },
+        { num: "€2&thinsp;800", label: "средняя ставка / мес нетто" },
+        { num: "9–12 мес", label: "контракт" },
+        { num: "€350", label: "сервис HR&Recruit" }
+      ],
+      visaInfo: {
+        type: "SL1 (Special Law L145) для украинцев",
+        duration: "до марта 2027",
+        sector: "Agriculture (livestock), fish processing, greenhouses",
+        rate: "по collective agreements — herdsman от 33,900 DKK/мес"
+      },
+      info: [
+        { icon: "01", title: "SL1 — работа сразу", text: "Уникальная особенность: украинцы могут работать с момента подачи заявления, не дожидаясь решения SIRI. Это 1-3 месяца форы." },
+        { icon: "02", title: "Collective agreements", text: "В Дании нет статутного минимума — зарплаты регулируются отраслевыми коллективными договорами. Они одни из самых высоких в ЕС." },
+        { icon: "03", title: "Соцпакет ATP", text: "Все официально через ATP (пенсионный фонд). 25 дней отпуска, медстраховка после CPR." }
+      ],
+      faq: [
+        { q: "Что такое SL1?", a: "Опхольдстиладель по Special Law L145 — специальный режим для украинцев. Аналог Temporary Protection в других ЕС-странах, но с уникальной фишкой: работа разрешена с момента подачи." },
+        { q: "Сколько может заработать на свиноферме / молочной?", a: "Herdsman — минимум 33,900 DKK/мес по collective agreement (~€4,540 брутто, ~€2,900-3,100 нетто). Это одни из самых высоких ставок в животноводстве ЕС." },
+        { q: "Принимают ли из всех регионов?", a: "Да, без ограничений." }
+      ]
+    },
+    norway: {
+      ru: "Норвегія", code: "NO", color: "#2C5878",
+      tagline: "Не ЕС. Самые высокие зарплаты Европы. Collective Protection для украинцев",
+      band: "https://placehold.co/2400x900/2C5878/F5F1E8?text=Norway&font=lato",
+      bandCaption: "Tromsø · Northern Norway",
+      stats: [
+        { num: "4", label: "вакансии" },
+        { num: "€3&thinsp;300", label: "средняя ставка / мес нетто" },
+        { num: "6–12 мес", label: "контракт" },
+        { num: "€350", label: "сервис HR&Recruit" }
+      ],
+      visaInfo: {
+        type: "Norwegian Collective Protection",
+        duration: "до 3 лет, переоформление через UDI",
+        sector: "Fish processing, agriculture, construction",
+        rate: "210-280 NOK/ч (€18-24/ч)"
+      },
+      info: [
+        { icon: "01", title: "Collective Protection", text: "Не входит в ЕС, но имеет свой аналог Temporary Protection — Kollektiv beskyttelse. Подача в UDI, решение 2-4 недели." },
+        { icon: "02", title: "Folketrygden", text: "Полная норвежская соцстрах. Высокие зарплаты компенсируют высокие цены. Сезон в рыбе — самый прибыльный (€3500-4000/мес чистыми)." },
+        { icon: "03", title: "⚠ Ограничения по регионам", text: "С сентября 2024 — новые заявители из Львовской, Тернопольской, Ровненской, Волынской, Ивано-Франковской, Закарпатской областей НЕ получают Collective Protection. Из других регионов — без проблем." }
+      ],
+      faq: [
+        { q: "Я из Львова — могу ли получить статус в Норвегии?", a: "Если вы оформляете НОВЫЙ статус с сентября 2024 — нет. Если у вас уже есть Collective Protection или TP в другой ЕС-стране — переезд возможен. Жители Житомирской, Киевской и других центральных/восточных областей — принимаются без проблем." },
+        { q: "Сколько реально получу нетто?", a: "На рыбозаводе в Тромсё — 230-280 NOK/ч брутто. После налогов и удержания за жильё — около €3300-3700/мес нетто. За 6 мес сезон — €20,000-22,000 чистыми." },
+        { q: "Холодно ли работать?", a: "Рыбные цеха — +4°C, но рабочие зоны хорошо отапливаются. Спецодежда полная. Сборщики ягод — на улице летом, тёплая погода в Рогаланде." }
+      ]
+    },
+    switzerland: {
+      ru: "Швейцарія", code: "CH", color: "#5C2E2E",
+      tagline: "S Permit для украинцев. С декабря 2025 — без отдельного work permit. Самые высокие зарплаты",
+      band: "https://placehold.co/2400x900/5C2E2E/F5F1E8?text=Switzerland&font=lato",
+      bandCaption: "Zermatt · Valais Alps",
+      stats: [
+        { num: "4", label: "вакансии" },
+        { num: "€3&thinsp;875", label: "средняя ставка / мес нетто" },
+        { num: "5–12 мес", label: "контракт" },
+        { num: "€500", label: "сервис HR&Recruit" }
+      ],
+      visaInfo: {
+        type: "Swiss S Permit (Schutzstatus S)",
+        duration: "до 4 марта 2027",
+        sector: "Hospitality, construction, forestry",
+        rate: "CHF 22-38/ч (€23-40/ч)"
+      },
+      info: [
+        { icon: "01", title: "S Permit без work permit", text: "С 1 декабря 2025 — революция: работодатель только подаёт notification через EasyGov.swiss за 1 день, отдельный work permit больше не нужен." },
+        { icon: "02", title: "Высочайшие зарплаты ЕС", text: "Стройка CHF 32-38/ч (~€6500 брутто), отели CHF 25-32/ч + чаевые CHF 200-700/мес. Альпийская надбавка в горных регионах." },
+        { icon: "03", title: "⚠ Ограничения по регионам", text: "С 1 ноября 2025 — новые заявители из Львовской, Тернопольской, Ровненской, Волынской, Ивано-Франковской, Закарпатской, Черновицкой областей НЕ получают S Permit. Из других регионов — без проблем." }
+      ],
+      faq: [
+        { q: "Что изменилось с 1 декабря 2025?", a: "Раньше работодатель подавал заявку на cantonal work permit — 8-12 недель ожидания. Теперь только онлайн-уведомление через EasyGov.swiss за 1 день. Это огромное упрощение." },
+        { q: "Сколько чаевых в отелях?", a: "В люксовых отелях Церматта и Санкт-Морица — CHF 200-700/мес для горничной/официанта. Это сверх зарплаты и не облагается налогом." },
+        { q: "Работа в горах — это сложно?", a: "Лесные работы и tree planting — физически интенсивно, но платят CHF 27-32/ч и бесплатные горные хижины. Подходит молодым и спортивным людям." }
       ]
     }
   };

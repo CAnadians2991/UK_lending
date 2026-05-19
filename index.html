@@ -1,499 +1,459 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HR & Recruit — Легальна робота в Європі та Великій Британії</title>
-  <meta name="description" content="Британське агентство HR & Recruit (Company No. 15117049). Працевлаштування у 5 країн ЄС. Підбір вакансії — безкоштовно. Платні лише оформлення документів та зустріч.">
-  <meta property="og:title" content="HR & Recruit — Легальна робота в Європі">
-  <meta property="og:description" content="Прозоро, офіційно, через Stripe. UK · Germany · Netherlands · Greece · Italy.">
+  <title>Работа в Европе — €1800–2400/мес чистыми — HR & Recruit</title>
+  <meta name="description" content="20 проверенных вакансий в 5 странах ЕС и UK. Сельское хозяйство, заводы, отели. Контракт, жильё, оплата от €1800 чистыми.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..800,0..100;1,9..144,300..800,0..100&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* Page-specific hero refinements */
+    .home-hero {
+      padding-top: 56px;
+      padding-bottom: 48px;
+      background: linear-gradient(to bottom, var(--warm-bg) 0%, var(--bg) 100%);
+    }
+    .home-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      background: var(--bg-elev);
+      border: 1px solid var(--line);
+      border-radius: var(--r-pill);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .home-hero-eyebrow-dot {
+      width: 8px; height: 8px; background: var(--trust); border-radius: 50%;
+      animation: pulse 1.6s infinite;
+    }
+    .home-hero-title {
+      font-size: clamp(2.5rem, 7vw, 5.5rem);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+      margin-bottom: 20px;
+      max-width: 14ch;
+    }
+    .home-hero-title em {
+      font-family: var(--font-accent);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .home-hero-meta {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 32px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+    .home-hero-meta-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+    }
+    .home-hero-meta-item strong {
+      font-weight: 700;
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+    }
+    .home-hero-meta-dot {
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    /* country teaser strip (horizontal pills under hero) */
+    .country-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .country-pill {
+      background: var(--bg-elev);
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      padding: 16px;
+      text-decoration: none;
+      color: inherit;
+      transition: all var(--dur) var(--ease);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .country-pill:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .country-pill-code {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--ink-mute);
+    }
+    .country-pill-name {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .country-pill-rate {
+      font-size: 0.8125rem;
+      color: var(--accent);
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+      margin-top: 2px;
+    }
+
+    @media (max-width: 1024px) {
+      .country-strip { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .country-strip { grid-template-columns: 1fr 1fr; gap: 8px; }
+    }
+  </style>
 </head>
 <body>
 
 <div id="siteHeader"></div>
 
-<!-- ============ HERO ============ -->
-<section class="hero">
+<!-- ============== HERO — vacancy-first ============== -->
+<section class="home-hero">
   <div class="container">
-    <div class="hero-eyebrow reveal">
-      <span class="hero-eyebrow-dot"></span>
-      <span class="eyebrow">Працевлаштування в&nbsp;5&nbsp;країнах • 20+ актуальних вакансій</span>
+    <div class="home-hero-eyebrow">
+      <span class="home-hero-eyebrow-dot"></span>
+      <span data-i18n="hero.eyebrow"></span>
     </div>
 
-    <h1 class="display hero-title reveal">
-      Легальна робота<br>
-      в Європі — <em>без посередників</em><br>
-      і прихованих платежів.
+    <h1 class="home-hero-title">
+      <span data-i18n="hero.titleA"></span><br>
+      <em data-i18n="hero.titleB"></em><br>
+      <span data-i18n="hero.titleC"></span>
     </h1>
 
-    <p class="lede hero-lede reveal">
-      Британське агентство HR&nbsp;&amp;&nbsp;Recruit&nbsp;Ltd. Підбір вакансії, співбесіда з&nbsp;роботодавцем,
-      оформлення офіційного контракту&nbsp;— <strong style="color: var(--ink);">безкоштовно</strong>.
-      Ви платите тільки за&nbsp;підготовку документів та&nbsp;зустріч у&nbsp;країні прибуття.
-      Всі платежі — через Stripe з&nbsp;чеком та&nbsp;гарантією повернення.
-    </p>
+    <p class="lede" style="max-width: 50ch; margin-bottom: 24px;" data-i18n="hero.lede"></p>
 
-    <div class="hero-cta reveal">
-      <a href="#countries" class="btn btn-accent btn-lg btn-arrow">Подивитися вакансії</a>
-      <a href="services.html" class="btn btn-ghost btn-lg">Як ми працюємо</a>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+      <a href="#vacancies" class="btn btn-accent btn-lg btn-arrow" data-i18n="hero.cta1"></a>
+      <a href="#calc" class="btn btn-ghost btn-lg" data-i18n="hero.cta2"></a>
     </div>
 
-    <!-- Metrics rail -->
-    <div class="hero-rail reveal">
-      <div class="hero-rail-item">
-        <div class="hero-rail-num"><span class="serif-num">5</span></div>
-        <div class="hero-rail-label">країн ЄС та&nbsp;Великобританія</div>
-      </div>
-      <div class="hero-rail-item">
-        <div class="hero-rail-num"><span class="serif-num">€1&thinsp;800</span> <span style="font-size: 0.55em; color: var(--ink-mute);">—</span> <span class="serif-num">€2&thinsp;200</span></div>
-        <div class="hero-rail-label">ставка на&nbsp;місяць, нетто</div>
-      </div>
-      <div class="hero-rail-item">
-        <div class="hero-rail-num"><span class="serif-num">€0</span></div>
-        <div class="hero-rail-label">плата за&nbsp;підбір вакансії</div>
-      </div>
-      <div class="hero-rail-item">
-        <div class="hero-rail-num"><span class="serif-num">100%</span></div>
-        <div class="hero-rail-label">офіційні контракти ЄС/UK</div>
-      </div>
+    <!-- Country teaser strip -->
+    <div class="country-strip" id="countryStrip"></div>
+
+    <div class="home-hero-meta">
+      <span class="home-hero-meta-item"><span class="home-hero-meta-dot"></span><span data-i18n="hero.microcopy"></span></span>
     </div>
   </div>
 </section>
 
-<!-- ============ GUARANTEE STRIP ============ -->
-<section class="guarantee-strip">
+<!-- ============== VACANCIES SHOWCASE (tabs by country) ============== -->
+<section class="section" id="vacancies" style="padding-top: 64px;">
   <div class="container">
-    <div class="guarantee-row">
-      <div class="reveal">
-        <div class="guarantee-item-label">Підстава діяльності</div>
-        <div class="guarantee-item-text">
-          Зареєстровані в&nbsp;Companies&nbsp;House під&nbsp;№15117049.
-          SIC-коди 78109, 78200, 78300 — кадрові послуги.
-        </div>
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 32px;">
+      <div>
+        <div class="eyebrow eyebrow-accent" style="margin-bottom: 12px;" data-i18n="vacShowcase.head"></div>
+        <h2 style="margin-bottom: 8px;">20 вакансий</h2>
+        <p class="lede" data-i18n="vacShowcase.sub"></p>
       </div>
-      <div class="reveal">
-        <div class="guarantee-item-label">Платежі</div>
-        <div class="guarantee-item-text">
-          Через Stripe — глобальну систему рівня Amazon і&nbsp;Google.
-          Ваші дані карти не&nbsp;потрапляють до&nbsp;нас.
-        </div>
-      </div>
-      <div class="reveal">
-        <div class="guarantee-item-label">Контракт</div>
-        <div class="guarantee-item-text">
-          Прямий з&nbsp;роботодавцем за&nbsp;трудовим законодавством країни.
-          Без агентських посередників на&nbsp;місці.
-        </div>
-      </div>
-      <div class="reveal">
-        <div class="guarantee-item-label">Право споживача</div>
-        <div class="guarantee-item-text">
-          Діяльність регулюється UK&nbsp;Consumer&nbsp;Rights&nbsp;Act&nbsp;2015. Прозоро та&nbsp;з&nbsp;офертою.
-        </div>
-      </div>
+    </div>
+
+    <div class="vac-showcase">
+      <!-- Tabs -->
+      <div class="vac-tabs" id="vacTabs"></div>
+      <!-- Panels -->
+      <div id="vacPanels"></div>
     </div>
   </div>
 </section>
 
-<!-- ============ COUNTRIES ============ -->
-<section class="section" id="countries">
+<!-- ============== EARNINGS CALCULATOR ============== -->
+<section class="section bg-soft" id="calc">
   <div class="container">
-    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px; gap: 48px; flex-wrap: wrap;">
-      <div style="max-width: 640px;">
-        <div class="eyebrow eyebrow-accent reveal" style="margin-bottom: 16px;">01 — Напрямки</div>
-        <h2 class="display reveal">
-          П'ять країн.<br>
-          <em style="font-style: italic; color: var(--accent); font-variation-settings: 'opsz' 96, 'SOFT' 60;">Один стандарт</em> офіційності.
-        </h2>
-      </div>
-      <p class="lede reveal" style="max-width: 380px;">
-        Сезонні та&nbsp;довгострокові контракти. Усі вакансії з&nbsp;проживанням,
-        страховкою та&nbsp;прямою угодою з&nbsp;роботодавцем.
-      </p>
+    <div style="text-align: center; max-width: 700px; margin: 0 auto 40px;">
+      <div class="eyebrow eyebrow-accent" style="margin-bottom: 12px;">Калькулятор</div>
+      <h2 style="margin-bottom: 12px;" data-i18n="calc.head"></h2>
+      <p class="lede" data-i18n="calc.sub"></p>
     </div>
 
-    <div class="country-grid">
-      <a href="country.html?c=uk" class="country-card size-md reveal">
-        <span class="country-flag">UK · United Kingdom</span>
-        <img class="country-card-img" src="https://placehold.co/1200x675/1B3A2F/F5F1E8?text=United+Kingdom" alt="UK">
-        <h3 class="country-name">Велика <em>Британія</em></h3>
-        <p class="country-tagline">Сезонні візи. Сільське господарство, упаковка, тепличні комплекси. Прямі контракти від UK-роботодавця.</p>
-        <div class="country-meta">
-          <div class="country-meta-stat">
-            <div class="country-meta-num">4</div>
-            <div class="country-meta-label">вакансії</div>
+    <div class="calc">
+      <!-- Controls -->
+      <div>
+        <div class="calc-control">
+          <div class="calc-label">
+            <span data-i18n="calc.labelCountry"></span>
+            <span class="calc-label-value" id="calcCountryName">Великобритания</span>
           </div>
-          <div class="country-meta-stat">
-            <div class="country-meta-num">€1900–2200</div>
-            <div class="country-meta-label">ставка / міс</div>
-          </div>
-          <div class="country-arrow">↗</div>
+          <div class="calc-options opts-5" id="calcCountry"></div>
         </div>
-      </a>
 
-      <a href="country.html?c=germany" class="country-card size-md reveal">
-        <span class="country-flag">DE · Germany</span>
-        <img class="country-card-img" src="https://placehold.co/1200x675/244A3D/F5F1E8?text=Germany" alt="Germany">
-        <h3 class="country-name"><em>Німеччина</em></h3>
-        <p class="country-tagline">Leiharbeit за&nbsp;AÜG. Виробництво, склади, сезонні зборки. Довгострокові контракти з&nbsp;продовженням.</p>
-        <div class="country-meta">
-          <div class="country-meta-stat">
-            <div class="country-meta-num">4</div>
-            <div class="country-meta-label">вакансії</div>
+        <div class="calc-control">
+          <div class="calc-label">
+            <span data-i18n="calc.labelDuration"></span>
+            <span class="calc-label-value" id="calcDurationName">6 месяцев</span>
           </div>
-          <div class="country-meta-stat">
-            <div class="country-meta-num">€1850–2100</div>
-            <div class="country-meta-label">ставка / міс</div>
+          <div class="calc-options opts-4">
+            <button class="calc-opt" data-dur="3">3 мес</button>
+            <button class="calc-opt is-active" data-dur="6">6 мес</button>
+            <button class="calc-opt" data-dur="9">9 мес</button>
+            <button class="calc-opt" data-dur="12">12 мес</button>
           </div>
-          <div class="country-arrow">↗</div>
         </div>
-      </a>
 
-      <a href="country.html?c=netherlands" class="country-card size-sm reveal">
-        <span class="country-flag">NL · Netherlands</span>
-        <img class="country-card-img" src="https://placehold.co/1200x675/2D6A4F/F5F1E8?text=Netherlands" alt="Netherlands">
-        <h3 class="country-name">Нідер­ланди</h3>
-        <p class="country-tagline">Phase A Uitzendcontract. Теплиці Вестланд, склади DHL, харчова промисловість.</p>
-        <div class="country-meta">
-          <div class="country-meta-stat">
-            <div class="country-meta-num">4</div>
-            <div class="country-meta-label">вакансії</div>
+        <div class="calc-control">
+          <div class="calc-label">
+            <span data-i18n="calc.labelEffort"></span>
           </div>
-          <div class="country-meta-stat">
-            <div class="country-meta-num">€1900–2200</div>
-            <div class="country-meta-label">ставка / міс</div>
+          <div class="calc-options" id="calcEffort">
+            <button class="calc-opt" data-eff="0">
+              <span data-i18n="calc.effortLow"></span>
+              <span class="calc-opt-sub" data-i18n="calc.effortLowSub"></span>
+            </button>
+            <button class="calc-opt is-active" data-eff="1">
+              <span data-i18n="calc.effortMed"></span>
+              <span class="calc-opt-sub" data-i18n="calc.effortMedSub"></span>
+            </button>
+            <button class="calc-opt" data-eff="2">
+              <span data-i18n="calc.effortHigh"></span>
+              <span class="calc-opt-sub" data-i18n="calc.effortHighSub"></span>
+            </button>
           </div>
-          <div class="country-arrow">↗</div>
         </div>
-      </a>
 
-      <a href="country.html?c=greece" class="country-card size-sm reveal">
-        <span class="country-flag">GR · Greece</span>
-        <img class="country-card-img" src="https://placehold.co/1200x675/1B3A2F/F5F1E8?text=Greece" alt="Greece">
-        <h3 class="country-name">Греція <em>·</em> готелі</h3>
-        <p class="country-tagline">Сезон квітень–жовтень. Острови Крит, Родос, Кос, Санторіні. Безкоштовне проживання та&nbsp;харчування.</p>
-        <div class="country-meta">
-          <div class="country-meta-stat">
-            <div class="country-meta-num">4</div>
-            <div class="country-meta-label">вакансії</div>
+        <div class="calc-control">
+          <div class="calc-label">
+            <span data-i18n="calc.labelExpenses"></span>
           </div>
-          <div class="country-meta-stat">
-            <div class="country-meta-num">€1800–2000</div>
-            <div class="country-meta-label">+ чайові</div>
+          <div class="calc-options opts-2" id="calcExpenses">
+            <button class="calc-opt is-active" data-exp="0">
+              <span data-i18n="calc.expIncluded"></span>
+              <span class="calc-opt-sub" data-i18n="calc.expIncludedSub"></span>
+            </button>
+            <button class="calc-opt" data-exp="300">
+              <span data-i18n="calc.expSelf"></span>
+              <span class="calc-opt-sub" data-i18n="calc.expSelfSub"></span>
+            </button>
           </div>
-          <div class="country-arrow">↗</div>
         </div>
-      </a>
+      </div>
 
-      <a href="country.html?c=italy" class="country-card size-sm reveal">
-        <span class="country-flag">IT · Italy</span>
-        <img class="country-card-img" src="https://placehold.co/1200x675/244A3D/F5F1E8?text=Italy" alt="Italy">
-        <h3 class="country-name">Іта­лія <em>·</em> готелі</h3>
-        <p class="country-tagline">Stagionale CCNL Turismo. Адріатичне узбережжя, Тоскана, Амальфі. Прямі контракти з&nbsp;готелем.</p>
-        <div class="country-meta">
-          <div class="country-meta-stat">
-            <div class="country-meta-num">4</div>
-            <div class="country-meta-label">вакансії</div>
+      <!-- Result -->
+      <div class="calc-result">
+        <div class="calc-result-label" data-i18n="calc.resultLabel"></div>
+        <div class="calc-result-num" id="calcResult">€12,300</div>
+        <div class="calc-result-meta" data-i18n="calc.resultMeta"></div>
+
+        <div class="calc-breakdown">
+          <div class="calc-breakdown-row">
+            <span data-i18n="calc.brkGross"></span>
+            <span id="calcBrkGross">€15,600</span>
           </div>
-          <div class="country-meta-stat">
-            <div class="country-meta-num">€1800–2050</div>
-            <div class="country-meta-label">+ чайові</div>
+          <div class="calc-breakdown-row">
+            <span data-i18n="calc.brkTax"></span>
+            <span id="calcBrkTax">−€3,300</span>
           </div>
-          <div class="country-arrow">↗</div>
+          <div class="calc-breakdown-row">
+            <span data-i18n="calc.brkExp"></span>
+            <span id="calcBrkExp">€0</span>
+          </div>
+          <div class="calc-breakdown-row">
+            <span data-i18n="calc.brkNet"></span>
+            <span id="calcBrkNet">€12,300</span>
+          </div>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ HOW WE WORK ============ -->
-<section class="section" style="background: var(--bg-elev); margin: 0;">
-  <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start;">
-      <div class="reveal">
-        <div class="eyebrow eyebrow-accent" style="margin-bottom: 16px;">02 — Процес</div>
-        <h2 class="display">
-          Як влаштовано<br>
-          співробітництво.
-        </h2>
-        <p class="lede" style="margin-top: 24px;">
-          Прозоро на&nbsp;кожному кроці. Спочатку — підбір та&nbsp;інтерв'ю безкоштовно. Оплата сервісів — тільки після офіційного offer-листа.
-        </p>
-      </div>
-
-      <ol style="list-style: none; padding: 0; margin: 0; counter-reset: step;">
-        <li class="reveal" style="display: grid; grid-template-columns: 80px 1fr; gap: 32px; padding: 24px 0; border-bottom: 1px solid var(--line); counter-increment: step;">
-          <div style="font-family: var(--font-display); font-size: 2.25rem; font-variation-settings: 'opsz' 48; color: var(--accent); line-height: 1;">01</div>
-          <div>
-            <h4 style="margin-bottom: 6px;">Заявка та&nbsp;співбесіда — безкоштовно</h4>
-            <p style="color: var(--ink-soft); font-size: 0.9375rem;">
-              Залишаєте заявку на&nbsp;вакансію. Менеджер зв'язується протягом 24 годин, проводить попереднє інтерв'ю, передає кандидатуру роботодавцю.
-            </p>
-          </div>
-        </li>
-        <li class="reveal" style="display: grid; grid-template-columns: 80px 1fr; gap: 32px; padding: 24px 0; border-bottom: 1px solid var(--line);">
-          <div style="font-family: var(--font-display); font-size: 2.25rem; font-variation-settings: 'opsz' 48; color: var(--accent); line-height: 1;">02</div>
-          <div>
-            <h4 style="margin-bottom: 6px;">Job offer від&nbsp;роботодавця — безкоштовно</h4>
-            <p style="color: var(--ink-soft); font-size: 0.9375rem;">
-              Отримуєте офіційний лист про&nbsp;прийом на&nbsp;роботу з&nbsp;умовами, датою початку та&nbsp;ставкою. На&nbsp;цьому етапі ще&nbsp;нічого не&nbsp;платите.
-            </p>
-          </div>
-        </li>
-        <li class="reveal" style="display: grid; grid-template-columns: 80px 1fr; gap: 32px; padding: 24px 0; border-bottom: 1px solid var(--line);">
-          <div style="font-family: var(--font-display); font-size: 2.25rem; font-variation-settings: 'opsz' 48; color: var(--accent); line-height: 1;">03</div>
-          <div>
-            <h4 style="margin-bottom: 6px;">Оплата Document&nbsp;Service через Stripe</h4>
-            <p style="color: var(--ink-soft); font-size: 0.9375rem;">
-              €200 для&nbsp;ЄС&nbsp;/&nbsp;€300 для&nbsp;UK. Готуємо повний пакет: переклади, апостиль, work&nbsp;permit, sponsor&nbsp;letter, медогляд. Чек на&nbsp;email.
-            </p>
-          </div>
-        </li>
-        <li class="reveal" style="display: grid; grid-template-columns: 80px 1fr; gap: 32px; padding: 24px 0; border-bottom: 1px solid var(--line);">
-          <div style="font-family: var(--font-display); font-size: 2.25rem; font-variation-settings: 'opsz' 48; color: var(--accent); line-height: 1;">04</div>
-          <div>
-            <h4 style="margin-bottom: 6px;">Виліт. Оплата Arrival&nbsp;Service за&nbsp;бажанням</h4>
-            <p style="color: var(--ink-soft); font-size: 0.9375rem;">
-              €150 для&nbsp;ЄС&nbsp;/&nbsp;€250 для&nbsp;UK. Зустріч в&nbsp;аеропорту, трансфер, заселення, допомога з&nbsp;банком та&nbsp;реєстрацією. Можете відмовитися та&nbsp;добиратися самостійно.
-            </p>
-          </div>
-        </li>
-        <li class="reveal" style="display: grid; grid-template-columns: 80px 1fr; gap: 32px; padding: 24px 0;">
-          <div style="font-family: var(--font-display); font-size: 2.25rem; font-variation-settings: 'opsz' 48; color: var(--accent); line-height: 1;">05</div>
-          <div>
-            <h4 style="margin-bottom: 6px;">Робота та&nbsp;підтримка 24/7 перші 14 днів</h4>
-            <p style="color: var(--ink-soft); font-size: 0.9375rem;">
-              Працюєте, отримуєте зарплату напряму від&nbsp;роботодавця. Якщо щось не&nbsp;так — координатор виходить на&nbsp;зв'язок негайно.
-            </p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PRICING ============ -->
+<!-- ============== COUNTRIES SECTION ============== -->
 <section class="section">
   <div class="container">
-    <div style="text-align: center; max-width: 720px; margin: 0 auto 64px;">
-      <div class="eyebrow eyebrow-accent reveal" style="margin-bottom: 16px;">03 — Прозорі ціни</div>
-      <h2 class="display reveal">
-        Ви точно знаєте,<br>
-        <em style="font-style: italic; color: var(--accent);">за що</em> платите.
-      </h2>
-      <p class="lede reveal" style="margin-top: 24px;">
-        Жодних прихованих платежів. Жодної плати за&nbsp;вакансію. Тільки конкретні послуги за&nbsp;фіксованою ціною — через Stripe.
-      </p>
+    <div style="margin-bottom: 40px; max-width: 640px;">
+      <div class="eyebrow eyebrow-accent" style="margin-bottom: 12px;" data-i18n="countriesSec.eyebrow"></div>
+      <h2 style="margin-bottom: 12px;" data-i18n="countriesSec.titleA"></h2>
+      <p class="lede" data-i18n="countriesSec.sub"></p>
     </div>
 
-    <div class="pricing-grid">
-      <!-- UK Package -->
-      <div class="price-card is-dark reveal">
-        <div class="price-eyebrow">UK Package</div>
-        <h3 class="price-name">Велика <em>Британія</em></h3>
-        <p class="price-meta">Розширений пакет: CoS, biometric, додаткові переклади.</p>
-
-        <div class="price-total">
-          <div class="price-total-amount">€550</div>
-          <div>
-            <div class="price-total-label">Document + Arrival</div>
-            <div style="font-size: 0.75rem; color: var(--brass);">або €300 / €250 окремо</div>
-          </div>
-        </div>
-
-        <ul class="price-lines">
-          <li class="price-line-item">
-            <svg class="price-line-item-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="price-line-item-text">Certificate of Sponsorship — координація</span>
-          </li>
-          <li class="price-line-item">
-            <svg class="price-line-item-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="price-line-item-text">Запис на&nbsp;biometric у&nbsp;візовому центрі</span>
-          </li>
-          <li class="price-line-item">
-            <svg class="price-line-item-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="price-line-item-text">Переклади та&nbsp;нотаріальне завірення</span>
-          </li>
-          <li class="price-line-item">
-            <svg class="price-line-item-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="price-line-item-text">Заповнення Work&nbsp;Permit Application</span>
-          </li>
-          <li class="price-line-item">
-            <svg class="price-line-item-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="price-line-item-text">Зустріч у&nbsp;Гетвік/Хітроу + трансфер</span>
-          </li>
-          <li class="price-line-item">
-            <svg class="price-line-item-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="price-line-item-text">Допомога з&nbsp;NIN та&nbsp;UK&nbsp;bank account</span>
-          </li>
-        </ul>
-
-        <a href="services.html#uk" class="btn btn-accent">Детально про&nbsp;UK&nbsp;пакет →</a>
-      </div>
-
-      <!-- EU Package -->
-      <div class="price-card reveal">
-        <div class="price-eyebrow">EU Package</div>
-        <h3 class="price-name">Європейський <em>Союз</em></h3>
-        <p class="price-meta">Німеччина, Нідерланди, Греція, Італія.</p>
-
-        <div class="price-total">
-          <div class="price-total-amount">€350</div>
-          <div>
-            <div class="price-total-label">Document + Arrival</div>
-            <div style="font-size: 0.75rem; color: var(--ink-mute);">або €200 / €150 окремо</div>
-          </div>
-        </div>
-
-        <ul class="price-lines">
-          <li class="price-line-item">
-            <svg class="price-line-item-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="price-line-item-text">Запит контракту від&nbsp;роботодавця</span>
-          </li>
-          <li class="price-line-item">
-            <svg class="price-line-item-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="price-line-item-text">Підготовка work&nbsp;permit application</span>
-          </li>
-          <li class="price-line-item">
-            <svg class="price-line-item-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="price-line-item-text">Переклади та&nbsp;легалізація документів</span>
-          </li>
-          <li class="price-line-item">
-            <svg class="price-line-item-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="price-line-item-text">Координація з&nbsp;консульством</span>
-          </li>
-          <li class="price-line-item">
-            <svg class="price-line-item-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="price-line-item-text">Зустріч в&nbsp;аеропорту + трансфер</span>
-          </li>
-          <li class="price-line-item">
-            <svg class="price-line-item-icon" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="price-line-item-text">BSN&nbsp;/&nbsp;Anmeldung&nbsp;/&nbsp;ΙΚΑ&nbsp;/&nbsp;INPS — допомога</span>
-          </li>
-        </ul>
-
-        <a href="services.html#eu" class="btn btn-primary">Детально про&nbsp;ЄС&nbsp;пакет →</a>
-      </div>
-    </div>
-
-    <p class="reveal" style="text-align: center; margin-top: 40px; font-size: 0.875rem; color: var(--ink-mute); max-width: 720px; margin-left: auto; margin-right: auto;">
-      Оплата через Stripe. Чек на&nbsp;email одразу після оплати. Гарантія повернення згідно з&nbsp;<a href="offer.html" style="color: var(--ink); border-bottom: 1px solid var(--line-strong);">публічною офертою</a>.
-    </p>
+    <div class="country-grid" id="countriesGrid"></div>
   </div>
 </section>
 
-<!-- ============ CASES ============ -->
-<section class="section" style="background: var(--bg-elev);">
+<!-- ============== CASES — real people, real money ============== -->
+<section class="section bg-warm">
   <div class="container">
-    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px; gap: 48px; flex-wrap: wrap;">
-      <div style="max-width: 640px;">
-        <div class="eyebrow eyebrow-accent reveal" style="margin-bottom: 16px;">04 — Реальні історії</div>
-        <h2 class="display reveal">
-          Люди, які вже<br>
-          <em style="font-style: italic; color: var(--accent);">працюють</em> через нас.
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 40px;">
+      <div>
+        <div class="eyebrow eyebrow-accent" style="margin-bottom: 12px;" data-i18n="cases.eyebrow"></div>
+        <h2>
+          <span data-i18n="cases.titleA"></span><br>
+          <span style="font-family: var(--font-accent); font-style: italic; color: var(--accent);" data-i18n="cases.titleB"></span>
         </h2>
       </div>
-      <a href="cases.html" class="btn btn-ghost reveal">Усі історії →</a>
+      <a href="cases.html" class="btn btn-primary btn-arrow" data-i18n="cases.all"></a>
     </div>
 
-    <div id="casesGrid"></div>
+    <div class="cases-row" id="casesRow"></div>
   </div>
 </section>
 
-<!-- ============ FAQ ============ -->
+<!-- ============== TRUST RIBBON — quiet, at the end ============== -->
+<section class="trust-ribbon">
+  <div class="container">
+    <div class="trust-ribbon-grid">
+      <div class="trust-ribbon-item">
+        <div class="trust-ribbon-item-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/></svg>
+        </div>
+        <div>
+          <strong data-i18n="trustRibbon.i1"></strong>
+          <span data-i18n="trustRibbon.i1m"></span>
+        </div>
+      </div>
+      <div class="trust-ribbon-item">
+        <div class="trust-ribbon-item-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        </div>
+        <div>
+          <strong data-i18n="trustRibbon.i2"></strong>
+          <span data-i18n="trustRibbon.i2m"></span>
+        </div>
+      </div>
+      <div class="trust-ribbon-item">
+        <div class="trust-ribbon-item-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div>
+          <strong data-i18n="trustRibbon.i3"></strong>
+          <span data-i18n="trustRibbon.i3m"></span>
+        </div>
+      </div>
+      <div class="trust-ribbon-item">
+        <div class="trust-ribbon-item-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><polyline points="3 4 3 12 11 12"/></svg>
+        </div>
+        <div>
+          <strong data-i18n="trustRibbon.i4"></strong>
+          <span data-i18n="trustRibbon.i4m"></span>
+        </div>
+      </div>
+      <div class="trust-ribbon-item">
+        <div class="trust-ribbon-item-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+        </div>
+        <div>
+          <strong data-i18n="trustRibbon.i5"></strong>
+          <span data-i18n="trustRibbon.i5m"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FAQ ============== -->
 <section class="section">
   <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start;">
-      <div class="reveal">
-        <div class="eyebrow eyebrow-accent" style="margin-bottom: 16px;">05 — Поширені запитання</div>
-        <h2 class="display">
-          Запитували —<br>
-          <em style="font-style: italic; color: var(--accent);">відповідаємо</em>.
-        </h2>
-        <p style="margin-top: 24px; color: var(--ink-soft);">
-          Не&nbsp;знайшли своє питання? Напишіть менеджеру в&nbsp;месенджер — відповімо протягом години.
-        </p>
+    <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 64px; align-items: start;">
+      <div>
+        <div class="eyebrow eyebrow-accent" style="margin-bottom: 12px;" data-i18n="faq.eyebrow"></div>
+        <h2 style="margin-bottom: 16px;" data-i18n="faq.title"></h2>
+        <p style="color: var(--ink-soft);" data-i18n="faq.sub"></p>
       </div>
-
       <div class="faq" id="faqList"></div>
     </div>
   </div>
 </section>
 
-<!-- ============ CTA + FORM ============ -->
-<section class="section" id="apply" style="background: var(--bg-dark); color: var(--bg); padding-top: 96px; padding-bottom: 96px;">
+<!-- ============== APPLY ============== -->
+<section class="section bg-soft" id="apply">
   <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;">
-      <div class="reveal">
-        <div class="eyebrow" style="color: var(--brass); margin-bottom: 16px;">Залишити заявку</div>
-        <h2 class="display" style="color: var(--bg); font-size: clamp(2.5rem, 4.5vw, 4rem);">
-          Безкоштовно.<br>
-          <em style="font-style: italic; color: var(--brass);">Без зобов'язань.</em>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;">
+      <div>
+        <div class="eyebrow eyebrow-accent" style="margin-bottom: 12px;" data-i18n="apply.eyebrow"></div>
+        <h2 style="margin-bottom: 16px;">
+          <span data-i18n="apply.titleA"></span>
+          <span style="font-family: var(--font-accent); font-style: italic; color: var(--accent);" data-i18n="apply.titleB"></span>
         </h2>
-        <p class="lede" style="color: rgba(245,241,232,0.75); margin-top: 24px;">
-          Заповніть форму — менеджер зв'яжеться протягом 24&nbsp;годин, проведе попередню співбесіду і&nbsp;підбере вакансії під&nbsp;ваш досвід.
-        </p>
-        <div style="margin-top: 48px; border-top: 1px solid rgba(245,241,232,0.15); padding-top: 32px;">
-          <div style="font-family: var(--font-display); font-style: italic; font-size: 1.25rem; color: var(--brass); margin-bottom: 8px;">Що буде далі</div>
-          <ol style="list-style: none; padding: 0; margin: 0; font-size: 0.9375rem; line-height: 1.8; color: rgba(245,241,232,0.85);">
-            <li>1. Дзвінок або повідомлення в&nbsp;месенджер</li>
-            <li>2. Підбір 2–4 вакансій під&nbsp;ваш профіль</li>
-            <li>3. Інтерв'ю з&nbsp;роботодавцем (онлайн)</li>
-            <li>4. Job offer на&nbsp;руки — і&nbsp;тільки тоді платні послуги</li>
-          </ol>
-        </div>
+        <p style="font-size: 1.0625rem; line-height: 1.5; color: var(--ink-soft); margin-bottom: 32px;" data-i18n="apply.lede"></p>
+
+        <div class="eyebrow eyebrow-accent" style="margin-bottom: 16px;" data-i18n="apply.stepsTitle"></div>
+        <ol style="list-style: none; padding: 0; margin: 0;">
+          <li style="display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line);">
+            <span style="flex-shrink: 0; width: 28px; height: 28px; background: var(--bg-elev); border: 1px solid var(--line); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); font-weight: 700;">1</span>
+            <span style="font-size: 0.9375rem; padding-top: 4px;" data-i18n="apply.s1"></span>
+          </li>
+          <li style="display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line);">
+            <span style="flex-shrink: 0; width: 28px; height: 28px; background: var(--bg-elev); border: 1px solid var(--line); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); font-weight: 700;">2</span>
+            <span style="font-size: 0.9375rem; padding-top: 4px;" data-i18n="apply.s2"></span>
+          </li>
+          <li style="display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line);">
+            <span style="flex-shrink: 0; width: 28px; height: 28px; background: var(--bg-elev); border: 1px solid var(--line); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); font-weight: 700;">3</span>
+            <span style="font-size: 0.9375rem; padding-top: 4px;" data-i18n="apply.s3"></span>
+          </li>
+          <li style="display: flex; gap: 14px; padding: 12px 0;">
+            <span style="flex-shrink: 0; width: 28px; height: 28px; background: var(--trust); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 0.75rem; color: #fff; font-weight: 700;">4</span>
+            <span style="font-size: 0.9375rem; padding-top: 4px; font-weight: 500;" data-i18n="apply.s4"></span>
+          </li>
+        </ol>
       </div>
 
-      <form class="reveal" onsubmit="event.preventDefault(); alert('Демо-форма. На&nbsp;продакшені піде на&nbsp;/api/lead'); this.reset();" style="background: var(--bg-elev); color: var(--ink); padding: 40px; border-radius: var(--r-lg);">
+      <form onsubmit="event.preventDefault(); alert('Демо-форма'); this.reset();" style="background: var(--bg-elev); padding: 32px; border-radius: var(--r-xl); border: 1px solid var(--line); box-shadow: var(--shadow-md);">
         <div class="field">
-          <label class="field-label">Ім'я та&nbsp;прізвище</label>
-          <input class="field-input" type="text" required placeholder="Анна Коваленко">
+          <label class="field-label" data-i18n="apply.formName"></label>
+          <input class="field-input" type="text" required>
         </div>
         <div class="field">
-          <label class="field-label">Телефон</label>
+          <label class="field-label" data-i18n="apply.formPhone"></label>
           <input class="field-input" type="tel" required placeholder="+380 ...">
         </div>
         <div class="field">
-          <label class="field-label">Email</label>
-          <input class="field-input" type="email" required placeholder="anna@example.com">
+          <label class="field-label" data-i18n="apply.formEmail"></label>
+          <input class="field-input" type="email" required>
         </div>
         <div class="field">
-          <label class="field-label">Бажана країна</label>
-          <select class="field-select" required>
-            <option value="">— оберіть країну —</option>
-            <option value="uk">Велика Британія</option>
-            <option value="germany">Німеччина</option>
-            <option value="netherlands">Нідерланди</option>
-            <option value="greece">Греція (готелі)</option>
-            <option value="italy">Італія (готелі)</option>
-            <option value="any">Не&nbsp;маю значення — порадьте</option>
+          <label class="field-label" data-i18n="apply.formCountry"></label>
+          <select class="field-select" id="formCountrySelect">
+            <option value="" data-i18n="apply.formCountryPh"></option>
+            <option value="" data-i18n="apply.formAny"></option>
           </select>
         </div>
         <div class="field">
-          <label class="field-label">Зручний месенджер для&nbsp;зв'язку</label>
-          <select class="field-select" required>
-            <option>Telegram</option>
+          <label class="field-label" data-i18n="apply.formMessenger"></label>
+          <select class="field-select">
             <option>WhatsApp</option>
+            <option>Telegram</option>
             <option>Viber</option>
-            <option>Дзвінок на&nbsp;телефон</option>
+            <option data-i18n="apply.formCall"></option>
           </select>
         </div>
         <div class="field">
           <label class="checkbox">
             <input type="checkbox" required>
-            <span>Я&nbsp;погоджуюся на&nbsp;обробку моїх персональних даних згідно з&nbsp;<a href="privacy.html" style="text-decoration: underline;">політикою конфіденційності</a>.</span>
+            <span>
+              <span data-i18n="apply.formAgree"></span>
+              <a href="privacy.html" style="text-decoration: underline;" data-i18n="apply.formAgreeLink"></a>.
+            </span>
           </label>
         </div>
-        <button type="submit" class="btn btn-accent btn-lg" style="width: 100%;">Надіслати заявку</button>
-        <p style="margin-top: 16px; font-size: 0.8125rem; color: var(--ink-mute); text-align: center;">
-          Це&nbsp;безкоштовно. Платні послуги&nbsp;— тільки після отримання job&nbsp;offer і&nbsp;за&nbsp;вашим рішенням.
-        </p>
+        <button class="btn btn-accent btn-lg btn-block" data-i18n="apply.formSubmit"></button>
+        <p style="margin-top: 12px; text-align: center; font-size: 0.8125rem; color: var(--ink-mute);" data-i18n="apply.formNote"></p>
       </form>
     </div>
   </div>
@@ -502,47 +462,285 @@
 <div id="siteFooter"></div>
 <div id="siteCookies"></div>
 <div id="siteMessenger"></div>
+<div id="siteMobileSticky"></div>
 
 <script src="data/site.js"></script>
+<script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 <script>
-  // Render header / footer
-  initSite("");
+  /* ========= COUNTRY DATA (rate ranges per country for calc) ========= */
+  const CALC_DATA = {
+    uk:          { gross: 2600, tax: 0.21, label: { ru: "Великобритания", uk: "Велика Британія", en: "United Kingdom" } },
+    germany:     { gross: 2900, tax: 0.31, label: { ru: "Германия",       uk: "Німеччина",       en: "Germany" } },
+    netherlands: { gross: 2950, tax: 0.27, label: { ru: "Нидерланды",     uk: "Нідерланди",      en: "Netherlands" } },
+    czechia:     { gross: 1900, tax: 0.18, label: { ru: "Чехия",          uk: "Чехія",           en: "Czechia" } },
+    denmark:     { gross: 3700, tax: 0.27, label: { ru: "Дания",          uk: "Данія",           en: "Denmark" } },
+    norway:      { gross: 4500, tax: 0.26, label: { ru: "Норвегия",       uk: "Норвегія",        en: "Norway" } },
+    switzerland: { gross: 5000, tax: 0.20, label: { ru: "Швейцария",      uk: "Швейцарія",       en: "Switzerland" } },
+    greece:      { gross: 2200, tax: 0.15, label: { ru: "Греция",         uk: "Греція",          en: "Greece" } },
+    italy:       { gross: 2400, tax: 0.20, label: { ru: "Италия",         uk: "Італія",          en: "Italy" } },
+  };
 
-  // Render cases
-  const casesHtml = window.CASES.map(c => `
-    <div class="case-card reveal">
-      <div class="case-card-media">
-        <img src="${c.img}" alt="${c.name}">
-        <div class="case-play">
-          <div class="case-play-btn">▶</div>
+  let calcState = { country: "uk", duration: 6, effort: 1, expenses: 0 };
+
+  function fmt(n) {
+    return "€" + new Intl.NumberFormat("en-GB").format(Math.round(n));
+  }
+  function fmtNeg(n) { return "−€" + new Intl.NumberFormat("en-GB").format(Math.round(n)); }
+
+  function updateCalc() {
+    const c = CALC_DATA[calcState.country];
+    const effortMult = [1.0, 1.18, 1.42][calcState.effort];  // 0, +18%, +42%
+    const dur = calcState.duration;
+    const gross = c.gross * effortMult * dur;
+    const tax = gross * c.tax;
+    const exp = calcState.expenses * dur;
+    const net = gross - tax - exp;
+
+    document.getElementById("calcResult").textContent = fmt(net);
+    document.getElementById("calcBrkGross").textContent = fmt(gross);
+    document.getElementById("calcBrkTax").textContent = fmtNeg(tax);
+    document.getElementById("calcBrkExp").textContent = exp ? fmtNeg(exp) : "€0";
+    document.getElementById("calcBrkNet").textContent = fmt(net);
+
+    const lang = getLang();
+    document.getElementById("calcCountryName").textContent = c.label[lang] || c.label.ru;
+    document.getElementById("calcDurationName").textContent = dur + " " + (lang==='en' ? 'months' : (lang==='uk' ? 'місяців' : 'месяцев'));
+  }
+
+  /* ========= RENDER ========= */
+  function renderHomeDynamic() {
+    const lang = getLang();
+
+    // Country teaser strip
+    const strip = document.getElementById("countryStrip");
+    if (strip) {
+      strip.innerHTML = SITE.countries.map(c => `
+        <a href="#vacancies" class="country-pill" onclick="selectVacTab('${c.slug}'); return true;">
+          <span class="country-pill-code">${c.code}</span>
+          <span class="country-pill-name">${countryName(c, lang)}</span>
+          <span class="country-pill-rate">€${c.rate} ${t('misc.currency')}</span>
+        </a>
+      `).join("");
+    }
+
+    // Vacancy tabs and panels
+    const tabs = document.getElementById("vacTabs");
+    const panels = document.getElementById("vacPanels");
+    if (tabs && panels && window.VACANCIES) {
+      tabs.innerHTML = SITE.countries.map((c, i) => `
+        <button class="vac-tab ${i===0 ? 'is-active' : ''}" data-tab="${c.slug}" onclick="selectVacTab('${c.slug}')">
+          <span class="vac-tab-flag">${c.code}</span>
+          <span class="vac-tab-name">${countryName(c, lang)}</span>
+          <span class="vac-tab-rate">€${c.rate}</span>
+          <span class="vac-tab-count">${c.count}</span>
+        </button>
+      `).join("");
+
+      panels.innerHTML = SITE.countries.map((c, i) => {
+        const vacs = window.VACANCIES.filter(v => v.country === c.slug);
+        return `
+          <div class="vac-panel ${i===0 ? 'is-active' : ''}" id="panel-${c.slug}">
+            <div class="vac-panel-grid">
+              ${vacs.map(v => `
+                <a href="vacancy.html?id=${v.id}" class="rate-card">
+                  <div class="rate-card-media">
+                    <img src="${v.img}" alt="${v.title}">
+                    <div class="rate-card-country-chip">${c.code}</div>
+                    <div class="rate-card-rate-badge">
+                      <div class="rate-card-rate-num">${fmtEur(v.rate)}</div>
+                      <div class="rate-card-rate-label">${t('misc.perMonth')}</div>
+                    </div>
+                  </div>
+                  <div class="rate-card-body">
+                    <div class="rate-card-name">${v.title}</div>
+                    <div class="rate-card-meta">
+                      <span>${v.city}</span>
+                      <span class="rate-card-meta-dot"></span>
+                      <span>${v.contract}</span>
+                    </div>
+                    <div class="rate-card-cta">
+                      <span>${t('misc.details')}</span>
+                      <span>→</span>
+                    </div>
+                  </div>
+                </a>
+              `).join("")}
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    // Countries section (large cards)
+    const grid = document.getElementById("countriesGrid");
+    if (grid) {
+      grid.innerHTML = SITE.countries.map((c, idx) => `
+        <a href="country.html?c=${c.slug}" class="country-card ${idx === 0 ? 'size-lg' : ''}">
+          <div class="country-flag-row">
+            <span class="country-flag-code">${c.code}</span>
+            <span class="country-flag-name">${countryName(c, lang)}</span>
+          </div>
+          <h3 class="country-name">${countryName(c, lang)}</h3>
+          <p class="country-tagline">${countryTag(c, lang)}</p>
+          <div class="country-meta">
+            <div>
+              <div class="country-meta-stat-num">€${c.rate.split("–")[1]}</div>
+              <div class="country-meta-stat-label">${lang==='ru' ? 'до €/мес' : (lang==='uk' ? 'до €/міс' : 'up to €/mo')}</div>
+            </div>
+            <div style="text-align: right;">
+              <div class="country-meta-stat-num">${c.count}</div>
+              <div class="country-meta-stat-label">${t('misc.vacancies')}</div>
+            </div>
+            <div class="country-meta-arrow">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h12M10 4l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </a>
+      `).join("");
+    }
+
+    // Cases — top 3 with money amounts
+    const casesRow = document.getElementById("casesRow");
+    if (casesRow && window.CASES) {
+      const tags = ["UK · Norfolk", "GR · Crete", "NL · Westland"];
+      const amounts = ["€11,500", "€10,200", "€12,400"];
+      const periods = ["6 мес", "5 мес", "8 мес"];
+      casesRow.innerHTML = window.CASES.slice(0, 3).map((c, i) => `
+        <div class="case-tile">
+          <div class="case-tile-media">
+            <img src="${c.img}" alt="${c.name}">
+            <div class="case-tile-tag">${tags[i] || ''}</div>
+            <div class="case-tile-amount">${amounts[i] || ''}</div>
+            <div class="case-tile-play">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><path d="M4 2l8 5-8 5z"/></svg>
+            </div>
+          </div>
+          <div class="case-tile-body">
+            <p class="case-tile-quote">"${c.quote.split('.').slice(0,2).join('.')}."</p>
+            <div class="case-tile-author">
+              <div class="case-tile-name">${c.name}</div>
+              <div class="case-tile-role">${c.role} · ${periods[i] || ''}</div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="case-body">
-        <blockquote class="case-quote">&ldquo;${c.quote}&rdquo;</blockquote>
-        <div class="case-author">
-          <span class="case-author-name">${c.name}</span>
-          <span class="case-author-meta">${c.role}</span>
+      `).join("");
+    }
+
+    // FAQ
+    const faqList = document.getElementById("faqList");
+    if (faqList) {
+      const items_ru = [
+        { q: "Сколько реально можно заработать?", a: "В UK — €1900–2400/мес чистыми. В ЕС — €1800–2200/мес. На отелях в Греции и Италии плюс чаевые (€100–400/мес). На фермах UK с понаднормовыми реально €2400 за хороший месяц." },
+        { q: "Сколько стоит уехать?", a: "Подбор и собеседование — бесплатно. Платите только за документы (€200–300) и встречу в аэропорту (€150–250). И только после того как у вас на руках job offer." },
+        { q: "Что если работодатель откажет?", a: "Если не по вашей вине — возврат 100%. Через Stripe — на ту же карту, что платили. Сроки 5–10 рабочих дней." },
+        { q: "Жильё включено?", a: "Везде, кроме некоторых вакансий в ЕС где удержание €60–120/нед из зарплаты. Всегда указано в карточке вакансии." },
+        { q: "Сколько времени готовят документы?", a: "UK — 4–6 недель. ЕС — 2–4 недели. Зависит от консульства и сезона." },
+        { q: "Нужен ли английский?", a: "Для ферм и фабрик — нет. Для отелей в Греции и Италии — базовый А1 желательно. Для официантов — B1." },
+      ];
+      const items_uk = [
+        { q: "Скільки реально можна заробити?", a: "В UK — €1900–2400/міс чистими. В ЄС — €1800–2200/міс. В готелях Греції та Італії плюс чайові (€100–400/міс). На фермах UK з понаднормовими реально €2400 за хороший місяць." },
+        { q: "Скільки коштує поїхати?", a: "Підбір та співбесіда — безкоштовно. Платите тільки за документи (€200–300) і зустріч в аеропорту (€150–250). І тільки після того як у вас на руках job offer." },
+        { q: "Що якщо роботодавець відмовить?", a: "Якщо не з вашої вини — повернення 100%. Через Stripe — на ту ж картку, з якої платили. Терміни 5–10 робочих днів." },
+        { q: "Чи включене житло?", a: "Усюди, крім деяких вакансій в ЄС, де утримання €60–120/тиж із зарплати. Завжди вказано у картці вакансії." },
+        { q: "Скільки часу готують документи?", a: "UK — 4–6 тижнів. ЄС — 2–4 тижні. Залежить від консульства та сезону." },
+        { q: "Чи потрібна англійська?", a: "Для ферм і фабрик — ні. Для готелів у Греції та Італії — базовий А1 бажано. Для офіціантів — B1." },
+      ];
+      const items_en = [
+        { q: "How much can I really earn?", a: "In UK — €1,900–2,400/mo net. In EU — €1,800–2,200/mo. Greek and Italian hotels add tips (€100–400/mo). UK farms with overtime can reach €2,400 in a good month." },
+        { q: "How much does it cost to go?", a: "Job placement and interviews — free. You only pay for documents (€200–300) and airport pickup (€150–250). And only once you have a job offer in hand." },
+        { q: "What if the employer rejects me?", a: "If not your fault — 100% refund. Via Stripe — back to the same card you paid with. 5–10 business days." },
+        { q: "Is accommodation included?", a: "Everywhere except some EU jobs where €60–120/week is deducted from salary. Always shown in the job card." },
+        { q: "How long do documents take?", a: "UK — 4–6 weeks. EU — 2–4 weeks. Depends on the consulate and season." },
+        { q: "Do I need English?", a: "For farms and factories — no. For hotels in Greece and Italy — basic A1 is desirable. For waiter positions — B1." },
+      ];
+      const list = lang === 'uk' ? items_uk : (lang === 'en' ? items_en : items_ru);
+      faqList.innerHTML = list.map(f => `
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>${f.q}</span>
+            <span class="faq-toggle"></span>
+          </div>
+          <div class="faq-a">${f.a}</div>
         </div>
-      </div>
-    </div>
-  `).join("");
-  document.getElementById("casesGrid").innerHTML = casesHtml;
+      `).join("");
+    }
 
-  // Render FAQ
-  const faqHtml = window.FAQ.map(f => `
-    <div class="faq-item">
-      <div class="faq-q">
-        <span>${f.q}</span>
-        <span class="faq-toggle"></span>
-      </div>
-      <div class="faq-a">${f.a}</div>
-    </div>
-  `).join("");
-  document.getElementById("faqList").innerHTML = faqHtml;
+    // Country select in form
+    const select = document.getElementById("formCountrySelect");
+    if (select) {
+      [...select.querySelectorAll('option:not([data-i18n])')].forEach(o => o.remove());
+      SITE.countries.forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c.slug;
+        opt.textContent = countryName(c, lang);
+        select.appendChild(opt);
+      });
+    }
 
+    updateCalc();
+  }
+
+  /* ========= TAB SWITCHING ========= */
+  function selectVacTab(slug) {
+    document.querySelectorAll(".vac-tab").forEach(t => t.classList.toggle("is-active", t.dataset.tab === slug));
+    document.querySelectorAll(".vac-panel").forEach(p => p.classList.toggle("is-active", p.id === "panel-" + slug));
+  }
+
+  /* ========= CALCULATOR CONTROLS ========= */
+  function bindCalc() {
+    // Country buttons (dynamic)
+    const countryEl = document.getElementById("calcCountry");
+    countryEl.innerHTML = SITE.countries.map((c, i) => `
+      <button class="calc-opt ${i===0 ? 'is-active' : ''}" data-country="${c.slug}">
+        ${c.code}
+      </button>
+    `).join("");
+
+    document.querySelectorAll("[data-country]").forEach(b => {
+      b.addEventListener("click", () => {
+        document.querySelectorAll("[data-country]").forEach(x => x.classList.remove("is-active"));
+        b.classList.add("is-active");
+        calcState.country = b.dataset.country;
+        updateCalc();
+      });
+    });
+    document.querySelectorAll("[data-dur]").forEach(b => {
+      b.addEventListener("click", () => {
+        document.querySelectorAll("[data-dur]").forEach(x => x.classList.remove("is-active"));
+        b.classList.add("is-active");
+        calcState.duration = parseInt(b.dataset.dur);
+        updateCalc();
+      });
+    });
+    document.querySelectorAll("[data-eff]").forEach(b => {
+      b.addEventListener("click", () => {
+        document.querySelectorAll("[data-eff]").forEach(x => x.classList.remove("is-active"));
+        b.classList.add("is-active");
+        calcState.effort = parseInt(b.dataset.eff);
+        updateCalc();
+      });
+    });
+    document.querySelectorAll("[data-exp]").forEach(b => {
+      b.addEventListener("click", () => {
+        document.querySelectorAll("[data-exp]").forEach(x => x.classList.remove("is-active"));
+        b.classList.add("is-active");
+        calcState.expenses = parseInt(b.dataset.exp);
+        updateCalc();
+      });
+    });
+  }
+
+  initSite("home");
+  renderHomeDynamic();
+  bindCalc();
   initFAQ();
-  initReveal();
+
+  document.addEventListener("langchange", () => {
+    renderHomeDynamic();
+    bindCalc();
+    initFAQ();
+  });
 </script>
 
 </body>

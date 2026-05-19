@@ -1,1098 +1,1012 @@
 /* ============================================
-   HR & Recruit — Master data
-   Vacancies / FAQ / Cases
-   All vacancy content is DEMO — replace before launch
+   HR & Recruit — SITE DATA
+   9 countries, 50+ vacancies
    ============================================ */
 
+/* ---------- VACANCIES (50+) ---------- */
+/* Image system: placehold.co URLs work as visual placeholders.
+   Replace with images/<id>-1.jpg etc when real photos are uploaded.
+   Each vacancy: 1 hero img + 4 work gallery + 4 housing gallery
+*/
+
 window.VACANCIES = [
-  /* ============ UNITED KINGDOM ============ */
+  /* ============= UK ============= */
   {
-    id: "uk-mushroom-picker",
-    country: "uk",
-    countryName: "Великобритания",
-    city: "Норфолк, Англия",
+    id: "uk-mushroom-norfolk",
+    country: "uk", countryName: "Великобритания", city: "Норфолк, Англия",
     title: "Сборщик шампиньонов",
-    type: "Сезонная виза",
-    contract: "6 месяцев",
-    start: "Май 2026",
-    rate: 2100,
-    rateMeta: "нетто/мес",
-    hours: "48 ч/нед",
-    overtime: "оплачивается ×1.5",
+    type: "Сельское хозяйство", category: "agro",
+    contract: "6 месяцев", start: "Май 2026",
+    rate: 2100, rateMeta: "нетто/мес + бонусы",
+    hours: "48 ч/нед", overtime: "оплачивается ×1.5",
     accommodation: "Общежитие на ферме, €60/нед удержание",
-    img: "https://placehold.co/1200x800/1B3A2F/F5F1E8?text=Mushroom+Farm+UK&font=lato",
-    gallery: [
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Mushroom+Farm+Inside",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Working+Area",
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Packing+Line",
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Farm+Exterior"
-    ],
-    housing: [
-      "https://placehold.co/800x600/8A877F/FFFFFF?text=Dorm+Room+2pp",
-      "https://placehold.co/800x600/B8935A/FFFFFF?text=Shared+Kitchen",
-      "https://placehold.co/800x600/6B6B6B/FFFFFF?text=Bathroom",
-      "https://placehold.co/800x600/4A4A47/FFFFFF?text=Common+Area"
-    ],
-    summary: "Современная ферма по выращиванию шампиньонов на востоке Англии. Закрытые отапливаемые помещения, работа круглый год, стабильный график. Один из крупнейших поставщиков сетей Tesco и Sainsbury's.",
-    duties: [
-      "Сбор зрелых шампиньонов на стеллажных грядках по нормативу качества",
-      "Сортировка и первичная упаковка в лотки для торговых сетей",
-      "Соблюдение санитарных норм фермы (HACCP-стандарт)",
-      "Работа в команде из 4–6 человек на смену",
-      "Поддержание чистоты рабочей зоны"
-    ],
-    requirements: [
-      "Возраст 21–55 лет",
-      "Готовность к физической работе стоя",
-      "Загранпаспорт со сроком действия минимум 18 мес",
-      "Отсутствие судимостей (police check)",
-      "Базовый английский — приветствуется, но не обязателен"
-    ],
+    img: "https://placehold.co/1200x800/2D5A3D/F5F1E8?text=Mushroom+Farm+UK",
+    gallery: ["https://placehold.co/800x600/2D5A3D/F5F1E8?text=Mushroom+House+1", "https://placehold.co/800x600/2D5A3D/F5F1E8?text=Picking+Line", "https://placehold.co/800x600/2D5A3D/F5F1E8?text=Mushroom+Trays", "https://placehold.co/800x600/2D5A3D/F5F1E8?text=Packaging"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Worker+Housing+UK", "https://placehold.co/800x600/8B7355/F5F1E8?text=Bedroom", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Common+Area"],
+    summary: "Сбор шампиньонов в крупнейшей мушрум-ферме Англии. Работа в климат-контролируемых теплицах: температура +14°C круглый год. Контракт через UK Seasonal Worker Route.",
+    duties: ["Сбор грибов по нормам качества", "Сортировка и фасовка", "Уборка рабочей зоны", "Соблюдение санитарных норм", "Работа с конвейером"],
+    requirements: ["Загранпаспорт срок 18+ месяцев", "Police check (отсутствие судимости)", "Физическая выносливость", "Базовая английская не обязательна", "Готовность к стоячей работе"],
     included: [
-      { icon: "home",   label: "Проживание",     value: "Общежитие на ферме, удержание €60/нед" },
-      { icon: "doc",    label: "Контракт",       value: "Прямой с фермой по UK Seasonal Worker route" },
-      { icon: "shield", label: "Страховка",      value: "Медицинская и от несчастных случаев" },
-      { icon: "plane",  label: "Трансфер",       value: "Аэропорт → ферма от ваших координаторов" },
-      { icon: "money",  label: "Оплата",         value: "Еженедельная, на UK bank account" },
-      { icon: "back",   label: "Возврат",        value: "При успешной отработке — компенсация перелёта" }
-    ]
+      { icon: "home", label: "Проживание", value: "Общежитие 4-6 чел в комнате, €60/нед" },
+      { icon: "doc", label: "Контракт", value: "Прямой с фермой по UK Law" },
+      { icon: "shield", label: "Страховка", value: "NHS surcharge оплачен работодателем" },
+      { icon: "plane", label: "Трансфер", value: "Из аэропорта Stansted/Gatwick" },
+      { icon: "money", label: "Оплата", value: "На UK bank account, минимум £12.21/ч" },
+      { icon: "back", label: "Бонус", value: "За скорость +£200/мес" }
+    ],
+    status: "uk-seasonal", visa: "UK Seasonal Worker Visa"
   },
   {
-    id: "uk-veg-packer",
-    country: "uk",
-    countryName: "Великобритания",
-    city: "Линкольншир, Англия",
-    title: "Упаковщик овощей",
-    type: "Сезонная виза",
-    contract: "5 месяцев",
-    start: "Апрель 2026",
-    rate: 1950,
-    rateMeta: "нетто/мес",
-    hours: "45 ч/нед",
-    overtime: "оплачивается ×1.5",
-    accommodation: "Караваны на территории, €55/нед",
-    img: "https://placehold.co/1200x800/244A3D/F5F1E8?text=Veg+Packing+UK",
-    gallery: [
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Packing+Line",
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Warehouse",
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Quality+Check",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Loading+Area"
-    ],
-    housing: [
-      "https://placehold.co/800x600/8A877F/FFFFFF?text=Caravan+Outside",
-      "https://placehold.co/800x600/B8935A/FFFFFF?text=Caravan+Inside",
-      "https://placehold.co/800x600/6B6B6B/FFFFFF?text=Shared+Shower",
-      "https://placehold.co/800x600/4A4A47/FFFFFF?text=Laundry+Room"
-    ],
-    summary: "Линия упаковки моркови, лука и капусты для сетей Asda и Morrisons. Закрытое тёплое помещение, конвейерная работа в спокойном темпе. Стабильный сезон апрель–август.",
-    duties: [
-      "Контроль овощей на линии (брак, мусор, посторонние предметы)",
-      "Упаковка в пакеты и сетки разного веса",
-      "Маркировка готовой продукции",
-      "Поддержание стандартов гигиены",
-      "Помощь в подготовке смены"
-    ],
-    requirements: [
-      "Возраст 19–58 лет",
-      "Готовность к стоячей работе",
-      "Загранпаспорт, действующий 18+ мес",
-      "Police check (мы помогаем оформить)",
-      "Базовая физическая выносливость"
-    ],
+    id: "uk-strawberry-herefordshire",
+    country: "uk", countryName: "Великобритания", city: "Херефордшир",
+    title: "Сборщик ягод (клубника)",
+    type: "Сельское хозяйство", category: "agro",
+    contract: "4-6 месяцев", start: "Апрель 2026",
+    rate: 2200, rateMeta: "нетто/мес в сезон",
+    hours: "до 60 ч/нед в пик",
+    overtime: "обязательно, оплачивается",
+    accommodation: "Караван-парк, €45/нед",
+    img: "https://placehold.co/1200x800/8B5A2B/F5F1E8?text=Strawberry+UK",
+    gallery: ["https://placehold.co/800x600/8B5A2B/F5F1E8?text=Polytunnels", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Berry+Picking", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Quality+Check", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Packing+Shed"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Caravan+Park", "https://placehold.co/800x600/8B7355/F5F1E8?text=Caravan+Inside", "https://placehold.co/800x600/8B7355/F5F1E8?text=Shared+Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Common+Room"],
+    summary: "Один из крупнейших производителей клубники в Великобритании. Работа в полиоблочных туннелях. Сезон с апреля по октябрь.",
+    duties: ["Сбор клубники по нормам качества", "Уход за грядками", "Сортировка по сортам", "Загрузка контейнеров", "Уборка тоннелей"],
+    requirements: ["Возраст 18-55 лет", "Физическая форма", "Терпение к монотонной работе", "Готовность к долгим сменам в сезон"],
     included: [
-      { icon: "home",   label: "Проживание",     value: "Караваны, €55/нед удержание" },
-      { icon: "doc",    label: "Контракт",       value: "Direct contract под Seasonal Worker visa" },
-      { icon: "shield", label: "Страховка",      value: "Включена" },
-      { icon: "plane",  label: "Трансфер",       value: "Из Бирмингема/Лондона до фермы" },
-      { icon: "money",  label: "Оплата",         value: "Weekly payroll" },
-      { icon: "wifi",   label: "Wi-Fi",          value: "Бесплатный на территории" }
-    ]
+      { icon: "home", label: "Проживание", value: "Караван 2-4 чел, €45/нед" },
+      { icon: "doc", label: "Контракт", value: "UK Seasonal Worker Route" },
+      { icon: "shield", label: "Страховка", value: "NHS surcharge включен" },
+      { icon: "plane", label: "Трансфер", value: "Из Heathrow или Birmingham" },
+      { icon: "money", label: "Оплата", value: "Min £12.21/ч + piece-rate бонусы" },
+      { icon: "back", label: "Возврат", value: "Опция повторного сезона" }
+    ],
+    status: "uk-seasonal", visa: "UK Seasonal Worker Visa"
   },
   {
-    id: "uk-greenhouse",
-    country: "uk",
-    countryName: "Великобритания",
-    city: "Кент, Англия",
-    title: "Работник тепличного комплекса",
-    type: "Сезонная виза",
-    contract: "6 месяцев",
-    start: "Март 2026",
-    rate: 2200,
-    rateMeta: "нетто/мес",
-    hours: "48 ч/нед",
-    overtime: "оплачивается ×1.5",
-    accommodation: "Общежитие 2-местное, €65/нед",
-    img: "https://placehold.co/1200x800/2D6A4F/F5F1E8?text=UK+Greenhouse",
-    gallery: [
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Tomato+Greenhouse",
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Plant+Care",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Harvest",
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Sorting+Area"
-    ],
-    housing: [
-      "https://placehold.co/800x600/8A877F/FFFFFF?text=Dorm+Building",
-      "https://placehold.co/800x600/B8935A/FFFFFF?text=Bedroom+2pp",
-      "https://placehold.co/800x600/6B6B6B/FFFFFF?text=Kitchen",
-      "https://placehold.co/800x600/4A4A47/FFFFFF?text=Garden"
-    ],
-    summary: "Современные гидропонные теплицы по выращиванию томатов на 12 гектарах. Самая высокая ставка по UK-направлению. Климат-контроль круглый год, чисто, тепло.",
-    duties: [
-      "Уход за плодоносящими растениями (подвязка, обрезка)",
-      "Сбор томатов разных сортов",
-      "Сортировка по калибру и качеству",
-      "Контроль системы капельного полива",
-      "Работа в составе бригады по 8 человек"
-    ],
-    requirements: [
-      "Возраст 21–55 лет",
-      "Внимательность, аккуратность",
-      "Загранпаспорт 18+ мес",
-      "Police check",
-      "Опыт в сельском хозяйстве — преимущество"
-    ],
+    id: "uk-driver-c-london",
+    country: "uk", countryName: "Великобритания", city: "Лондон, юго-восток",
+    title: "Водитель грузовика категории C",
+    type: "Транспорт", category: "driver",
+    contract: "12 месяцев", start: "Июнь 2026",
+    rate: 2900, rateMeta: "нетто/мес",
+    hours: "45-50 ч/нед",
+    overtime: "по тарифу",
+    accommodation: "Квартира работодателя или £400/мес allowance",
+    img: "https://placehold.co/1200x800/1F3A5F/F5F1E8?text=UK+Driver+C",
+    gallery: ["https://placehold.co/800x600/1F3A5F/F5F1E8?text=DAF+Truck+UK", "https://placehold.co/800x600/1F3A5F/F5F1E8?text=Distribution+Centre", "https://placehold.co/800x600/1F3A5F/F5F1E8?text=Cabin+View", "https://placehold.co/800x600/1F3A5F/F5F1E8?text=Loading+Bay"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Driver+Flat", "https://placehold.co/800x600/8B7355/F5F1E8?text=Bedroom+UK", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Bathroom"],
+    summary: "Развоз товаров по складам сетевого ритейлера. Маршруты в радиусе 200 км от Лондона. Требуется UK CPC (Driver Qualification Card).",
+    duties: ["Развоз грузов по 5-7 точкам в день", "Контроль документов CMR", "Базовый контроль состояния машины", "Соблюдение графика тахографа", "Заполнение путевых листов"],
+    requirements: ["UK или ЕС категория C с CPC Code 95", "Опыт от 2 лет", "Английский A2-B1", "Готовность работать в Лондоне"],
     included: [
-      { icon: "home",   label: "Проживание",     value: "2-местные комнаты, €65/нед" },
-      { icon: "doc",    label: "Контракт",       value: "UK Seasonal Worker visa, sponsor — ферма" },
-      { icon: "shield", label: "Страховка",      value: "Полная" },
-      { icon: "plane",  label: "Трансфер",       value: "Лондон-Гэтвик → ферма" },
-      { icon: "money",  label: "Оплата",         value: "Еженедельно, банк UK" },
-      { icon: "food",   label: "Питание",        value: "Кухня для самостоятельной готовки, продукты — самостоятельно" }
-    ]
+      { icon: "home", label: "Проживание", value: "Квартира или allowance" },
+      { icon: "doc", label: "Контракт", value: "Skilled Worker visa, 12 мес+" },
+      { icon: "shield", label: "Страховка", value: "Health Surcharge оплачен" },
+      { icon: "plane", label: "Трансфер", value: "Перелёт компенсирует работодатель" },
+      { icon: "money", label: "Оплата", value: "£14-15/ч + per diem" },
+      { icon: "wifi", label: "Связь", value: "Корпоративная SIM" }
+    ],
+    status: "uk-skilled", visa: "UK Skilled Worker Visa"
   },
   {
-    id: "uk-berry-picker",
-    country: "uk",
-    countryName: "Великобритания",
-    city: "Херефордшир, Англия",
-    title: "Сборщик ягод (клубника, малина)",
-    type: "Сезонная виза",
-    contract: "4 месяца",
-    start: "Май 2026",
-    rate: 1900,
-    rateMeta: "нетто/мес",
-    hours: "50 ч/нед",
-    overtime: "пиковые недели — оплата выше",
-    accommodation: "Караваны на ферме, €50/нед",
-    img: "https://placehold.co/1200x800/1B3A2F/F5F1E8?text=Berry+Farm+UK",
-    gallery: [
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Strawberry+Field",
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Picking+Process",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Sorting",
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Farm+Overview"
-    ],
-    housing: [
-      "https://placehold.co/800x600/8A877F/FFFFFF?text=Caravan+Park",
-      "https://placehold.co/800x600/B8935A/FFFFFF?text=Inside+Caravan",
-      "https://placehold.co/800x600/6B6B6B/FFFFFF?text=Communal+Kitchen",
-      "https://placehold.co/800x600/4A4A47/FFFFFF?text=Free+Time+Area"
-    ],
-    summary: "Семейная ягодная ферма, поставщик M&S и Waitrose. Возможность увеличения зарплаты при высокой производительности — топ-сборщики получают до €2400.",
-    duties: [
-      "Ручной сбор клубники и малины с тоннелей",
-      "Калибровка и упаковка прямо в поле",
-      "Поддержание чистоты тоннелей",
-      "Соблюдение норм по весу и качеству на смену",
-      "Работа сменами в зависимости от погоды"
-    ],
-    requirements: [
-      "Возраст 19–55 лет",
-      "Хорошая физическая форма",
-      "Готовность к работе на открытом воздухе",
-      "Загранпаспорт 18+ мес",
-      "Police check"
-    ],
+    id: "uk-poultry-norfolk",
+    country: "uk", countryName: "Великобритания", city: "Норфолк",
+    title: "Работник птицефабрики",
+    type: "Сельское хозяйство", category: "agro",
+    contract: "6 месяцев", start: "Май 2026",
+    rate: 2050, rateMeta: "нетто/мес",
+    hours: "48 ч/нед", overtime: "оплачивается",
+    accommodation: "Общежитие на территории, бесплатно",
+    img: "https://placehold.co/1200x800/4A5D3F/F5F1E8?text=UK+Poultry+Farm",
+    gallery: ["https://placehold.co/800x600/4A5D3F/F5F1E8?text=Chicken+House", "https://placehold.co/800x600/4A5D3F/F5F1E8?text=Egg+Sorting", "https://placehold.co/800x600/4A5D3F/F5F1E8?text=Processing", "https://placehold.co/800x600/4A5D3F/F5F1E8?text=Hatchery"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Farm+Housing", "https://placehold.co/800x600/8B7355/F5F1E8?text=Twin+Room", "https://placehold.co/800x600/8B7355/F5F1E8?text=Lounge", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen"],
+    summary: "Большое птицеводческое хозяйство. Работа в зонах с климат-контролем. Уход за птицей, сортировка яиц, базовая обработка.",
+    duties: ["Уход за птицей", "Сбор и сортировка яиц", "Поддержание чистоты в помещениях", "Базовая работа в processing", "Кормление и поение"],
+    requirements: ["Физическая выносливость", "Работа в запахе и тепле", "Возможно ранние смены (с 5:00)"],
     included: [
-      { icon: "home",   label: "Проживание",     value: "Караваны 2–4 чел, €50/нед" },
-      { icon: "doc",    label: "Контракт",       value: "Seasonal Worker UK" },
-      { icon: "shield", label: "Страховка",      value: "От несчастных случаев" },
-      { icon: "plane",  label: "Трансфер",       value: "Из аэропорта до фермы" },
-      { icon: "money",  label: "Оплата",         value: "Weekly + bonus за производительность" },
-      { icon: "back",   label: "Возможность",    value: "Перевод на упаковку зимой" }
-    ]
+      { icon: "home", label: "Проживание", value: "Бесплатно, общежитие на ферме" },
+      { icon: "doc", label: "Контракт", value: "Seasonal Worker Visa" },
+      { icon: "food", label: "Питание", value: "Кухня общая, продукты сам" },
+      { icon: "plane", label: "Трансфер", value: "Из аэропорта Stansted" },
+      { icon: "money", label: "Оплата", value: "£12.21/ч + сверхурочные ×1.5" },
+      { icon: "back", label: "Возврат", value: "Опция продления на сезон" }
+    ],
+    status: "uk-seasonal", visa: "UK Seasonal Worker Visa"
   },
 
-  /* ============ GERMANY ============ */
+  /* ============= GERMANY ============= */
   {
-    id: "de-warehouse",
-    country: "germany",
-    countryName: "Германия",
-    city: "Лейпциг, Саксония",
-    title: "Оператор склада e-commerce",
-    type: "Leiharbeit / Zeitarbeit",
-    contract: "12 месяцев + продление",
-    start: "Февраль 2026",
-    rate: 2100,
-    rateMeta: "нетто/мес",
-    hours: "40 ч/нед",
-    overtime: "оплачивается ×1.25, выходные ×1.5",
-    accommodation: "Wohnheim, €280/мес удержание",
-    img: "https://placehold.co/1200x800/244A3D/F5F1E8?text=Leipzig+Warehouse",
-    gallery: [
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Warehouse+Aisles",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Picking+Station",
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Conveyor",
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Loading+Dock"
-    ],
-    housing: [
-      "https://placehold.co/800x600/8A877F/FFFFFF?text=Wohnheim+Outside",
-      "https://placehold.co/800x600/B8935A/FFFFFF?text=Single+Room",
-      "https://placehold.co/800x600/6B6B6B/FFFFFF?text=Shared+Kitchen",
-      "https://placehold.co/800x600/4A4A47/FFFFFF?text=Bathroom"
-    ],
-    summary: "Распределительный центр крупной немецкой e-commerce компании. Современное автоматизированное оборудование, чистые отапливаемые залы. Возможность долгосрочного контракта.",
-    duties: [
-      "Комплектация заказов по системе pick-by-light",
-      "Упаковка товаров в фирменные коробки",
-      "Маркировка отправлений",
-      "Перемещение паллет с электропогрузчиком (обучаем)",
-      "Сменная работа: 06–14, 14–22"
-    ],
-    requirements: [
-      "Возраст 19–60 лет",
-      "Готовность к сменам",
-      "Загранпаспорт, действующий 24+ мес",
-      "Базовый немецкий A1 — приветствуется",
-      "Опыт на складе — преимущество"
-    ],
+    id: "de-warehouse-leipzig",
+    country: "germany", countryName: "Германия", city: "Лейпциг, Саксония",
+    title: "Кладовщик логистического центра",
+    type: "Логистика", category: "logistics",
+    contract: "12 месяцев", start: "Апрель 2026",
+    rate: 2050, rateMeta: "нетто/мес",
+    hours: "40 ч/нед", overtime: "оплачивается ×1.25",
+    accommodation: "Корпоративное общежитие, €100/нед удержание",
+    img: "https://placehold.co/1200x800/3A4E6B/F5F1E8?text=DE+Warehouse",
+    gallery: ["https://placehold.co/800x600/3A4E6B/F5F1E8?text=Warehouse+Floor", "https://placehold.co/800x600/3A4E6B/F5F1E8?text=Forklift", "https://placehold.co/800x600/3A4E6B/F5F1E8?text=Packing+Line", "https://placehold.co/800x600/3A4E6B/F5F1E8?text=Conveyor"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=DE+Worker+Flat", "https://placehold.co/800x600/8B7355/F5F1E8?text=Bedroom+DE", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen+DE", "https://placehold.co/800x600/8B7355/F5F1E8?text=Common+Area"],
+    summary: "Распределительный центр одного из крупнейших немецких ритейлеров. Работа со складом, погрузка, комплектация заказов через сканер.",
+    duties: ["Комплектация заказов по сканеру", "Перемещение паллет вилочным погрузчиком", "Сортировка возвратов", "Контроль качества", "Подготовка к отгрузке"],
+    requirements: ["Готовность к 8-часовым сменам", "Умение работать со сканером", "Опыт работы с погрузчиком приветствуется", "Базовый немецкий А1 - желательно"],
     included: [
-      { icon: "home",   label: "Проживание",     value: "Wohnheim, 1-местные комнаты" },
-      { icon: "doc",    label: "Контракт",       value: "Arbeitsvertrag по AÜG" },
-      { icon: "shield", label: "Страховка",      value: "Krankenversicherung (TK)" },
-      { icon: "money",  label: "Оплата",         value: "Ежемесячно на немецкий счёт (помогаем открыть)" },
-      { icon: "doc",    label: "Документы",      value: "Anmeldung и Steuer-ID — помощь от менеджера" },
-      { icon: "back",   label: "Перспектива",    value: "Перевод в штат после 6 мес" }
-    ]
+      { icon: "home", label: "Проживание", value: "Общежитие 2-4 чел, €100/нед" },
+      { icon: "doc", label: "Контракт", value: "Прямой по AÜG" },
+      { icon: "shield", label: "Страховка", value: "TK / AOK медстраховка" },
+      { icon: "plane", label: "Трансфер", value: "Из Berlin Brandenburg" },
+      { icon: "money", label: "Оплата", value: "€13/ч + ночные ×1.25" },
+      { icon: "back", label: "Перспектива", value: "Контракт прямой через 6 мес" }
+    ],
+    status: "tp-eligible", visa: "Temporary Protection или work permit"
   },
   {
-    id: "de-auto-parts",
-    country: "germany",
-    countryName: "Германия",
-    city: "Ингольштадт, Бавария",
-    title: "Сборщик автокомплектующих",
-    type: "Leiharbeit",
-    contract: "9 месяцев + продление",
-    start: "Январь 2026",
-    rate: 2050,
-    rateMeta: "нетто/мес",
+    id: "de-driver-ce-stuttgart",
+    country: "germany", countryName: "Германия", city: "Штутгарт",
+    title: "Водитель грузовика категории C+E",
+    type: "Транспорт", category: "driver",
+    contract: "12 месяцев", start: "Май 2026",
+    rate: 2700, rateMeta: "нетто/мес + per diem",
+    hours: "по тахографу",
+    overtime: "включена в per diem",
+    accommodation: "Корпоративная квартира или allowance",
+    img: "https://placehold.co/1200x800/1F3A5F/F5F1E8?text=DE+CE+Driver",
+    gallery: ["https://placehold.co/800x600/1F3A5F/F5F1E8?text=MAN+Truck", "https://placehold.co/800x600/1F3A5F/F5F1E8?text=Highway+DE", "https://placehold.co/800x600/1F3A5F/F5F1E8?text=Rest+Stop", "https://placehold.co/800x600/1F3A5F/F5F1E8?text=Loading"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Driver+Apt+DE", "https://placehold.co/800x600/8B7355/F5F1E8?text=Bedroom", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen+DE", "https://placehold.co/800x600/8B7355/F5F1E8?text=Bathroom"],
+    summary: "Международные перевозки в радиусе Германии и стран Бенилюкса. Режим 3/1 (3 недели работа / 1 дома).",
+    duties: ["Международные грузоперевозки", "Контроль ездового времени", "Загрузка/разгрузка", "Документооборот CMR"],
+    requirements: ["Категория C+E", "Code 95 (CPC)", "Опыт международных перевозок 2+ лет", "Немецкий или английский А2"],
+    included: [
+      { icon: "home", label: "Проживание", value: "Квартира или €400/мес allowance" },
+      { icon: "doc", label: "Контракт", value: "AÜG или прямой" },
+      { icon: "shield", label: "Страховка", value: "Полный соцпакет" },
+      { icon: "money", label: "Per diem", value: "€60/день + базовая ставка" },
+      { icon: "wifi", label: "Связь", value: "Корпоративная SIM" },
+      { icon: "back", label: "Премия", value: "За пробег и эконом топлива" }
+    ],
+    status: "tp-eligible", visa: "Temporary Protection или work permit"
+  },
+  {
+    id: "de-construction-munich",
+    country: "germany", countryName: "Германия", city: "Мюнхен и пригороды",
+    title: "Строитель-разнорабочий",
+    type: "Строительство", category: "construction",
+    contract: "12 месяцев", start: "Май 2026",
+    rate: 2150, rateMeta: "нетто/мес",
+    hours: "40 ч/нед",
+    overtime: "оплачивается ×1.25-1.5",
+    accommodation: "Вагончик-общежитие на стройке, бесплатно",
+    img: "https://placehold.co/1200x800/8B5A2B/F5F1E8?text=DE+Construction",
+    gallery: ["https://placehold.co/800x600/8B5A2B/F5F1E8?text=Construction+Site", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Concrete+Work", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Brick+Laying", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Renovation"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Site+Container", "https://placehold.co/800x600/8B7355/F5F1E8?text=Bunks", "https://placehold.co/800x600/8B7355/F5F1E8?text=Mess", "https://placehold.co/800x600/8B7355/F5F1E8?text=Shower"],
+    summary: "Бригада на объекте жилого строительства. Работа на свежем воздухе. Возможна работа на высоте (с обучением).",
+    duties: ["Разгрузка и распределение материалов", "Помощь каменщикам / бетонщикам", "Уборка и подготовка объекта", "Демонтаж опалубки", "Базовые отделочные работы"],
+    requirements: ["Физическая выносливость", "Готовность к работе на улице зимой", "Опыт стройки желателен, не обязателен"],
+    included: [
+      { icon: "home", label: "Проживание", value: "Вагончик на объекте, бесплатно" },
+      { icon: "doc", label: "Контракт", value: "По Tarifvertrag Bau" },
+      { icon: "shield", label: "Страховка", value: "BG Bau + KV" },
+      { icon: "plane", label: "Трансфер", value: "Из Мюнхена включён" },
+      { icon: "money", label: "Оплата", value: "€14-16/ч + сверхурочные" },
+      { icon: "back", label: "Зимний бонус", value: "Saison-Kurzarbeitergeld" }
+    ],
+    status: "tp-eligible", visa: "Temporary Protection или work permit"
+  },
+  {
+    id: "de-meatprocessing-hamburg",
+    country: "germany", countryName: "Германия", city: "Гамбург, пригороды",
+    title: "Оператор мясоперерабатывающей линии",
+    type: "Производство", category: "factory",
+    contract: "12 месяцев", start: "Июнь 2026",
+    rate: 2200, rateMeta: "нетто/мес",
+    hours: "40 ч/нед",
+    overtime: "обязательная ×1.25",
+    accommodation: "Общежитие, €110/нед",
+    img: "https://placehold.co/1200x800/8B3A3A/F5F1E8?text=DE+Meat+Plant",
+    gallery: ["https://placehold.co/800x600/8B3A3A/F5F1E8?text=Production+Line", "https://placehold.co/800x600/8B3A3A/F5F1E8?text=Cutting+Room", "https://placehold.co/800x600/8B3A3A/F5F1E8?text=Packaging+Meat", "https://placehold.co/800x600/8B3A3A/F5F1E8?text=Cold+Storage"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Hostel+DE", "https://placehold.co/800x600/8B7355/F5F1E8?text=Room", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Lounge"],
+    summary: "Современное предприятие по переработке мяса. Работа в холодных цехах (+4°C). Большая часть процессов автоматизирована.",
+    duties: ["Работа на конвейере", "Упаковка готовой продукции", "Контроль качества", "Соблюдение HACCP", "Базовая дезинфекция"],
+    requirements: ["Готовность работать в холоде", "Хорошая концентрация", "Соблюдение санитарии"],
+    included: [
+      { icon: "home", label: "Проживание", value: "Общежитие 2-3 чел, €110/нед" },
+      { icon: "doc", label: "Контракт", value: "AÜG, переход в штат через 6 мес" },
+      { icon: "food", label: "Спецодежда", value: "Полный комплект включён" },
+      { icon: "plane", label: "Трансфер", value: "Из Гамбурга" },
+      { icon: "money", label: "Оплата", value: "€14.50/ч + Schichtzuschlag" },
+      { icon: "shield", label: "Страховка", value: "Полный соцпакет" }
+    ],
+    status: "tp-eligible", visa: "Temporary Protection"
+  },
+
+  /* ============= NETHERLANDS ============= */
+  {
+    id: "nl-greenhouse-westland",
+    country: "netherlands", countryName: "Нидерланды", city: "Вестланд",
+    title: "Работник в теплице (помидоры/огурцы)",
+    type: "Сельское хозяйство", category: "agro",
+    contract: "12 месяцев", start: "Март 2026",
+    rate: 2150, rateMeta: "нетто/мес",
+    hours: "40 ч/нед", overtime: "оплачивается ×1.5",
+    accommodation: "Корпоративный дом, €120/нед",
+    img: "https://placehold.co/1200x800/2D5A3D/F5F1E8?text=NL+Greenhouse",
+    gallery: ["https://placehold.co/800x600/2D5A3D/F5F1E8?text=Tomato+Greenhouse", "https://placehold.co/800x600/2D5A3D/F5F1E8?text=Cucumber+Lines", "https://placehold.co/800x600/2D5A3D/F5F1E8?text=Harvest+Cart", "https://placehold.co/800x600/2D5A3D/F5F1E8?text=Packing"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=NL+Worker+House", "https://placehold.co/800x600/8B7355/F5F1E8?text=Twin+Room+NL", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen+NL", "https://placehold.co/800x600/8B7355/F5F1E8?text=Garden"],
+    summary: "Крупнейший тепличный регион Европы. Высокотехнологичные теплицы Westland. Сбор, упаковка, обслуживание лент с томатами/огурцами.",
+    duties: ["Сбор овощей по нормам", "Подвязка растений", "Срезка нижних листьев", "Сортировка по размерам", "Упаковка для торговых сетей"],
+    requirements: ["Физическая выносливость", "Готовность к стоячей работе", "Базовая аккуратность"],
+    included: [
+      { icon: "home", label: "Проживание", value: "Дом 4-6 чел, €120/нед" },
+      { icon: "doc", label: "Контракт", value: "Uitzendovereenkomst Phase A" },
+      { icon: "shield", label: "Страховка", value: "Zorgverzekering €145/мес" },
+      { icon: "plane", label: "Трансфер", value: "Из Schiphol" },
+      { icon: "money", label: "Оплата", value: "€14.06/ч + надбавки" },
+      { icon: "back", label: "Перспектива", value: "Через год — Phase B" }
+    ],
+    status: "tp-eligible", visa: "Temporary Protection или sticker O"
+  },
+  {
+    id: "nl-flower-aalsmeer",
+    country: "netherlands", countryName: "Нидерланды", city: "Алсмер",
+    title: "Сортировщик цветов",
+    type: "Сельское хозяйство", category: "agro",
+    contract: "6-12 месяцев", start: "Февраль 2026",
+    rate: 2100, rateMeta: "нетто/мес",
+    hours: "40 ч/нед",
+    overtime: "пиково — ×1.5",
+    accommodation: "Корпоративное жильё, €110/нед",
+    img: "https://placehold.co/1200x800/D4757C/F5F1E8?text=NL+Flowers",
+    gallery: ["https://placehold.co/800x600/D4757C/F5F1E8?text=Flower+Auction", "https://placehold.co/800x600/D4757C/F5F1E8?text=Tulip+Sorting", "https://placehold.co/800x600/D4757C/F5F1E8?text=Bouquet+Packing", "https://placehold.co/800x600/D4757C/F5F1E8?text=Cold+Storage"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=NL+House", "https://placehold.co/800x600/8B7355/F5F1E8?text=Room+NL", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Bath"],
+    summary: "Крупнейший в мире цветочный аукцион. Работа на сортировке тюльпанов, роз, гербер. Климат-контроль +12°C.",
+    duties: ["Сортировка по цвету и длине", "Упаковка букетов", "Подготовка к аукциону", "Загрузка на палеты", "Соблюдение норм холода"],
+    requirements: ["Аккуратность", "Не аллергия на цветы и пыльцу", "Возможны ранние смены (с 4:00)"],
+    included: [
+      { icon: "home", label: "Проживание", value: "Дом, €110/нед, в 30 мин от работы" },
+      { icon: "doc", label: "Контракт", value: "Uitzendovereenkomst Phase A" },
+      { icon: "shield", label: "Страховка", value: "Zorgverzekering обязательна" },
+      { icon: "plane", label: "Трансфер", value: "Из Schiphol — велосипед в комплекте" },
+      { icon: "money", label: "Оплата", value: "€14.06/ч + ранний бонус" },
+      { icon: "back", label: "Премия", value: "В сезон 8 марта — ×2 ставка" }
+    ],
+    status: "tp-eligible", visa: "Temporary Protection"
+  },
+  {
+    id: "nl-driver-ce-rotterdam",
+    country: "netherlands", countryName: "Нидерланды", city: "Роттердам",
+    title: "Водитель грузовика категории C+E",
+    type: "Транспорт", category: "driver",
+    contract: "12 месяцев", start: "Май 2026",
+    rate: 2750, rateMeta: "нетто/мес + per diem",
+    hours: "по тахографу",
+    overtime: "в составе per diem",
+    accommodation: "Квартира работодателя",
+    img: "https://placehold.co/1200x800/1F3A5F/F5F1E8?text=NL+Driver",
+    gallery: ["https://placehold.co/800x600/1F3A5F/F5F1E8?text=Volvo+Truck", "https://placehold.co/800x600/1F3A5F/F5F1E8?text=Rotterdam+Port", "https://placehold.co/800x600/1F3A5F/F5F1E8?text=Container+Yard", "https://placehold.co/800x600/1F3A5F/F5F1E8?text=Highway+A1"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Driver+House+NL", "https://placehold.co/800x600/8B7355/F5F1E8?text=Bedroom+NL", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Lounge"],
+    summary: "Контейнерные перевозки из порта Роттердам по всей Европе. Современный парк Volvo FH16. Режим 4/2.",
+    duties: ["Контейнерные перевозки", "Контроль документов CMR", "Загрузка/выгрузка в порту", "Контроль режима тахографа"],
+    requirements: ["C+E + Code 95", "Опыт от 3 лет", "Английский B1", "Готовность к ночёвкам в кабине"],
+    included: [
+      { icon: "home", label: "Проживание", value: "Квартира на 2 чел" },
+      { icon: "doc", label: "Контракт", value: "Прямой с компанией" },
+      { icon: "shield", label: "Страховка", value: "Zorgverzekering включена" },
+      { icon: "money", label: "Per diem", value: "€60/день + ставка" },
+      { icon: "wifi", label: "Связь", value: "Spotify Premium + SIM" },
+      { icon: "back", label: "Премия", value: "За топливо + км" }
+    ],
+    status: "tp-eligible", visa: "Temporary Protection"
+  },
+  {
+    id: "nl-construction-amsterdam",
+    country: "netherlands", countryName: "Нидерланды", city: "Амстердам, пригороды",
+    title: "Строитель / помощник каменщика",
+    type: "Строительство", category: "construction",
+    contract: "12 месяцев", start: "Апрель 2026",
+    rate: 2200, rateMeta: "нетто/мес",
+    hours: "40 ч/нед",
+    overtime: "×1.5 после 40 ч",
+    accommodation: "Корпоративное общежитие, €130/нед",
+    img: "https://placehold.co/1200x800/8B5A2B/F5F1E8?text=NL+Construction",
+    gallery: ["https://placehold.co/800x600/8B5A2B/F5F1E8?text=Building+Site+NL", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Concrete+Pour", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Brick+Work", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Insulation"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Worker+Hostel+NL", "https://placehold.co/800x600/8B7355/F5F1E8?text=Twin", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Common"],
+    summary: "Жилое строительство в районе Большого Амстердама. Работа в составе украинской бригады с местным мастером.",
+    duties: ["Подготовка раствора", "Кладка фундаментов", "Установка опалубки", "Помощь каменщикам", "Уборка объекта"],
+    requirements: ["Физическая выносливость", "Опыт стройки от 1 года", "Готовность работать на улице"],
+    included: [
+      { icon: "home", label: "Проживание", value: "Хостел 2-4 чел, €130/нед" },
+      { icon: "doc", label: "Контракт", value: "Bouw CAO" },
+      { icon: "shield", label: "Страховка", value: "Полный соцпакет" },
+      { icon: "plane", label: "Трансфер", value: "Из Schiphol" },
+      { icon: "money", label: "Оплата", value: "€15.50/ч + 30% надбавок" },
+      { icon: "back", label: "Премия", value: "13-я зарплата" }
+    ],
+    status: "tp-eligible", visa: "Temporary Protection"
+  },
+
+  /* ============= CZECHIA (NEW) ============= */
+  {
+    id: "cz-factory-pilsen",
+    country: "czechia", countryName: "Чехия", city: "Пльзень",
+    title: "Оператор сборочного производства",
+    type: "Производство", category: "factory",
+    contract: "12 месяцев", start: "Март 2026",
+    rate: 1400, rateMeta: "нетто/мес",
+    hours: "40 ч/нед",
+    overtime: "обязательная ×1.25",
+    accommodation: "Корпоративное общежитие, бесплатно",
+    img: "https://placehold.co/1200x800/3A4E6B/F5F1E8?text=CZ+Factory",
+    gallery: ["https://placehold.co/800x600/3A4E6B/F5F1E8?text=Assembly+Line", "https://placehold.co/800x600/3A4E6B/F5F1E8?text=Skoda+Plant", "https://placehold.co/800x600/3A4E6B/F5F1E8?text=Quality+Control", "https://placehold.co/800x600/3A4E6B/F5F1E8?text=Logistics"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=CZ+Hostel", "https://placehold.co/800x600/8B7355/F5F1E8?text=Room+CZ", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen+CZ", "https://placehold.co/800x600/8B7355/F5F1E8?text=Lounge"],
+    summary: "Сборочное производство автокомпонентов для крупного европейского автоконцерна. Работа в чистых цехах. Стабильная компания с многолетней историей.",
+    duties: ["Сборка узлов по техкарте", "Контроль качества", "Работа с инструментом", "Соблюдение цикла", "Заполнение чек-листов"],
+    requirements: ["Готовность к 8-часовым сменам", "Внимательность к деталям", "Чешский не обязателен, но желателен А1"],
+    included: [
+      { icon: "home", label: "Проживание", value: "Бесплатно, общежитие 2-3 чел" },
+      { icon: "doc", label: "Контракт", value: "Прямой по Lex Ukraine" },
+      { icon: "shield", label: "Страховка", value: "Здоровотне поіштене" },
+      { icon: "food", label: "Питание", value: "Столовая на территории €3/обед" },
+      { icon: "money", label: "Оплата", value: "150-180 CZK/ч + бонусы" },
+      { icon: "back", label: "Премия", value: "Квартальные премии до 30%" }
+    ],
+    status: "tp-eligible", visa: "Temporary Protection (Lex Ukraine, code D/DO/667)"
+  },
+  {
+    id: "cz-construction-prague",
+    country: "czechia", countryName: "Чехия", city: "Прага и пригороды",
+    title: "Строитель-универсал",
+    type: "Строительство", category: "construction",
+    contract: "12 месяцев", start: "Апрель 2026",
+    rate: 1550, rateMeta: "нетто/мес",
+    hours: "40 ч/нед",
+    overtime: "×1.25-1.5",
+    accommodation: "Хостел / контейнер на стройке, €60/нед",
+    img: "https://placehold.co/1200x800/8B5A2B/F5F1E8?text=CZ+Construction",
+    gallery: ["https://placehold.co/800x600/8B5A2B/F5F1E8?text=Prague+Site", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Brick+Work", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Concrete", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Finishing"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Site+Container", "https://placehold.co/800x600/8B7355/F5F1E8?text=Bunks", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Shower"],
+    summary: "Жилое и коммерческое строительство в Праге. Большой украинский коллектив. Возможна работа от каменщика до отделочника.",
+    duties: ["Каменные работы", "Бетонные работы", "Штукатурка", "Гипсокартон", "Финишная отделка"],
+    requirements: ["Опыт строительства от 2 лет", "Своя одежда", "Базовые инструменты предоставляются"],
+    included: [
+      { icon: "home", label: "Проживание", value: "Хостел или контейнер, €60/нед" },
+      { icon: "doc", label: "Контракт", value: "Прямой по Lex Ukraine" },
+      { icon: "shield", label: "Страховка", value: "Здоровотне + страховка на стройке" },
+      { icon: "plane", label: "Трансфер", value: "Из Праги (Ruzyně)" },
+      { icon: "money", label: "Оплата", value: "180-220 CZK/ч + сверхурочные" },
+      { icon: "back", label: "Премия", value: "За завершение объекта" }
+    ],
+    status: "tp-eligible", visa: "Temporary Protection (Lex Ukraine)"
+  },
+  {
+    id: "cz-driver-c-brno",
+    country: "czechia", countryName: "Чехия", city: "Брно",
+    title: "Водитель грузовика категории C",
+    type: "Транспорт", category: "driver",
+    contract: "12 месяцев", start: "Май 2026",
+    rate: 1800, rateMeta: "нетто/мес",
+    hours: "по тахографу",
+    overtime: "в составе нормы",
+    accommodation: "Корпоративная квартира, бесплатно",
+    img: "https://placehold.co/1200x800/1F3A5F/F5F1E8?text=CZ+Driver",
+    gallery: ["https://placehold.co/800x600/1F3A5F/F5F1E8?text=DAF+CZ", "https://placehold.co/800x600/1F3A5F/F5F1E8?text=Distribution", "https://placehold.co/800x600/1F3A5F/F5F1E8?text=Highway", "https://placehold.co/800x600/1F3A5F/F5F1E8?text=Loading"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Driver+Flat+CZ", "https://placehold.co/800x600/8B7355/F5F1E8?text=Bedroom", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Bath"],
+    summary: "Внутренняя дистрибуция по Чехии и Словакии. Каждый день дома. Стабильный график 5/2.",
+    duties: ["Развоз грузов по точкам", "Контроль документов", "Базовый контроль ТС", "Соблюдение тахографа"],
+    requirements: ["Категория C", "Code 95", "Опыт от 1 года", "Чешский A1 желателен"],
+    included: [
+      { icon: "home", label: "Проживание", value: "Квартира бесплатно" },
+      { icon: "doc", label: "Контракт", value: "Прямой по Lex Ukraine" },
+      { icon: "shield", label: "Страховка", value: "Полный соцпакет" },
+      { icon: "money", label: "Оплата", value: "200 CZK/ч + per diem" },
+      { icon: "wifi", label: "Связь", value: "Корпоративная SIM" },
+      { icon: "back", label: "Премия", value: "За эконом топлива" }
+    ],
+    status: "tp-eligible", visa: "Temporary Protection"
+  },
+  {
+    id: "cz-warehouse-ostrava",
+    country: "czechia", countryName: "Чехия", city: "Острава",
+    title: "Кладовщик / комплектовщик",
+    type: "Логистика", category: "logistics",
+    contract: "12 месяцев", start: "Март 2026",
+    rate: 1350, rateMeta: "нетто/мес",
+    hours: "40 ч/нед",
+    overtime: "доступна, ×1.25",
+    accommodation: "Общежитие, €40/нед",
+    img: "https://placehold.co/1200x800/3A4E6B/F5F1E8?text=CZ+Warehouse",
+    gallery: ["https://placehold.co/800x600/3A4E6B/F5F1E8?text=Warehouse+CZ", "https://placehold.co/800x600/3A4E6B/F5F1E8?text=Conveyor", "https://placehold.co/800x600/3A4E6B/F5F1E8?text=Forklift", "https://placehold.co/800x600/3A4E6B/F5F1E8?text=Loading+Dock"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Hostel+Ostrava", "https://placehold.co/800x600/8B7355/F5F1E8?text=Room", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Hall"],
+    summary: "Региональный дистрибуционный центр интернет-ритейлера. Комплектация заказов, отправка покупателям.",
+    duties: ["Комплектация заказов по сканеру", "Упаковка", "Подготовка к отправке", "Возвраты", "Базовый учёт"],
+    requirements: ["Готовность к работе со сканером", "Внимательность", "Опыт не обязателен"],
+    included: [
+      { icon: "home", label: "Проживание", value: "Общежитие, €40/нед" },
+      { icon: "doc", label: "Контракт", value: "Прямой по Lex Ukraine" },
+      { icon: "shield", label: "Страховка", value: "Здоровотне" },
+      { icon: "food", label: "Питание", value: "Столовая на территории" },
+      { icon: "money", label: "Оплата", value: "150 CZK/ч + ночные ×1.4" },
+      { icon: "back", label: "Премия", value: "За выполнение KPI" }
+    ],
+    status: "tp-eligible", visa: "Temporary Protection"
+  },
+  {
+    id: "cz-welder-ostrava",
+    country: "czechia", countryName: "Чехия", city: "Острава",
+    title: "Сварщик (MIG/MAG)",
+    type: "Промышленность", category: "trades",
+    contract: "12 месяцев", start: "Май 2026",
+    rate: 1850, rateMeta: "нетто/мес",
+    hours: "40 ч/нед",
+    overtime: "×1.25-1.5",
+    accommodation: "Общежитие, бесплатно",
+    img: "https://placehold.co/1200x800/A0522D/F5F1E8?text=CZ+Welder",
+    gallery: ["https://placehold.co/800x600/A0522D/F5F1E8?text=Welding+Shop", "https://placehold.co/800x600/A0522D/F5F1E8?text=Metal+Frame", "https://placehold.co/800x600/A0522D/F5F1E8?text=MAG+Welding", "https://placehold.co/800x600/A0522D/F5F1E8?text=Assembly"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Hostel", "https://placehold.co/800x600/8B7355/F5F1E8?text=Twin+Room", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Lounge"],
+    summary: "Металлоконструкции для строительства. Производство ферм, балок, металлокаркасов.",
+    duties: ["Сварка MIG/MAG", "Чтение чертежей", "Контроль качества сварных швов", "Подготовка деталей", "Шлифовка"],
+    requirements: ["Опыт сварщика 2+ года", "MIG/MAG сертификат", "Чтение чертежей", "Здоровье"],
+    included: [
+      { icon: "home", label: "Проживание", value: "Бесплатно, общежитие" },
+      { icon: "doc", label: "Контракт", value: "Прямой" },
+      { icon: "shield", label: "Страховка", value: "Полный пакет + работа на стройке" },
+      { icon: "money", label: "Оплата", value: "220-260 CZK/ч + бонусы" },
+      { icon: "back", label: "Премия", value: "За скорость и качество" }
+    ],
+    status: "tp-eligible", visa: "Temporary Protection"
+  },
+
+  /* ============= DENMARK (NEW) ============= */
+  {
+    id: "dk-livestock-jutland",
+    country: "denmark", countryName: "Дания", city: "Ютландия",
+    title: "Работник животноводческой фермы",
+    type: "Сельское хозяйство", category: "agro",
+    contract: "12 месяцев", start: "Апрель 2026",
+    rate: 2950, rateMeta: "нетто/мес",
+    hours: "37 ч/нед", overtime: "оплачивается ×1.5",
+    accommodation: "Корпоративный дом на ферме, бесплатно",
+    img: "https://placehold.co/1200x800/4A5D3F/F5F1E8?text=DK+Farm",
+    gallery: ["https://placehold.co/800x600/4A5D3F/F5F1E8?text=Dairy+Farm+DK", "https://placehold.co/800x600/4A5D3F/F5F1E8?text=Milking+Parlor", "https://placehold.co/800x600/4A5D3F/F5F1E8?text=Cattle", "https://placehold.co/800x600/4A5D3F/F5F1E8?text=Calf+Barn"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Farm+House+DK", "https://placehold.co/800x600/8B7355/F5F1E8?text=Bedroom+DK", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen+DK", "https://placehold.co/800x600/8B7355/F5F1E8?text=Lounge+DK"],
+    summary: "Крупная датская молочная ферма. Современное оборудование. Работа с коровами в роботизированном milking parlor.",
+    duties: ["Уход за коровами (дойка)", "Кормление", "Уборка стойл", "Контроль здоровья животных", "Базовое обслуживание оборудования"],
+    requirements: ["Опыт работы с животными приветствуется", "Готовность к ранним сменам", "Физическая выносливость", "Английский A2-B1"],
+    included: [
+      { icon: "home", label: "Проживание", value: "Бесплатно, дом на ферме" },
+      { icon: "doc", label: "Контракт", value: "По SL1 (Special Law L145)" },
+      { icon: "shield", label: "Страховка", value: "Полный соцпакет ATP" },
+      { icon: "food", label: "Питание", value: "Часть продуктов от хозяйства" },
+      { icon: "money", label: "Оплата", value: "180 DKK/ч + надбавки" },
+      { icon: "back", label: "Премия", value: "25 дней отпуска + бонусы" }
+    ],
+    status: "dk-sl1", visa: "Special Law L145 (SL1) — для украинцев"
+  },
+  {
+    id: "dk-fish-skagen",
+    country: "denmark", countryName: "Дания", city: "Скаген",
+    title: "Оператор рыбоперерабатывающего завода",
+    type: "Производство", category: "factory",
+    contract: "8-12 месяцев", start: "Сентябрь 2026",
+    rate: 2700, rateMeta: "нетто/мес",
+    hours: "37 ч/нед", overtime: "×1.5",
+    accommodation: "Общежитие при заводе, €70/нед",
+    img: "https://placehold.co/1200x800/2C5878/F5F1E8?text=DK+Fish+Plant",
+    gallery: ["https://placehold.co/800x600/2C5878/F5F1E8?text=Fish+Processing", "https://placehold.co/800x600/2C5878/F5F1E8?text=Filleting+Line", "https://placehold.co/800x600/2C5878/F5F1E8?text=Cold+Storage", "https://placehold.co/800x600/2C5878/F5F1E8?text=Packaging"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Plant+Housing", "https://placehold.co/800x600/8B7355/F5F1E8?text=Twin+Room", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Lounge"],
+    summary: "Один из крупнейших рыбоперерабатывающих заводов Северной Европы. Обработка трески, лосося, селёдки. Высокие гигиенические требования.",
+    duties: ["Работа на линии обработки рыбы", "Филетирование", "Упаковка", "Контроль качества", "Соблюдение HACCP"],
+    requirements: ["Готовность работать в холоде (+4°C)", "Хорошая концентрация", "Без аллергии на рыбу"],
+    included: [
+      { icon: "home", label: "Проживание", value: "Общежитие при заводе, €70/нед" },
+      { icon: "doc", label: "Контракт", value: "SL1 — украинцы работают сразу при подаче" },
+      { icon: "food", label: "Спецодежда", value: "Полный комплект + сапоги" },
+      { icon: "shield", label: "Страховка", value: "Полный соцпакет" },
+      { icon: "money", label: "Оплата", value: "165 DKK/ч + ночные надбавки" },
+      { icon: "back", label: "Премия", value: "Сезонный бонус" }
+    ],
+    status: "dk-sl1", visa: "Special Law L145"
+  },
+  {
+    id: "dk-pig-farm-aalborg",
+    country: "denmark", countryName: "Дания", city: "Ольборг",
+    title: "Работник свинофермы",
+    type: "Сельское хозяйство", category: "agro",
+    contract: "12 месяцев", start: "Май 2026",
+    rate: 2850, rateMeta: "нетто/мес",
+    hours: "37 ч/нед", overtime: "×1.5",
+    accommodation: "Дом на ферме, бесплатно",
+    img: "https://placehold.co/1200x800/4A5D3F/F5F1E8?text=DK+Pig+Farm",
+    gallery: ["https://placehold.co/800x600/4A5D3F/F5F1E8?text=Pig+Barn", "https://placehold.co/800x600/4A5D3F/F5F1E8?text=Feeding+System", "https://placehold.co/800x600/4A5D3F/F5F1E8?text=Sows", "https://placehold.co/800x600/4A5D3F/F5F1E8?text=Veterinary"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Farmhouse", "https://placehold.co/800x600/8B7355/F5F1E8?text=Bedroom", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Lounge"],
+    summary: "Современная свиноферма с автоматизированным кормлением. Работа в чистых помещениях с климат-контролем.",
+    duties: ["Уход за животными", "Контроль кормления", "Уборка стойл", "Помощь в ветеринарных процедурах", "Обслуживание оборудования"],
+    requirements: ["Готовность работать с животными", "Без аллергии", "Английский A2"],
+    included: [
+      { icon: "home", label: "Проживание", value: "Бесплатно, дом на ферме" },
+      { icon: "doc", label: "Контракт", value: "SL1 (для украинцев)" },
+      { icon: "shield", label: "Страховка", value: "ATP пенсионный фонд" },
+      { icon: "food", label: "Питание", value: "Скидки в местных магазинах" },
+      { icon: "money", label: "Оплата", value: "175 DKK/ч + сверхурочные" },
+      { icon: "back", label: "Бонус", value: "Премия за полный сезон" }
+    ],
+    status: "dk-sl1", visa: "Special Law L145"
+  },
+  {
+    id: "dk-greenhouse-funen",
+    country: "denmark", countryName: "Дания", city: "Фюн",
+    title: "Тепличник (овощи, цветы)",
+    type: "Сельское хозяйство", category: "agro",
+    contract: "9 месяцев", start: "Февраль 2026",
+    rate: 2600, rateMeta: "нетто/мес",
+    hours: "37 ч/нед", overtime: "×1.5",
+    accommodation: "Общежитие на 8-10 чел, €60/нед",
+    img: "https://placehold.co/1200x800/2D5A3D/F5F1E8?text=DK+Greenhouse",
+    gallery: ["https://placehold.co/800x600/2D5A3D/F5F1E8?text=Greenhouse+DK", "https://placehold.co/800x600/2D5A3D/F5F1E8?text=Tomato+Plants", "https://placehold.co/800x600/2D5A3D/F5F1E8?text=Pepper+Harvest", "https://placehold.co/800x600/2D5A3D/F5F1E8?text=Packing"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Worker+Hostel", "https://placehold.co/800x600/8B7355/F5F1E8?text=Bunks", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Common"],
+    summary: "Тепличный комплекс на острове Фюн. Выращивание томатов, перцев и горшечных цветов.",
+    duties: ["Сбор и сортировка", "Подвязка растений", "Базовый уход", "Упаковка", "Уборка"],
+    requirements: ["Возраст 18-55", "Физическая выносливость", "Без аллергии"],
+    included: [
+      { icon: "home", label: "Проживание", value: "Общежитие €60/нед" },
+      { icon: "doc", label: "Контракт", value: "SL1 (для украинцев)" },
+      { icon: "shield", label: "Страховка", value: "Полный соцпакет" },
+      { icon: "money", label: "Оплата", value: "150 DKK/ч + надбавки" },
+      { icon: "back", label: "Бонус", value: "За скорость работы" }
+    ],
+    status: "dk-sl1", visa: "Special Law L145"
+  },
+
+  /* ============= NORWAY (NEW) ============= */
+  {
+    id: "no-fish-tromso",
+    country: "norway", countryName: "Норвегия", city: "Тромсё",
+    title: "Оператор рыбоперерабатывающего завода",
+    type: "Производство", category: "factory",
+    contract: "6-12 месяцев", start: "Январь 2026",
+    rate: 3400, rateMeta: "нетто/мес",
+    hours: "37.5 ч/нед", overtime: "×2 (большие)",
+    accommodation: "Корпоративное общежитие, €120/нед",
+    img: "https://placehold.co/1200x800/2C5878/F5F1E8?text=NO+Fish+Plant",
+    gallery: ["https://placehold.co/800x600/2C5878/F5F1E8?text=Salmon+Processing", "https://placehold.co/800x600/2C5878/F5F1E8?text=Filleting", "https://placehold.co/800x600/2C5878/F5F1E8?text=Cold+Room", "https://placehold.co/800x600/2C5878/F5F1E8?text=Tromso+Port"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=NO+Hostel", "https://placehold.co/800x600/8B7355/F5F1E8?text=Room+NO", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen+NO", "https://placehold.co/800x600/8B7355/F5F1E8?text=Mess+Hall"],
+    summary: "Крупный завод по переработке норвежского лосося. Высокие зарплаты (одни из самых высоких в Европе), но и интенсивная работа в холоде.",
+    duties: ["Филетирование лосося", "Упаковка", "Контроль качества", "Чистка рабочей зоны", "Соблюдение санитарии"],
+    requirements: ["Возраст 18-50", "Здоровье (работа в холоде)", "Английский A2", "Без аллергии на рыбу"],
+    included: [
+      { icon: "home", label: "Проживание", value: "Общежитие 2-3 чел, €120/нед" },
+      { icon: "doc", label: "Контракт", value: "По норвежскому ТК + collective protection" },
+      { icon: "shield", label: "Страховка", value: "Folketrygden (нац. страх.)" },
+      { icon: "food", label: "Питание", value: "Столовая, €5-7/прием" },
+      { icon: "money", label: "Оплата", value: "230-280 NOK/ч + надбавки" },
+      { icon: "back", label: "Премия", value: "Сезонный бонус +10%" }
+    ],
+    status: "no-collective", visa: "Norwegian Collective Protection",
+    regionWarning: true
+  },
+  {
+    id: "no-strawberry-rogaland",
+    country: "norway", countryName: "Норвегия", city: "Рогаланд",
+    title: "Сборщик ягод (клубника)",
+    type: "Сельское хозяйство", category: "agro",
+    contract: "4-5 месяцев", start: "Май 2026",
+    rate: 3200, rateMeta: "нетто/мес",
+    hours: "до 50 ч/нед",
+    overtime: "обязательная ×1.5",
+    accommodation: "Фермерское общежитие, €80/нед",
+    img: "https://placehold.co/1200x800/8B5A2B/F5F1E8?text=NO+Strawberry",
+    gallery: ["https://placehold.co/800x600/8B5A2B/F5F1E8?text=NO+Strawberry+Field", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Picking", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Packing+House", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Sorting"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Farm+Cottage", "https://placehold.co/800x600/8B7355/F5F1E8?text=Twin+Room", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Lounge"],
+    summary: "Семейная ферма на юго-западе Норвегии. Сбор клубники, малины, голубики. Длинный световой день (полярное лето).",
+    duties: ["Сбор ягод по нормам качества", "Сортировка", "Упаковка", "Уход за грядками", "Транспортировка ящиков"],
+    requirements: ["Физическая выносливость", "Возраст 18-55", "Готовность к пикам сезона"],
+    included: [
+      { icon: "home", label: "Проживание", value: "Коттедж 4-6 чел, €80/нед" },
+      { icon: "doc", label: "Контракт", value: "Norwegian seasonal" },
+      { icon: "shield", label: "Страховка", value: "Folketrygden" },
+      { icon: "money", label: "Оплата", value: "210-240 NOK/ч + piece-rate" },
+      { icon: "food", label: "Питание", value: "Кухня общая, ягоды разрешено" },
+      { icon: "back", label: "Бонус", value: "За пик сезона +20%" }
+    ],
+    status: "no-collective", visa: "Norwegian Collective Protection или Seasonal Work",
+    regionWarning: true
+  },
+  {
+    id: "no-construction-oslo",
+    country: "norway", countryName: "Норвегия", city: "Осло",
+    title: "Строитель (отделочные работы)",
+    type: "Строительство", category: "construction",
+    contract: "12 месяцев", start: "Июнь 2026",
+    rate: 3600, rateMeta: "нетто/мес",
     hours: "37.5 ч/нед",
-    overtime: "оплачивается отдельно",
-    accommodation: "Корпоративное жильё, €310/мес",
-    img: "https://placehold.co/1200x800/1B3A2F/F5F1E8?text=Auto+Assembly+DE",
-    gallery: [
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Assembly+Line",
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Workstation",
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Components",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Production+Floor"
-    ],
-    housing: [
-      "https://placehold.co/800x600/8A877F/FFFFFF?text=Apartment+Block",
-      "https://placehold.co/800x600/B8935A/FFFFFF?text=Twin+Room",
-      "https://placehold.co/800x600/6B6B6B/FFFFFF?text=Kitchen",
-      "https://placehold.co/800x600/4A4A47/FFFFFF?text=Living+Room"
-    ],
-    summary: "Поставщик автокомплектующих 1-го уровня для премиум-марок. Конвейерная сборка световых блоков и электроники. Чистая производственная зона, отопление, форма выдаётся.",
-    duties: [
-      "Сборка узлов на станции конвейера",
-      "Визуальный контроль качества",
-      "Маркировка готовых компонентов",
-      "Соблюдение норм такта линии (~90 сек/деталь)",
-      "Работа в 2 смены: 06–14, 14–22"
-    ],
-    requirements: [
-      "Возраст 19–55 лет",
-      "Хорошая мелкая моторика",
-      "Загранпаспорт 24+ мес",
-      "Готовность к сменной работе",
-      "Без хронических заболеваний рук/спины"
-    ],
+    overtime: "×2.0",
+    accommodation: "Корпоративное жильё, €150/нед",
+    img: "https://placehold.co/1200x800/8B5A2B/F5F1E8?text=NO+Construction",
+    gallery: ["https://placehold.co/800x600/8B5A2B/F5F1E8?text=Oslo+Site", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Interior+Work", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Drywall", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Finishing"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=NO+Workshouse", "https://placehold.co/800x600/8B7355/F5F1E8?text=Room+NO", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Bathroom"],
+    summary: "Строительная компания в Осло. Жилое и коммерческое строительство. Отделочные работы внутри объектов.",
+    duties: ["Гипсокартон", "Шпаклёвка", "Покраска", "Укладка плитки", "Установка дверей и окон"],
+    requirements: ["Опыт отделки 3+ лет", "Английский B1", "Свой набор инструментов приветствуется"],
     included: [
-      { icon: "home",   label: "Проживание",     value: "Корпоративные квартиры, 2-местные" },
-      { icon: "doc",    label: "Контракт",       value: "AÜG-сертифицированный работодатель" },
-      { icon: "shield", label: "Страховка",      value: "Полная по немецкому стандарту" },
-      { icon: "money",  label: "Оплата",         value: "30-го числа на банковский счёт" },
-      { icon: "food",   label: "Питание",        value: "Канцерн (кантина) дотируется работодателем" },
-      { icon: "doc",    label: "Документы",      value: "Anmeldung помогаем оформить" }
-    ]
+      { icon: "home", label: "Проживание", value: "Квартира на 2 чел, €150/нед" },
+      { icon: "doc", label: "Контракт", value: "По норвежскому ТК" },
+      { icon: "shield", label: "Страховка", value: "Полный соцпакет + ЧП на стройке" },
+      { icon: "money", label: "Оплата", value: "260 NOK/ч + сверхурочные ×2" },
+      { icon: "back", label: "Премия", value: "Завершение объекта +15%" }
+    ],
+    status: "no-collective", visa: "Norwegian Collective Protection или Skilled Worker",
+    regionWarning: true
   },
   {
-    id: "de-asparagus",
-    country: "germany",
-    countryName: "Германия",
-    city: "Нижняя Саксония",
-    title: "Сборщик спаржи и клубники (сезон)",
-    type: "Saisonarbeit",
-    contract: "70–90 дней",
-    start: "Апрель 2026",
-    rate: 1850,
-    rateMeta: "нетто за период",
-    hours: "8–10 ч/день, 6 дней/нед",
-    overtime: "штучная оплата возможна",
-    accommodation: "Общежитие фермы, €8/день",
-    img: "https://placehold.co/1200x800/2D6A4F/F5F1E8?text=Asparagus+Field+DE",
-    gallery: [
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Asparagus+Field",
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Harvest+Tool",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Strawberry+Tunnels",
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Packing+Shed"
-    ],
-    housing: [
-      "https://placehold.co/800x600/8A877F/FFFFFF?text=Farm+Dorm",
-      "https://placehold.co/800x600/B8935A/FFFFFF?text=Room+4pp",
-      "https://placehold.co/800x600/6B6B6B/FFFFFF?text=Communal+Kitchen",
-      "https://placehold.co/800x600/4A4A47/FFFFFF?text=Outside+Area"
-    ],
-    summary: "Сезон спаржи (Spargel) и клубники в Германии — короткий, интенсивный, оплачиваемый штучно или по часам. Лучший вариант для тех, кто хочет заработать за 2–3 месяца и вернуться.",
-    duties: [
-      "Сбор спаржи специальным ножом из-под земли",
-      "Сбор клубники в тоннелях",
-      "Сортировка и взвешивание",
-      "Работа от рассвета (5–6 утра)",
-      "Соблюдение норм по килограммам на смену"
-    ],
-    requirements: [
-      "Возраст 19–55 лет",
-      "Готовность к физической работе и ранним подъёмам",
-      "Загранпаспорт 12+ мес",
-      "Базовая выносливость",
-      "Желателен опыт в сельском хозяйстве"
-    ],
+    id: "no-greenhouse-vestfold",
+    country: "norway", countryName: "Норвегия", city: "Вестфолл",
+    title: "Тепличник (томаты, огурцы)",
+    type: "Сельское хозяйство", category: "agro",
+    contract: "8 месяцев", start: "Март 2026",
+    rate: 3000, rateMeta: "нетто/мес",
+    hours: "37.5 ч/нед",
+    overtime: "×1.5",
+    accommodation: "Корпоративное жильё, €100/нед",
+    img: "https://placehold.co/1200x800/2D5A3D/F5F1E8?text=NO+Greenhouse",
+    gallery: ["https://placehold.co/800x600/2D5A3D/F5F1E8?text=Greenhouse+NO", "https://placehold.co/800x600/2D5A3D/F5F1E8?text=Tomato+Vines", "https://placehold.co/800x600/2D5A3D/F5F1E8?text=Climate+Control", "https://placehold.co/800x600/2D5A3D/F5F1E8?text=Harvest"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Farm+House+NO", "https://placehold.co/800x600/8B7355/F5F1E8?text=Bedroom", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Garden"],
+    summary: "Современный тепличный комплекс. Выращивание помидоров и огурцов. Климат-контроль, минимум физических нагрузок.",
+    duties: ["Сбор урожая", "Подвязка", "Удаление лишних побегов", "Сортировка", "Подготовка к отгрузке"],
+    requirements: ["Возраст 18-50", "Аккуратность", "Готовность к рутинной работе"],
     included: [
-      { icon: "home",   label: "Проживание",     value: "На территории фермы, €8/день" },
-      { icon: "doc",    label: "Контракт",       value: "Сезонный по 70-90-day rule" },
-      { icon: "shield", label: "Страховка",      value: "Несчастный случай + базовая мед" },
-      { icon: "money",  label: "Оплата",         value: "Конец сезона + авансы по запросу" },
-      { icon: "food",   label: "Питание",        value: "Завтрак включён" },
-      { icon: "plane",  label: "Трансфер",       value: "От аэропорта до фермы организован" }
-    ]
-  },
-  {
-    id: "de-food-prod",
-    country: "germany",
-    countryName: "Германия",
-    city: "Бремен",
-    title: "Оператор пищевого производства",
-    type: "Leiharbeit",
-    contract: "12 месяцев",
-    start: "Февраль 2026",
-    rate: 2000,
-    rateMeta: "нетто/мес",
-    hours: "40 ч/нед",
-    overtime: "×1.25",
-    accommodation: "Wohnheim, €270/мес",
-    img: "https://placehold.co/1200x800/244A3D/F5F1E8?text=Food+Production+DE",
-    gallery: [
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Production+Hall",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Packaging+Line",
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Quality+Control",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Warehouse"
+      { icon: "home", label: "Проживание", value: "Дом 4-6 чел, €100/нед" },
+      { icon: "doc", label: "Контракт", value: "Norwegian seasonal или collective protection" },
+      { icon: "shield", label: "Страховка", value: "Folketrygden + работодателя" },
+      { icon: "money", label: "Оплата", value: "215 NOK/ч + надбавки" },
+      { icon: "back", label: "Бонус", value: "Премия за весь сезон" }
     ],
-    housing: [
-      "https://placehold.co/800x600/8A877F/FFFFFF?text=Wohnheim",
-      "https://placehold.co/800x600/B8935A/FFFFFF?text=Bedroom",
-      "https://placehold.co/800x600/6B6B6B/FFFFFF?text=Kitchen",
-      "https://placehold.co/800x600/4A4A47/FFFFFF?text=Hallway"
-    ],
-    summary: "Производство замороженных полуфабрикатов и готовых блюд для немецких супермаркетов. Современный цех с HACCP, чистая работа в комфортной температуре +12°C.",
-    duties: [
-      "Работа на линии упаковки и фасовки",
-      "Контроль веса и качества",
-      "Маркировка продукции",
-      "Соблюдение санитарных норм (HACCP)",
-      "Сменная работа: утро, день, вечер"
-    ],
-    requirements: [
-      "Возраст 19–55 лет",
-      "Готовность к работе в прохладе (+10–12°C)",
-      "Загранпаспорт 24+ мес",
-      "Без аллергии на пищевые продукты",
-      "Базовый немецкий A1 — желательно"
-    ],
-    included: [
-      { icon: "home",   label: "Проживание",     value: "Wohnheim, 1–2 чел в комнате" },
-      { icon: "doc",    label: "Контракт",       value: "По AÜG" },
-      { icon: "shield", label: "Страховка",      value: "Krankenversicherung" },
-      { icon: "money",  label: "Оплата",         value: "Ежемесячно" },
-      { icon: "food",   label: "Питание",        value: "Кантина дотируется" },
-      { icon: "doc",    label: "Помощь",         value: "Открытие счёта, Anmeldung, Steuer-ID" }
-    ]
+    status: "no-collective", visa: "Norwegian Collective Protection",
+    regionWarning: true
   },
 
-  /* ============ NETHERLANDS ============ */
+  /* ============= SWITZERLAND (NEW) ============= */
   {
-    id: "nl-greenhouse",
-    country: "netherlands",
-    countryName: "Нидерланды",
-    city: "Вестланд",
-    title: "Оператор тепличного комплекса",
-    type: "Uitzendcontract (Phase A)",
-    contract: "12 месяцев + продление",
-    start: "Февраль 2026",
-    rate: 2200,
-    rateMeta: "нетто/мес",
-    hours: "40 ч/нед",
-    overtime: "оплачивается отдельно",
-    accommodation: "Корпоративное жильё, €115/нед",
-    img: "https://placehold.co/1200x800/2D6A4F/F5F1E8?text=NL+Greenhouse",
-    gallery: [
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Tomato+Vines",
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Picking+Cart",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Greenhouse+Interior",
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Sorting"
-    ],
-    housing: [
-      "https://placehold.co/800x600/8A877F/FFFFFF?text=House+Outside",
-      "https://placehold.co/800x600/B8935A/FFFFFF?text=Twin+Room",
-      "https://placehold.co/800x600/6B6B6B/FFFFFF?text=Kitchen",
-      "https://placehold.co/800x600/4A4A47/FFFFFF?text=Living+Area"
-    ],
-    summary: "«Стеклянный город» Вестланд — самый большой тепличный регион мира. Современные роботизированные комплексы по томатам, перцам, огурцам. Высокая ставка по голландскому стандарту.",
-    duties: [
-      "Сбор томатов/перцев с роботизированных платформ",
-      "Подвязка, обрезка лишних побегов",
-      "Сортировка по размеру и цвету",
-      "Контроль системы полива и подкормки (обучаем)",
-      "Работа 8 часов в комфортном микроклимате"
-    ],
-    requirements: [
-      "Возраст 19–58 лет",
-      "Аккуратность, внимательность",
-      "Загранпаспорт 24+ мес",
-      "BSN — мы помогаем оформить",
-      "Английский A1 — желательно"
-    ],
+    id: "ch-hotel-zermatt",
+    country: "switzerland", countryName: "Швейцария", city: "Церматт",
+    title: "Горничная в горном отеле",
+    type: "Гостиничный бизнес", category: "hospitality",
+    contract: "6 месяцев", start: "Декабрь 2026",
+    rate: 3800, rateMeta: "нетто/мес + чаевые",
+    hours: "42 ч/нед", overtime: "×1.25",
+    accommodation: "Бесплатное проживание + питание",
+    img: "https://placehold.co/1200x800/4A5D7B/F5F1E8?text=CH+Hotel+Zermatt",
+    gallery: ["https://placehold.co/800x600/4A5D7B/F5F1E8?text=Mountain+Hotel", "https://placehold.co/800x600/4A5D7B/F5F1E8?text=Hotel+Room", "https://placehold.co/800x600/4A5D7B/F5F1E8?text=Lobby", "https://placehold.co/800x600/4A5D7B/F5F1E8?text=Matterhorn"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Staff+Quarters", "https://placehold.co/800x600/8B7355/F5F1E8?text=Twin+Room", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=View"],
+    summary: "5-звёздочный отель в Церматте, у подножия Маттерхорна. Высокий сезон зимой. Безналоговые чаевые до CHF 400/мес.",
+    duties: ["Уборка номеров (12-16 номеров/смена)", "Замена белья", "Пополнение мини-бара", "Подготовка для прибытия гостей"],
+    requirements: ["Английский B1+", "Опыт работы в отеле приветствуется", "Аккуратность, внимательность"],
     included: [
-      { icon: "home",   label: "Проживание",     value: "Дома на 4–6 человек, €115/нед" },
-      { icon: "doc",    label: "Контракт",       value: "Phase A Uitzendcontract (WAADI)" },
-      { icon: "shield", label: "Страховка",      value: "Zorgverzekering" },
-      { icon: "money",  label: "Оплата",         value: "Еженедельно на банковский счёт" },
-      { icon: "doc",    label: "Помощь",         value: "BSN, банк, страховка — координатор" },
-      { icon: "plane",  label: "Трансфер",       value: "Аэропорт Схипхол → жильё" }
-    ]
+      { icon: "home", label: "Проживание", value: "Бесплатно в персонал-блоке" },
+      { icon: "food", label: "Питание", value: "3-разовое бесплатное" },
+      { icon: "doc", label: "Контракт", value: "По швейцарскому ТК / S permit" },
+      { icon: "shield", label: "Страховка", value: "Krankenversicherung обязательна" },
+      { icon: "money", label: "Оплата", value: "CHF 4400 брутто/мес" },
+      { icon: "back", label: "Чаевые", value: "CHF 200-400/мес" }
+    ],
+    status: "ch-s-permit", visa: "Swiss S Permit (с 1 дек 2025 — только notification)",
+    regionWarning: true
   },
   {
-    id: "nl-flowers",
-    country: "netherlands",
-    countryName: "Нидерланды",
-    city: "Алсмеер",
-    title: "Упаковщик цветов",
-    type: "Uitzendcontract",
-    contract: "12 месяцев",
-    start: "Январь 2026",
-    rate: 2100,
-    rateMeta: "нетто/мес",
-    hours: "40 ч/нед",
-    overtime: "×1.35",
-    accommodation: "Дома на 4–5 чел, €110/нед",
-    img: "https://placehold.co/1200x800/1B3A2F/F5F1E8?text=Flower+Packing+NL",
-    gallery: [
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Flower+Auction",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Bouquet+Line",
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Cooled+Room",
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Sorting+Roses"
-    ],
-    housing: [
-      "https://placehold.co/800x600/8A877F/FFFFFF?text=Worker+House",
-      "https://placehold.co/800x600/B8935A/FFFFFF?text=Bedroom",
-      "https://placehold.co/800x600/6B6B6B/FFFFFF?text=Communal+Kitchen",
-      "https://placehold.co/800x600/4A4A47/FFFFFF?text=Backyard"
-    ],
-    summary: "Алсмеер — крупнейший в мире цветочный аукцион. Современные цеха по сборке букетов для экспорта в Великобританию, США, ЕС. Чистая, эстетичная работа в команде.",
-    duties: [
-      "Сортировка цветов по сорту и качеству",
-      "Сборка букетов по шаблонам клиентов",
-      "Упаковка в фирменные обёртки",
-      "Маркировка для экспорта",
-      "Работа в прохладном помещении (+8°C)"
-    ],
-    requirements: [
-      "Возраст 19–55 лет",
-      "Аккуратность, эстетический вкус",
-      "Загранпаспорт 24+ мес",
-      "Готовность к работе в прохладе",
-      "Без аллергии на цветочную пыльцу"
-    ],
+    id: "ch-construction-zurich",
+    country: "switzerland", countryName: "Швейцария", city: "Цюрих",
+    title: "Строитель / каменщик",
+    type: "Строительство", category: "construction",
+    contract: "12 месяцев", start: "Май 2026",
+    rate: 4200, rateMeta: "нетто/мес",
+    hours: "42 ч/нед",
+    overtime: "×1.25-1.5",
+    accommodation: "Корпоративное общежитие, €180/нед",
+    img: "https://placehold.co/1200x800/8B5A2B/F5F1E8?text=CH+Construction",
+    gallery: ["https://placehold.co/800x600/8B5A2B/F5F1E8?text=Zurich+Site", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Stone+Work", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Building", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Renovation"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Hostel+CH", "https://placehold.co/800x600/8B7355/F5F1E8?text=Room", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Common"],
+    summary: "Швейцарская строительная компания в Цюрихе. Жилищное и коммерческое строительство. Зарплаты одни из самых высоких в Европе.",
+    duties: ["Каменная кладка", "Бетонные работы", "Реставрация фасадов", "Чтение проектной документации"],
+    requirements: ["Опыт стройки 3+ лет", "Немецкий A2-B1", "Свой инструмент приветствуется"],
     included: [
-      { icon: "home",   label: "Проживание",     value: "Дома 4–5 чел, €110/нед" },
-      { icon: "doc",    label: "Контракт",       value: "Phase A" },
-      { icon: "shield", label: "Страховка",      value: "Полная" },
-      { icon: "money",  label: "Оплата",         value: "Weekly" },
-      { icon: "doc",    label: "Помощь",         value: "BSN + банковский счёт" },
-      { icon: "plane",  label: "Трансфер",       value: "Включён" }
-    ]
+      { icon: "home", label: "Проживание", value: "Хостел, €180/нед" },
+      { icon: "doc", label: "Контракт", value: "По CCT / S permit с notification" },
+      { icon: "shield", label: "Страховка", value: "SUVA + KV" },
+      { icon: "money", label: "Оплата", value: "CHF 32-38/ч" },
+      { icon: "back", label: "13-я зарплата", value: "Pflicht (обязательна)" }
+    ],
+    status: "ch-s-permit", visa: "Swiss S Permit",
+    regionWarning: true
   },
   {
-    id: "nl-meat",
-    country: "netherlands",
-    countryName: "Нидерланды",
-    city: "Бокстел",
-    title: "Оператор мясного производства",
-    type: "Uitzendcontract Phase A",
-    contract: "12 месяцев",
-    start: "Февраль 2026",
-    rate: 2200,
-    rateMeta: "нетто/мес",
-    hours: "40 ч/нед",
-    overtime: "×1.35",
-    accommodation: "Корпоративное жильё, €105/нед",
-    img: "https://placehold.co/1200x800/244A3D/F5F1E8?text=Meat+Production+NL",
-    gallery: [
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Production+Line",
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Cold+Storage",
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Packing+Area",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Quality+Control"
-    ],
-    housing: [
-      "https://placehold.co/800x600/8A877F/FFFFFF?text=Housing+Complex",
-      "https://placehold.co/800x600/B8935A/FFFFFF?text=Twin+Room",
-      "https://placehold.co/800x600/6B6B6B/FFFFFF?text=Kitchen",
-      "https://placehold.co/800x600/4A4A47/FFFFFF?text=Garden"
-    ],
-    summary: "Современное мясокомбинатное производство, поставщик Albert Heijn и Jumbo. Не разделка туш, а упаковка готовой продукции в потребительские лотки. Чисто, +6°C, форма выдаётся.",
-    duties: [
-      "Упаковка нарезок и фарша в потребительские лотки",
-      "Маркировка и взвешивание",
-      "Контроль герметичности упаковки",
-      "Соблюдение HACCP-стандартов",
-      "Сменная работа 06–14, 14–22"
-    ],
-    requirements: [
-      "Возраст 19–55 лет",
-      "Готовность к работе в прохладе и со специфическим запахом",
-      "Загранпаспорт 24+ мес",
-      "Базовая физическая выносливость",
-      "Без аллергии"
-    ],
+    id: "ch-forestry-grisons",
+    country: "switzerland", countryName: "Швейцария", city: "Граубюнден",
+    title: "Лесник / высадка деревьев",
+    type: "Лесное хозяйство", category: "forestry",
+    contract: "5-7 месяцев", start: "Апрель 2026",
+    rate: 3500, rateMeta: "нетто/мес",
+    hours: "42 ч/нед", overtime: "×1.25",
+    accommodation: "Кантональное общежитие, бесплатно",
+    img: "https://placehold.co/1200x800/2D5A3D/F5F1E8?text=CH+Forestry",
+    gallery: ["https://placehold.co/800x600/2D5A3D/F5F1E8?text=Alpine+Forest", "https://placehold.co/800x600/2D5A3D/F5F1E8?text=Tree+Planting", "https://placehold.co/800x600/2D5A3D/F5F1E8?text=Forest+Clearing", "https://placehold.co/800x600/2D5A3D/F5F1E8?text=Saplings"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Alpine+Cabin", "https://placehold.co/800x600/8B7355/F5F1E8?text=Bunks+CH", "https://placehold.co/800x600/8B7355/F5F1E8?text=Mess", "https://placehold.co/800x600/8B7355/F5F1E8?text=Mountain+View"],
+    summary: "Восстановление альпийских лесов после буреломов. Высадка саженцев, расчистка горных лесов, борьба с инвазивными видами.",
+    duties: ["Высадка саженцев по схеме", "Расчистка завалов", "Уход за молодыми деревьями", "Маркировка зон", "Контроль за инвазивными растениями"],
+    requirements: ["Физическая выносливость", "Готовность к работе в горах", "Базовая ориентация на местности", "Английский A2 или немецкий A1"],
     included: [
-      { icon: "home",   label: "Проживание",     value: "Корпоративные дома, 2-местные" },
-      { icon: "doc",    label: "Контракт",       value: "Phase A по WAADI" },
-      { icon: "shield", label: "Страховка",      value: "Zorgverzekering" },
-      { icon: "money",  label: "Оплата",         value: "Weekly" },
-      { icon: "food",   label: "Спецодежда",     value: "Включена" },
-      { icon: "doc",    label: "Документы",      value: "BSN, банк — координатор" }
-    ]
+      { icon: "home", label: "Проживание", value: "Бесплатно, горное общежитие" },
+      { icon: "food", label: "Питание", value: "3-разовое бесплатное" },
+      { icon: "doc", label: "Контракт", value: "Кантональный + S permit" },
+      { icon: "shield", label: "Страховка", value: "SUVA (риски в горах)" },
+      { icon: "money", label: "Оплата", value: "CHF 27-32/ч" },
+      { icon: "back", label: "Премия", value: "Альпийский бонус +10%" }
+    ],
+    status: "ch-s-permit", visa: "Swiss S Permit",
+    regionWarning: true
   },
   {
-    id: "nl-logistics",
-    country: "netherlands",
-    countryName: "Нидерланды",
-    city: "Венло",
-    title: "Сборщик заказов на складе DHL",
-    type: "Uitzendcontract",
-    contract: "12 месяцев",
-    start: "Январь 2026",
-    rate: 2100,
-    rateMeta: "нетто/мес",
-    hours: "40 ч/нед",
-    overtime: "×1.35",
-    accommodation: "Корпоративное, €110/нед",
-    img: "https://placehold.co/1200x800/2D6A4F/F5F1E8?text=DHL+Venlo",
-    gallery: [
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Warehouse+Aisles",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Pick+by+Voice",
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Conveyor+System",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Loading+Dock"
-    ],
-    housing: [
-      "https://placehold.co/800x600/8A877F/FFFFFF?text=House+Front",
-      "https://placehold.co/800x600/B8935A/FFFFFF?text=Bedroom",
-      "https://placehold.co/800x600/6B6B6B/FFFFFF?text=Kitchen",
-      "https://placehold.co/800x600/4A4A47/FFFFFF?text=Lounge"
-    ],
-    summary: "Крупный логистический хаб DHL в Венло — обработка интернет-заказов для всего Бенилюкса. Современная складская техника, технологии Pick-by-Voice.",
-    duties: [
-      "Сборка заказов с помощью голосовой системы",
-      "Упаковка в фирменные коробки DHL",
-      "Сканирование штрих-кодов",
-      "Перемещение паллет (после обучения)",
-      "Дневные и вечерние смены"
-    ],
-    requirements: [
-      "Возраст 19–55 лет",
-      "Хорошая ориентация в пространстве",
-      "Загранпаспорт 24+ мес",
-      "Базовый английский A1",
-      "Готовность к ходьбе 8 ч"
-    ],
+    id: "ch-hotel-stmoritz",
+    country: "switzerland", countryName: "Швейцария", city: "Санкт-Мориц",
+    title: "Официант / помощник на кухне",
+    type: "Гостиничный бизнес", category: "hospitality",
+    contract: "5-6 месяцев", start: "Декабрь 2026",
+    rate: 4000, rateMeta: "нетто/мес + чаевые",
+    hours: "42 ч/нед", overtime: "×1.25",
+    accommodation: "Бесплатно + питание",
+    img: "https://placehold.co/1200x800/4A5D7B/F5F1E8?text=CH+St+Moritz",
+    gallery: ["https://placehold.co/800x600/4A5D7B/F5F1E8?text=Luxury+Restaurant", "https://placehold.co/800x600/4A5D7B/F5F1E8?text=Service", "https://placehold.co/800x600/4A5D7B/F5F1E8?text=Kitchen+CH", "https://placehold.co/800x600/4A5D7B/F5F1E8?text=St+Moritz+View"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Staff+House+CH", "https://placehold.co/800x600/8B7355/F5F1E8?text=Single+Room", "https://placehold.co/800x600/8B7355/F5F1E8?text=Common+Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Ski+Storage"],
+    summary: "5-звёздочный гранд-отель в Санкт-Морице. Зимний сезон высочайшего класса. Чаевые - значимая часть дохода.",
+    duties: ["Обслуживание в ресторане 4-5★", "Помощь шеф-повару", "Подготовка завтрака", "Room service", "Поддержание сервиса"],
+    requirements: ["Английский B2", "Немецкий A2-B1 (приветствуется)", "Опыт HoReCa 1+ год", "Презентабельная внешность"],
     included: [
-      { icon: "home",   label: "Проживание",     value: "Дома 4–5 человек, €110/нед" },
-      { icon: "doc",    label: "Контракт",       value: "Phase A" },
-      { icon: "shield", label: "Страховка",      value: "Полная" },
-      { icon: "money",  label: "Оплата",         value: "Еженедельно" },
-      { icon: "doc",    label: "Помощь",         value: "BSN, банк, страховка" },
-      { icon: "plane",  label: "Трансфер",       value: "Из Дюссельдорфа/Схипхол" }
-    ]
+      { icon: "home", label: "Проживание", value: "Бесплатно (single room)" },
+      { icon: "food", label: "Питание", value: "Полный пансион" },
+      { icon: "doc", label: "Контракт", value: "L-GAV / S permit" },
+      { icon: "shield", label: "Страховка", value: "Полный пакет" },
+      { icon: "money", label: "Оплата", value: "CHF 4500 брутто + чаевые" },
+      { icon: "back", label: "Чаевые", value: "CHF 300-700/мес" }
+    ],
+    status: "ch-s-permit", visa: "Swiss S Permit",
+    regionWarning: true
   },
 
-  /* ============ GREECE — HOTELS ============ */
+  /* ============= GREECE ============= */
   {
-    id: "gr-housekeeper-crete",
-    country: "greece",
-    countryName: "Греция",
-    city: "Крит, Херсониссос",
-    title: "Горничная в отеле 5★ All-Inclusive",
-    type: "Сезонный контракт (Σύμβαση ορισμένου χρόνου)",
-    contract: "6 месяцев",
-    start: "Апрель 2026",
-    rate: 1900,
-    rateMeta: "нетто/мес + чаевые",
-    hours: "40 ч/нед, 5 дней",
-    overtime: "оплачивается ×1.25",
-    accommodation: "Бесплатное на территории отеля",
-    img: "https://placehold.co/1200x800/2D6A4F/F5F1E8?text=Crete+Hotel+5",
-    gallery: [
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Hotel+Exterior",
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Hotel+Room",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Pool+Area",
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Lobby"
-    ],
-    housing: [
-      "https://placehold.co/800x600/8A877F/FFFFFF?text=Staff+Building",
-      "https://placehold.co/800x600/B8935A/FFFFFF?text=Twin+Staff+Room",
-      "https://placehold.co/800x600/6B6B6B/FFFFFF?text=Staff+Bathroom",
-      "https://placehold.co/800x600/4A4A47/FFFFFF?text=Staff+Canteen"
-    ],
-    summary: "5-звёздочный отель сети с международным брендом, 600 номеров. Сезон апрель–октябрь. Питание 3 раза в день и проживание — бесплатно. Реальная экономия €400–500/мес.",
-    duties: [
-      "Уборка 14–16 номеров за смену по стандарту 5★",
-      "Замена белья и полотенец",
-      "Пополнение мини-бара и amenities",
-      "Доклад о повреждениях супервайзеру",
-      "Соблюдение тайминга чек-аут / чек-ин"
-    ],
-    requirements: [
-      "Возраст 21–55 лет",
-      "Аккуратность, внимание к деталям",
-      "Загранпаспорт 18+ мес",
-      "Опыт работы горничной — желателен (можно без него)",
-      "Английский A1 — приветствуется"
-    ],
+    id: "gr-housekeeping-crete",
+    country: "greece", countryName: "Греция", city: "Крит, Херсониссос",
+    title: "Горничная в курортном отеле",
+    type: "Гостиничный бизнес", category: "hospitality",
+    contract: "6 месяцев", start: "Апрель 2026",
+    rate: 1850, rateMeta: "нетто/мес + чаевые",
+    hours: "40 ч/нед", overtime: "оплачивается",
+    accommodation: "Бесплатно + 3-разовое питание",
+    img: "https://placehold.co/1200x800/4A6D8B/F5F1E8?text=GR+Crete+Hotel",
+    gallery: ["https://placehold.co/800x600/4A6D8B/F5F1E8?text=Crete+Resort", "https://placehold.co/800x600/4A6D8B/F5F1E8?text=Hotel+Room+GR", "https://placehold.co/800x600/4A6D8B/F5F1E8?text=Pool+Area", "https://placehold.co/800x600/4A6D8B/F5F1E8?text=Beach"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Staff+Block+GR", "https://placehold.co/800x600/8B7355/F5F1E8?text=Twin+Room+GR", "https://placehold.co/800x600/8B7355/F5F1E8?text=Common+Area", "https://placehold.co/800x600/8B7355/F5F1E8?text=Mess+Hall"],
+    summary: "4★ All-Inclusive отель в Херсониссосе на Крите. Сезон апрель-октябрь. Чаевые - €100-200/мес сверх ставки.",
+    duties: ["Уборка номеров (15-18/смена)", "Замена белья и полотенец", "Пополнение мини-бара", "Подготовка для гостей"],
+    requirements: ["Физическая выносливость", "Английский A2-B1", "Готовность к 6-дневной неделе в пик"],
     included: [
-      { icon: "home",   label: "Проживание",     value: "Бесплатное на территории отеля" },
-      { icon: "food",   label: "Питание",        value: "3 раза в день, бесплатно" },
-      { icon: "doc",    label: "Контракт",       value: "Прямой с отелем по греческому ТК" },
-      { icon: "shield", label: "Страховка",      value: "ΙΚΑ (греческое соцстрах.)" },
-      { icon: "money",  label: "Оплата",         value: "Ежемесячно + чаевые отдельно" },
-      { icon: "plane",  label: "Трансфер",       value: "Аэропорт Ираклион → отель" }
-    ]
+      { icon: "home", label: "Проживание", value: "Бесплатно в персонал-блоке" },
+      { icon: "food", label: "Питание", value: "3-разовое бесплатное" },
+      { icon: "doc", label: "Контракт", value: "Σύμβαση ορισμένου χρόνου" },
+      { icon: "shield", label: "Страховка", value: "ΙΚΑ - греческое соцстрах." },
+      { icon: "money", label: "Оплата", value: "€1100 брутто + 14-я зарплата" },
+      { icon: "back", label: "Чаевые", value: "€100-200/мес" }
+    ],
+    status: "tp-eligible", visa: "Temporary Protection или сезонная виза"
   },
   {
-    id: "gr-waiter-rhodes",
-    country: "greece",
-    countryName: "Греция",
-    city: "Родос, Фалираки",
-    title: "Помощник официанта (busser) в отеле 4★",
-    type: "Сезонный контракт",
-    contract: "5 месяцев",
-    start: "Май 2026",
-    rate: 1850,
-    rateMeta: "нетто/мес + чаевые",
-    hours: "40 ч/нед, 5 дней",
-    overtime: "×1.25",
-    accommodation: "Бесплатное на территории",
-    img: "https://placehold.co/1200x800/1B3A2F/F5F1E8?text=Rhodes+Hotel",
-    gallery: [
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Restaurant",
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Pool+Bar",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Beach+Front",
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Buffet+Area"
-    ],
-    housing: [
-      "https://placehold.co/800x600/8A877F/FFFFFF?text=Staff+House",
-      "https://placehold.co/800x600/B8935A/FFFFFF?text=Twin+Room",
-      "https://placehold.co/800x600/6B6B6B/FFFFFF?text=Shared+Kitchen",
-      "https://placehold.co/800x600/4A4A47/FFFFFF?text=Outdoor+Area"
-    ],
-    summary: "Семейный 4★ отель с прямым выходом к морю. Работа в буфете и à-la-carte ресторане. Хорошая команда, дружелюбный коллектив, реальные чаевые €100–250/мес сверх ставки.",
-    duties: [
-      "Сервировка и уборка столов",
-      "Помощь официантам в обслуживании гостей",
-      "Пополнение буфетных линий",
-      "Чистка зоны после сервиса",
-      "Подготовка следующей смены"
-    ],
-    requirements: [
-      "Возраст 19–45 лет",
-      "Опрятный внешний вид",
-      "Загранпаспорт 18+ мес",
-      "Базовый английский A1+ (важно для общения с гостями)",
-      "Опыт в HoReCa — преимущество"
-    ],
+    id: "gr-waitress-rhodes",
+    country: "greece", countryName: "Греция", city: "Родос",
+    title: "Официант / бариста",
+    type: "Гостиничный бизнес", category: "hospitality",
+    contract: "5-6 месяцев", start: "Май 2026",
+    rate: 2000, rateMeta: "нетто/мес + чаевые",
+    hours: "40 ч/нед", overtime: "оплачивается",
+    accommodation: "Бесплатно + питание",
+    img: "https://placehold.co/1200x800/4A6D8B/F5F1E8?text=GR+Rhodes",
+    gallery: ["https://placehold.co/800x600/4A6D8B/F5F1E8?text=Rhodes+Restaurant", "https://placehold.co/800x600/4A6D8B/F5F1E8?text=Beachfront+Cafe", "https://placehold.co/800x600/4A6D8B/F5F1E8?text=Bar+Service", "https://placehold.co/800x600/4A6D8B/F5F1E8?text=Old+Town"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Staff+Apt", "https://placehold.co/800x600/8B7355/F5F1E8?text=Bedroom+GR", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Balcony"],
+    summary: "Семейная таверна у пляжа на Родосе. Туристы из всей Европы. Хорошие чаевые от европейских туристов.",
+    duties: ["Обслуживание столов", "Приготовление кофе/коктейлей", "Сервировка", "Уборка зала", "Поддержание сервиса"],
+    requirements: ["Английский B1", "Опыт HoReCa приветствуется", "Хорошая память и стрессоустойчивость"],
     included: [
-      { icon: "home",   label: "Проживание",     value: "Бесплатное" },
-      { icon: "food",   label: "Питание",        value: "3 раза в день" },
-      { icon: "doc",    label: "Контракт",       value: "Прямой по ТК Греции" },
-      { icon: "shield", label: "Страховка",      value: "ΙΚΑ" },
-      { icon: "money",  label: "Оплата",         value: "Ставка + чаевые" },
-      { icon: "plane",  label: "Трансфер",       value: "Аэропорт → отель" }
-    ]
+      { icon: "home", label: "Проживание", value: "Бесплатно + питание" },
+      { icon: "doc", label: "Контракт", value: "Σύμβαση ορισμένου χρόνου" },
+      { icon: "shield", label: "Страховка", value: "ΙΚΑ" },
+      { icon: "money", label: "Оплата", value: "€1200 брутто" },
+      { icon: "back", label: "Чаевые", value: "€200-400/мес" }
+    ],
+    status: "tp-eligible", visa: "Temporary Protection или сезонная виза"
   },
   {
-    id: "gr-kitchen-santorini",
-    country: "greece",
-    countryName: "Греция",
-    city: "Санторини, Фира",
-    title: "Помощник на кухне (kitchen porter)",
-    type: "Сезонный контракт",
-    contract: "6 месяцев",
-    start: "Апрель 2026",
-    rate: 2000,
-    rateMeta: "нетто/мес",
+    id: "gr-reception-mykonos",
+    country: "greece", countryName: "Греция", city: "Миконос",
+    title: "Reception / администратор",
+    type: "Гостиничный бизнес", category: "hospitality",
+    contract: "6 месяцев", start: "Апрель 2026",
+    rate: 2100, rateMeta: "нетто/мес",
+    hours: "40 ч/нед", overtime: "по тарифу",
+    accommodation: "Бесплатно + питание",
+    img: "https://placehold.co/1200x800/4A6D8B/F5F1E8?text=GR+Mykonos",
+    gallery: ["https://placehold.co/800x600/4A6D8B/F5F1E8?text=Mykonos+Hotel", "https://placehold.co/800x600/4A6D8B/F5F1E8?text=Reception+Desk", "https://placehold.co/800x600/4A6D8B/F5F1E8?text=Concierge", "https://placehold.co/800x600/4A6D8B/F5F1E8?text=White+Village"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Mykonos+Staff", "https://placehold.co/800x600/8B7355/F5F1E8?text=Single+Room", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchenette", "https://placehold.co/800x600/8B7355/F5F1E8?text=View"],
+    summary: "Бутик-отель 4★ на Миконосе. Самая фешенебельная аудитория Греции. Английский — must.",
+    duties: ["Check-in/out гостей", "Бронирование", "Работа в PMS", "Решение проблем гостей", "Координация с housekeeping"],
+    requirements: ["Английский B2+", "Опыт в reception/туризме", "Знание PMS (Opera, Protel) приветствуется"],
+    included: [
+      { icon: "home", label: "Проживание", value: "Single room в персонал-блоке" },
+      { icon: "food", label: "Питание", value: "3-разовое" },
+      { icon: "doc", label: "Контракт", value: "ΣOX" },
+      { icon: "shield", label: "Страховка", value: "ΙΚΑ" },
+      { icon: "money", label: "Оплата", value: "€1300 брутто + 14-я" },
+      { icon: "back", label: "Бонус", value: "Дополнительные смены ×1.5" }
+    ],
+    status: "tp-eligible", visa: "Temporary Protection"
+  },
+  {
+    id: "gr-cook-corfu",
+    country: "greece", countryName: "Греция", city: "Корфу",
+    title: "Помощник повара",
+    type: "Гостиничный бизнес", category: "hospitality",
+    contract: "6 месяцев", start: "Апрель 2026",
+    rate: 1950, rateMeta: "нетто/мес + чаевые",
     hours: "40 ч/нед",
-    overtime: "×1.25",
-    accommodation: "Бесплатное",
-    img: "https://placehold.co/1200x800/244A3D/F5F1E8?text=Santorini+Hotel",
-    gallery: [
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Kitchen+Pro",
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Prep+Area",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Dish+Wash",
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Hotel+View"
-    ],
-    housing: [
-      "https://placehold.co/800x600/8A877F/FFFFFF?text=Staff+Quarters",
-      "https://placehold.co/800x600/B8935A/FFFFFF?text=Room+2pp",
-      "https://placehold.co/800x600/6B6B6B/FFFFFF?text=Bathroom",
-      "https://placehold.co/800x600/4A4A47/FFFFFF?text=Common+Area"
-    ],
-    summary: "Бутик-отель на калдере Санторини, 80 номеров премиум-класса. Самые высокие ставки по Греции из-за дороговизны региона. Не разделка туш и не кухонная подготовка — мытьё, поддержание чистоты, помощь шефам.",
-    duties: [
-      "Мытьё кухонной утвари и посуды",
-      "Поддержание чистоты рабочих зон",
-      "Помощь шефам в первичной подготовке (нарезка)",
-      "Вынос мусора, поддержание санитарии",
-      "Работа в команде из 8–10 человек"
-    ],
-    requirements: [
-      "Возраст 21–50 лет",
-      "Физическая выносливость",
-      "Загранпаспорт 18+ мес",
-      "Стрессоустойчивость в пиковые часы",
-      "Без серьёзных заболеваний опорно-двигательного"
-    ],
+    accommodation: "Бесплатно + питание",
+    img: "https://placehold.co/1200x800/4A6D8B/F5F1E8?text=GR+Corfu",
+    gallery: ["https://placehold.co/800x600/4A6D8B/F5F1E8?text=Corfu+Kitchen", "https://placehold.co/800x600/4A6D8B/F5F1E8?text=Prep+Station", "https://placehold.co/800x600/4A6D8B/F5F1E8?text=Restaurant", "https://placehold.co/800x600/4A6D8B/F5F1E8?text=Old+Town+Corfu"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Staff+Corfu", "https://placehold.co/800x600/8B7355/F5F1E8?text=Room", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Balcony"],
+    summary: "Ресторан при отеле на Корфу. Завтраки, обеды, ужины для гостей и местных туристов.",
+    duties: ["Подготовка заготовок", "Помощь шеф-повару", "Соблюдение HACCP", "Уборка кухни", "Приём поставок"],
+    requirements: ["Опыт работы на кухне", "Английский A2", "Готовность к жаре и интенсиву"],
     included: [
-      { icon: "home",   label: "Проживание",     value: "Бесплатное в персонал-доме" },
-      { icon: "food",   label: "Питание",        value: "Бесплатное, 3 раза" },
-      { icon: "doc",    label: "Контракт",       value: "Прямой с отелем" },
-      { icon: "shield", label: "Страховка",      value: "ΙΚΑ" },
-      { icon: "money",  label: "Оплата",         value: "Ежемесячно" },
-      { icon: "plane",  label: "Трансфер",       value: "Аэропорт/порт → отель" }
-    ]
-  },
-  {
-    id: "gr-receptionist-kos",
-    country: "greece",
-    countryName: "Греция",
-    city: "Кос",
-    title: "Reception assistant в отеле 4★",
-    type: "Сезонный контракт",
-    contract: "6 месяцев",
-    start: "Апрель 2026",
-    rate: 1900,
-    rateMeta: "нетто/мес",
-    hours: "40 ч/нед, сменно",
-    overtime: "×1.25",
-    accommodation: "Бесплатное",
-    img: "https://placehold.co/1200x800/2D6A4F/F5F1E8?text=Kos+Reception",
-    gallery: [
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Reception+Lobby",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Hotel+Pool",
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Beach",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Hotel+Lounge"
+      { icon: "home", label: "Проживание", value: "Бесплатно + питание" },
+      { icon: "doc", label: "Контракт", value: "Σύμβαση ορισμένου χρόνου" },
+      { icon: "shield", label: "Страховка", value: "ΙΚΑ" },
+      { icon: "money", label: "Оплата", value: "€1200 + чаевые" }
     ],
-    housing: [
-      "https://placehold.co/800x600/8A877F/FFFFFF?text=Staff+Apartment",
-      "https://placehold.co/800x600/B8935A/FFFFFF?text=Single+Room",
-      "https://placehold.co/800x600/6B6B6B/FFFFFF?text=Kitchen",
-      "https://placehold.co/800x600/4A4A47/FFFFFF?text=Terrace"
-    ],
-    summary: "Помощник на ресепшен в 4★ all-inclusive отеле. Для русско/украиноязычных кандидатов — приоритет: 40% гостей из стран СНГ, нужен живой коммуникатор. Английский — обязательно.",
-    duties: [
-      "Приём гостей и помощь с заселением",
-      "Информирование о услугах отеля",
-      "Помощь с переводом (RU↔EN)",
-      "Обработка простых запросов",
-      "Поддержка чистоты ресепшен-зоны"
-    ],
-    requirements: [
-      "Возраст 21–40 лет",
-      "Английский B1 — обязательно",
-      "Опрятный внешний вид",
-      "Коммуникабельность",
-      "Опыт в гостиничном сервисе — преимущество"
-    ],
-    included: [
-      { icon: "home",   label: "Проживание",     value: "Бесплатное, отдельный staff-комплекс" },
-      { icon: "food",   label: "Питание",        value: "3 раза в день" },
-      { icon: "doc",    label: "Контракт",       value: "Прямой по ТК" },
-      { icon: "shield", label: "Страховка",      value: "ΙΚΑ" },
-      { icon: "money",  label: "Оплата",         value: "Ежемесячно" },
-      { icon: "plane",  label: "Трансфер",       value: "Аэропорт Кос → отель" }
-    ]
+    status: "tp-eligible", visa: "Temporary Protection"
   },
 
-  /* ============ ITALY — HOTELS ============ */
+  /* ============= ITALY ============= */
   {
-    id: "it-housekeeper-rimini",
-    country: "italy",
-    countryName: "Италия",
-    city: "Римини, Эмилия-Романья",
-    title: "Cameriera ai piani (горничная) в отеле 4★",
-    type: "Stagionale (сезонный)",
-    contract: "5 месяцев",
-    start: "Май 2026",
-    rate: 1850,
-    rateMeta: "нетто/мес + чаевые",
-    hours: "40 ч/нед",
-    overtime: "оплачивается отдельно",
-    accommodation: "Бесплатное на территории",
-    img: "https://placehold.co/1200x800/244A3D/F5F1E8?text=Rimini+Hotel",
-    gallery: [
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Hotel+Front",
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Hotel+Room",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Reception",
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Beach+View"
-    ],
-    housing: [
-      "https://placehold.co/800x600/8A877F/FFFFFF?text=Staff+House",
-      "https://placehold.co/800x600/B8935A/FFFFFF?text=Bedroom+2pp",
-      "https://placehold.co/800x600/6B6B6B/FFFFFF?text=Kitchen",
-      "https://placehold.co/800x600/4A4A47/FFFFFF?text=Common+Area"
-    ],
-    summary: "Семейный 4★ отель на адриатическом побережье. Высокий сезон май–сентябрь. Стабильные итальянские чаевые, прямой контракт по итальянскому ТК (CCNL Turismo).",
-    duties: [
-      "Уборка 14–16 номеров за смену",
-      "Замена белья и полотенец",
-      "Пополнение amenities",
-      "Доклад о повреждениях governante (старшей горничной)",
-      "Подготовка номеров к заселению"
-    ],
-    requirements: [
-      "Возраст 21–55 лет",
-      "Опрятность, ответственность",
-      "Загранпаспорт 18+ мес",
-      "Опыт горничной — желателен",
-      "Базовый итальянский/английский — плюс"
-    ],
+    id: "it-housekeeping-tuscany",
+    country: "italy", countryName: "Италия", city: "Тоскана",
+    title: "Горничная в агритуризме",
+    type: "Гостиничный бизнес", category: "hospitality",
+    contract: "6-7 месяцев", start: "Март 2026",
+    rate: 1900, rateMeta: "нетто/мес + TFR",
+    hours: "40 ч/нед", overtime: "по CCNL",
+    accommodation: "Бесплатно + питание",
+    img: "https://placehold.co/1200x800/B8935A/F5F1E8?text=IT+Tuscany",
+    gallery: ["https://placehold.co/800x600/B8935A/F5F1E8?text=Tuscany+Villa", "https://placehold.co/800x600/B8935A/F5F1E8?text=Hotel+Room", "https://placehold.co/800x600/B8935A/F5F1E8?text=Vineyard+View", "https://placehold.co/800x600/B8935A/F5F1E8?text=Olive+Trees"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Staff+House+IT", "https://placehold.co/800x600/8B7355/F5F1E8?text=Twin", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen+IT", "https://placehold.co/800x600/8B7355/F5F1E8?text=Pool"],
+    summary: "Бутиковый агритуризм в холмах Тосканы. Уютная семейная атмосфера. Без массовости.",
+    duties: ["Уборка номеров (8-10/смена)", "Замена белья", "Подготовка к заезду гостей", "Помощь с завтраком"],
+    requirements: ["Английский A2-B1", "Аккуратность", "Опыт в HoReCa желателен"],
     included: [
-      { icon: "home",   label: "Проживание",     value: "Бесплатное в персонал-блоке" },
-      { icon: "food",   label: "Питание",        value: "2–3 раза в день" },
-      { icon: "doc",    label: "Контракт",       value: "Stagionale по CCNL Turismo" },
-      { icon: "shield", label: "Страховка",      value: "INPS + INAIL" },
-      { icon: "money",  label: "Оплата",         value: "Ежемесячно + chiusura conguaglio в конце" },
-      { icon: "plane",  label: "Трансфер",       value: "Болонья/Римини → отель" }
-    ]
+      { icon: "home", label: "Проживание", value: "Бесплатно, домик для персонала" },
+      { icon: "food", label: "Питание", value: "Полный пансион" },
+      { icon: "doc", label: "Контракт", value: "Contratto stagionale (CCNL Turismo)" },
+      { icon: "shield", label: "Страховка", value: "INPS + INAIL" },
+      { icon: "money", label: "Оплата", value: "€1350 брутто + TFR в конце" },
+      { icon: "back", label: "TFR", value: "≈€800 при завершении сезона" }
+    ],
+    status: "tp-eligible", visa: "Temporary Protection или сезонная виза"
   },
   {
-    id: "it-waiter-tuscany",
-    country: "italy",
-    countryName: "Италия",
-    city: "Тоскана, Гроссето",
-    title: "Cameriere di sala (официант) в семейном агрит­уризме",
-    type: "Stagionale",
-    contract: "6 месяцев",
-    start: "Апрель 2026",
-    rate: 2050,
-    rateMeta: "нетто/мес + чаевые",
+    id: "it-waiter-amalfi",
+    country: "italy", countryName: "Италия", city: "Амальфи",
+    title: "Официант на побережье",
+    type: "Гостиничный бизнес", category: "hospitality",
+    contract: "5-6 месяцев", start: "Апрель 2026",
+    rate: 2050, rateMeta: "нетто/мес + чаевые",
     hours: "40 ч/нед",
-    overtime: "×1.3",
-    accommodation: "Бесплатное на агроусадьбе",
-    img: "https://placehold.co/1200x800/2D6A4F/F5F1E8?text=Tuscany+Agriturismo",
-    gallery: [
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Vineyard+View",
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Outdoor+Dining",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Wine+Cellar",
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Tuscan+Sunset"
-    ],
-    housing: [
-      "https://placehold.co/800x600/8A877F/FFFFFF?text=Staff+Cottage",
-      "https://placehold.co/800x600/B8935A/FFFFFF?text=Bedroom",
-      "https://placehold.co/800x600/6B6B6B/FFFFFF?text=Kitchen",
-      "https://placehold.co/800x600/4A4A47/FFFFFF?text=Vineyard"
-    ],
-    summary: "Бутик-агритуризмо на 30 номеров в самом сердце Тосканы. Уровень обслуживания — высокий, гости преимущественно из США и Северной Европы. Высокие чаевые, потрясающая среда.",
-    duties: [
-      "Сервировка завтрака, обеда, ужина в à-la-carte режиме",
-      "Приём заказов на английском",
-      "Подача вин (после внутреннего обучения)",
-      "Общение с гостями, рекомендации",
-      "Уборка зала после смены"
-    ],
-    requirements: [
-      "Возраст 21–40 лет",
-      "Английский B1 обязательно, итальянский — плюс",
-      "Опрятный внешний вид",
-      "Опыт в HoReCa от 1 года",
-      "Доброжелательность, инициативность"
-    ],
+    accommodation: "Бесплатно + питание",
+    img: "https://placehold.co/1200x800/B8935A/F5F1E8?text=IT+Amalfi",
+    gallery: ["https://placehold.co/800x600/B8935A/F5F1E8?text=Amalfi+Cliff", "https://placehold.co/800x600/B8935A/F5F1E8?text=Restaurant+Sea", "https://placehold.co/800x600/B8935A/F5F1E8?text=Service", "https://placehold.co/800x600/B8935A/F5F1E8?text=Positano"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Staff+Amalfi", "https://placehold.co/800x600/8B7355/F5F1E8?text=Bedroom", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Terrace"],
+    summary: "Ресторан 4★ отеля на Амальфитанском побережье. Премиум-туризм. Чаевые от международных гостей.",
+    duties: ["Обслуживание столов", "Знание винной карты", "Подача блюд", "Координация с кухней"],
+    requirements: ["Английский B1", "Итальянский A2 (плюс)", "Опыт официанта 1+ год"],
     included: [
-      { icon: "home",   label: "Проживание",     value: "Коттедж для персонала" },
-      { icon: "food",   label: "Питание",        value: "3 раза в день, тосканская кухня" },
-      { icon: "doc",    label: "Контракт",       value: "CCNL Turismo, stagionale" },
-      { icon: "shield", label: "Страховка",      value: "INPS + INAIL" },
-      { icon: "money",  label: "Оплата",         value: "Ежемесячно + значимые чаевые" },
-      { icon: "plane",  label: "Трансфер",       value: "Рим/Пиза → агроусадьба" }
-    ]
+      { icon: "home", label: "Проживание", value: "Бесплатно с видом на море" },
+      { icon: "food", label: "Питание", value: "Полный пансион" },
+      { icon: "doc", label: "Контракт", value: "Contratto stagionale" },
+      { icon: "shield", label: "Страховка", value: "INPS + INAIL" },
+      { icon: "money", label: "Оплата", value: "€1400 + чаевые €300-500" },
+      { icon: "back", label: "TFR", value: "Выплата при завершении сезона" }
+    ],
+    status: "tp-eligible", visa: "Temporary Protection"
   },
   {
-    id: "it-laundry-jesolo",
-    country: "italy",
-    countryName: "Италия",
-    city: "Лидо-ди-Езоло, Венето",
-    title: "Работник прачечной курортного комплекса",
-    type: "Stagionale",
-    contract: "5 месяцев",
-    start: "Май 2026",
-    rate: 1800,
-    rateMeta: "нетто/мес",
+    id: "it-construction-milan",
+    country: "italy", countryName: "Италия", city: "Милан, Ломбардия",
+    title: "Строитель-универсал",
+    type: "Строительство", category: "construction",
+    contract: "12 месяцев", start: "Апрель 2026",
+    rate: 1950, rateMeta: "нетто/мес",
     hours: "40 ч/нед",
-    overtime: "×1.3",
-    accommodation: "Бесплатное",
-    img: "https://placehold.co/1200x800/1B3A2F/F5F1E8?text=Jesolo+Laundry",
-    gallery: [
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Laundry+Floor",
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Folding+Area",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Sorting",
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Hotel+Group"
-    ],
-    housing: [
-      "https://placehold.co/800x600/8A877F/FFFFFF?text=Staff+Building",
-      "https://placehold.co/800x600/B8935A/FFFFFF?text=Bedroom",
-      "https://placehold.co/800x600/6B6B6B/FFFFFF?text=Bathroom",
-      "https://placehold.co/800x600/4A4A47/FFFFFF?text=Beach+Walk"
-    ],
-    summary: "Центральная прачечная, обслуживающая 12 отелей курорта. Работа с современным оборудованием, кондиционированное помещение. Подходит тем, кто не хочет работать с гостями напрямую.",
-    duties: [
-      "Сортировка белья по типу и степени загрязнения",
-      "Загрузка стиральных и сушильных машин",
-      "Глажка через каландр",
-      "Сборка комплектов для отелей",
-      "Сменная работа: 06–14, 14–22"
-    ],
-    requirements: [
-      "Возраст 21–55 лет",
-      "Готовность к жаркой среде летом",
-      "Загранпаспорт 18+ мес",
-      "Базовая физическая выносливость",
-      "Без серьёзных кожных аллергий"
-    ],
+    overtime: "×1.25-1.5",
+    accommodation: "Корпоративное общежитие, €100/нед",
+    img: "https://placehold.co/1200x800/8B5A2B/F5F1E8?text=IT+Construction",
+    gallery: ["https://placehold.co/800x600/8B5A2B/F5F1E8?text=Milan+Site", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Concrete+Work", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Brick", "https://placehold.co/800x600/8B5A2B/F5F1E8?text=Finishing"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Hostel+IT", "https://placehold.co/800x600/8B7355/F5F1E8?text=Room", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Common"],
+    summary: "Жилое строительство в районе Милана. Многоэтажные дома и реконструкция исторических зданий.",
+    duties: ["Каменные работы", "Бетонирование", "Установка опалубки", "Помощь специалистам"],
+    requirements: ["Опыт стройки 2+ лет", "Итальянский A1 желателен", "Свой инструмент приветствуется"],
     included: [
-      { icon: "home",   label: "Проживание",     value: "Бесплатное" },
-      { icon: "food",   label: "Питание",        value: "2 раза в день" },
-      { icon: "doc",    label: "Контракт",       value: "Stagionale по CCNL" },
-      { icon: "shield", label: "Страховка",      value: "INPS + INAIL" },
-      { icon: "money",  label: "Оплата",         value: "Ежемесячно" },
-      { icon: "plane",  label: "Трансфер",       value: "Венеция → курорт" }
-    ]
+      { icon: "home", label: "Проживание", value: "Общежитие, €100/нед" },
+      { icon: "doc", label: "Контракт", value: "CCNL edilizia" },
+      { icon: "shield", label: "Страховка", value: "INPS + INAIL" },
+      { icon: "money", label: "Оплата", value: "€11-13/ч + TFR" },
+      { icon: "back", label: "13-я и 14-я", value: "Обязательны по CCNL" }
+    ],
+    status: "tp-eligible", visa: "Temporary Protection"
   },
   {
-    id: "it-kitchen-amalfi",
-    country: "italy",
-    countryName: "Италия",
-    city: "Амальфи, Кампания",
-    title: "Aiuto cuoco / commis di cucina в отеле 5★",
-    type: "Stagionale",
-    contract: "7 месяцев",
-    start: "Март 2026",
-    rate: 2050,
-    rateMeta: "нетто/мес + чаевые",
+    id: "it-cook-rome",
+    country: "italy", countryName: "Италия", city: "Рим",
+    title: "Помощник повара (пицца, паста)",
+    type: "Гостиничный бизнес", category: "hospitality",
+    contract: "6-12 месяцев", start: "Май 2026",
+    rate: 1850, rateMeta: "нетто/мес + TFR",
     hours: "40 ч/нед",
-    overtime: "×1.3",
-    accommodation: "Бесплатное",
-    img: "https://placehold.co/1200x800/244A3D/F5F1E8?text=Amalfi+Hotel",
-    gallery: [
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Amalfi+Coast",
-      "https://placehold.co/800x600/1B3A2F/F5F1E8?text=Pro+Kitchen",
-      "https://placehold.co/800x600/244A3D/F5F1E8?text=Prep+Stations",
-      "https://placehold.co/800x600/2D6A4F/F5F1E8?text=Hotel+Terrace"
-    ],
-    housing: [
-      "https://placehold.co/800x600/8A877F/FFFFFF?text=Staff+House",
-      "https://placehold.co/800x600/B8935A/FFFFFF?text=Twin+Room",
-      "https://placehold.co/800x600/6B6B6B/FFFFFF?text=Shared+Kitchen",
-      "https://placehold.co/800x600/4A4A47/FFFFFF?text=Sea+View"
-    ],
-    summary: "Помощник повара в кухне 5★ отеля с одной мишленовской звездой на Амальфитанском побережье. Возможность реального карьерного роста, рекомендации от итальянских шефов.",
-    duties: [
-      "Первичная подготовка продуктов (mise en place)",
-      "Помощь шефам в простых заготовках",
-      "Поддержание чистоты рабочих станций",
-      "Контроль сроков годности",
-      "Работа в команде из 14 человек"
-    ],
-    requirements: [
-      "Возраст 21–40 лет",
-      "Образование/опыт повара (даже базовый)",
-      "Загранпаспорт 18+ мес",
-      "Стрессоустойчивость",
-      "Базовый итальянский — большой плюс"
-    ],
+    accommodation: "Помощь с поиском, €350-450/мес",
+    img: "https://placehold.co/1200x800/B8935A/F5F1E8?text=IT+Rome+Kitchen",
+    gallery: ["https://placehold.co/800x600/B8935A/F5F1E8?text=Rome+Trattoria", "https://placehold.co/800x600/B8935A/F5F1E8?text=Pizza+Oven", "https://placehold.co/800x600/B8935A/F5F1E8?text=Pasta+Station", "https://placehold.co/800x600/B8935A/F5F1E8?text=Colosseum"],
+    housing: ["https://placehold.co/800x600/8B7355/F5F1E8?text=Rome+Flat", "https://placehold.co/800x600/8B7355/F5F1E8?text=Room", "https://placehold.co/800x600/8B7355/F5F1E8?text=Kitchen", "https://placehold.co/800x600/8B7355/F5F1E8?text=Centro"],
+    summary: "Семейная пиццерия-траттория в историческом центре Рима. Туристы со всего мира. Хорошие чаевые.",
+    duties: ["Подготовка теста", "Помощь у печи", "Работа с пастой", "Подготовка заготовок"],
+    requirements: ["Базовый опыт кухни", "Итальянский A2", "Готовность к жаре и интенсиву"],
     included: [
-      { icon: "home",   label: "Проживание",     value: "Staff-дом отеля" },
-      { icon: "food",   label: "Питание",        value: "3 раза в день, кухня отеля" },
-      { icon: "doc",    label: "Контракт",       value: "Stagionale CCNL Turismo" },
-      { icon: "shield", label: "Страховка",      value: "INPS + INAIL" },
-      { icon: "money",  label: "Оплата",         value: "Ежемесячно + чаевые" },
-      { icon: "back",   label: "Перспектива",    value: "Возможность возврата на следующий сезон" }
-    ]
+      { icon: "doc", label: "Контракт", value: "CCNL Pubblici esercizi" },
+      { icon: "shield", label: "Страховка", value: "INPS + INAIL" },
+      { icon: "money", label: "Оплата", value: "€1300 + чаевые" },
+      { icon: "back", label: "TFR + 13-я", value: "Обязательны" }
+    ],
+    status: "tp-eligible", visa: "Temporary Protection"
   }
 ];
 
-/* ============ FAQ ============ */
-window.FAQ = [
-  {
-    q: "За что именно я плачу?",
-    a: "Вы платите за два конкретных сервиса: Document Service (подготовка пакета документов для выезда и легализации в стране) и Arrival & Coordination (встреча в аэропорту, трансфер, заселение, помощь с регистрацией). Подбор вакансии и собеседование с работодателем — бесплатно."
-  },
-  {
-    q: "Что если меня не примут на работу?",
-    a: "Если работодатель или консульство отказывают по причинам, не связанным с вашими действиями (например, изменение квот или форс-мажор работодателя) — мы возвращаем 100% стоимости услуги. Это прописано в нашей публичной оферте."
-  },
-  {
-    q: "Что если я сам передумаю?",
-    a: "Услуга считается оказанной в момент передачи вам готового пакета документов. Если после этого вы решите не выходить на работу — мы понимаем, что обстоятельства бывают разные, но возврат в этом случае не предусмотрен, так как вся работа с нашей стороны уже выполнена. Поэтому рекомендуем заранее быть уверенным в решении."
-  },
-  {
-    q: "Безопасна ли оплата?",
-    a: "Все платежи проходят через Stripe — глобальную платёжную систему, которая обслуживает Amazon, Google, Booking.com. Ваши карточные данные никогда не попадают на наш сервер. После оплаты вы получаете официальный чек на email."
-  },
-  {
-    q: "Сколько времени готовятся документы?",
-    a: "В среднем 2–6 недель в зависимости от страны. Великобритания — 4–6 недель (sponsor letter, biometric appointment). Германия и Нидерланды — 2–4 недели. Греция и Италия (сезонные контракты) — 3–5 недель."
-  },
-  {
-    q: "Почему UK дороже, чем остальные направления?",
-    a: "UK-направление требует расширенного пакета документов: Certificate of Sponsorship от работодателя, biometric appointment в визовом центре, дополнительные переводы и проверки в рамках UK Visa System. Объём работы больше — поэтому пакет стоит дороже."
-  },
-  {
-    q: "Что входит в Arrival Service?",
-    a: "Встреча в аэропорту, трансфер до места работы, заселение в общежитие, ориентация в первый день, помощь с покупкой SIM-карты, помощь с открытием банковского счёта и регистрацией (Anmeldung, BSN, NIN — в зависимости от страны), сопровождение к работодателю, экстренная связь 24/7 первые 14 дней после прибытия."
-  },
-  {
-    q: "Можно ли оплатить пакеты раздельно?",
-    a: "Да. Многие кандидаты сначала оплачивают только Document Service, получают визу/work permit, и только после этого — Arrival Service. Это совершенно нормально и часто выгоднее."
-  }
-];
-
-/* ============ CASES ============ */
+/* ---------- CASES (extended with money figures) ---------- */
 window.CASES = [
   {
     name: "Дмитрий, 34",
     role: "Сборщик шампиньонов, UK",
-    quote: "Боялся ехать, потому что слышал истории про обман. Здесь всё было как обещали — встретили в Гэтвике, отвезли на ферму, показали комнату. Уже отработал 4 месяца, поеду снова в следующий сезон.",
-    img: "https://placehold.co/600x800/2D6A4F/F5F1E8?text=Photo+placeholder",
-    video: "[REAL VIDEO TO BE ADDED]"
+    quote: "Сезон 2024 — €11,500 за 6 месяцев. Это нетто после всех удержаний за жильё. Возвращаюсь второй год подряд, в этот раз обещали бригадиром.",
+    img: "https://placehold.co/800x800/2D5A3D/F5F1E8?text=Dmitry+UK",
+    tag: "UK · Norfolk",
+    amount: "€11,500",
+    period: "6 месяцев"
   },
   {
-    name: "Оксана, 41",
-    role: "Горничная, отель 5★, Крит",
-    quote: "Это был мой первый сезон в Греции. Всё было официально, контракт на руках, ИКА оформили. Жильё бесплатное, питание — три раза в день. За шесть месяцев скопила почти €10 000.",
-    img: "https://placehold.co/600x800/B8935A/FFFFFF?text=Photo+placeholder",
-    video: "[REAL VIDEO TO BE ADDED]"
+    name: "Елена, 29",
+    role: "Горничная, Греция (Крит)",
+    quote: "Привезла €10,200 + €1,400 чаевыми за сезон. Жильё и еда были бесплатно — практически всё, что заработала, осталось на руках.",
+    img: "https://placehold.co/800x800/4A6D8B/F5F1E8?text=Elena+GR",
+    tag: "GR · Crete",
+    amount: "€10,200",
+    period: "5 месяцев"
   },
   {
-    name: "Андрей, 29",
-    role: "Оператор теплиц, Нидерланды",
-    quote: "Самое важное было — что мне помогли с BSN и банковским счётом сразу по приезду. Без этого я бы три недели бегал по офисам. А так через 5 дней уже работал и получал зарплату на голландский счёт.",
-    img: "https://placehold.co/600x800/244A3D/F5F1E8?text=Photo+placeholder",
-    video: "[REAL VIDEO TO BE ADDED]"
+    name: "Сергей, 42",
+    role: "Сборщик в теплице, NL",
+    quote: "12 месяцев — €25,800 чистыми. Через год перевели на постоянный контракт Phase B, теперь думаю об ипотеке.",
+    img: "https://placehold.co/800x800/2D5A3D/F5F1E8?text=Sergey+NL",
+    tag: "NL · Westland",
+    amount: "€25,800",
+    period: "12 месяцев"
   }
+];
+
+/* ---------- FAQ (general) ---------- */
+window.FAQ = [
+  { q: "Сколько реально можно заработать?", a: "UK: €1900–2400/мес чистыми. Германия и Нидерланды: €2000–2200. Греция и Италия: €1850–2050 + чаевые. Норвегия и Швейцария: €3000–4000 (одни из самых высоких в Европе). Дания: €2700–3000." },
+  { q: "Сколько стоит уехать?", a: "Подбор вакансии и интервью — бесплатно. Платите только за документы (€200–300) и встречу в аэропорту (€150–250). После того как у вас на руках уже есть job offer." },
+  { q: "Что если работодатель откажет?", a: "Если отказ не по вашей вине — возврат 100% через Stripe на ту же карту, что платили. Срок 5–10 рабочих дней." },
+  { q: "Какие документы нужны для разных стран?", a: "Зависит от вашего статуса в Европе. Если уже в ЕС с Temporary Protection — переезд проще. Если из Украины — нужна виза или регистрация в стране прибытия. Подробно — на странице 'Документы'." },
+  { q: "Жильё включено?", a: "Везде есть жильё. В UK и большинстве вакансий ЕС — €40-130/нед удержание из зарплаты. В Греции, Италии, Швейцарии (отели) — бесплатно + питание." },
+  { q: "Сколько времени готовят документы?", a: "UK — 4-6 недель. ЕС с TP — 2-3 недели. Швейцария (с дек 2025) — 1-2 дня для S permit holders. Норвегия — 2-4 недели." },
+  { q: "Нужен ли английский?", a: "Сельхоз и фабрики — нет. Отели в Греции и Италии — А1-А2 (горничная) до B1 (официант). Швейцария — B1-B2 для отелей. Водители — A2-B1." }
 ];

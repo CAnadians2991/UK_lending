@@ -35,7 +35,8 @@
       "Bash(npm install *)",
       "Bash(docker compose *)",
       "Bash(head -776 /Users/admin/Downloads/deploy/index.html)",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "Read(//Users/admin/Downloads/europeservice 2/**)"
     ]
   }
 }
