@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facebook Гайд для менеджерів | EuropeService</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: #ffffff;
+  color: #1a2440;
+  font-family: 'Mulish', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ─── VARIABLES ─── */
+:root {
+  --blue: #1877F2;
+  --blue-s: #e8f1ff;
+  --blue-m: #c7ddfe;
+  --green: #059669;
+  --green-s: #d1fae5;
+  --orange: #ea580c;
+  --orange-s: #fff1e6;
+  --red: #dc2626;
+  --red-s: #fee2e2;
+  --yellow: #d97706;
+  --yellow-s: #fef3c7;
+  --purple: #7c3aed;
+  --purple-s: #ede9fe;
+  --gray: #f8f9fc;
+  --gray-b: #e8ecf4;
+  --text: #1a2440;
+  --muted: #64748b;
+  --font-h: 'Nunito', sans-serif;
+}
+
+/* ─── PAGE LAYOUT ─── */
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 32px;
+}
+
+/* ─── HERO ─── */
+.hero {
+  background: linear-gradient(135deg, #1877F2 0%, #2563eb 50%, #1d4ed8 100%);
+  border-radius: 24px;
+  padding: 48px 44px;
+  color: white;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: 'f';
+  font-family: var(--font-h);
+  font-weight: 900;
+  font-size: 320px;
+  color: rgba(255,255,255,0.05);
+  position: absolute;
+  right: -20px;
+  top: -60px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.hero-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.hero-label {
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 99px;
+  padding: 5px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-family: var(--font-h);
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.hero-desc {
+  font-size: 15px;
+  opacity: 0.85;
+  max-width: 520px;
+  line-height: 1.65;
+}
+
+.hero-nums {
+  display: flex;
+  gap: 20px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.hero-num {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 14px;
+  padding: 14px 20px;
+  text-align: center;
+  min-width: 110px;
+}
+
+.hero-num .n {
+  font-family: var(--font-h);
+  font-size: 28px;
+  font-weight: 900;
+  display: block;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.hero-num .l {
+  font-size: 11px;
+  opacity: 0.75;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ─── SECTION WRAPPER ─── */
+.section {
+  margin-bottom: 28px;
+}
+
+/* ─── SECTION HEADER ─── */
+.sec-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--gray-b);
+}
+
+.sec-num {
+  font-family: var(--font-h);
+  font-size: 11px;
+  font-weight: 900;
+  color: white;
+  background: var(--blue);
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sec-head h2 {
+  font-family: var(--font-h);
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--text);
+}
+
+.sec-why {
+  background: var(--blue-s);
+  border-left: 4px solid var(--blue);
+  border-radius: 0 12px 12px 0;
+  padding: 12px 18px;
+  font-size: 13px;
+  color: #1e40af;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.sec-why strong { font-weight: 700; }
+
+/* ─── PROFILE GRID ─── */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.prof-card {
+  background: var(--gray);
+  border: 1.5px solid var(--gray-b);
+  border-radius: 16px;
+  padding: 20px 16px;
+  transition: border-color .2s;
+}
+
+.prof-card:hover { border-color: var(--blue); }
+
+.prof-emoji { font-size: 28px; margin-bottom: 10px; display: block; }
+
+.prof-card h3 {
+  font-family: var(--font-h);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.prof-card p {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.prof-card .tag {
+  display: inline-block;
+  background: var(--blue-s);
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin-top: 8px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+/* ─── TRIGGER BLOCK ─── */
+.trigger-box {
+  background: linear-gradient(135deg, #1877F2, #2563eb);
+  border-radius: 20px;
+  padding: 28px 32px;
+  color: white;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.trigger-icon {
+  font-size: 52px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.trigger-box h3 {
+  font-family: var(--font-h);
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.trigger-box p {
+  font-size: 13.5px;
+  opacity: .85;
+  line-height: 1.6;
+}
+
+.free-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.free-tag {
+  background: white;
+  border: 1.5px solid var(--gray-b);
+  border-radius: 99px;
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* ─── SCHEDULE ─── */
+.schedule-card {
+  background: white;
+  border: 1.5px solid var(--gray-b);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+  margin-bottom: 16px;
+}
+
+.sch-head {
+  background: var(--blue-s);
+  padding: 13px 24px;
+  font-family: var(--font-h);
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--blue);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sch-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 160px;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--gray-b);
+}
+
+.sch-row.peak {
+  background: linear-gradient(90deg, #eff6ff, #f0fdf4);
+}
+
+.sch-time-label {
+  font-family: var(--font-h);
+  font-size: 17px;
+  font-weight: 900;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sch-bar-bg {
+  height: 12px;
+  background: var(--gray-b);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.sch-bar {
+  height: 100%;
+  border-radius: 99px;
+}
+
+.sch-bar.b1 { width: 45%; background: linear-gradient(90deg, #60a5fa, #3b82f6); }
+.sch-bar.b2 { width: 68%; background: linear-gradient(90deg, #3b82f6, #2563eb); }
+.sch-bar.b3 { width: 100%; background: linear-gradient(90deg, #1877F2, #059669); }
+
+.sch-note {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.sch-note.peak-note {
+  color: var(--green);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ─── LIMIT CARDS ─── */
+.limits-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.lim-card {
+  border-radius: 16px;
+  padding: 18px 16px;
+  border: 1.5px solid;
+  text-align: center;
+}
+
+.lim-card.red { background: var(--red-s); border-color: #fca5a5; }
+.lim-card.orange { background: var(--orange-s); border-color: #fdba74; }
+.lim-card.green { background: var(--green-s); border-color: #6ee7b7; }
+.lim-card.yellow { background: var(--yellow-s); border-color: #fcd34d; }
+
+.lim-num {
+  font-family: var(--font-h);
+  font-size: 30px;
+  font-weight: 900;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.red .lim-num { color: var(--red); }
+.orange .lim-num { color: var(--orange); }
+.green .lim-num { color: var(--green); }
+.yellow .lim-num { color: var(--yellow); }
+
+.lim-title {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 4px;
+  font-family: var(--font-h);
+}
+
+.lim-desc {
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+/* ─── GROUPS TIPS ─── */
+.tips-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tip-item {
+  background: white;
+  border: 1.5px solid var(--gray-b);
+  border-radius: 12px;
+  padding: 13px 18px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.tip-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+.td-blue { background: var(--blue); }
+.td-green { background: var(--green); }
+.td-orange { background: var(--orange); }
+.td-red { background: var(--red); }
+
+.tip-item p { font-size: 13.5px; color: #334155; line-height: 1.55; }
+.tip-item p strong { color: var(--text); }
+
+/* ─── FORMAT COMPARE ─── */
+.format-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.fmt {
+  border-radius: 18px;
+  padding: 22px 20px;
+  border: 1.5px solid;
+}
+
+.fmt.yes { background: var(--green-s); border-color: #6ee7b7; }
+.fmt.care { background: var(--yellow-s); border-color: #fcd34d; }
+
+.fmt h3 {
+  font-family: var(--font-h);
+  font-size: 14px;
+  font-weight: 900;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fmt.yes h3 { color: var(--green); }
+.fmt.care h3 { color: var(--yellow); }
+
+.fmt ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.fmt li {
+  font-size: 13px;
+  color: #334155;
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.5;
+}
+.fmt li::before { content: '→'; position: absolute; left:0; color: var(--blue); font-size:11px; top:2px; }
+
+/* ─── VACANCY CHECKLIST ─── */
+.vac-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.vac-row {
+  background: white;
+  border: 1.5px solid var(--gray-b);
+  border-radius: 12px;
+  padding: 13px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vac-check {
+  width: 30px; height: 30px;
+  background: var(--green-s);
+  border: 1.5px solid #6ee7b7;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.vac-row p {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.35;
+}
+
+/* ─── ALGO BLOCK ─── */
+.algo-wrap {
+  background: white;
+  border: 1.5px solid var(--gray-b);
+  border-radius: 20px;
+  padding: 28px 24px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  margin-bottom: 16px;
+}
+
+.algo-title {
+  font-family: var(--font-h);
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--muted);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.algo-chain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.algo-box {
+  background: var(--blue-s);
+  border: 2px solid var(--blue-m);
+  border-radius: 14px;
+  padding: 12px 16px;
+  text-align: center;
+}
+
+.algo-box .ico { font-size: 22px; display: block; margin-bottom: 4px; }
+.algo-box .label { font-family: var(--font-h); font-size: 12px; font-weight: 800; color: var(--blue); }
+.algo-box .sub { font-size: 10.5px; color: var(--muted); margin-top: 2px; }
+
+.algo-arr { font-size: 20px; color: #93c5fd; }
+
+.algo-badge {
+  background: var(--yellow-s);
+  border: 1.5px solid #fcd34d;
+  border-radius: 99px;
+  padding: 8px 20px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--yellow);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin: 20px auto 0;
+}
+
+/* ─── EXAMPLE POST ─── */
+.example-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.post-mockup {
+  background: white;
+  border: 1.5px solid var(--gray-b);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+}
+
+.pm-top {
+  background: #f0f2f5;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pm-avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1877F2, #2563eb);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.pm-name { font-family: var(--font-h); font-size: 13px; font-weight: 800; color: var(--text); }
+.pm-time { font-size: 11px; color: var(--muted); }
+
+.pm-body {
+  padding: 16px;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: #334155;
+  border-top: 1px solid var(--gray-b);
+}
+
+.pm-footer {
+  background: #f9fafc;
+  border-top: 1px solid var(--gray-b);
+  padding: 10px 16px;
+  display: flex;
+  gap: 16px;
+}
+
+.pm-act {
+  font-size: 11.5px;
+  color: var(--muted);
+  font-weight: 700;
+  display: flex; align-items: center; gap: 4px;
+}
+
+.post-results {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.post-results h4 {
+  font-family: var(--font-h);
+  font-size: 13px;
+  font-weight: 900;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.res-row {
+  background: var(--blue-s);
+  border: 1.5px solid var(--blue-m);
+  border-radius: 12px;
+  padding: 11px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e40af;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ─── STORIES GRID ─── */
+.stories-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.story-card {
+  background: white;
+  border: 1.5px solid var(--gray-b);
+  border-radius: 16px;
+  padding: 18px 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.story-card:hover { border-color: var(--blue); }
+
+.story-card .ico { font-size: 26px; display: block; margin-bottom: 8px; }
+.story-card .lbl {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.content-tip {
+  background: var(--purple-s);
+  border: 1.5px solid #c4b5fd;
+  border-radius: 14px;
+  padding: 16px 20px;
+  font-size: 13.5px;
+  color: #4c1d95;
+  line-height: 1.6;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.content-tip .ico { font-size: 20px; flex-shrink: 0; }
+
+/* ─── FUNNEL ─── */
+.funnel-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 24px;
+}
+
+.f-step {
+  width: 100%;
+}
+
+.f-bar {
+  border-radius: 12px;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 auto;
+  border: 1.5px solid;
+}
+
+.f-step.s1 .f-bar { max-width: 760px; background:#eff6ff; border-color:#bfdbfe; }
+.f-step.s2 .f-bar { max-width: 680px; background:#e0f2fe; border-color:#7dd3fc; }
+.f-step.s3 .f-bar { max-width: 600px; background:#d1fae5; border-color:#6ee7b7; }
+.f-step.s4 .f-bar { max-width: 520px; background:#fef9c3; border-color:#fde047; }
+.f-step.s5 .f-bar { max-width: 440px; background:#fce7f3; border-color:#f9a8d4; }
+.f-step.s6 .f-bar { max-width: 360px; background:#d1fae5; border-color:#34d399; }
+
+.f-conn { width:2px; height:14px; background:var(--gray-b); margin:0 auto; }
+
+.f-n {
+  font-family: var(--font-h);
+  font-size: 18px;
+  font-weight: 900;
+  width: 28px;
+  flex-shrink: 0;
+  text-align: center;
+}
+.s1 .f-n { color:#2563eb; }
+.s2 .f-n { color:#0284c7; }
+.s3 .f-n { color:#059669; }
+.s4 .f-n { color:#ca8a04; }
+.s5 .f-n { color:#be185d; }
+.s6 .f-n { color:#059669; font-size:20px; }
+
+.f-text { font-size: 13.5px; color: #334155; line-height: 1.45; }
+.f-text strong { color: var(--text); font-weight: 800; }
+
+/* ─── CHANNELS ─── */
+.channels-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.ch-chip {
+  background: white;
+  border: 1.5px solid var(--gray-b);
+  border-radius: 14px;
+  padding: 14px 20px;
+  text-align: center;
+  min-width: 105px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  font-family: var(--font-h);
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.ch-chip span { font-size: 26px; display: block; margin-bottom: 6px; }
+
+/* ─── FOOTER ─── */
+.footer {
+  background: var(--blue-s);
+  border-radius: 18px;
+  padding: 22px 28px;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.footer p { font-size: 12.5px; color: #1e40af; }
+.footer strong { font-family: var(--font-h); font-weight: 900; }
+
+/* ─── PRINT ─── */
+@media print {
+  body { background: white; }
+  .page { padding: 20px 24px; }
+}
+
+@media (max-width: 700px) {
+  .profile-grid { grid-template-columns: repeat(2, 1fr); }
+  .limits-row { grid-template-columns: repeat(2, 1fr); }
+  .format-2col { grid-template-columns: 1fr; }
+  .vac-grid { grid-template-columns: repeat(2, 1fr); }
+  .stories-5 { grid-template-columns: repeat(3, 1fr); }
+  .example-area { grid-template-columns: 1fr; }
+  .algo-chain { flex-direction: column; }
+  .hero h1 { font-size: 26px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ══════════ HERO ══════════ -->
+<div class="hero">
+  <div class="hero-label">EuropeService · Гайд для менеджерів · v3.0</div>
+  <div class="hero-top">
+    <div>
+      <h1>Facebook — твій головний<br>інструмент пошуку кандидатів</h1>
+      <p class="hero-desc">Цей гайд пояснює кожен крок: що робити, як робити і — головне — <strong>навіщо</strong> це потрібно. Читай, застосовуй, отримуй результат.</p>
+    </div>
+  </div>
+  <div class="hero-nums">
+    <div class="hero-num"><span class="n">15–20</span><span class="l">постів/день макс</span></div>
+    <div class="hero-num"><span class="n">7 000+</span><span class="l">учасників у групі</span></div>
+    <div class="hero-num"><span class="n">19:00</span><span class="l">пік активності</span></div>
+    <div class="hero-num"><span class="n">3×</span><span class="l">публікації на день</span></div>
+    <div class="hero-num"><span class="n">100%</span><span class="l">відповідей у коментах</span></div>
+  </div>
+</div>
+
+<!-- ══════════ 01. ПРОФІЛЬ ══════════ -->
+<div class="section">
+  <div class="sec-head">
+    <div class="sec-num">01</div>
+    <h2>Оформлення профілю — перше враження</h2>
+  </div>
+  <div class="sec-why">
+    <strong>Навіщо це потрібно?</strong> Людина, яка побачила твоє оголошення, першим ділом зайде на твій профіль. Якщо сторінка виглядає порожньо або підозріло — вона закриє і піде. Якщо профіль живий і довірливий — напише сама. Тому профіль — це твоя «вітрина», і вона має бути ідеальною ще до першого посту.
+  </div>
+  <div class="profile-grid">
+    <div class="prof-card">
+      <span class="prof-emoji">📸</span>
+      <h3>Аватар — фото 40+</h3>
+      <p>Фото дорослої людини (чоловік або жінка 40+) викликає набагато більше довіри у людей, ніж молоде обличчя або логотип. Аудиторія Facebook — люди старшого покоління, вони звикли довіряти «досвідченим».</p>
+      <span class="tag">Довіра аудиторії</span>
+    </div>
+    <div class="prof-card">
+      <span class="prof-emoji">🖼️</span>
+      <h3>Обкладинка — чіткий меседж</h3>
+      <p>Використовуй ШІ-зображення з текстом: «Personal Work — безкоштовне працевлаштування». Людина одразу розуміє, куди потрапила, ще до того як прочитала хоч один пост.</p>
+      <span class="tag">Перше враження</span>
+    </div>
+    <div class="prof-card">
+      <span class="prof-emoji">✍️</span>
+      <h3>Шапка — ключові слова</h3>
+      <p>В описі профілю обов'язково: «безкоштовне працевлаштування», «безкоштовні вакансії», «робота за кордоном». Facebook індексує ці слова — тебе знайдуть навіть без реклами.</p>
+      <span class="tag">SEO у Facebook</span>
+    </div>
+    <div class="prof-card">
+      <span class="prof-emoji">🔗</span>
+      <h3>Опис — всі твої канали</h3>
+      <p>Постав посилання на TikTok, Telegram-групи, Instagram. Людина, яка тобі довіряє на Facebook, підпишеться скрізь — так ти охоплюєш її на декількох платформах одночасно.</p>
+      <span class="tag">Мультиканальність</span>
+    </div>
+    <div class="prof-card">
+      <span class="prof-emoji">📌</span>
+      <h3>Закріплений пост — головне вгорі</h3>
+      <p>Закріпи пост із описом послуг і напрямками (Польща, Чехія, Великобританія і т.д.). Це перше, що читає новий відвідувач. Не змушуй його гортати стрічку в пошуках інформації.</p>
+      <span class="tag">Конверсія у підписника</span>
+    </div>
+    <div class="prof-card">
+      <span class="prof-emoji">⚙️</span>
+      <h3>Професійний режим — одразу</h3>
+      <p>Після створення акаунта — Settings → Professional Mode. Це дає статистику (скільки людей бачили пост), знижує ризик блокувань і підвищує авторитет сторінки в очах алгоритму.</p>
+      <span class="tag">Захист від бану</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ 02. ТРИГЕР ══════════ -->
+<div class="section">
+  <div class="sec-head">
+    <div class="sec-num">02</div>
+    <h2>Слово «БЕЗКОШТОВНО» — головний тригер</h2>
+  </div>
+  <div class="sec-why">
+    <strong>Навіщо це потрібно?</strong> Люди, які шукають роботу за кордоном, бояться обману і прихованих витрат. Слово «безкоштовно» знімає цей страх і різко підвищує кількість звернень. Це не маніпуляція — це чесне пояснення того, що ти реально надаєш безкоштовно. Використовуй його скрізь і завжди.
+  </div>
+  <div class="trigger-box">
+    <div class="trigger-icon">🆓</div>
+    <div>
+      <h3>Вживай слово «безкоштовно» у кожному пості</h3>
+      <p>Це найсильніший тригер у сфері працевлаштування. Він знімає страх перед шахрайством, відрізняє тебе від конкурентів, які «забувають» це написати, і збільшує кількість звернень у 2–3 рази порівняно з постами без цього слова.</p>
+    </div>
+  </div>
+  <div class="free-tags">
+    <div class="free-tag">💼 Безкоштовне працевлаштування</div>
+    <div class="free-tag">📋 Безкоштовна вакансія</div>
+    <div class="free-tag">🏠 Безкоштовне житло</div>
+    <div class="free-tag">🍽️ Безкоштовне харчування</div>
+    <div class="free-tag">🚌 Безкоштовний транспорт</div>
+  </div>
+</div>
+
+<!-- ══════════ 03. ГРУПИ ══════════ -->
+<div class="section">
+  <div class="sec-head">
+    <div class="sec-num">03</div>
+    <h2>Робота з групами та розклад публікацій</h2>
+  </div>
+  <div class="sec-why">
+    <strong>Навіщо це потрібно?</strong> Групи — це вже зібрана аудиторія, яка шукає саме те, що ти пропонуєш. Замість того щоб чекати, поки люди знайдуть тебе самі, ти виходиш до них. Але Facebook стежить за поведінкою: занадто багато постів — бан. Тому потрібна система: правильний час, правильна кількість, правильні групи.
+  </div>
+
+  <div class="schedule-card">
+    <div class="sch-head"><span>Час публікації</span><span>Активність людей у Facebook</span></div>
+    <div class="sch-row">
+      <div class="sch-time-label">🌅 Ранок</div>
+      <div class="sch-bar-bg"><div class="sch-bar b1"></div></div>
+      <div class="sch-note">Перегляд стрічки перед роботою</div>
+    </div>
+    <div class="sch-row">
+      <div class="sch-time-label">☀️ День</div>
+      <div class="sch-bar-bg"><div class="sch-bar b2"></div></div>
+      <div class="sch-note">Обідня перерва — середня активність</div>
+    </div>
+    <div class="sch-row peak">
+      <div class="sch-time-label">🌆 19:00–20:00</div>
+      <div class="sch-bar-bg"><div class="sch-bar b3"></div></div>
+      <div class="sch-note peak-note">⭐ НАЙКРАЩИЙ ЧАС — будь онлайн!</div>
+    </div>
+  </div>
+
+  <div class="limits-row">
+    <div class="lim-card red">
+      <span class="lim-num">20</span>
+      <div class="lim-title">Максимум постів/день</div>
+      <div class="lim-desc">Більше — ризик бану. Новий акаунт: починай з 5–7 на день.</div>
+    </div>
+    <div class="lim-card orange">
+      <span class="lim-num">3×</span>
+      <div class="lim-title">Публікацій щодня</div>
+      <div class="lim-desc">Ранок, день, вечір. Рівномірно — не всі одразу.</div>
+    </div>
+    <div class="lim-card green">
+      <span class="lim-num">7К+</span>
+      <div class="lim-title">Учасників у групі</div>
+      <div class="lim-desc">Мертві групи до 1000 осіб — марна трата часу.</div>
+    </div>
+    <div class="lim-card yellow">
+      <span class="lim-num">✗</span>
+      <div class="lim-title">Виходь з проблемних</div>
+      <div class="lim-desc">Якщо пости видаляють або не пропускають — прибирай групу зі списку.</div>
+    </div>
+  </div>
+
+  <div class="tips-col">
+    <div class="tip-item">
+      <div class="tip-dot td-blue"></div>
+      <p><strong>Цільові групи:</strong> «Робота в Чехії», «Українці в Польщі», «Робота в Німеччині», «Робота в Італії» — шукай нові схожі кожного тижня і додавайся.</p>
+    </div>
+    <div class="tip-item">
+      <div class="tip-dot td-green"></div>
+      <p><strong>Регулярно чисти список груп:</strong> неактивні або ті, що блокують — видаляй. Замість них додавай свіжі тематичні спільноти. Список має «жити».</p>
+    </div>
+    <div class="tip-item">
+      <div class="tip-dot td-orange"></div>
+      <p><strong>Новий акаунт — поводься обережно:</strong> Facebook «дивиться» на нові акаунти з підозрою. Перший тиждень — максимум 5 постів на день, поступово збільшуй.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ 04. ФОРМАТ ══════════ -->
+<div class="section">
+  <div class="sec-head">
+    <div class="sec-num">04</div>
+    <h2>Формат оголошень — як писати щоб читали</h2>
+  </div>
+  <div class="sec-why">
+    <strong>Навіщо це потрібно?</strong> Аудиторія Facebook — переважно люди 35–55 років. Вони не реагують на «стильний мінімалізм». Їм потрібно яскраво, емоційно, зрозуміло. Емодзі — не дитяча забавка, а візуальний навігатор по тексту. Картинки — пастка: Facebook вважає масові однакові фото спамом і блокує. Тому тексти — наш головний формат.
+  </div>
+
+  <div class="format-2col">
+    <div class="fmt yes">
+      <h3>✅ Текстові пости — наш пріоритет</h3>
+      <ul>
+        <li>Багато смайликів — допомагають «прочитати» пост очима швидко</li>
+        <li>Чергуй короткі пости (3–5 рядків) і розгорнуті (10–15 рядків)</li>
+        <li>Яскраво, емоційно, з конкретними цифрами зарплати</li>
+        <li>Завжди тестуй різні варіанти — фіксуй, що дає більше коментарів</li>
+        <li>Проходять модерацію миттєво, Facebook їх не блокує</li>
+      </ul>
+    </div>
+    <div class="fmt care">
+      <h3>⚠️ Картинки — використовуй обережно</h3>
+      <ul>
+        <li>Одне й те саме фото в 50 групах = Facebook вважає це спамом</li>
+        <li>Довше проходять модерацію — затримки до кількох годин</li>
+        <li>Частіше викликають блокування акаунта</li>
+        <li>Якщо картинка — щоразу нова або з іншим текстом поверх неї</li>
+        <li>Краще: відео з телефону коротке — воно охоплює більше</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="font-family:var(--font-h); font-size:15px; font-weight:900; margin-bottom:13px; color:var(--text)">✅ Що обов'язково писати у кожній вакансії</h3>
+  <div class="vac-grid">
+    <div class="vac-row"><div class="vac-check">💰</div><p>Зарплата (конкретна сума, не «від…»)</p></div>
+    <div class="vac-row"><div class="vac-check">🏠</div><p>Безкоштовне житло</p></div>
+    <div class="vac-row"><div class="vac-check">🍽️</div><p>Безкоштовне харчування</p></div>
+    <div class="vac-row"><div class="vac-check">🚌</div><p>Безкоштовний транспорт</p></div>
+    <div class="vac-row"><div class="vac-check">📅</div><p>Стабільний графік роботи</p></div>
+    <div class="vac-row"><div class="vac-check">✅</div><p>Перевірений роботодавець</p></div>
+  </div>
+</div>
+
+<!-- ══════════ 05. КОМЕНТАРІ ══════════ -->
+<div class="section">
+  <div class="sec-head">
+    <div class="sec-num">05</div>
+    <h2>Алгоритм Facebook та робота з коментарями</h2>
+  </div>
+  <div class="sec-why">
+    <strong>Навіщо це потрібно?</strong> Facebook — не дошка оголошень. Це соціальна мережа, де алгоритм вирішує, скільки людей побачать твій пост. Чим більше коментарів — тим більше охоплення. Тому КОЖЕН коментар під твоїм постом — це безкоштовна реклама. Ігнорувати коментарі = викидати гроші на вітер.
+  </div>
+
+  <div class="algo-wrap">
+    <div class="algo-title">⚙️ Як алгоритм Facebook ранжує твої пости</div>
+    <div class="algo-chain">
+      <div class="algo-box">
+        <span class="ico">💬</span>
+        <div class="label">Коментарі</div>
+        <div class="sub">відповідай на всі</div>
+      </div>
+      <span class="algo-arr">→</span>
+      <div class="algo-box">
+        <span class="ico">📡</span>
+        <div class="label">Охоплення</div>
+        <div class="sub">пост отримує трафік</div>
+      </div>
+      <span class="algo-arr">→</span>
+      <div class="algo-box">
+        <span class="ico">👁️</span>
+        <div class="label">Перегляди</div>
+        <div class="sub">нові люди бачать пост</div>
+      </div>
+      <span class="algo-arr">→</span>
+      <div class="algo-box">
+        <span class="ico">🔁</span>
+        <div class="label">Нові коментарі</div>
+        <div class="sub">цикл прискорюється</div>
+      </div>
+    </div>
+    <div class="algo-badge">⭐ Активний пост Facebook піднімає вище у стрічці та рекомендує іншим — безкоштовно</div>
+  </div>
+
+  <div class="example-area">
+    <div>
+      <div class="post-mockup">
+        <div class="pm-top">
+          <div class="pm-avatar">👩</div>
+          <div>
+            <div class="pm-name">Personal Work Agency</div>
+            <div class="pm-time">Вчора о 19:15 · 🌐</div>
+          </div>
+        </div>
+        <div class="pm-body">
+          🇮🇹 Хто шукає роботу в <strong>Італії</strong>?<br><br>
+          ✅ Безкоштовне житло<br>
+          ✅ Безкоштовне харчування<br>
+          ✅ Безкоштовний транспорт<br>
+          💰 Зарплата від <strong>1 200 €/місяць</strong><br>
+          🏭 Перевірений роботодавець<br><br>
+          👇 Пишіть свій номер телефону в коментарі — надішлю актуальні вакансії у <strong>Viber</strong>!
+        </div>
+        <div class="pm-footer">
+          <span class="pm-act">👍 Подобається</span>
+          <span class="pm-act">💬 Коментувати</span>
+          <span class="pm-act">↗ Поділитись</span>
+        </div>
+      </div>
+    </div>
+    <div class="post-results">
+      <h4>Що дає такий пост:</h4>
+      <div class="res-row"><span>📞</span><span>Збирає номери телефонів прямо у коментарях</span></div>
+      <div class="res-row"><span>🎯</span><span>Дозволяє одразу зрозуміти, яка країна популярна</span></div>
+      <div class="res-row"><span>💬</span><span>Переводить людину у Viber / Telegram для особистої розмови</span></div>
+      <div class="res-row"><span>📊</span><span>Коментарі «розкручують» пост через алгоритм</span></div>
+      <div class="res-row"><span>🔁</span><span>Можна повторювати щотижня — змінюй країну або деталі</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ 06. КОНТЕНТ ══════════ -->
+<div class="section">
+  <div class="sec-head">
+    <div class="sec-num">06</div>
+    <h2>Наповнення профілю та Stories</h2>
+  </div>
+  <div class="sec-why">
+    <strong>Навіщо це потрібно?</strong> Коли людина заходить на твій профіль і бачить активну сторінку з відгуками, фото, відео та свіжими постами — вона думає: «Ці люди реальні, їм можна довіряти». Порожній або застарілий профіль — навпаки, відлякує навіть теплого кандидата. Сторіз — це щоденне нагадування про тебе тим, хто вже підписаний.
+  </div>
+  <div class="stories-5">
+    <div class="story-card"><span class="ico">💼</span><div class="lbl">Актуальні вакансії</div></div>
+    <div class="story-card"><span class="ico">⭐</span><div class="lbl">Відгуки кандидатів</div></div>
+    <div class="story-card"><span class="ico">📸</span><div class="lbl">Фото з роботи</div></div>
+    <div class="story-card"><span class="ico">🌍</span><div class="lbl">Новини по напрямках</div></div>
+    <div class="story-card"><span class="ico">🔔</span><div class="lbl">Вільні місця</div></div>
+  </div>
+  <div class="content-tip">
+    <span class="ico">💡</span>
+    <span><strong>Лайфхак:</strong> Не знімай нічого нового. Просто перевикористовуй контент із TikTok та Instagram — завантажуй ті ж відео та фото на Facebook. Це займає 2 хвилини і тримає профіль активним щодня без зайвих зусиль.</span>
+  </div>
+</div>
+
+<!-- ══════════ 07. ВОРОНКА ══════════ -->
+<div class="section">
+  <div class="sec-head">
+    <div class="sec-num">07</div>
+    <h2>Воронка: від першого посту до кандидата на роботі</h2>
+  </div>
+  <div class="sec-why">
+    <strong>Навіщо це потрібно?</strong> Facebook — це лише початок шляху. Ніхто не підпише контракт у коментарях. Твоє завдання — якомога швидше перевести людину в особисте спілкування (Messenger, Viber, Telegram). Саме там відбувається справжня робота: виявлення потреби, підбір вакансії, закриття угоди. Чим швидше ти це робиш — тим вищий результат.
+  </div>
+
+  <div class="funnel-wrap">
+    <div class="f-step s1"><div class="f-bar"><div class="f-n">1</div><div class="f-text"><strong>Публікація у групах</strong> — текстовий пост з тригерами, перевагами та конкретною зарплатою</div></div></div>
+    <div class="f-conn"></div>
+    <div class="f-step s2"><div class="f-bar"><div class="f-n">2</div><div class="f-text"><strong>Коментар або реакція</strong> — людина зацікавилась. Відповідай протягом 1–2 годин, поки «гаряча»</div></div></div>
+    <div class="f-conn"></div>
+    <div class="f-step s3"><div class="f-bar"><div class="f-n">3</div><div class="f-text"><strong>Переводиш у приватне</strong> — Messenger, Viber або Telegram. Тут відбувається справжня розмова</div></div></div>
+    <div class="f-conn"></div>
+    <div class="f-step s4"><div class="f-bar"><div class="f-n">4</div><div class="f-text"><strong>Виявляєш потребу</strong> — яка країна? який тип роботи? коли готовий? є досвід? документи в порядку?</div></div></div>
+    <div class="f-conn"></div>
+    <div class="f-step s5"><div class="f-bar"><div class="f-n">5</div><div class="f-text"><strong>Підбираєш вакансію</strong> та допомагаєш із документами — людина відчуває турботу і довіряє</div></div></div>
+    <div class="f-conn"></div>
+    <div class="f-step s6"><div class="f-bar"><div class="f-n">🎉</div><div class="f-text"><strong>Кандидат на роботі — вакансія закрита!</strong> Прибуток компанії і задоволений клієнт.</div></div></div>
+  </div>
+
+  <div class="channels-row">
+    <div class="ch-chip"><span>💬</span>Messenger</div>
+    <div class="ch-chip"><span>📱</span>Viber</div>
+    <div class="ch-chip"><span>✈️</span>Telegram</div>
+    <div class="ch-chip"><span>📞</span>Дзвінок</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>Внутрішній документ <strong>EuropeService</strong> · Лише для менеджерів компанії · Версія 3.0<br>
+  Питання та доповнення — до керівника напрямку</p>
+</div>
+
+</div><!-- /page -->
+</body>
+</html>
