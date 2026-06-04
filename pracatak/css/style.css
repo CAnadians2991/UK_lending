@@ -226,8 +226,18 @@ h2 { font-size: clamp(2rem, 4vw, 3rem); }
 }
 .chip:hover { border-color: var(--gold); color: var(--gold); }
 .chip.is-active { background: var(--gold-grad); color: #20180a; border-color: transparent; }
+.chip i {
+  font-style: normal; font-size: .75rem; margin-left: 4px; padding: 1px 7px;
+  border-radius: 100px; background: rgba(255,255,255,.07); color: inherit; opacity: .85;
+}
+.chip.is-active i { background: rgba(0,0,0,.18); }
 
 .vacancy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.vacancy-grid.is-in .vac-card { animation: vacIn .4s ease both; }
+.vacancy-grid.is-in .vac-card:nth-child(2) { animation-delay: .04s; }
+.vacancy-grid.is-in .vac-card:nth-child(3) { animation-delay: .08s; }
+.vacancy-grid.is-in .vac-card:nth-child(4) { animation-delay: .12s; }
+@keyframes vacIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 .vac-card {
   background: linear-gradient(160deg, var(--panel), var(--black-2));
   border: 1px solid var(--line-soft); border-radius: var(--radius); padding: 24px;

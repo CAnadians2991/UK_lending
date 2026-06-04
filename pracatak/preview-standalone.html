@@ -246,8 +246,18 @@ h2 { font-size: clamp(2rem, 4vw, 3rem); }
 }
 .chip:hover { border-color: var(--gold); color: var(--gold); }
 .chip.is-active { background: var(--gold-grad); color: #20180a; border-color: transparent; }
+.chip i {
+  font-style: normal; font-size: .75rem; margin-left: 4px; padding: 1px 7px;
+  border-radius: 100px; background: rgba(255,255,255,.07); color: inherit; opacity: .85;
+}
+.chip.is-active i { background: rgba(0,0,0,.18); }
 
 .vacancy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.vacancy-grid.is-in .vac-card { animation: vacIn .4s ease both; }
+.vacancy-grid.is-in .vac-card:nth-child(2) { animation-delay: .04s; }
+.vacancy-grid.is-in .vac-card:nth-child(3) { animation-delay: .08s; }
+.vacancy-grid.is-in .vac-card:nth-child(4) { animation-delay: .12s; }
+@keyframes vacIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 .vac-card {
   background: linear-gradient(160deg, var(--panel), var(--black-2));
   border: 1px solid var(--line-soft); border-radius: var(--radius); padding: 24px;
@@ -850,26 +860,65 @@ const COUNTRIES = [
   { slug: "sk", name: "Словакия",      flag: "🇸🇰" },
 ];
 
-/* --- Демо-вакансии (рандомные) --- */
+/* --- Демо-вакансии (рандомные, по 3-4 на страну) --- */
 const VACANCIES = [
-  { country: "pl", title: "Упаковщик на склад",        city: "Вроцлав",     salary: "4 800 zł",  unit: "нетто/мес", type: "Без опыта", hot: true,  housing: true },
-  { country: "pl", title: "Сварщик MIG/MAG",           city: "Познань",     salary: "27 zł",     unit: "/час",      type: "Опыт 1 год", hot: false, housing: true },
-  { country: "de", title: "Работник производства",     city: "Мюнхен",      salary: "2 600 €",   unit: "нетто/мес", type: "Без опыта", hot: true,  housing: true },
-  { country: "de", title: "Водитель категории C+E",    city: "Гамбург",     salary: "3 100 €",   unit: "нетто/мес", type: "Права C+E", hot: false, housing: false },
-  { country: "cz", title: "Оператор линии",            city: "Брно",        salary: "38 000 Kč", unit: "нетто/мес", type: "Без опыта", hot: false, housing: true },
-  { country: "cz", title: "Электрик-монтажник",        city: "Прага",       salary: "190 Kč",    unit: "/час",      type: "Опыт 2 года",hot: false, housing: true },
-  { country: "nl", title: "Сборщик заказов",           city: "Венло",       salary: "2 400 €",   unit: "нетто/мес", type: "Без опыта", hot: true,  housing: true },
-  { country: "nl", title: "Работник теплицы",          city: "Роттердам",   salary: "2 300 €",   unit: "нетто/мес", type: "Сезон",     hot: false, housing: true },
-  { country: "uk", title: "Сборщик урожая",            city: "Норфолк",     salary: "£1 950",    unit: "нетто/мес", type: "Сезон. виза",hot: true,  housing: true },
-  { country: "uk", title: "Работник склада Amazon",    city: "Манчестер",   salary: "£2 100",    unit: "нетто/мес", type: "Без опыта", hot: false, housing: false },
-  { country: "it", title: "Помощник на ферме",         city: "Верона",      salary: "1 700 €",   unit: "нетто/мес", type: "Сезон",     hot: false, housing: true },
-  { country: "it", title: "Горничная в отель",         city: "Римини",      salary: "1 600 €",   unit: "нетто/мес", type: "Сезон",     hot: false, housing: true },
-  { country: "es", title: "Сборщик клубники",          city: "Уэльва",      salary: "1 500 €",   unit: "нетто/мес", type: "Сезон",     hot: false, housing: true },
-  { country: "es", title: "Работник консервного завода",city: "Валенсия",   salary: "1 650 €",   unit: "нетто/мес", type: "Без опыта", hot: false, housing: true },
-  { country: "no", title: "Рыбообработчик",            city: "Берген",      salary: "2 900 €",   unit: "нетто/мес", type: "Без опыта", hot: true,  housing: true },
-  { country: "no", title: "Разнорабочий стройка",      city: "Осло",        salary: "3 200 €",   unit: "нетто/мес", type: "Опыт 1 год", hot: false, housing: false },
-  { country: "lt", title: "Швея",                      city: "Вильнюс",     salary: "1 200 €",   unit: "нетто/мес", type: "Опыт 1 год", hot: false, housing: true },
-  { country: "sk", title: "Оператор станка ЧПУ",       city: "Братислава",  salary: "1 400 €",   unit: "нетто/мес", type: "Опыт 1 год", hot: false, housing: true },
+  /* 🇵🇱 Польша */
+  { country: "pl", title: "Упаковщик на склад",          city: "Вроцлав",    salary: "4 800 zł",  unit: "нетто/мес", type: "Без опыта",  hot: true,  housing: true },
+  { country: "pl", title: "Сварщик MIG/MAG",             city: "Познань",    salary: "32 zł",     unit: "/час",      type: "Опыт 1 год", hot: false, housing: true },
+  { country: "pl", title: "Оператор производства",       city: "Лодзь",      salary: "4 500 zł",  unit: "нетто/мес", type: "Без опыта",  hot: false, housing: true },
+  { country: "pl", title: "Кладовщик-комплектовщик",     city: "Варшава",    salary: "5 200 zł",  unit: "нетто/мес", type: "Без опыта",  hot: true,  housing: false },
+
+  /* 🇩🇪 Германия */
+  { country: "de", title: "Работник производства",       city: "Мюнхен",     salary: "2 600 €",   unit: "нетто/мес", type: "Без опыта",  hot: true,  housing: true },
+  { country: "de", title: "Водитель категории C+E",      city: "Гамбург",    salary: "3 100 €",   unit: "нетто/мес", type: "Права C+E",  hot: false, housing: false },
+  { country: "de", title: "Сборщик мебели",              city: "Кёльн",      salary: "2 500 €",   unit: "нетто/мес", type: "Без опыта",  hot: false, housing: true },
+  { country: "de", title: "Помощник на складе",          city: "Берлин",     salary: "2 400 €",   unit: "нетто/мес", type: "Без опыта",  hot: false, housing: true },
+
+  /* 🇨🇿 Чехия */
+  { country: "cz", title: "Оператор линии",              city: "Брно",       salary: "38 000 Kč", unit: "нетто/мес", type: "Без опыта",  hot: false, housing: true },
+  { country: "cz", title: "Электрик-монтажник",          city: "Прага",      salary: "190 Kč",    unit: "/час",      type: "Опыт 2 года",hot: false, housing: true },
+  { country: "cz", title: "Работник склада",             city: "Пльзень",    salary: "35 000 Kč", unit: "нетто/мес", type: "Без опыта",  hot: true,  housing: true },
+  { country: "cz", title: "Швея",                        city: "Острава",    salary: "32 000 Kč", unit: "нетто/мес", type: "Опыт 1 год", hot: false, housing: true },
+
+  /* 🇳🇱 Нидерланды */
+  { country: "nl", title: "Сборщик заказов",             city: "Венло",      salary: "2 400 €",   unit: "нетто/мес", type: "Без опыта",  hot: true,  housing: true },
+  { country: "nl", title: "Работник теплицы",            city: "Роттердам",  salary: "2 300 €",   unit: "нетто/мес", type: "Сезон",      hot: false, housing: true },
+  { country: "nl", title: "Упаковщик цветов",            city: "Алсмер",     salary: "2 350 €",   unit: "нетто/мес", type: "Без опыта",  hot: false, housing: true },
+  { country: "nl", title: "Оператор склада",             city: "Эйндховен",  salary: "2 600 €",   unit: "нетто/мес", type: "Без опыта",  hot: false, housing: false },
+
+  /* 🇬🇧 Великобритания */
+  { country: "uk", title: "Сборщик урожая",              city: "Норфолк",    salary: "£1 950",    unit: "нетто/мес", type: "Сезон. виза",hot: true,  housing: true },
+  { country: "uk", title: "Работник склада",             city: "Манчестер",  salary: "£2 100",    unit: "нетто/мес", type: "Без опыта",  hot: false, housing: false },
+  { country: "uk", title: "Упаковщик пищ. производства", city: "Лидс",       salary: "£2 000",    unit: "нетто/мес", type: "Без опыта",  hot: false, housing: true },
+  { country: "uk", title: "Оператор линии",              city: "Бирмингем",  salary: "£2 150",    unit: "нетто/мес", type: "Опыт 1 год", hot: false, housing: false },
+
+  /* 🇮🇹 Италия */
+  { country: "it", title: "Помощник на ферме",           city: "Верона",     salary: "1 700 €",   unit: "нетто/мес", type: "Сезон",      hot: false, housing: true },
+  { country: "it", title: "Горничная в отель",           city: "Римини",     salary: "1 600 €",   unit: "нетто/мес", type: "Сезон",      hot: true,  housing: true },
+  { country: "it", title: "Сборщик винограда",           city: "Тоскана",    salary: "1 650 €",   unit: "нетто/мес", type: "Сезон",      hot: false, housing: true },
+  { country: "it", title: "Работник пекарни",            city: "Милан",      salary: "1 800 €",   unit: "нетто/мес", type: "Опыт 1 год", hot: false, housing: false },
+
+  /* 🇪🇸 Испания */
+  { country: "es", title: "Сборщик клубники",            city: "Уэльва",     salary: "1 500 €",   unit: "нетто/мес", type: "Сезон",      hot: false, housing: true },
+  { country: "es", title: "Работник консервного завода", city: "Валенсия",   salary: "1 650 €",   unit: "нетто/мес", type: "Без опыта",  hot: false, housing: true },
+  { country: "es", title: "Сборщик апельсинов",          city: "Севилья",    salary: "1 550 €",   unit: "нетто/мес", type: "Сезон",      hot: true,  housing: true },
+  { country: "es", title: "Упаковщик на складе",         city: "Мадрид",     salary: "1 700 €",   unit: "нетто/мес", type: "Без опыта",  hot: false, housing: false },
+
+  /* 🇳🇴 Норвегия */
+  { country: "no", title: "Рыбообработчик",              city: "Берген",     salary: "2 900 €",   unit: "нетто/мес", type: "Без опыта",  hot: true,  housing: true },
+  { country: "no", title: "Разнорабочий на стройке",     city: "Осло",       salary: "3 200 €",   unit: "нетто/мес", type: "Опыт 1 год", hot: false, housing: false },
+  { country: "no", title: "Работник рыбной фермы",       city: "Тромсё",     salary: "3 000 €",   unit: "нетто/мес", type: "Без опыта",  hot: false, housing: true },
+  { country: "no", title: "Сотрудник клининга",          city: "Ставангер",  salary: "2 700 €",   unit: "нетто/мес", type: "Без опыта",  hot: false, housing: true },
+
+  /* 🇱🇹 Литва */
+  { country: "lt", title: "Швея",                        city: "Вильнюс",    salary: "1 200 €",   unit: "нетто/мес", type: "Опыт 1 год", hot: false, housing: true },
+  { country: "lt", title: "Оператор станка",             city: "Каунас",     salary: "1 300 €",   unit: "нетто/мес", type: "Без опыта",  hot: false, housing: true },
+  { country: "lt", title: "Работник склада",             city: "Клайпеда",   salary: "1 250 €",   unit: "нетто/мес", type: "Без опыта",  hot: true,  housing: true },
+
+  /* 🇸🇰 Словакия */
+  { country: "sk", title: "Оператор станка ЧПУ",         city: "Братислава", salary: "1 400 €",   unit: "нетто/мес", type: "Опыт 1 год", hot: false, housing: true },
+  { country: "sk", title: "Сборщик автокомпонентов",     city: "Жилина",     salary: "1 350 €",   unit: "нетто/мес", type: "Без опыта",  hot: true,  housing: true },
+  { country: "sk", title: "Работник производства",       city: "Кошице",     salary: "1 300 €",   unit: "нетто/мес", type: "Без опыта",  hot: false, housing: true },
 ];
 
 /* --- Отзывы --- */
@@ -904,9 +953,10 @@ function renderStats() {
 function renderCountryFilter() {
   const wrap = document.getElementById("countryFilter");
   if (!wrap) return;
-  const all = `<button class="chip is-active" data-c="all">Все страны</button>`;
+  const countOf = (slug) => VACANCIES.filter((v) => v.country === slug).length;
+  const all = `<button class="chip is-active" data-c="all">Все страны <i>${VACANCIES.length}</i></button>`;
   const items = COUNTRIES.map(
-    (c) => `<button class="chip" data-c="${c.slug}">${c.flag} ${c.name}</button>`
+    (c) => `<button class="chip" data-c="${c.slug}">${c.flag} ${c.name} <i>${countOf(c.slug)}</i></button>`
   ).join("");
   wrap.innerHTML = all + items;
 
@@ -923,6 +973,11 @@ function renderVacancies(filter = "all") {
   const grid = document.getElementById("vacancyGrid");
   if (!grid) return;
   const list = filter === "all" ? VACANCIES : VACANCIES.filter((v) => v.country === filter);
+
+  // плавная смена карточек
+  grid.classList.remove("is-in");
+  void grid.offsetWidth;
+  grid.classList.add("is-in");
 
   grid.innerHTML = list
     .map((v) => {
