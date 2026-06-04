@@ -101,12 +101,11 @@ h2 { font-size: clamp(2rem, 4vw, 3rem); }
 /* Логотип-эмблема */
 .logo { display: flex; align-items: center; gap: 13px; }
 .logo__badge {
-  width: 50px; height: 50px; border-radius: 13px; flex: 0 0 auto;
-  display: grid; place-items: center; position: relative;
-  background: radial-gradient(circle at 30% 25%, #2a2a2e, #0c0c0d);
+  width: 52px; height: 52px; border-radius: 13px; flex: 0 0 auto;
+  background: radial-gradient(circle at 30% 25%, #1c1c20, #0c0c0d);
   border: 1px solid var(--line);
   box-shadow: inset 0 0 18px rgba(212,175,55,.12);
-  overflow: hidden;
+  padding: 3px;
 }
 .logo__pt { font-family: var(--font-head); font-weight: 800; font-size: 1.45rem; letter-spacing: -1px; }
 .logo__pt .p { color: var(--white); }

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" width="640" height="240" role="img" aria-label="PracaTak">
+  <defs>
+    <linearGradient id="lgGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f9e69a"/><stop offset=".45" stop-color="#d8b34a"/><stop offset="1" stop-color="#9c6f1c"/>
+    </linearGradient>
+    <linearGradient id="lgGoldV" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbeeb0"/><stop offset=".5" stop-color="#d8b34a"/><stop offset="1" stop-color="#a9781f"/>
+    </linearGradient>
+    <linearGradient id="lgSilver" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#e3e3e6"/><stop offset="1" stop-color="#a9abb0"/>
+    </linearGradient>
+    <clipPath id="lgGlobe"><circle cx="84" cy="108" r="50"/></clipPath>
+    <filter id="lgShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity=".55"/>
+    </filter>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&amp;family=Manrope:wght@600&amp;display=swap');
+      .wm   { font-family:'Playfair Display',Georgia,serif; font-weight:800; font-size:74px; }
+      .tag  { font-family:'Manrope',sans-serif; font-weight:600; font-size:13.5px; letter-spacing:3px; }
+    </style>
+  </defs>
+
+  <!-- background (uncomment for badge version) -->
+  <!-- <rect width="640" height="240" rx="28" fill="#0c0c0d"/> -->
+
+  <!-- ЭМБЛЕМА -->
+  <g>
+    <circle cx="84" cy="108" r="50" fill="#0d0d0f" stroke="url(#lgGold)" stroke-width="2.5"/>
+    <g clip-path="url(#lgGlobe)" stroke="url(#lgGold)" stroke-opacity=".55" fill="none" stroke-width="1.4">
+      <ellipse cx="84" cy="108" rx="50" ry="20"/><ellipse cx="84" cy="108" rx="50" ry="40"/>
+      <ellipse cx="84" cy="108" rx="20" ry="50"/><ellipse cx="84" cy="108" rx="40" ry="50"/>
+      <line x1="34" y1="108" x2="134" y2="108"/><line x1="84" y1="58" x2="84" y2="158"/>
+    </g>
+    <g clip-path="url(#lgGlobe)" fill="url(#lgGold)" fill-opacity=".9">
+      <path d="M52 86c8-6 18-3 22 3s-4 12-1 18-10 9-17 6-12-9-11-16 1-9 7-11z"/>
+      <path d="M96 118c6-2 13 1 15 7s-2 12-9 13-13-3-13-10 1-8 7-10z"/>
+      <path d="M64 132c5-1 9 3 8 8s-7 8-12 5-4-12 4-13z"/>
+    </g>
+    <path d="M30 150 C 18 96, 70 40, 150 48" fill="none" stroke="url(#lgGold)" stroke-width="6" stroke-linecap="round"/>
+    <g transform="translate(150 48) rotate(-32)" fill="url(#lgGoldV)" filter="url(#lgShadow)">
+      <path d="M0 -2 L22 0 L0 4 L-7 12 L-10 11 L-6 2 L-16 4 L-19 8 L-22 7 L-19 0 L-22 -7 L-19 -8 L-16 -4 L-6 -2 L-10 -11 L-7 -12 Z"/>
+    </g>
+    <path d="M96 78 C 112 66, 130 58, 146 52" fill="none" stroke="url(#lgGold)" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 7" opacity=".8"/>
+    <g filter="url(#lgShadow)">
+      <g fill="url(#lgSilver)">
+        <rect x="58" y="50" width="20" height="98" rx="5"/>
+        <path d="M72 56 a27 27 0 0 1 0 52" fill="none" stroke="url(#lgSilver)" stroke-width="19" stroke-linecap="round"/>
+      </g>
+      <g fill="url(#lgGoldV)">
+        <rect x="86" y="50" width="74" height="20" rx="5"/>
+        <rect x="113" y="50" width="20" height="98" rx="5"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- НАДПИСЬ -->
+  <text x="196" y="128" class="wm" fill="url(#lgSilver)">Praca<tspan fill="url(#lgGoldV)">Tak</tspan></text>
+
+  <!-- СЛОГАН с золотыми линиями -->
+  <line x1="198" y1="158" x2="232" y2="158" stroke="url(#lgGold)" stroke-width="1.5"/>
+  <text x="240" y="163" class="tag" fill="url(#lgGold)">PRACA ZA GRANICĄ — TWOJA PRZYSZŁOŚĆ BEZ GRANIC</text>
+</svg>
